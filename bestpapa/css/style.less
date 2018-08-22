@@ -1,0 +1,485 @@
+// FONTS
+
+@font-face {
+    font-family: 'MuseoExtraBold';
+    src: url('MuseoSansCyrl-900.eot');
+    src: url('MuseoSansCyrl-900.eot?#iefix') format('embedded-opentype'),
+        url('MuseoSansCyrl-900.woff2') format('woff2'),
+        url('MuseoSansCyrl-900.woff') format('woff'),
+        url('MuseoSansCyrl-900.ttf') format('truetype'),
+        url('MuseoSansCyrl-900.svg#MuseoSansCyrl-900') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoBold';
+    src: url('MuseoSansCyrl-700.eot');
+    src: url('MuseoSansCyrl-700.eot?#iefix') format('embedded-opentype'),
+        url('MuseoSansCyrl-700.woff2') format('woff2'),
+        url('MuseoSansCyrl-700.woff') format('woff'),
+        url('MuseoSansCyrl-700.ttf') format('truetype'),
+        url('MuseoSansCyrl-700.svg#MuseoSansCyrl-700') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoReg';
+    src: url('MuseoSansCyrl-300.eot');
+    src: url('MuseoSansCyrl-300.eot?#iefix') format('embedded-opentype'),
+        url('MuseoSansCyrl-300.woff2') format('woff2'),
+        url('MuseoSansCyrl-300.woff') format('woff'),
+        url('MuseoSansCyrl-300.ttf') format('truetype'),
+        url('MuseoSansCyrl-300.svg#MuseoSansCyrl-300') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+ // MIXINS
+
+ @blue__bg: #e4f6f8;
+ @blue: #5ba2a9;
+ @grey: #454545;
+ @black: #b1b1b1;
+
+.MuseoEB{
+    font-family: 'MuseoExtraBold';
+    font-weight: bold;
+}
+.MuseoB{
+    font-family: 'MuseoBold';
+    font-weight: normal;
+}
+.MuseoReg{
+    font-family: 'MuseoReg';
+    font-weight: 300;
+}
+
+// SETTINGS
+
+html{
+    font-size: 10px;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    .MuseoReg;
+    color: @black;
+}
+
+.main{
+    background: url(../img/main/main__bg.jpg) no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    min-height: 80rem;
+    &__overlay{
+        height: 100%;
+        width: 100%;
+        background: rgba(0,0,0,0.8);
+    }
+    &__header{
+        margin-top: 5rem;
+        margin-bottom: 15vh;
+    }
+    &__logo{
+        width: 20rem;
+        padding: 0.4rem;
+        border: 2px solid #fff;
+        &Text{
+            display: inline-block;
+            margin: 0 1rem;
+            color: #fff;
+            font-size: 2.4rem;
+            .MuseoEB;
+        }
+    }
+    &__icon{
+        margin-bottom: 0.6rem;
+        margin-left: 1rem;
+    }
+    &__tel{
+        text-align: right;
+        &Text{
+            font-size: 3rem;
+            .MuseoB;
+            color: #fff;
+            display: block;
+        }
+    }
+    &__link{
+        font-size: 1.8rem;
+        color: #fff;
+        text-decoration: underline;
+        &:hover{
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    &__title{
+        text-align: center;
+        &Text{
+            color: #fff;
+            font-size: 5.5rem;
+            .MuseoB;
+        }
+    }
+    &__subTitle{
+        display: block;
+        font-size: 3.3rem;
+        .MuseoReg;
+    }
+    &__btn{
+        margin-top: 7vh;
+        width: 100%;
+        padding: 1.6rem 0rem;
+        border: 2px solid #fff;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 2rem;
+        .MuseoB;
+        background: transparent;
+        transition: all 0.3s;
+        &:hover{
+            background:#fff;
+            color:#000;
+        }
+    }
+    &__features{
+        margin-top: 20vh;
+    }
+    &__item{
+        text-align: center;
+        width: 100%;
+        min-height: 6rem;
+        &Text{
+            font-size: 1.57rem;
+            color: #fff;
+        }    
+    }
+}
+
+.section{
+    margin-top: 8rem;
+    margin-bottom: 5rem;
+    &__icon{
+        text-align: center;
+        &:before{
+            vertical-align: middle;
+            content: '';
+            display: inline-block;
+            width: 1.2rem;
+            margin-right: 0.7rem;
+            height: 1.5px;
+            background: @blue;
+        }
+        &:after{
+            content: '';
+            vertical-align: middle;
+            display: inline-block;
+            width: 1.2rem;
+            margin-left: 0.7rem;
+            height: 1.5px;
+            background: @blue;
+        }
+    }
+    &__text{
+            font-size: 3.4rem;
+            color: #000;
+            .MuseoEB;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0;
+            margin-top: 2rem;
+        }
+}
+
+.picture{
+    padding-bottom: 6rem;
+    &__line{
+        height: 28rem;
+        width: 100%;
+        background:url(../img/picture/line__bg.jpg) no-repeat center center;
+        background-size: cover;
+        margin-bottom: 10rem;
+    }
+    &__text{
+        color: #000;
+        text-align: center;
+    }
+    &__title{
+        font-size: 3rem;
+        .MuseoEB;
+        margin: 0;
+    }
+    &__subTitle{
+        width: 90%;
+        font-size: 2.4rem;
+        margin: 2rem 0rem;
+        margin-bottom: 5rem;
+    }
+}
+
+.form{
+    &__user, &__tel{
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        border: 2px solid #d0d0d0;
+        background: url(../img/form/user__icon.png) no-repeat 96%;
+        .MuseoReg;
+        &:focus{
+            outline: none;
+        }
+    }
+    &__tel{
+       background: url(../img/form/tel__icon.png) no-repeat 96%; 
+    }
+    &__submit{
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        color: #fff;
+        background:@blue;
+        border: none;
+        &:focus{
+            outline: none;
+        } 
+    }
+}
+
+.featuresOne{
+    background:@blue__bg;
+    &__item{
+        width: 100%;
+        text-align: center;
+        min-height: 20rem;
+    }
+    &__text{
+        font-size: 1.8rem;
+        color: #000;
+    }
+}
+
+.price{
+    padding-bottom: 10rem;
+    &__block{
+        box-sizing: border-box;
+        border: 1px solid #e8e8e8;
+        padding: 4rem 5rem;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 3rem;
+        transition:all 0.2s;
+        &:hover{
+            box-shadow: 0px 0px 16px 0px rgb( 91, 162, 169 );
+        }
+        }
+    &__name{
+        font-size: 1.8rem;
+        color: #000;
+        margin: 0;
+    }
+    &__money{
+        .MuseoEB;
+        font-size: 5rem; 
+        color:@blue;
+        margin: 0;
+        margin-top: 1.6rem;
+    }
+    &__text{
+        color: #000;
+        font-size: 1.6rem;
+    }
+    &__rub{
+        font-size: 2rem;
+        .MuseoReg;
+    }
+    &__btn{
+        border: 2px solid #e8e8e8;
+        text-transform: uppercase;
+        color: #000;
+        font-size: 1.8rem;
+        .MuseoB;
+        padding: 1.6rem 3rem;
+        background: transparent;
+        margin-top: 3rem;
+        transition:all 0.3s;
+        &:focus{
+            outline: none;
+        } 
+        &:hover{
+            color: #fff;
+            background: @blue;
+        }    
+    }
+}
+
+.featuresTwo{
+    padding-bottom: 3rem;
+    background:@blue__bg;
+    &__item{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5rem;
+        min-height: 32rem;
+    }
+    &__circle{ 
+        margin: 0 auto;      
+        width: 18rem;
+        height: 18rem;
+        border-radius: 50%;
+        border: 2px solid #fff;
+    }
+    &__text{
+     width: 64%;
+     margin: 0 auto;
+     margin-top: 2rem;
+     font-size: 2rem;
+     color: #000;
+    }
+}
+.one{
+    background: url(../img/features__two/feature__1.jpg) no-repeat center;
+    background-size: cover;
+}
+.two{
+    background: url(../img/features__two/feature__2.jpg) no-repeat center;
+    background-size: cover;
+}
+.three{
+    background: url(../img/features__two/feature__3.jpg) no-repeat right;
+    background-size: cover;
+}
+.four{
+    background: url(../img/features__two/feature__4.jpg) no-repeat center;
+    background-size: cover;
+}
+.five{
+    background: url(../img/features__two/feature__5.jpg) no-repeat right;
+    background-size: cover;
+}
+.six{
+    background: url(../img/features__two/feature__6.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.block__form{
+ padding: 7rem 0rem 9rem 0rem;
+}
+
+.comment{
+ padding-bottom: 4.7rem;
+ background:url(../img/comment/comment__bg.jpg) no-repeat center;
+ &__slider{
+  padding: 7% 5% 0rem 20%;
+  height: 34rem;
+  width: 100%;
+  background:#fff;
+  position: relative;
+ }
+ &__photo{
+  position: absolute;
+  width: 25rem;
+  height: 25rem;
+  background:url(../img/comment/comment__photo.jpg) no-repeat -40rem 0rem;
+  top: 14%;
+  left: -14%;
+ }
+ &__name{
+  font-size: 2.2rem;
+  .MuseoEB;
+  color: #000;
+  margin: 0;
+  text-transform: uppercase;
+ }
+ &__text{
+  font-size: 2rem;
+  color: #000;
+ }
+ &__circle{
+  margin-left: 0.5rem;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  border: 2px solid @blue;
+  border-radius: 50%;
+  cursor: pointer;
+ }
+ &__link{
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+ }
+ &__block{
+  display: none;
+ }
+}
+.active{
+ display: block;
+}
+
+.circle__active{
+ background:@blue;
+}
+
+.footer{
+ background:#000;
+ &__header{
+  margin-bottom: 3rem;
+ }
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+ .main__features{
+  display: none;
+ }
+ .comment__photo{
+  display: none;
+ }
+}
+
+@media (max-width: 768px) and (min-width: 330px){
+ .main__logo{
+  margin-left: 28%;
+ }
+ .footer__logo{
+  margin-left: 16%;
+ }
+}
+
+@media (max-width: 768px){
+ html{
+  font-size: 8px;
+ }
+ .comment__photo{
+  display: none;
+ }
+ .main__titleText{
+  font-size: 4rem;
+ }
+ .main__subTitle{
+  font-size: 2.4rem;
+ }
+ .main__features{
+  display: none;
+ }
+ .main__tel{
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  text-align: center;
+  
+ }
+ .main__telText{
+  font-size: 2.5rem;
+ }
+ .section__text{
+  font-size: 2.5rem;
+ }
+ .comment__text{
+  font-size: 1.7rem;
+ }
+}
