@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Производство упаковки из гофрокартона">
+    <meta name="author" content="https://vk.com/denis_developer">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="theme-color" content="#ff9d00">
+   <!-- <meta http-equiv="Expires" content="Wed, 22 Mar 3205 00:20:05 GMT">
+    <meta http-equiv="Cache-Control" content="max-age=347000">-->
+    <title>Добрый картон</title>
+<style>
+	.main h6{
+		margin: 0;
+	}
+.btn-mobile {
+  display: none;
+}
+.header {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.header .logo img {
+  width: 19.5rem;
+  height: 6.5rem;
+}
+.header .phone {
+  display: inline-block;
+  text-align: right;
+  margin-top: 1rem;
+  font-family: 'Roboto_med', sans-serif;
+  font-size: 2.12rem;
+  line-height: 4.5rem;
+}
+.header .phone a {
+  color: #373737;
+  text-decoration: none;
+}
+.header .phone-right {
+  border-left: 1px solid #cfcfd0;
+  padding-left: 1.5rem;
+}
+.header .phone-right strong {
+  margin-left: -0.1rem;
+  font-weight: 500;
+}
+.header .phone-left {
+  padding-right: 1rem;
+}
+.header .phone-left strong {
+  margin-left: -0.1rem;
+  font-weight: 500;
+}
+.header-btn {
+  width: 18rem;
+  height: 4.5rem;
+  margin-top: 1rem;
+}
+.header-btn img {
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-right: 1rem;
+}
+/*Контент главного экрана*/
+.main {
+  padding-top: 4.5rem;
+}
+.main-content {
+  position: relative;
+  background: url(img/bg-main.jpg) center no-repeat;
+  background-size: cover;
+}
+.main-content h1 {
+  font-family: 'Roboto_bold', sans-serif;
+  margin-top: 7rem;
+  font-size: 4.1rem;
+  color: #fff;
+}
+.main-content p {
+  color: #fff;
+  font-family: 'Roboto_reg', sans-serif;
+  font-size: 2.8rem;
+}
+.main-content:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.main-content-form {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 3rem;
+  width: 55rem;
+  margin-bottom: 8rem;
+}
+.main-content-form .form-footer {
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  font-family: 'Roboto_light', sans-serif;
+  font-size: 1.4rem;
+}
+.main-content-form h2 {
+  color: #fff;
+  font-family: 'Roboto_light', sans-serif;
+  font-size: 2rem;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+.main-content-form h2 strong {
+  text-transform: uppercase;
+  font-family: 'Roboto_bold', sans-serif;
+  font-size: 2rem;
+}
+.main-content-form input {
+  width: 31.1rem;
+  height: 5.8rem;
+  border-radius: 5px;
+  border: none;
+  padding-left: 2rem;
+  margin-left: 0;
+}
+.main-content-form-btn {
+  width: 16rem;
+  height: 5.8rem;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  margin-top: -0.3rem;
+}
+/*коробки*/
+.box {
+  border: 1px solid #947e7b;
+  height: 42rem;
+  width: 42rem;
+  margin-top: 10rem;
+  border-radius: 50%;
+  margin-left: -4rem;
+}
+.box-img {
+  position: absolute;
+  top: 7rem;
+  left: -8rem;
+}
+.box-rst {
+  position: absolute;
+  bottom: 5rem;
+}.features {
+  background-color: #f4f4f4;
+}
+.features-header-title {
+  margin-bottom: 4rem;
+}
+.features h2 {
+  color: #f39003;
+  font-family: 'Roboto_black', sans-serif;
+  font-size: 3.6rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+.features p {
+  font-family: 'Roboto_reg', sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+}
+.features-block {
+  padding: 3rem 2rem 3rem 7rem;
+  background-color: #fff;
+  margin-bottom: 3rem;
+  min-height: 17rem;
+  position: relative;
+}
+.features-block img {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.features-block h5 {
+  text-align: left;
+  font-family: 'Roboto_bold', sans-serif;
+  font-size: 1.5rem;
+}
+.features-block p {
+  text-align: left;
+  font-family: 'Roboto_light', sans-serif;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 991px){
+	
+  .header .phone {
+    margin-top: 0;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .header .phone-right {
+    padding: 0;
+    display: inline-block;
+    border-left: none;
+  }
+  .header .phone-left {
+    padding: 0;
+  }
+  .box {
+    display: none;
+  }
+  .box-img {
+    display: none;
+  }
+  .box-rst {
+    display: none;
+  }
+  .features h2 {
+    font-size: 2.7rem;
+  }
+  .features p {
+    font-size: 1.4rem;
+  }
+  .features-block {
+    padding: 1rem 1rem 1rem 6rem;
+  }
+  .features-block-img img {
+    left: 1rem !important;
+  }
+  .features-block p {
+    font-size: 1.2rem;
+  }
+  .features-block img {
+    left: 0;
+  }
+}
+@media (max-width: 767px){
+	
+  /*header */
+  .logo {
+    display: none;
+  }
+  .logo-mobile {
+    z-index: 10000;
+    position: fixed;
+    display: inline-block;
+    background-color: #f39003;
+    width: 3.5rem;
+    height: 3.5rem;
+    top: 0.5rem;
+    left: 5rem;
+  }
+  .logo-mobile img {
+    margin: 8px 6px;
+  }
+  .header .phone {
+    position: fixed;
+    z-index: 10000;
+    font-size: 1.4rem;
+    top: 0.6rem;
+    right: 5rem;
+    line-height: 1.3;
+  }
+  .header .phone-left {
+    display: block;
+    font-size: 1.4rem;
+  }
+  .header .phone-left strong {
+    font-weight: 900;
+  }
+  .header .phone-right {
+    font-size: 1.4rem;
+  }
+  .header .phone-right strong {
+    font-weight: 900;
+  }
+  .wrap-btn {
+    display: none;
+  }
+  .btn-mobile {
+    position: fixed;
+    z-index: 10000;
+    top: 1rem;
+    right: 1rem;
+    display: block;
+    background-color: #f39003;
+    width: 2.7rem;
+    height: 2.7rem;
+    border: none;
+    border-radius: 5px;
+  }
+  .btn-mobile:hover {
+    -webkit-filter: brightness(90%);
+            filter: brightness(90%);
+  }
+  .btn-mobile img {
+    margin: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .header {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .main {
+    text-align: center;
+  }
+  .main-content h1 {
+    color: #ff9d00;
+    font-family: 'Roboto_bold', sans-serif;
+    font-size: 2.2rem;
+    margin-top: 5rem;
+  }
+  .main-content p {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
+  .main-content-form {
+    margin-bottom: 6rem;
+    width: 100%;
+    background: none !important;
+    padding: 0;
+  }
+  .main-content-form h2 {
+    margin-top: 4rem;
+    font-size: 1.5rem;
+  }
+  .main-content-form h2 strong {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+  }
+  .main-content-form input {
+    padding-left: 6.1rem;
+    height: 4.7rem;
+    width: 29rem;
+    margin-bottom: 1.5rem;
+  }
+  .main-content-form-btn {
+    width: 18rem;
+    height: 5rem;
+    display: inline-block;
+  }
+  .main-content-form .form-footer {
+    font-size: 1.3rem;
+  }
+  .features {
+    padding-bottom: 3rem;
+  }
+  .features h2 {
+    font-size: 3rem;
+    margin-top: 2.5rem;
+  }
+  .features-header-title {
+    margin-bottom: 0;
+  }
+  .features-header-title3 {
+    margin-bottom: 2.5rem;
+  }
+  .features-block {
+    min-height: 0;
+    margin-bottom: 1rem;
+  }
+  .features-block h5 {
+    font-family: 'Roboto_black', sans-serif;
+    font-size: 1.5rem;
+  }
+}
+</style>
+
+  </head>
+
+
+<body>
+	  <!-- Yandex.Metrika counter --> <script> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47116608 = new Ya.Metrika({ id:47116608, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47116608" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!--/Yandex.Metrika counter -->
+	  
+<section class="main">
+	<h6>.</h6>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+       <ul class="nav navbar-nav">
+            <li><a href="#home">О КОМПАНИИ</a></li>
+            <li><a href="#features">ПРЕИМУЩЕСТВА</a></li>
+            <li><a href="#production">ПРОДУКЦИЯ</a></li>
+            <li><a href="#offer">ПРЕДЛОЖЕНИЕ</a></li>
+            <li><a href="#make">ПРОИЗВОДСТВО</a></li>
+            <li><a href="#client">НАШИ КЛИЕНТЫ</a></li>
+            <li><a href="#feedback">ОТЗЫВЫ</a></li>
+            <li><a href="#contact">КОНТАКТЫ</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container">
+
+		<!--Header-->
+		<div class="header" id="home">
+			<div class="row">
+
+				<div class="col-md-3 col-md-offset-0 col-sm-3 col-sm-offset-0 col-xs-1 col-xs-offset-1">
+					<div class="logo">
+						<img src="img/logo.png" alt="Лого">
+					</div>
+					<div class="logo-mobile">
+						<img src="img/logo2.png" alt="лого">
+					</div>
+				</div>
+
+				<div class="col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-1">
+					<div class="phone">
+						<span class="phone-left"><a href="tel:8(347)271-54-28">8 (347) <strong>271-54-28</strong></a></span>
+						<span class="phone-right"><a href="tel:8(937)363-30-00">8 (937) <strong>363-30-00</strong></a></span>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-3 col-xs-1 col-xs-offset-0">
+					<div class="wrap-btn wow tada" data-wow-iteration="5">
+						<button type="button" onclick="yaCounter47116608.reachGoal('coll-btn'); return true;" class="btn header-btn" data-toggle="modal" data-target="#myModal"><img src="img/telephone.svg" alt="телефон">Заказать звонок</button>
+					</div>	
+					<div class="wrap-btn-mobile">
+						<button type="submit" class="btn-mobile" data-toggle="modal" data-target="#myModal"><img src="img/telephone.svg" alt=""></button>
+					</div>	
+				</div>	
+			</div>	
+			</div>
+		</div>
+     <div class="main-content">
+			
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<div class="box"></div>	
+							
+							<div class="box-img">
+								<img src="img/box.png" alt="коробки">
+							</div>
+							<div class="box-rst">
+								<img src="img/rst.png" alt="рст">
+							</div>
+							</div>
+					<div class="col-md-7 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+						<div class="main-content-right">
+							<h1>Производство упаковки из гофрокартона</h1>
+						<p>с доставкой по всей России</p>
+						<div class="main-content-form">
+							<h2>Получите индивидуальное предложение <br> на производство и поставку гофропродукции<br> <strong>Образцы упаковки бесплатно!</strong></h2>
+							<form class="form "  action="mailer/smart.php" method="POST">
+								<input type="text" class="phone" name="user_phone" required placeholder="Введите номер телефона">
+								<button type="submit" onclick="yaCounter47116608.reachGoal('bid-btn'); return true;"  class="btn main-content-form-btn" >Оставить заявку!</button>
+							</form>
+							<p class="form-footer"><sup>*</sup>Минимальный заказ 500шт</p>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+</section>
+
+<section class="features" id="features">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-12">
+				<h2>5 лет</h2>
+				<p class="features-header-title">На рынке изделий из гофрокартона</p>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12">
+				<h2>до 5 000 000 м<sup>2</sup>	</h2>
+				<p class="features-header-title">Ежемесячный объем производства гофрокартона</p>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12">
+				<h2>4 000 м<sup>2</sup></h2>
+				<p class="features-header-title features-header-title3">Площадь склада</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-12">
+			<div class="features-block wow fadeInLeft">
+				<img src="img/features/1.png" alt="">
+				<h5>Производство</h5>
+				<p>4 технологические линии способны выполнить любой заказ любой сложности</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-12">
+			<div class="features-block wow fadeInDown">
+				<img src="img/features/2.png" alt="">
+				<h5>Бесплатные образцы</h5>
+				<p>Бесплатно делаем образцы гофроупаковки - это помогает заранее увидеть упаковку</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-12">
+			<div class="features-block wow fadeInRight">
+				<div class="features-block-img">
+					<img src="img/features/3.png" alt="">
+				</div>
+				<h5>Стабильное качество</h5>
+				<p>Собственная лаборатория контролирует качество на каждом этапе производства</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-12">
+			<div class="features-block wow fadeInLeft">
+				<img src="img/features/4.png" alt="">
+				<h5>Страховой запас</h5>
+				<p>Можем хранить запас гофропродукции на своих складах и поставлять его партиями</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-12">
+			<div class="features-block wow fadeInUp">
+				<img src="img/features/5.png" alt="Флексопечать">
+				<h5>Флексопечать</h5>
+				<p>Возможно нанесение вашего  логотипа, текста или манипуляционных знаков</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-12">
+			<div class="features-block wow fadeInRight">
+				<img src="img/features/6.png" alt="">
+				<h5>Гидрофобные добавки</h5>
+				<p>На производстве реализована технология, которая позволяет гофрокартону стать прочнее</p>
+			</div>
+		</div>
+		</div>
+	</div>
+</section>
+
+<section class="production" id="production">
+	<div class="container">
+		<div class="header">
+			<h2>НАША ПРОДУКЦИЯ</h2>
+			<div class="wave"><img src="img/production/wavy.png" alt=""></div>
+		</div>
+		<div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12">
+			<div class="production-block"><img src="img/production/1.png" alt=""></div>
+			<div class="production-block-mobile"><img src="img/production/mobile/1.png" alt=""></div>
+			<h4>Гофрокороб 4-х клапанный</h4>
+			<div class="production-btn">
+				<button type="button" class="btn production-btn-left" data-toggle="modal" data-target="#myModal1" >Подробнее</button>
+				<button type="button" class="btn production-btn-right" data-toggle="modal" data-target="#myModal">Получить расчет</button>
+			</div>
+		</div>
+		<div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12">
+			<div class="production-block"><img src="img/production/2.png" alt=""></div>
+			<div class="production-block-mobile"><img src="img/production/mobile/2.png" alt=""></div>
+			<h4>Гофролоток</h4>
+			<div class="production-btn">
+				<button type="button" class="btn production-btn-left" data-toggle="modal" data-target="#myModal1" >Подробнее</button>
+				<button type="button" class="btn production-btn-right" data-toggle="modal" data-target="#myModal">Получить расчет</button>
+			</div>
+		</div>
+		<div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12">
+			<div class="production-block"><img src="img/production/3.png" alt=""></div>
+			<div class="production-block-mobile"><img src="img/production/mobile/1.png" alt=""></div>
+			<h4>Гофрокороб самосборный (сложная высечка)</h4>
+			<div class="production-btn">
+				<button type="button" class="btn production-btn-left" data-toggle="modal" data-target="#myModal1">Подробнее</button>
+				<button type="button" class="btn production-btn-right" data-toggle="modal" data-target="#myModal">Получить расчет</button>
+			</div>
+		</div>
+		<div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12">
+			<div class="production-block"><img src="img/production/4.png" alt=""></div>
+			<div class="production-block-mobile"><img src="img/production/mobile/1.png" alt=""></div>
+			<h4>Листовой гофрокартон</h4>
+			<div class="production-btn">
+				<button type="button" class="btn production-btn-left" data-toggle="modal" data-target="#myModal1">Подробнее</button>
+				<button type="button" class="btn production-btn-right" data-toggle="modal" data-target="#myModal">Получить расчет</button>
+			</div>
+		</div>
+	</div>
+</section>
+    
+<section class="offer parallax-window" data-androidFix="false" data-parallax="scroll" data-image-src="img/offer/bg-offer.jpg" id="offer">
+	<div class="offer-header">
+		<h2>Получите индивидуальное предложение</h2>
+		<p>на производство и поставку изделий</p>
+	</div>
+	<div class="offer-form">
+		<h4>Введите ваш номер телефона:</h4>
+		<form action="mailer/smart.php"  method="POST">
+		<input type="text" name="user_phone" class="phone" required placeholder="Введите номер телефона"><br>
+		<button type="submit" onclick="yaCounter47116608.reachGoal('bid-btn'); return true;" class="btn offer-form-btn">Оставить заявку!</button>
+	</form>
+	<small><sup>*</sup>Минимальный заказ 500шт</small>
+	</div>
+</section>
+
+<section class="make" id="make">
+	<div class="container">
+		<div class="row">
+	<div class=" col-xs-12 col-md-push-7 col-md-5 col-lg-5">
+			<div class="make-block">
+				<div class="make-header">
+				<h2>Производство</h2>
+			</div>
+			<div class="make-content">
+				<p>Современное оборудование позволяет произ- водить до 5 миллионов квадратных метров гофрокартона ежемесячно. Гофрокороба и лотки производятся по ГОСТу или чертежам заказчика.</p>
+				<p>Досконально прорабатываем конструкции коро- бов и составы сырья, учитывая условия хранения, транспортировки и производства вашей продукции. </p>
+				<p>Возможно нанесение цветной флексопечати на поверхность коробов.</p>
+			</div>
+			</div>
+		</div>
+	<div class="slider">
+			<div class=" col-xs-12 col-md-7 col-md-pull-5 col-lg-7">
+		<div class="make-slider">
+			<div class="make-slider_item"><img src="img/make/1.jpg" alt=""></div>
+			<div class="make-slider_item"><img src="img/make/2.jpg" alt=""></div>
+			<div class="make-slider_item"><img src="img/make/3.jpg" alt=""></div>
+			<div class="make-slider_item"><img src="img/make/4.jpg" alt=""></div>
+			<div class="make-slider_item"><img src="img/make/5.jpg" alt=""></div>
+		</div>	
+		<div class="make-slider-small">
+			<div class="make-slider-small_item"><img src="img/make/small/1.jpg" alt=""></div>
+			<div class="make-slider-small_item"><img src="img/make/small/2.jpg" alt=""></div>
+			<div class="make-slider-small_item"><img src="img/make/small/3.jpg" alt=""></div>
+			<div class="make-slider-small_item"><img src="img/make/small/4.jpg" alt=""></div>
+			<div class="make-slider-small_item"><img src="img/make/small/5.jpg" alt=""></div>
+		</div>	
+		</div>
+	</div>
+	</div>
+
+	</div>
+</section>
+
+<section class="client" id="client">
+	<div class="container">
+		<div class="client-header">
+			<h2>Наши клиенты</h2>
+			<div class="wave"><img src="img/production/wavy.png" alt=""></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<div class="client-block client-block1"><img src="img/client/1.png" alt=""></div>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<div class="client-block client-block2"><img src="img/client/2.png" alt=""></div>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<div class="client-block client-block1"><img src="img/client/3.png" alt=""></div>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<div class="client-block client-block2"><img src="img/client/4.png" alt=""></div>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<div class="client-block client-block1"><img src="img/client/5.png" alt=""></div>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<div class="client-block client-block2 "><img src="img/client/6.png" alt=""></div>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<div class="client-block client-block1"><img src="img/client/7.png" alt=""></div>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<div class="client-block client-block2 "><img src="img/client/8.png" alt=""></div>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<div class="client-block client-block1"><img src="img/client/9.png" alt=""></div>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<div class="client-block client-block2"><img src="img/client/10.png" alt=""></div>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<div class="client-block client-block1"><img src="img/client/11.png" alt=""></div>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<div class="client-block client-block2"><img src="img/client/12.png" alt=""></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="feedback" id="feedback">
+	<div class="container">
+		<div class="feedback-header">
+			<h2>Отзывы о сотрудничестве</h2>
+			<div class="wave"><img src="img/production/wavy.png" alt=""></div>
+		</div>
+		<div class="feedback-slider">
+			<div class="feedback-block"><a data-fancybox="gallery" href="img/feedback/big/1.jpg"><img src="img/feedback/1.jpg" alt="h"></a></div>
+			<div class="feedback-block"><a data-fancybox="gallery" href="img/feedback/big/2.jpg"><img src="img/feedback/2.jpg" alt="h"></a></div>
+			<div class="feedback-block"><a data-fancybox="gallery" href="img/feedback/big/3.jpg"><img src="img/feedback/3.jpg" alt="h"></a></div>
+			<div class="feedback-block"><a data-fancybox="gallery" href="img/feedback/big/1.jpg"><img src="img/feedback/1.jpg" alt="h"></a></div>
+			<div class="feedback-block"><a data-fancybox="gallery" href="img/feedback/big/2.jpg"><img src="img/feedback/2.jpg" alt="h"></a></div>
+			<div class="feedback-block"><a data-fancybox="gallery" href="img/feedback/big/3.jpg"><img src="img/feedback/3.jpg" alt="h"></a></div>
+		</div>
+	</div>
+</section>
+
+<section class="contact" id="contact">
+	
+	<div class="container">
+		<div class="row">
+			<div class=" col-xs-12 col-sm-5 col-md-4">
+				<div class="contact-header">
+					<h2>КОНТАКТЫ</h2>
+				</div>
+				<div class="contact-block">
+					<div class="contact-address">
+					<p><span>Адрес офиса</span> <br>г. Уфа, Проспект октября, 46 <br>
+					<span>Адрес офиса</span> <br>г. Уфа, ул. Майкопская, 65/2</p>
+				</div>
+				<div class="contact-phone">
+					<p><span>Тел. отдела продаж:</span><br>8 (347) 271-54-28 <br> 8 (937) 363-30-00</p>
+				</div>
+				<button type="button" onclick="yaCounter47116608.reachGoal('coll-btn'); return true;" class="btn contact-btn" data-toggle="modal" data-target="#myModal">Заказать звонок</button>
+				<div class="contact-mail">
+					<p><span>Е-mail</span> <br> urals.karton@gmail.com</p>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="map">
+		<script async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad4a66578493af9e9bd0bc849883d54f534a4788f1be2353abc9621450e853d6a&amp;lang=ru_RU&amp;scroll=false&amp;id=map"></script>
+	</div>
+</section>
+<section class="footer">
+	<div class="container">
+		<h5>&copy; www.gofra-ural.ru 2016, все права защищены</h5>
+	</div>
+	
+</section>
+
+<div class="modal-call modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close modal-call-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel2">ФОРМА ОБРАТНОЙ СВЯЗИ</h4>
+      </div>
+      <div class="modal-body">
+        <div class="modal-call-form">
+							<h2>Получите индивидуальное предложение </h2>
+							<p>на производство и поставку изделий</p>
+							<form class="form-send" action="mailer/smart.php" method="POST">
+								<input type="text" name="user_phone" class="phone" required placeholder="Введите номер телефона">
+								<button type="submit" onclick="yaCounter47116608.reachGoal('bid-btn'); return true;"  class="btn modal-call-form-btn" >Оставить заявку!</button>
+							</form>
+							<p class="modal-call-form-footer"><sup>*</sup>Минимальный заказ 500шт</p>
+						</div>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+
+
+<div class="modal-gofro1 modal" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close modal-gofro1-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">ГОФРОКОРОБ САМОСБОРНЫЙ (СЛОЖНАЯ ВЫСЕЧКА)</h4>
+      </div>
+      <div class="modal-body">
+      	
+      		<div class="container-fluid">
+      			<div class="modal-gofro1-title">
+      				<p><strong>Гофрокороб самосборный</strong> – вид упаковки из гофрокартона, которые представляют собой высеченный по чертежу гофролист. При сборке таких коробов нет необходимости применять дополнительные материалы (как клей, скотч, скобы), что удобно для открывания-закрывания гофрокороба без потери внешнего вида упаковки из картона. Еще одно их достоинство – они очень легко собираются, практически не требуя усилий. Для производства самосборных коробов требуется изготовление плоских либо ротационных штанцевальных форм по чертежам, предоставленных заказчиком. При заказе таких коробов важно указать три размера: длина (L) х ширина (B) х высота (h). Размеры указываются внутренние, выраженные в миллиметрах. В случае отсутствия у заказчика чертежей на изготовление самосборного короба, либо еще не выбран тип короба, специалисты компании «Добрый картон» предложат подходящий тип короба и разработают чертежи для изготовления в дальнейшем штанцевальных форм. Распространённые типы самосборных коробов – короб с крышкой на фиксаторах, лотки с отрытым верхом, короба типа «телевизор», гофроподдоны, короба по типу «крышка - дно», телескопические короба, короба оберточного типа. «Добрый картон» изготавливает гофрокороба самосборные из 3-х слойного гофрокартона от Т21 до Т27 марки профиля С (высота профиля 4 мм), бурого и белого цветов, с нанесением двухцветной флексопечати на поверхность коробов (например логотипов, текста, манипуляционных знаков). Упаковываются обычно короба в пачки по 20 шт. По желанию заказчика может быть поставка в паллетах, обвязка стрейч - пленкой и стяжка стреппинг-лентой.</p>
+      			</div>
+      		</div>
+      		<div class="modal-features">
+      			<div class="container-fluid">
+      		<div class="row">
+      			<div class="col-md-4">
+      				<div class="modal-block">
+      					<img src="img/modal/1.png" alt="">
+      					<h5>Собственное производство</h5>
+      				</div>
+      			</div>
+      			<div class="col-md-4">
+      				<div class="modal-block">
+      					<img src="img/modal/2.png" alt="">
+      					<h5>Стабильное качество по ГОСТу</h5>
+      				</div>
+      			</div>
+      			<div class="col-md-4">
+      				<div class="modal-block">
+      					<img src="img/modal/3.png" alt="">
+      					<h5>Доставка по всей России </h5>
+      				</div>
+      			</div>
+      			<div class="col-md-4">
+      				<div class="modal-block">
+      					<img src="img/modal/4.png" alt="">
+      					<h5>Бесплатное создание образцов</h5>
+      				</div>
+      			</div>
+      			<div class="col-md-4">
+      				<div class="modal-block">
+      					<img src="img/modal/5.png" alt="">
+      					<h5>Нанесение флексопечати</h5>
+      				</div>
+      			</div>
+      			<div class="col-md-4">
+      				<div class="modal-block">
+      					<img src="img/modal/6.png" alt="">
+      					<h5>Страховой запас гофрокартона на нашем складе</h5>
+      				</div>
+      			</div>
+      		</div>	
+      	</div>
+      		</div>
+        <div class="modal-gofro1-form">
+							<h2>Получите индивидуальное предложение </h2>
+							<p>на производство и поставку изделий</p>
+							<h3>Введите ваш номер телефона:</h3>
+							<form action="mailer/smart.php">
+								<input type="text" name="user_phone" class="phone" required placeholder="Введите номер телефона">
+								<button type="submit" onclick="yaCounter47116608.reachGoal('bid-btn'); return true;" class=" btn modal-gofro1-form-btn" >Оставить заявку!</button>
+							</form>
+							<p class="modal-gofro1-form-footer"><sup>*</sup>Минимальный заказ 500шт</p>
+		</div>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+
+
+<!--Спасибо-->
+
+
+<!-- Modal -->
+<div class="modal-thanks modal " id="thanks" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close modal-call-close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</button>
+        <h2 class="modal-title" id="myModalLabel4">СПАСИБО!</h2>
+      </div>
+      <div class="modal-body">
+     <h3>Наши менеджеры свяжутся с вами.</h3>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet"  href="slick/slick.css">
+     <link rel="stylesheet"  href="slick/slick-theme.css">
+     <link rel="stylesheet" href="css/animate.min.css">
+
+<link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script  src="slick/slick.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/wow.min.js"></script>
+
+	<script src="js/jquery.fancybox.min.js"></script>
+	
+	<!--<script>
+		$('.form-send').submit(function(event) {
+                event.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "mailer/smart.php",
+                    data: $(this).serialize()
+                }).done(function() {
+                    $(this).find("input").val("");
+                    // alert("Сообщение успешно отправлено");
+                    event.preventDefault();
+
+                    $('.modal-call').fadeOut();
+
+                    $("form").trigger("reset");
+                	$('.modal-thanks').fadeIn();
+                });
+                return false;
+            });
+	</script>-->
+	<script>
+$('form').submit(function(event) {
+event.preventDefault();
+$.ajax({
+type: "POST",
+url: "mailer/smart.php",
+data: $(this).serialize()
+}).done(function() {
+$(this).find("input").val("");
+$('.modal-thanks').fadeIn();
+$('.modal-call').fadeOut();
+$('.close').on('click', function(event) {
+   event.preventDefault();
+   $('#thanks').fadeOut();
+   $('div').removeClass('modal-backdrop');
+$('body').removeClass('modal-open')
+$('body').removeAttr( "style" )
+});
+$("form").trigger("reset");
+});
+return false;
+});
+	$('form').submit(function(event) {
+event.preventDefault();
+$.ajax({
+type: "POST",
+url: "mailer/smart.php",
+data: $(this).serialize()
+}).done(function() {
+$(this).find("input").val("");
+$('.modal-thanks').fadeIn();
+$('.modal-gofro1').fadeOut();
+$('.close').on('click', function(event) {
+   event.preventDefault();
+   $('#thanks').fadeOut();
+   $('div').removeClass('modal-backdrop');
+$('body').removeClass('modal-open')
+$('body').removeAttr( "style" )
+});
+$("form").trigger("reset");
+});
+return false;
+});
+	</script>
+
+  
+   
+ <script>
+	new WOW().init();
+ </script>
+    <script>
+
+   jQuery(function($){
+  
+   $(".phone").mask("+7(999) 999-99-99");
+  
+});	
+
+ $('.make-slider').slick({
+ 	adaptiveHeight: true,
+  fade: true,
+  slidesToShow: 1,
+        slidesToScroll: 1,
+  asNavFor: '.make-slider-small',
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '<button type="button" class="prev"></button>',
+  		nextArrow: '<button type="button" class="next"></button>'
+        
+      }
+    }
+  ]
+
+});
+$('.make-slider-small').slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  asNavFor: '.make-slider',
+  prevArrow: '<button type="button" class="prev"></button>',
+  nextArrow: '<button type="button" class="next"></button>',
+  arrows :true,
+  focusOnSelect: true
+});
+
+  $('.feedback-slider').slick({
+     infinite: true,
+  slidesToShow: 3,
+  arrows: true,
+  slidesToScroll: 1,
+  focusOnSelect: true,
+   prevArrow: '<button class="feedback-arrow prev2"></button>',
+        nextArrow: '<button class="feedback-arrow next2"></button>',
+  responsive: [
+  
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '<button class="feedback-arrow prev1"></button>',
+        nextArrow: '<button class="feedback-arrow next1"></button>'
+      }
+    }
+    
+  ]
+  });
+    </script>
+    <script>
+      jQuery(document).ready(function() {
+        $('.link-down').on('click', function(event) {
+          event.preventDefault();
+          var id = $(this).attr('href'),
+          top = $(id).offset().top;
+          $('body,html').animate({scrollTop: top}, 800);
+          });
+        });
+    </script>
+</body>
+</html>
