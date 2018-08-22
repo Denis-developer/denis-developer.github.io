@@ -1,0 +1,471 @@
+// MIXINS
+@green: #8cc63e;
+@red: #c60429;
+
+// SETTINGS
+html{
+	font-size: 10px;
+}
+
+body{
+	padding: 0;
+	margin: 0;	
+}
+button:active,button:focus{
+	outline: none;
+}
+
+.main{
+	height: 100vh;
+	min-height: 95rem;
+	background: url(../img/main/main__bg.jpg) no-repeat center;
+	background-size: cover;
+	&__header{
+		height: 10rem;
+		background:rgba(255,255,255,0.88);
+	}
+	&__logo{
+		width: 23rem;
+		margin-top: 2rem;
+	}
+	&__logoBlock{
+		text-align: center;
+	}
+	&__tel{
+		font-size: 2.7rem;
+		line-height: 10rem;
+		color: #000;
+		&:hover{
+			text-decoration: none;
+			color: #000;
+		}
+	}
+	&__headerBtn{
+		width: 80%;
+		height: 5.5rem;
+		border-radius: 40px;
+		border: none;
+		background:@green;
+		color: #fff;
+		text-align: center;
+		font-size: 1.7rem;
+		margin-top: 2rem;
+		transition: all 0.2s;
+		&:hover{
+			background:darken(@green,5%);
+		}
+	}
+	&__title{
+		color: #fff;
+		font-size: 6rem;
+		margin-top: 30vh;
+		text-align: center;
+		font-weight: bolder;
+	}
+	&__btn{
+		display: block;
+		margin: 0 auto;
+		height: 6rem;
+		width: 80%;
+		background:@green;
+		border: none;
+		border-radius: 10px;
+		box-shadow: 2px 2px 26px 0px rgb( 0, 0, 0 );
+		color: #fff;
+		font-size: 2rem;
+		transition: all 0.2s;
+		&:hover{
+			background:darken(@green,5%);
+		}
+	}
+	&__arrow{
+		text-align: center;
+		margin-top: 20vh;
+		cursor: pointer;
+		display: block;
+		text-decoration: none;
+	}
+}
+
+.about{
+	padding-top: 10vh;
+	background:#fff;
+	&__picture{
+		width: 45.3rem;
+		text-align: center;
+	}
+	&__text{
+		font-size: 2.2rem;
+		line-height: 1.7;
+	}
+	&__line{
+		height: 1px;
+		width: 100%;
+		background:#000;
+		margin-top: 15vh;
+	}
+}
+
+.title{
+	font-size: 6rem;
+	margin:0rem;
+	margin-top: 2rem;
+	letter-spacing: -3px;
+}
+
+.features{
+	text-align: center;
+	background:#fff;
+	padding-top: 10vh;
+	padding-bottom: 15vh;
+	&__block{
+		margin-top: 5rem;
+	}
+	&__img{
+		width: 20rem;
+	}
+	&__itemTitle{
+		font-weight: normal;
+		font-size: 2.7rem;
+		margin: 0;
+	}
+	&__text{
+		font-size: 1.6rem;
+	}
+	&__item{
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+
+.request{
+	background:linear-gradient(to right,#c7c7c7,#919191);
+	&__title{
+		margin-top: 6vh;
+		margin-bottom: 5vh;
+	}
+	&__text{
+		font-size: 2.2rem;
+		line-height: 1.65;
+	}
+	&__link{
+		color:@red;
+		border-bottom: 1px solid @red;
+		&:hover{
+			color:@red;
+			text-decoration: none;
+			border: none;
+		}
+	}
+	&__blockBtn{
+		margin-top: 10vh;
+	}
+	&__btn{
+		width: 21rem;
+  height: 6rem;
+  border-radius: 10px;
+  background:@red;
+  color: #fff;
+  border: none;
+  font-size: 1.7rem;
+  margin-right: 2rem;
+  transition:all 0.2s;
+  &:hover{
+  	background:lighten(@red,10%);
+  }
+	}
+	&__price{
+		text-align: left;
+		position: relative;
+		box-sizing: border-box;
+		padding-left: 3.4rem;
+		width: 21rem;
+		height: 6rem;
+		background: transparent;
+		color:@red;
+		font-size: 1.7rem;
+		border: 3px solid @red;
+		border-radius: 10px;
+		font-weight: bold;
+		transition:all 0.3s;
+		&:hover{
+			border-color: lighten(@red,10%);
+			color: lighten(@red,10%);
+		}
+		img{
+			width: 2.3rem;
+			position: absolute;
+			right: 2rem;
+			top: 47%;
+			transform: translateY(-50%);
+		}
+	}
+	&__picture{
+		margin-top: 5vh;
+	}
+	&__blockPicture{
+		position: relative;
+	}
+}
+
+.work{
+	padding-top: 4rem;
+	padding-bottom: 8rem;
+	&__block{
+		text-align: center;
+	}
+	&__title{
+		margin-bottom: 8rem;
+	}
+	&__circle{
+		margin: 0 auto;
+		width: 11rem;
+		height: 11rem;
+		border-radius: 50%;
+		background:#89d7ff;
+		line-height: 11rem;
+		margin-bottom: 2.5rem;
+	}
+	&__text{
+		font-size: 1.8rem;
+	}
+}
+
+.document{
+	background: #e1e1e1;
+	padding-top: 12vh;
+	padding-bottom: 12vh;
+	&__title{
+		margin-top: 0;
+		font-size: 5.5rem;
+	}
+	&__subtitle{
+		color:#a2a2a2;
+	}
+	&__text{
+		font-size: 2rem;
+		line-height: 1.65;
+	}
+	&__list{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+	&__item{
+		padding: 1rem;
+		img{
+			vertical-align: top;
+		}
+	}
+	&__link{
+		font-size: 2.3rem;
+		color: #000;
+		border-bottom: 2px solid #000;
+		margin-left: 3rem;
+		&:hover{
+			text-decoration: none;
+			color: #000;
+			border: none;
+		}
+	}
+}
+
+.contact{
+	padding-top: 15vh;
+	padding-bottom: 6vh;
+	&__title{
+		margin-top: 0;
+		margin-bottom: 5rem;
+	}
+	&__tel, &__email{
+		color: #000;
+		display: block;
+		font-size: 3.4rem;
+		margin-bottom: 1rem;
+		&:hover{
+			color: #000;
+			text-decoration: none;
+		}
+	}
+	&__textMap{
+		margin-top: 10rem;
+		display: block;
+	}
+}
+
+.footer{
+	background:#000;
+	height: 8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__text{
+		text-align: center;
+		font-size: 1.7rem;
+		color: #969696;
+	}
+}
+
+.modal{
+	display: none;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 6rem;
+	width: 50%;
+	position: fixed;
+	background:rgba(0,0,0,0.85);
+	top: 14vh;
+	left: 50%;
+	transform: translateX(-50%);
+	&__apple{
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: -8rem;
+	}
+	&__input{
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+		height: 5rem;
+		padding: 1.5rem;
+		border: none;
+		margin-bottom: 2rem;
+		border-radius: 7px;
+		&:focus{
+			outline: none;
+			border: 2px solid @green;
+			text-decoration: underline;
+		}
+	}
+	&__textarea{
+		height: 10rem;
+	}
+	&__btn{
+		width: 45%;
+		margin: 1rem auto;
+		display: block;
+		&:focus{
+			outline: none;
+		}
+	}
+	&__text{
+		color: #fff;
+	}
+	&__check{
+		margin-right: 1rem;
+	}
+	&__close{
+		color: #fff;
+		font-size: 5rem;
+		position: absolute;
+		top: 0;
+		right: 1.5rem;
+		cursor: pointer;
+	}
+}
+
+@media (max-width: 992px){
+	html{
+		font-size: 9px;
+	}
+	.title{
+		font-size: 4rem;
+	}
+	.main{
+		&__title{
+			font-size: 5.5rem;
+		}
+		&__logo{
+			width: 21rem;
+		}
+		&__header{
+			height: 9rem;
+		}
+	}
+	.about{
+		&__picture{
+			width: 100%;
+		}
+	}
+	.features{
+		&__item{
+			margin-bottom: 8rem;
+		}
+	}
+	.request{
+		padding-bottom: 5rem;
+		&__picture{
+			display: none;
+		}
+	}
+	.work{
+		&__title{
+			text-align: center;
+		}
+		&__block{
+			margin-bottom: 6rem;
+		}
+	}
+	.contact{
+		text-align: center;
+		&__btn{
+			width: 60%;
+		}
+		&__textMap{
+			margin-top: 4rem;
+			margin-bottom: 8rem;
+		}
+	}
+	.modal{
+		&__apple{
+			display: none;
+		}
+		&__btn{
+			width: 80%;
+		}
+	}
+}
+
+@media (max-width: 768px){
+	html{
+		font-size: 8px;
+	}
+	.main{
+		&__header{
+			height: 20rem;
+		}
+		&__headerBtn{
+			display: block;
+			margin: 1rem auto;
+		}
+		&__tel{
+			font-size: 2.4rem;
+		}
+	}
+	.title{
+		letter-spacing: 0;
+	}
+	.modal{
+		width: 70%;
+	}
+}
+
+@media (max-width: 500px){
+	.main{
+		min-height:110rem;
+	}
+	.request{
+		&__btn{
+			margin-bottom: 2rem;
+		}
+	}
+	.document{
+		&__link{
+			font-size: 2rem;
+		}
+	}
+	.modal{
+		width: 90%;
+	}
+}
