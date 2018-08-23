@@ -21,8 +21,11 @@ background-size: cover;}
 }
 
 .features{
-	padding-bottom: 35rem;
+	padding-bottom: 45rem;
 	padding-top: 2rem;
+}
+.features-block{
+	text-align: center;
 }
 .features-block-item p::before{
 	content: '';
