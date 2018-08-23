@@ -12,6 +12,10 @@ background-size: cover;}
 .link-down{position:absolute;color:#fff;z-index:4;bottom:2rem;display:inline-block;font-size:2rem;width:50px;height:50px;border-radius:50%;border:1px solid transparent;line-height:50px;left:50%;margin-left:-25px;}
 .link-down:hover{color:#fff;border-color:#fff;}
 .link-down:focus{color:#fff;}
+.features-block ul{
+	padding: 0;
+	margin: 0;
+}
 .features-block li{
 	list-style: none;
 }
@@ -20,7 +24,7 @@ background-size: cover;}
 	padding-bottom: 35rem;
 	padding-top: 2rem;
 }
-.features-block-item p:before{
+.features-block-item p::before{
 	content: '';
 	display: inline-block;
 	height: 2rem;
@@ -66,9 +70,23 @@ transform: translate(-50%, -50%);}
 .close{background-color:transparent;border:none;font-size:2.5rem;position:absolute;right:2rem;top:1rem;}
 .modal-btn{display:inline-block;color:#333;border:1px solid #333;padding:10px 20px;border-radius:5px; transition: 0.3s all;}
 .modal-btn:hover{background-color:#333;color:#fff;text-decoration:none;}
+@media (max-width: 1200px){
+	.portfolio-block{
+		height: 235px;
+	}
+	.portfolio-blocks h3{
+		font-size: 1.4rem;
+	}
+}
 @media (min-width:0px) and (max-width:767px){html{font-size:7px;}
 .footer strong{margin:3rem 0 2rem;display:inline-block;}
 .social-links a{font-size:1.5rem;}
 }
 @media (min-width:768px) and (max-width:991px){.footer strong{margin:3rem 0 2rem;display:inline-block;}
+}
+@media (min-width:393px) and (max-width:768px){
+	.portfolio-block{
+		width: 300px;
+		margin: 0 auto;
+	}
 }
