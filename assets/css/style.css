@@ -184,3 +184,6 @@ figure.effect-bubba:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);trans
 @media screen and (max-width:30.6em){.cbp-qtrotator{font-size:70%;}
 .cbp-qtrotator img{width:80px;}
 }
+@media (min-width: 390px) and (max-width: 767px){
+	.grid{width: 360px;}
+}
