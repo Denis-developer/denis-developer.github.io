@@ -458,3 +458,12 @@ body {
     font-size: 1.7rem;
   }
 }
+
+@media(max-width: 550px){
+  .main__logo{
+    margin: 0 auto;
+  }
+  .footer__logo{
+    margin: 0 auto;
+  }
+}
