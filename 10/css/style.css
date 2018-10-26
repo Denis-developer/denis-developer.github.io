@@ -1,0 +1,10 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+
+.main{
+	width: 100vw;
+	height: 100vh;
+	background: url(../img/img.jpg) no-repeat center / cover;
+}
