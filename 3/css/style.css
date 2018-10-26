@@ -1,0 +1,104 @@
+html{
+	font-size: 10px;
+}
+body{
+	padding: 0;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+.main-wrapper{
+	height: 100vh;
+	width: 100vw;
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: -ms-inline-flex;
+	display: -o-inline-flex;
+	display: inline-flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+}
+.main-text{
+	margin: 0;
+	font-weight: 400;
+	font-size: 2rem;
+	color: #1B1B1B;
+	opacity: 0.8;
+	line-height: 30px;
+	margin-bottom: 40px;
+}
+.fotorama{
+	float: right;
+	width: 48%;
+	height: 420px;
+	margin-left: 30px;
+	position: relative;
+	z-index: 999;
+}
+.fotorama__arr--prev{
+	background-color: rgba(0, 0, 0, 0.3);
+	background-image: url(../img/arrow-prev.png);
+	background-position: center;
+	-webkit-background-size: auto;
+	background-size: auto;
+	height: 36px;
+	border-radius: 50%;
+	border: none;
+	z-index: 10;
+	width: 36px;
+	cursor: pointer;
+	margin-left: 15px;
+}
+.fotorama__arr--next{
+	background-color: rgba(0, 0, 0, 0.3);
+	background-image: url(../img/arrow-next.png);
+	background-position: center;
+	-webkit-background-size: auto;
+	background-size: auto;
+	height: 36px;
+	border-radius: 50%;
+	border: none;
+	z-index: 10;
+	width: 36px;
+	cursor: pointer;
+	margin-right: 15px;
+}
+@media(max-width: 1200px){
+	.fotorama{
+		height: 450px;
+	}
+}
+
+@media (max-width: 768px){
+	body{
+		padding-top: 100px;
+	}
+	.fotorama{
+		float: none;
+		margin: 0 auto;
+		display: block;
+		text-align: center;
+		width: 360px;
+		margin-bottom: 40px;
+	}
+}
+@media (max-width: 576px){
+	body{
+		padding-top: 30px;
+	}
+	.fotorama{
+		width: auto auto;
+	}
+	.main-wrapper{
+		width: auto;
+		height: auto;
+		display: block;
+	}
+}
+
+@media(max-width: 390px){
+	.fotorama{
+		width: auto;
+		height: auto;
+	}
+}
