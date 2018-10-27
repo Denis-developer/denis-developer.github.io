@@ -66,10 +66,17 @@ body{
 }
 .fotorama__nav {
 	background: #a8a8a8;
-	height: 550px;
 }
-.fotorama__thumb{
-
+.fotorama__nav__frame--thumb{
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.fotorama__thumb-border{
+	display: none;
+}
+.fotorama__active{
+	opacity: 0;
+	transition: opacity 0.1s;
 }
 @media(max-width: 1200px){
 	.fotorama{
