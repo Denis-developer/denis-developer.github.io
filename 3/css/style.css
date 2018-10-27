@@ -1,5 +1,6 @@
 html{
 	font-size: 10px;
+	overflow-x: hidden;
 }
 body{
 	padding: 0;
@@ -62,6 +63,13 @@ body{
 	width: 36px;
 	cursor: pointer;
 	margin-right: 15px;
+}
+.fotorama__nav {
+	background: #a8a8a8;
+	height: 550px;
+}
+.fotorama__thumb{
+
 }
 @media(max-width: 1200px){
 	.fotorama{
