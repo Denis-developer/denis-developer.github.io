@@ -25,6 +25,14 @@ body{
 @media (max-width: 768px){
 	.main-img{
 		width: 48%;
+		margin-bottom: 15px;
+		margin-left: 3px;
+		margin-right: 3px;
+	}
+	.main{
+		height: 800px;
+		display: block;
+		margin-top: 6vh;
 	}
 }
 @media (max-width: 425px){
