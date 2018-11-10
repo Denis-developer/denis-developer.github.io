@@ -31,7 +31,7 @@ $(function() {
       .closest('.media').find('div.media-blockTab').removeClass('active-block').eq($(this).index()).addClass('active-block');
   });
 
-  $('.menu__link').on('click', function(event) {
+  $('.menu__link, .menu-logo__link').on('click', function(event) {
       $('.menu').addClass('dn');
       $('.humburger').removeClass('active-hum');
     });
@@ -47,7 +47,7 @@ $(function() {
 
   // ЯКОРЯ
 
-    $('.header-menu__link, .menu__link').on('click', function(event) {
+    $('.header-menu__link, .menu__link, .menu-logo__link').on('click', function(event) {
       event.preventDefault();
       var id = $(this).attr('href'),
       top = $(id).offset().top;
@@ -58,8 +58,13 @@ $(function() {
     //Menu scroll
 
     document.addEventListener('scroll', function () {
-      if(document.documentElement.scrollTop == 0 && min576.matches){
-        document.querySelector('.menu-line').style.display = "none";
+     if(document.documentElement.scrollTop == 0 && min576.matches){
+        if($(".menu").hasClass("dn")){
+          document.querySelector('.menu-line').style.display = "none";
+        }
+        else{
+          document.querySelector('.menu-line').style.display = "block";
+        }
       }
       else if (document.documentElement.scrollTop > 0 && min576.matches){
         document.querySelector('.menu-line').style.display = "block";
