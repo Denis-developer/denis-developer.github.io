@@ -6,6 +6,13 @@ $(function() {
 	let humburger = document.getElementsByClassName('humburger'),
       menu = document.querySelector('.menu');
 
+  const min576 = window.matchMedia( "(max-width: 576px)" );
+
+  $('.menu__link').on('click', function(event) {
+      $('.menu').addClass('dn');
+      $('.humburger').removeClass('active-hum');
+    });
+
 
   // АНИМАЦИЯ ГАМБУРГЕРА
 
@@ -15,6 +22,17 @@ $(function() {
             menu.classList.toggle('dn');
         });
     }
+
+    //Menu scroll
+
+    document.addEventListener('scroll', function () {
+      if(document.documentElement.scrollTop == 0 && min576.matches){
+        document.querySelector('.menu-line').style.display = "none";
+      }
+      else if (document.documentElement.scrollTop > 0 && min576.matches){
+        document.querySelector('.menu-line').style.display = "block";
+      }
+    })
 
   // ЯКОРЯ
 
