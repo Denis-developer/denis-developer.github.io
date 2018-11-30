@@ -12,15 +12,18 @@ body{
 }
 .main{
 	height: 100vh;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding: 20px;
 	position: relative;
 }
 .main-title{
 	font-size: 15px;
 	text-align: center;
 	margin-bottom: 30px;
-	margin-top: 15px;
+}
+.main-text{
+	font-size: 14px;
+	margin-bottom: 25px;
+	padding-left: 10px;
 }
 .label{
 	display: block;
@@ -69,6 +72,20 @@ body{
 .checkbox{
 	margin: 0 auto;
 	display: block;
+}
+.main-list{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.main-item{
+	margin-bottom: 40px;
+}
+.main-link{
+	font-size: 22px;
+}
+.main-link:hover{
+	text-decoration: none;
 }
 button:focus, input:focus, textarea:focus{
 	outline: none;

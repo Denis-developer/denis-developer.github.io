@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		  input = document.getElementsByTagName('input');
 
 	for(let i = 0;i < input; i++){
-		if(input[i].onfocus){
+		if(input[i].focus){
 			btn1.style.display = 'none';
 			btn2.style.display = 'none';
 		}
