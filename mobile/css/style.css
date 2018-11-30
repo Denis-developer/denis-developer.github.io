@@ -15,8 +15,8 @@ body{
 	position: relative;
 }
 .section{
-	padding-top: 10px;
-	padding-left: 8px;
+	padding-top: 8px;
+	padding-left: 10px;
 }
 .main-title{
 	font-size: 15px;
@@ -80,7 +80,7 @@ body{
 	padding: 0;
 	margin: 0;
 	position: relative;
-	left: -15px;
+	left: -5px;
 }
 .main-item{
 	margin-bottom: 40px;
