@@ -1,0 +1,60 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.container{
+	width: 100%;
+	max-width: 425px;
+	margin: 0 auto;
+}
+.main{
+	padding-left: 20px;
+	padding-right: 20px;
+	position: relative;
+	background: pink;
+}
+.main-title{
+	font-size: 15px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.label{
+	display: block;
+	font-size: 15px;
+	margin-bottom: 6px;
+}
+.btn{
+	padding: 3px 8px;
+	border: 1px solid #808080;
+	background: #94c37d;
+	border-radius: 2px;
+	cursor: pointer;
+}
+.btn-back{
+	background: #dcdedc;
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+}
+.btn-submit{
+	position: absolute;
+	bottom: 10px;
+	right: 20px;
+}
+.input{
+	margin-bottom: 20px;
+	width: 160px;
+	height: 19px;
+	margin-right: 10px;
+	padding-left: 3px;
+}
+.textarea{
+	width: 100%;
+	height: 60px;
+	margin-bottom: 10px;
+}
+button:focus, input:focus, textarea:focus{
+	outline: none;
+}
