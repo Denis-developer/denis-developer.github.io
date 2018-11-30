@@ -11,7 +11,7 @@ body{
 	display: block;
 }
 .main{
-	height: 100vh;
+	height: auto;
 	padding: 20px;
 	position: relative;
 	padding-top: 10px;
@@ -68,7 +68,8 @@ body{
 	display: -o-inline-flex;
 	display: inline-flex;
 	justify-content: space-between;
-	width: 100%
+	width: 100%;
+	margin-top: 50px;
 }
 .textarea{
 	width: 100%;
