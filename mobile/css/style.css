@@ -46,8 +46,7 @@ body{
 .btn{
 	padding: 3px 8px;
 	border: 1px solid #808080;
-	/* background: #94c37d; */
-	background: blue;
+	background: #94c37d;
 	border-radius: 2px;
 	cursor: pointer;
 }
@@ -69,9 +68,7 @@ body{
 	display: -o-inline-flex;
 	display: inline-flex;
 	justify-content: space-between;
-	width: 88%;
-	position: absolute;
-	bottom: 20px;
+	width: 100%
 }
 .textarea{
 	width: 100%;
