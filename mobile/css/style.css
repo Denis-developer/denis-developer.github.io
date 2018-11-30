@@ -46,7 +46,8 @@ body{
 .btn{
 	padding: 3px 8px;
 	border: 1px solid #808080;
-	background: #94c37d;
+/* 	background: #94c37d; */
+	background: red;
 	border-radius: 2px;
 	cursor: pointer;
 }
