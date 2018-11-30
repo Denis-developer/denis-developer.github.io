@@ -8,6 +8,7 @@ body{
 	width: 100%;
 	max-width: 425px;
 	margin: 0 auto;
+	height: 100%;
 }
 .main{
 	height: 100vh;
@@ -30,7 +31,7 @@ body{
 }
 .block-two{
 	position: relative;
-	top: 2px;
+	top: -20px;
 }
 .btn{
 	padding: 3px 8px;
@@ -56,11 +57,16 @@ body{
 	height: 19px;
 	margin-right: 10px;
 	padding-left: 3px;
+	border: 1px solid #a9a9a9;
 }
 .textarea{
 	width: 100%;
 	height: 60px;
 	margin-bottom: 10px;
+}
+.checkbox{
+	margin: 0 auto;
+	display: block;
 }
 button:focus, input:focus, textarea:focus{
 	outline: none;
