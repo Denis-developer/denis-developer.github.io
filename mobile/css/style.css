@@ -23,7 +23,6 @@ body{
 .main-text{
 	font-size: 14px;
 	margin-bottom: 25px;
-	padding-left: 10px;
 }
 .label{
 	display: block;
@@ -77,6 +76,8 @@ body{
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
+	position: relative;
+	left: -8px;
 }
 .main-item{
 	margin-bottom: 40px;
