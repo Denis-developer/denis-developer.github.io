@@ -17,7 +17,7 @@ body{
 	padding-top: 10px;
 }
 .section{
-	padding-top: 0px;
+	padding-top: 20px;
 	padding-left: 10px;
 }
 .main-title{
@@ -27,6 +27,7 @@ body{
 	margin-bottom: 30px;
 }
 .main-text{
+	margin-top: 0;
 	font-size: 14px;
 	margin-bottom: 25px;
 }
@@ -67,7 +68,7 @@ body{
 	display: -o-inline-flex;
 	display: inline-flex;
 	justify-content: space-between;
-	width: 100%;
+	width: 92%;
 	position: absolute;
 	bottom: 20px;
 }
