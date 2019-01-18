@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
       centerMode: true,
       variableWidth: true,
       adaptiveHeight: true,
-      autoplay: true,
       responsive: [
         {
           breakpoint: 992,
