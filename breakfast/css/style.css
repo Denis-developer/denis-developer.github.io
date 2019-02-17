@@ -260,6 +260,9 @@ body {
     width: 350px;
     margin-top: 20px;
   }
+  .main {
+    height: auto;
+  }
 }
 @media (max-width: 540px) {
   .main-title {
@@ -280,7 +283,6 @@ body {
   }
   .main {
     background: url(../img/mobile-bg.jpg) no-repeat center / cover;
-    height: auto;
   }
 }
 @media (max-width: 490px) {
@@ -335,11 +337,16 @@ body {
   }
   .main-block {
     width: 280px;
-    margin: 0;
-    margin-left: -25px;
     margin-bottom: 20px;
   }
   .main-block__text {
     font-size: 1.5rem;
+  }
+}
+@media (max-width: 335px) {
+  .main-block {
+    margin: 0;
+    margin-left: -25px;
+    margin-bottom: 20px;
   }
 }
