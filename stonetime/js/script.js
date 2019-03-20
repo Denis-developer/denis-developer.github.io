@@ -8,12 +8,17 @@ $(document).ready(function(){
       descriptionLink = document.getElementsByClassName('description-link')[0],
       description = document.getElementsByClassName('description')[0],
       dignityLink = document.getElementsByClassName('dignity-link')[0],
-      dignity = document.getElementsByClassName('dignity')[0];
+      dignity = document.getElementsByClassName('dignity')[0],
+      popuWrapper = document.getElementsByClassName('popup-wrapper'),
+      btnModal = document.getElementsByClassName('header-reach__btn'),
+      popupClose = document.getElementsByClassName('popup-close');
 
 
   if(max992.matches){
     empty.innerHTML = "(Горьковское шоссе, 93-й км, поворот на ст.«Усад»)";
   }
+
+  // Развёртывание текста и свёртывание на мобильных устройствах(криво)
 
   menuLink.addEventListener('click', function (event) {
     event.preventDefault();
@@ -62,6 +67,27 @@ $(document).ready(function(){
       dignityLink.classList.remove("dignity-link_1");
     }
   })
+
+  // Модальные окна
+
+  for(let i = 0; i < popupClose.length; i++){
+    popupClose[i].addEventListener('click', function (event) {
+      event.preventDefault();
+      for(let z = 0; z < popuWrapper.length; z++){
+        popuWrapper[z].style.display = 'none';
+      }
+    })
+  }
+  for(let i = 0; i < btnModal.length; i++){
+    btnModal[i].addEventListener('click', function (event) {
+      event.preventDefault();
+      for(let z = 0; z < popuWrapper.length; z++){
+        popuWrapper[z].style.display = 'block';
+      }
+    })
+  }
+
+  // Слайдер главного экрана
 
   $('.slider').slick({
     infinite: true,
