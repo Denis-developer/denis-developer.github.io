@@ -116,7 +116,7 @@ input:focus, input:active, button:focus, button:active, a:focus, a:active{
     background: #444e61;
     position: relative;
     &-mobile{
-        z-index: 9999;
+        z-index: 9000;
         display: none;
         position: absolute;
         width: 100%;
@@ -170,7 +170,7 @@ input:focus, input:active, button:focus, button:active, a:focus, a:active{
     }
     &-sub{
         display: none;
-        z-index: 9999;
+        z-index: 9000;
         position: absolute;
         list-style: none;
         background: #444e61;
@@ -312,7 +312,7 @@ input:focus, input:active, button:focus, button:active, a:focus, a:active{
         background: #fff;
         width: 100%;
         bottom: -1px;
-        z-index: 9999;
+        z-index: 9000;
         a{
             color: #000;
             border-bottom: 1px solid #000;
@@ -598,7 +598,7 @@ input:focus, input:active, button:focus, button:active, a:focus, a:active{
         bottom: 7px;
         left: 0;
         text-align: center;
-        z-index: 9999;
+        z-index: 9000;
         a{
             color: #000;
             border-bottom: 1px solid #000;
@@ -750,6 +750,7 @@ input:focus, input:active, button:focus, button:active, a:focus, a:active{
         top: 0;
         left: 0;
         background: rgba(0,0,0,0.85);
+        z-index: 9999;
     }
     &-close{
         color: #000;
@@ -1087,5 +1088,12 @@ input:focus, input:active, button:focus, button:active, a:focus, a:active{
         display: block;
         margin: 0 auto;
         margin-bottom: 15px;
+    }
+    .popup{
+        width: 96%;
+        height: 300px;
+    }
+    .popup-input{
+        width: 250px;
     }
 }
