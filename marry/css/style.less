@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400&subset=cyrillic');
+
+html{
+    font-size: 10px;
+    overflow-x: hidden;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+    overflow-x: hidden;
+}
+button:focus, button:active, a:focus, a:active{
+    outline: none;
+}
+
+.wrapper{
+    height: 100%;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+}
+
+.page{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    &-btn{
+        font-size: 2rem;
+        font-weight: 400;
+        color: #000;
+        border: none;
+        background: #fbf800;
+        width: 200px;
+        height: 50px;
+    }
+}
+
+.section-1{
+    background: url(../img/bg-1.jpg) no-repeat center center / cover;
+    padding-top: 10vh;
+    &-block{
+        text-align: center;
+    }
+    &__logo{
+        margin-bottom: 12vh;
+    }
+    &__title{
+        font-size: 5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        word-spacing: 8px;
+        line-height: 1.7;
+        margin-bottom: 9vh;
+    }
+}
+
+.section-2{
+    background: url(../img/bg-2.jpg) no-repeat center center / cover;
+    padding-top: 10vh;
+    &-block{
+        text-align: center;
+    }
+    &__logo{
+        position: absolute;
+        right: 340px;
+    }
+    &__btn{
+        position: absolute;
+        right: 300px;
+        top: 63%;
+        transform: translateY(-50%);
+    }
+    &__title{
+        font-size: 5.6rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        word-spacing: 8px;
+        line-height: 1.8;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 200px;
+    }
+}
+
+.section-3{
+    background: url(../img/bg-3.jpg) no-repeat center center / cover;
+    &__title{
+        font-size: 4.8rem;
+        letter-spacing: 5px;
+        font-weight: 300;
+        position: absolute;
+        bottom: 15vh;
+        left: 50%;
+        transform: translateX(-50%);
+        word-spacing: 8px;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
+
+.section-4{
+    background: url(../img/bg-4.jpg) no-repeat center center / cover;
+    padding-top: 12vh;
+    &-block{
+        text-align: center;
+    }
+    &__logo{
+        margin-bottom: 16vh;
+    }
+    &__title{
+        font-size: 5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        word-spacing: 8px;
+        line-height: 1.7;
+        margin-bottom: 6vh;
+    }
+    &__line{
+        left: 0%;
+    }
+}
+
+.section-5{
+    background: url(../img/bg-5.jpg) no-repeat center center / cover;
+    padding-top: 10vh;
+    &-block{
+        text-align: center;
+    }
+    &__logo{
+        margin-bottom: 19vh;
+    }
+    &__title{
+        font-size: 8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #fff;
+        letter-spacing: 5px;
+        word-spacing: 8px;
+        line-height: 1.7;
+        margin-bottom: 9vh;
+    }
+}
+
+.section-6{
+    background: url(../img/bg-6.jpg) no-repeat center center / cover;
+    padding-top: 10vh;
+    &-block{
+        text-align: center;
+    }
+    &__logo{
+        margin-bottom: 8vh;
+    }
+    &__title{
+        font-size: 5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        word-spacing: 8px;
+        line-height: 1.7;
+        margin-bottom: 6vh;
+    }
+}
+
+.section-7{
+    background: url(../img/bg-7.jpg) no-repeat center center / cover;
+    padding-top: 12vh;
+    &-block{
+        text-align: center;
+    }
+    &__logo{
+        margin-bottom: 16vh;
+    }
+    &__title{
+        font-size: 5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        word-spacing: 8px;
+        line-height: 1.7;
+        margin-bottom: 6vh;
+    }
+}
+
+.section-8{
+    background: url(../img/bg-8.jpg) no-repeat center center / cover;
+    padding-top: 10vh;
+    &-block{
+        text-align: center;
+    }
+    &__logo{
+        position: absolute;
+        right: 340px;
+    }
+    &__btn{
+        position: absolute;
+        right: 350px;
+        top: 69%;
+        transform: translateY(-50%);
+    }
+    &__title{
+        font-size: 4.5rem;
+        font-weight: 300;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        word-spacing: 8px;
+        color: #fff;
+        line-height: 1.8;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 200px;
+    }
+}
+
+
+.black-line{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 150px;
+}
+.white-line{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 150px;
+}
+
+.menu{
+    transform: translateX(-100%);
+    transition: all 0.5s;
+    z-index: 100;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100vh;
+    width: 404px;
+    display: block;
+    background: url(../img/menu.png) no-repeat center;
+    &-list{
+        list-style-type: none;
+        padding: 90px;
+        margin-top: 20vh;
+        &__item{
+            margin-bottom: 50px;
+        }
+        &__link{
+            font-size: 2rem;
+            font-weight: 300;
+            color: #2b2b2b;
+            &:hover, &:active{
+                color: #2b2b2b;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.humburger
+{
+    cursor: pointer;
+    display: block;
+    position: fixed;
+    left: 90px;
+    top: 13vh;
+    transition: all .3s;
+    z-index: 101;
+}
+.humburger span
+{
+    background: #000;
+    display: block;
+    height: 3px;
+    margin-bottom: 16px;
+    width: 4.6rem;
+}
+.active,.humburger span
+{
+    transition: all .3s;
+}
+.active span:first-child
+{
+    background: #000;
+    left: 0;
+    position: relative;
+    top: 17.5px;
+    transform: rotate(45deg);
+    transition: all .3s;
+}
+.active span:nth-child(2)
+{
+    display: none;
+}
+.active span:nth-child(3)
+{
+    background: #000;
+    bottom: 0;
+    position: relative;
+    transform: rotate(-45deg);
+    transition: all .3s;
+}
+.dn{
+    transform: translateX(0%);
+    transition: all 0.5s;
+}
+
+@media (max-width: 1440px){
+    .page h2{
+        font-size: 3rem;
+    }
+    .section-2__logo{
+        right: 280px;
+    }
+    .section-2__btn{
+        right: 248px;
+    }
+    .section-8__logo{
+        right: 320px;
+    }
+    .section-8__btn{
+        right: 282px;
+    }
+}
+@media(max-width: 756px){  
+    .section-2__title, .section-2__btn, .section-2__logo, .section-8__title, .section-8__btn, .section-8__logo{
+        right: 50%;
+        transform: translateX(50%);
+        top: 47%;
+    }
+    .section-2__btn{
+        top: 60%;
+    }
+    .section-8__btn{
+        top: 70%;
+    }
+    .section-2__logo, .section-8__logo{
+        top: 10vh;
+    }
+    .black-line, .white-line{
+        display: none;
+    }
+    .section-8__title{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (max-width: 576px){
+    .page h2{
+        font-size: 3rem;
+        word-spacing: 0px;
+    }
+    .menu{
+        background: #fff;
+        width: 100%;
+    }
+    .humburger{
+        top: 40px;
+        left: 40px;
+    }
+    .humburger span{
+        width: 3.7rem;
+        margin-bottom: 10px;
+    }
+    .active span:first-child{
+        top: 12.3px;
+    }
+    .menu-list{
+        padding: 0;
+        margin-top: 7vh;
+        &__item{
+            text-align: center;
+            margin-bottom: 8vh;
+        }
+    }
+    .section-2__title{
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
+@media(max-width: 420px){  
+    .page h2{
+        font-size: 2.4rem;
+    }
+    .logo{
+        width: 100px;
+    }
+    .section-6__logo{
+        margin-bottom: 6vh;
+    }
+}
+@media(max-width: 360px){  
+    .page h2{
+        font-size: 2rem;
+    }
+}
