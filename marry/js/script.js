@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 	let humburger = document.getElementsByClassName('humburger'),
 	    span = document.getElementsByClassName('line'),
-  		section2 = document.querySelector('.section-2'),
+  		section1 = document.querySelector('.section-1'),
+      section2 = document.querySelector('.section-2'),
   		section3 = document.querySelector('.section-3'),
   		section4 = document.querySelector('.section-4'),
   		section5 = document.querySelector('.section-5'),
@@ -20,42 +21,68 @@ document.addEventListener('DOMContentLoaded', function () {
             this.classList.toggle('active');
             menu.classList.toggle('dn');
             for (let i = 0; i < span.length; i++) {
-		        span[i].style.background = '#000';
-		    }
+  		        span[i].style.background = '#000';
+  		    }
         });
     }
-     document.addEventListener('scroll', function () {
-     //  if(document.documentElement.scrollTop >= section2.offsetTop - 100 && document.documentElement.scrollTop <= section3.offsetTop - 100
-     //  	|| document.documentElement.scrollTop >= section5.offsetTop - 100 && document.documentElement.scrollTop <= section6.offsetTop - 100
-     //  	|| document.documentElement.scrollTop >= section8.offsetTop - 100){
-     //  	if(menu.classList.contains('dn')){
-     //  		for (let i = 0; i < span.length; i++) {
-		   //      span[i].style.background = '#000';
-		   //  }
-     //  	}else{
-     //  		for (let i = 0; i < span.length; i++) {
-		   //      span[i].style.background = '#fff';
-		   //  }
-     //  	}
-      	
-     //  }
-     //  else if(document.documentElement.scrollTop >= section3.offsetTop - 100 || document.documentElement.scrollTop <= section2.offsetTop - 100 
-     //  	 || document.documentElement.scrollTop >= section6.offsetTop - 100){
-     //  	for (let i = 0; i < span.length; i++) {
-	    //     span[i].style.background = '#000';
-	    // }
-     //  }
-     if(document.documentElement.scrollTop > $('.section-1').offset().top){
-      // for (let i = 0; i < span.length; i++) {
-      //        span[i].style.background = '#fff';
-      //    }
-      alert('sdasd')
-     }
-      
+
+    
+     section1.addEventListener('wheel', function (e) {
+      if (e.deltaY > 0){
+        for (let i = 0; i < span.length; i++) {
+              span[i].style.background = '#fff';
+          }
+      }
     })
+     section2.addEventListener('wheel', function () {
+          for (let i = 0; i < span.length; i++) {
+              span[i].style.background = '#000';
+          }
+        })
+     section3.addEventListener('wheel', function (e) {
+          if (e.deltaY < 0){
+            for (let i = 0; i < span.length; i++) {
+                  span[i].style.background = '#fff';
+              }
+          }
+        })
+     section4.addEventListener('wheel', function (e) {
+          if (e.deltaY > 0){
+            for (let i = 0; i < span.length; i++) {
+                  span[i].style.background = '#fff';
+              }
+          }
+        })
+
+     section5.addEventListener('wheel', function () {
+          for (let i = 0; i < span.length; i++) {
+              span[i].style.background = '#000';
+          }
+        })
+     section6.addEventListener('wheel', function (e) {
+          if (e.deltaY < 0){
+            for (let i = 0; i < span.length; i++) {
+                  span[i].style.background = '#fff';
+              }
+          }
+        })
+     section7.addEventListener('wheel', function (e) {
+          if (e.deltaY > 0){
+            for (let i = 0; i < span.length; i++) {
+                  span[i].style.background = '#fff';
+              }
+          }
+        })
+     section8.addEventListener('wheel', function (e) {
+          if (e.deltaY < 0){
+            for (let i = 0; i < span.length; i++) {
+                  span[i].style.background = '#000';
+              }
+          }
+        })
+
      if(max756.matches){
       section2Logo.src = 'img/logo-2.png';
      }
-
 	
 })
