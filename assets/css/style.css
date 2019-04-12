@@ -76,7 +76,7 @@ h2{font-size:24px;margin:0 0 30px;letter-spacing:3px;}
 .grid figure h2,
 .grid figure p{margin:0;}
 .grid figure p{letter-spacing:1px;font-size:68.5%;}
-figure.effect-bubba{background:#9e5406;}
+figure.effect-bubba{background:#9e5406; height: 235px;}
 figure.effect-bubba img{opacity:0.7;-webkit-transition:opacity 0.35s;transition:opacity 0.35s;}
 figure.effect-bubba:hover img{opacity:0.2;}
 figure.effect-bubba figcaption::before,
@@ -103,9 +103,14 @@ h3.about-tech{text-align: center; margin-top: 25px;margin-bottom: 30px; font-siz
 }
 @media (max-width: 1200px){
 	.about-img{width: 290px;height: 290px;}
+	figure.effect-bubba{height: 193px;}
 }
 @media (max-width: 992px){
 	.about-img{display: none;}
+	figure.effect-bubba{height: 225px;}
+}
+@media(max-width: 768px){
+	figure.effect-bubba{height: 238px;}
 }
 @media (max-width: 576px){
 	.pfblock{padding-top: 70px;}
@@ -115,6 +120,7 @@ h3.about-tech{text-align: center; margin-top: 25px;margin-bottom: 30px; font-siz
 }
 @media(max-width: 425px){
 	.about-blockIcon{width: 25%}
+	figure.effect-bubba{height: 190px;}
 }
 @media (max-width: 350px){
 	.grid h2{
