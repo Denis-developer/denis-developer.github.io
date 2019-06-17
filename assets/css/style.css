@@ -93,7 +93,7 @@ figure.effect-bubba:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);trans
 .about-img{width: 350px;height: 350px;border-radius: 50%;overflow: hidden;}
 .about-img img{width: auto; position: relative; top: -60px;}
 .about-title{text-align: center;}
-.about-text{font-size: 15px;}
+.about-text{font-size: 21px;}
 .about-block{display: flex; flex-wrap: wrap}
 .about-blockIcon{width: 20%; margin-bottom: 20px;}
 .about-block img{height: 60px; width: 60px;	text-align: center; display: block; margin: 0 auto;}
@@ -108,12 +108,14 @@ h3.about-tech{text-align: center; margin-top: 25px;margin-bottom: 30px; font-siz
 @media (max-width: 992px){
 	.about-img{display: none;}
 	figure.effect-bubba{height: 225px;}
+	.about-text{font-size: 18px;}
 }
 @media(max-width: 768px){
 	figure.effect-bubba{height: 238px;}
 }
 @media (max-width: 576px){
 	.pfblock{padding-top: 70px;}
+	.about-text{font-size: 15px;}
 }
 @media (max-width: 992px) and (min-width: 768px){
 	.figure.effect-bubba h2{font-size: 15px;}
@@ -134,3 +136,4 @@ h3.about-tech{text-align: center; margin-top: 25px;margin-bottom: 30px; font-siz
 		height: 40px;
 	}
 }
+
