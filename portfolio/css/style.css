@@ -151,6 +151,7 @@ body {
   margin-bottom: 20px;
   overflow: hidden;
   cursor: pointer;
+  display: inline-block;
 }
 .main-portfolioBlock__img {
   width: 100%;
