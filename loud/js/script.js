@@ -24,7 +24,10 @@ $(document).ready(function(){
   	]
   });
 
- var btnPlay = document.getElementsByClassName('catalog-music__play');
+ var btnPlay = document.getElementsByClassName('catalog-music__play'),
+      popuWrapper = document.getElementsByClassName('popup-wrapper'),
+      btnModal = document.getElementsByClassName('btnModal'),
+      popupClose = document.getElementsByClassName('popup-close');
 
   for( let i = 0; i < btnPlay.length; i++){
       btnPlay[i].addEventListener('click', function () {
@@ -39,6 +42,24 @@ $(document).ready(function(){
         }
     })
 
+  }
+  // Модальные окна
+
+  for(let i = 0; i < popupClose.length; i++){
+    popupClose[i].addEventListener('click', function (event) {
+      event.preventDefault();
+      for(let z = 0; z < popuWrapper.length; z++){
+        popuWrapper[z].style.display = 'none';
+      }
+    })
+  }
+  for(let i = 0; i < btnModal.length; i++){
+    btnModal[i].addEventListener('click', function (event) {
+      event.preventDefault();
+      for(let z = 0; z < popuWrapper.length; z++){
+        popuWrapper[z].style.display = 'block';
+      }
+    })
   }
 
 });

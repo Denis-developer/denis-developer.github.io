@@ -30,14 +30,14 @@
               <div class="header-tel">
                 <img src="img/main/tel.png" class="header-tel__img" alt="">
                 <a href="tel:+79(345)3456060" class="header-tel__link">+79 (345) 345 60 60</a>
-                <span class="header-tel__text">заказать обратный звонок</span>
+                <span class="header-tel__text btnModal">заказать обратный звонок</span>
               </div>
             </div>
             <h3 class="main-title">студия</h3>
             <img src="img/main/title.png" alt="Звукозаписи" class="main-titleImg">
             <div class="main-block">
               <p class="main-text">проффесиональная запись аудиорекламы, <br> аудиороликов, озвучка фильмов и прочее.</p>
-              <button class="main-btn">заказать сейчас</button>
+              <button class="main-btn btnModal">заказать сейчас</button>
               <img src="img/main/dot.png" alt="" class="main-dot">
             </div>
           </div>
@@ -356,7 +356,7 @@
                 <div class="contact-tel">
                   <img src="img/tel.png" class="header-tel__img" alt="">
                   <a href="tel:+380961050422" class="header-tel__link contact-call__tel">+38 096 1050 422</a> <br>
-                  <a href="#" class="contact-call__link">обратный звонок</a>
+                  <a href="#" class="contact-call__link btnModal">обратный звонок</a>
                 </div>
                 <p class="contact-text"><span>г. Москва,</span> ул. Петербуржская, 12/5</p>
                 <p class="contact-text">офис №1</p>
@@ -378,6 +378,20 @@
           </div>
         </footer>
       </div>
+
+      
+	<!-- MODAL -->
+	<div class="popup-wrapper">
+		<div class="popup">
+			<a href="#" class="popup-close">&times;</a>
+			<form action="mail.php" method="POST" class="popup-form">
+				<input type="tel" class="popup-input" placeholder="Телефон или email" name="user_tel">
+				<textarea class="popup-input popup-textarea" placeholder="Ваше сообщение" name="user_message"></textarea>
+				<input type="submit" class="popup-btn" value="Отправить">
+			</form>
+		</div>
+	</div>
+
       
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
