@@ -7,6 +7,9 @@ window.addEventListener('DOMContentLoaded', function () {
 		modalClose = document.getElementsByClassName('main-popupStatus__close'),
 		modalOpen = document.getElementsByClassName('main-blockTitle__status_2');
 
+		
+	// Программирование табов
+
 	function hideTabContent(a) {
 		for(let i = a; i < tabContent.length; i++){
 			tabContent[i].classList.remove('show');
@@ -40,11 +43,20 @@ window.addEventListener('DOMContentLoaded', function () {
 		}
 	})	
 
-	$('.main-order__num').click(function() {
+	// Номер заказа
+
+	$('.main-order__num').click(function(event) {
 		event.preventDefault();
 		$(this).toggleClass('in').parent().parent().next().slideToggle();
 		$(this).children().toggleClass('rotate');
 	});
+
+	$('.main-order__num a').click(function() {
+		event.preventDefault();
+		this.classList.toggle('blue');
+	});
+
+	// Модальное окно статуса
 
 	for(let i = 0; i < modalOpen.length; i++){
       modalOpen[i].addEventListener('click', function (event) {
