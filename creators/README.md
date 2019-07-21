@@ -1,5 +1,5 @@
-#Лэндинг Page Creators  
-Стэк технологий
+# Лэндинг Page Creators  
+### Стэк технологий
   * Gulp 
   * Pug 
   * Sass 
