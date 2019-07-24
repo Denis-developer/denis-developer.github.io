@@ -85,7 +85,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	
 
 	document.addEventListener('scroll', function () {
-      if(document.documentElement.scrollTop >= mainHeight && document.documentElement.scrollTop <= mesHide - $height){
+      if(document.documentElement.scrollTop >= mainHeight && document.documentElement.scrollTop <= mesHide - $height - 100){
         $('.messanger').css('display', 'block');
       }
       else{
