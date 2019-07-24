@@ -34,12 +34,12 @@ window.addEventListener('DOMContentLoaded', function () {
 	info.addEventListener('click', function (event) {
 		let target = event.target;
 		event.preventDefault();
-		for (let z = 0; z < tab.length; z++){
-			tab[z].classList.remove('active-tab');
-		}
 		if(target.className == 'answer-tab'){
 			for(let i = 0; i < tab.length; i++){
 				if(target == tab[i]){
+					for (let z = 0; z < tab.length; z++){
+						tab[z].classList.remove('active-tab');
+					}
 					tab[i].classList.add('active-tab');
 					showTabContent(i);
 					break;
