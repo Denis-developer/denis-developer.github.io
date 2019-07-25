@@ -60,35 +60,24 @@ window.addEventListener('DOMContentLoaded', function () {
 			$('.answer-tabs').css('overflow', 'visible');
 		}
 	});
-	// Появление меню при скролле вверх
-
-	var lastScrollTop = 0;
-	var $height = $(window).height(); // Высота экрана 
-	var mesHide = $(".footer-text").offset().top;
-
-	$(window).scroll(function(event){
-		var st = $(this).scrollTop();
-		if($(this).scrollTop() >= 200 && document.documentElement.scrollTop <= mesHide - $height - 20){
-			if (st > lastScrollTop){
-			   $('.header').removeClass('header-scroll');
-			   $('body').removeClass('pt');
-			} else {
-			   $('.header').addClass('header-scroll');
-			   $('body').addClass('pt');
-			}
+	
+	// Фиксированное меню
+	$(window).scroll(function(){
+		if(document.documentElement.scrollTop > 0){
+			$('.header').css('backgroundColor', '#0A121C');
+		} else{
+			$('.header').css('backgroundColor', 'transparent');
 		}
-		else{
-			$('.header').removeClass('header-scroll');
-		    $('body').removeClass('pt');
-		}
-		lastScrollTop = st;
 	});
+	
 
 	// messanger
 	var mainHeight = $(".features").offset().top;
+	var $height = $(window).height(); // Высота экрана 
+	var mesHide = $(".footer-text").offset().top;
 	
 	$(window).scroll(function(){
-		if(document.documentElement.scrollTop >= mainHeight && document.documentElement.scrollTop <= mesHide - $height - 120){
+		if(document.documentElement.scrollTop >= mainHeight && document.documentElement.scrollTop <= mesHide - $height - 130){
 	        $('.messanger').css('display', 'block');
 	      }
 	      else{
