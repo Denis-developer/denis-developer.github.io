@@ -63,12 +63,12 @@ window.addEventListener('DOMContentLoaded', function () {
 	// Появление меню при скролле вверх
 
 	var lastScrollTop = 0;
-	var heightBody = $('body').height(); // Высота документа
 	var $height = $(window).height(); // Высота экрана 
+	var mesHide = $(".footer-text").offset().top;
 
 	$(window).scroll(function(event){
 		var st = $(this).scrollTop();
-		if($(this).scrollTop() >= 200 && document.documentElement.scrollTop <= heightBody - $height){
+		if($(this).scrollTop() >= 200 && document.documentElement.scrollTop <= mesHide - $height - 20){
 			if (st > lastScrollTop){
 			   $('.header').removeClass('header-scroll');
 			   $('body').removeClass('pt');
@@ -86,7 +86,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	// messanger
 	var mainHeight = $(".features").offset().top;
-	var mesHide = $(".footer-text").offset().top;
 	
 
 	document.addEventListener('scroll', function () {
