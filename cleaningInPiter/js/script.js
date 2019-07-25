@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	
 	// Фиксированное меню
 	$(window).scroll(function(){
-		if(document.documentElement.scrollTop > 0){
+		if(window.pageYOffset > 0){
 			$('.header').css('backgroundColor', '#0A121C');
 		} else{
 			$('.header').css('backgroundColor', 'transparent');
@@ -77,7 +77,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	var mesHide = $(".footer-text").offset().top;
 	
 	$(window).scroll(function(){
-		if(document.documentElement.scrollTop >= mainHeight && document.documentElement.scrollTop <= mesHide - $height - 130){
+		if(window.pageYOffset >= mainHeight && window.pageYOffset <= mesHide - $height - 130){
 	        $('.messanger').css('display', 'block');
 	      }
 	      else{
