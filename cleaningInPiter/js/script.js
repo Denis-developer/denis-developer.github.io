@@ -63,17 +63,23 @@ window.addEventListener('DOMContentLoaded', function () {
 	// Появление меню при скролле вверх
 
 	var lastScrollTop = 0;
+	var heightBody = $('body').height(); // Высота документа
+	var $height = $(window).height(); // Высота экрана 
+
 	$(window).scroll(function(event){
 		var st = $(this).scrollTop();
-		if($(this).scrollTop() >= 200){
+		if($(this).scrollTop() >= 200 && document.documentElement.scrollTop <= heightBody - $height){
 			if (st > lastScrollTop){
 			   $('.header').removeClass('header-scroll');
+			   $('body').removeClass('pt');
 			} else {
 			   $('.header').addClass('header-scroll');
+			   $('body').addClass('pt');
 			}
 		}
 		else{
 			$('.header').removeClass('header-scroll');
+		    $('body').removeClass('pt');
 		}
 		lastScrollTop = st;
 	});
@@ -81,7 +87,6 @@ window.addEventListener('DOMContentLoaded', function () {
 	// messanger
 	var mainHeight = $(".features").offset().top;
 	var mesHide = $(".footer-text").offset().top;
-	var $height = $(window).height(); // Высота экрана 
 	
 
 	document.addEventListener('scroll', function () {
