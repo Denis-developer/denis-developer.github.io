@@ -87,15 +87,14 @@ window.addEventListener('DOMContentLoaded', function () {
 	// messanger
 	var mainHeight = $(".features").offset().top;
 	
-
-	document.addEventListener('scroll', function () {
-      if(document.documentElement.scrollTop >= mainHeight && document.documentElement.scrollTop <= mesHide - $height - 120){
-        $('.messanger').css('display', 'block');
-      }
-      else{
-        $('.messanger').css('display', 'none');
-	  }
-    })
+	$(window).scroll(function(){
+		if(document.documentElement.scrollTop >= mainHeight && document.documentElement.scrollTop <= mesHide - $height - 120){
+	        $('.messanger').css('display', 'block');
+	      }
+	      else{
+	        $('.messanger').css('display', 'none');
+		  }
+	});
 	
 	$('.messanger-btn').on('click', function(event) {
 		event.preventDefault();
