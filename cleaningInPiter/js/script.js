@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	
 
 	document.addEventListener('scroll', function () {
-      if(document.documentElement.scrollTop >= mainHeight && document.documentElement.scrollTop <= mesHide - $height - 100){
+      if(document.documentElement.scrollTop >= mainHeight && document.documentElement.scrollTop <= mesHide - $height - 120){
         $('.messanger').css('display', 'block');
       }
       else{
@@ -131,17 +131,22 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	setInterval(fadeMess, 11000)
 
-	$.fn.equivalent = function (){
-        var $blocks = $('.answer-ask'),
-            maxH    = $blocks.eq(0).height();
-        $blocks.each(function(){
 
-            maxH = ( $(this).height() > maxH ) ? $(this).height() : maxH;
-        });
-        $blocks.height(maxH);
+	$('.answer-ask').resize(function(){
+  		$.fn.equivalent = function (){
+	        var $blocks = $('.answer-ask'),
+	            maxH    = $blocks.eq(0).height();
+	        $blocks.each(function(){
 
-    }
-	$('.nav').equivalent();
+	            maxH = ( $(this).height() > maxH ) ? $(this).height() : maxH;
+	        });
+	        $blocks.height(maxH);
+
+	    }
+		$('.nav').equivalent();
+	});
+
+	
 
 
 })
