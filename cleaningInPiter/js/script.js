@@ -65,10 +65,10 @@ window.addEventListener('DOMContentLoaded', function () {
 	var lastScrollTop = 0;
 	var $height = $(window).height(); // Высота экрана 
 	var mesHide = $(".footer-text").offset().top;
- // && window.pageYOffset <= mesHide - $height - 20
+ 
 	$(window).scroll(function(event){
 		var st = $(this).scrollTop();
-		if($(this).scrollTop() >= 70){
+		if($(this).scrollTop() >= 200 && window.pageYOffset <= mesHide - $height - 30){
 			if (st > lastScrollTop){
 			   $('.header').css('backgroundColor', 'transparent');
 			   $('.header').css('position', 'absolute');
@@ -79,6 +79,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		}
 		else{
 			$('.header').css('backgroundColor', 'transparent');
+			$('.header').css('position', 'absolute');
 		}
 		lastScrollTop = st;
 	});
