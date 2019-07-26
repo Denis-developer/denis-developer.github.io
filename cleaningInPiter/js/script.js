@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded', function () {
  
 	$(window).scroll(function(event){
 		var st = $(this).scrollTop();
-		if($(this).scrollTop() >= 200 && window.pageYOffset <= mesHide - $height - 30){
+		if($(this).scrollTop() >= 200 && window.pageYOffset <= mesHide - $height - 100){
 			if (st > lastScrollTop){
 			   $('.header').css('backgroundColor', 'transparent');
 			   $('.header').css('position', 'absolute');
