@@ -65,10 +65,11 @@ window.addEventListener('DOMContentLoaded', function () {
 	var lastScrollTop = 0;
 	var $height = $(window).height(); // Высота экрана 
 	var mesHide = $(".footer-text").offset().top;
+	var menuHide = $(".communication").offset().top;
  
 	$(window).scroll(function(event){
 		var st = $(this).scrollTop();
-		if($(this).scrollTop() >= 200 && window.pageYOffset <= mesHide - $height - 100){
+		if($(this).scrollTop() >= 200 && window.pageYOffset < menuHide){
 			if (st > lastScrollTop){
 			   $('.header').css('backgroundColor', 'transparent');
 			   $('.header').css('position', 'absolute');
