@@ -130,19 +130,19 @@ window.addEventListener('DOMContentLoaded', function () {
 	setInterval(fadeMess, 11000)
 
 
-	$('.answer-ask').resize(function(){
-  		$.fn.equivalent = function (){
-	        var $blocks = $('.answer-ask'),
-	            maxH    = $blocks.eq(0).height();
-	        $blocks.each(function(){
+	// $(window).resize(function(){
+ //        var $blocks = $('.answer-ask'),
+ //            maxH    = $blocks.eq(0).height();
+ //  		$.fn.equivalent = function (){
+	//         $blocks.each(function(){
 
-	            maxH = ( $(this).height() > maxH ) ? $(this).height() : maxH;
-	        });
-	        $blocks.height(maxH);
+	//             maxH = ( $(this).height() > maxH ) ? $(this).height() : maxH;
+	//         });
+	//         $blocks.height(maxH);
 
-	    }
-		$('.nav').equivalent();
-	});
+	//     }
+	// 	$('.nav').equivalent();
+	// });
 
 	
 
