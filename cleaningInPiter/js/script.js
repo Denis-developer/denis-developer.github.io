@@ -71,16 +71,27 @@ jQuery(document).ready(function($) {
 		var st = $(this).scrollTop();
 		if($(this).scrollTop() >= 200 && window.pageYOffset < menuHide){
 			if (st > lastScrollTop){
-			   $('.header').css('backgroundColor', 'transparent');
-			   $('.header').css('position', 'absolute');
-			} else {
+   				$('.header').removeClass('menuFade');
+				$('.header').addClass('menuOut');
+				setTimeout(function() {
+				   $('.header').css('position', 'absolute');
+				   $('.header').css('backgroundColor', 'transparent');
+				}, 390);	
+			} 
+			else {
+	   	   	$('.header').removeClass('menuOut');
+		   	   $('.header').addClass('menuFade');
 			   $('.header').css('position', 'fixed');
 		       $('.header').css('backgroundColor', '#0A121C');
 			}
 		}
 		else{
-			$('.header').css('backgroundColor', 'transparent');
-			$('.header').css('position', 'absolute');
+			$('.header').removeClass('menuFade');
+			$('.header').addClass('menuOut');
+			setTimeout(function() {
+			   $('.header').css('position', 'absolute');
+			   $('.header').css('backgroundColor', 'transparent');
+			}, 390);	
 		}
 		lastScrollTop = st;
 	});
