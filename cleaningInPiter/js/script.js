@@ -1,5 +1,5 @@
-window.addEventListener('DOMContentLoaded', function () {
-	
+jQuery(document).ready(function($) {
+		
 	// Работа табов в блоке "Вопросы / ответы"
 
 	let tab = document.getElementsByClassName('answer-tab'),
@@ -131,22 +131,20 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	setInterval(fadeMess, 11000)
 
+	// Выравнивание блоков по самому высокому "Вопрос / Ответ"
+	$.fn.equivalent = function (){
+			var $blocks = $(this),
+        	maxH    = $blocks.eq(0).height();
+        $blocks.each(function(){
+            maxH = ( $(this).height() > maxH ) ? $(this).height() : maxH;
+        });
+        $blocks.height(maxH);
+    }
+	$('.answer-ask').equivalent();
+		
+	$(window).on('resize', function () { 
+		$('.answer-ask').css('height','auto').equivalent();
+	})
+		
 
-	// $(window).resize(function(){
- //        var $blocks = $('.answer-ask'),
- //            maxH    = $blocks.eq(0).height();
- //  		$.fn.equivalent = function (){
-	//         $blocks.each(function(){
-
-	//             maxH = ( $(this).height() > maxH ) ? $(this).height() : maxH;
-	//         });
-	//         $blocks.height(maxH);
-
-	//     }
-	// 	$('.nav').equivalent();
-	// });
-
-	
-
-
-})
+});
