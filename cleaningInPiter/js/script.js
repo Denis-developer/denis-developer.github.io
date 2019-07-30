@@ -93,30 +93,30 @@ jQuery(document).ready(function($) {
 	// 	lastScrollTop = st;
 	// });
 
-	// messanger
+	// messenger
 	var $height = $(window).height(); // Высота экрана 
 	var heightToCommun = $(".communication").offset().top;
 	
 	$(window).scroll(function(){
 		if(window.pageYOffset >= 1 && window.pageYOffset <= heightToCommun - $height){
-	        $('.messanger').css('display', 'block');
+	        $('.messenger').css('display', 'block');
 	      }
 	      else{
-	        $('.messanger').css('display', 'none');
+	        $('.messenger').css('display', 'none');
 		  }
 	});
 	
-	$('.messanger-btn').on('click', function(event) {
+	$('.messenger-btn').on('click', function(event) {
 		event.preventDefault();
 		$(this).toggleClass('fade');
-		$('img.messanger-btn__img').css('display', 'none');
-		$('.messanger-close').toggleClass('anim-2');
+		$('img.messenger-btn__img').css('display', 'none');
+		$('.messenger-close').toggleClass('anim-2');
 		if(this.classList.contains('fade')){
-			$('.messanger-list').fadeIn(400);
+			$('.messenger-list').fadeIn(400);
 		}
 		else{
-			$('.messanger-list').fadeOut(400);
-			$('img.messanger-btn__img').css('display', 'block');
+			$('.messenger-list').fadeOut(400);
+			$('img.messenger-btn__img').css('display', 'block');
 		}
 	});
 
