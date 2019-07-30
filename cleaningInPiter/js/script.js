@@ -62,45 +62,43 @@ jQuery(document).ready(function($) {
 	});
 	// Появление меню при скролле вверх
 
-	var lastScrollTop = 0;
-	var $height = $(window).height(); // Высота экрана 
-	var mesHide = $(".footer-text").offset().top;
-	var menuHide = $(".communication").offset().top;
+	// var lastScrollTop = 0;
  
-	$(window).scroll(function(event){
-		var st = $(this).scrollTop();
-		if($(this).scrollTop() >= 200 && window.pageYOffset < menuHide){
-			if (st > lastScrollTop){
-   				$('.header').removeClass('menuFade');
-				$('.header').addClass('menuOut');
-				setTimeout(function() {
-				   $('.header').css('position', 'absolute');
-				   $('.header').css('backgroundColor', 'transparent');
-				}, 390);	
-			} 
-			else {
-	   	   	$('.header').removeClass('menuOut');
-		   	   $('.header').addClass('menuFade');
-			   $('.header').css('position', 'fixed');
-		       $('.header').css('backgroundColor', '#0A121C');
-			}
-		}
-		else{
-			$('.header').removeClass('menuFade');
-			$('.header').addClass('menuOut');
-			setTimeout(function() {
-			   $('.header').css('position', 'absolute');
-			   $('.header').css('backgroundColor', 'transparent');
-			}, 390);	
-		}
-		lastScrollTop = st;
-	});
+	// $(window).scroll(function(event){
+	// 	var st = $(this).scrollTop();
+	// 	if($(this).scrollTop() >= 200 && window.pageYOffset < menuHide){
+	// 		if (st > lastScrollTop){
+ //   				$('.header').removeClass('menuFade');
+	// 			$('.header').addClass('menuOut');
+	// 			setTimeout(function() {
+	// 			   $('.header').css('position', 'absolute');
+	// 			   $('.header').css('backgroundColor', 'transparent');
+	// 			}, 390);	
+	// 		} 
+	// 		else {
+	//    	   	$('.header').removeClass('menuOut');
+	// 	   	   $('.header').addClass('menuFade');
+	// 		   $('.header').css('position', 'fixed');
+	// 	       $('.header').css('backgroundColor', '#0A121C');
+	// 		}
+	// 	}
+	// 	else{
+	// 		$('.header').removeClass('menuFade');
+	// 		$('.header').addClass('menuOut');
+	// 		setTimeout(function() {
+	// 		   $('.header').css('position', 'absolute');
+	// 		   $('.header').css('backgroundColor', 'transparent');
+	// 		}, 390);	
+	// 	}
+	// 	lastScrollTop = st;
+	// });
 
 	// messanger
-	var mainHeight = $(".features").offset().top;
+	var $height = $(window).height(); // Высота экрана 
+	var heightToCommun = $(".communication").offset().top;
 	
 	$(window).scroll(function(){
-		if(window.pageYOffset >= mainHeight && window.pageYOffset <= mesHide - $height - 120){
+		if(window.pageYOffset >= 1 && window.pageYOffset <= heightToCommun - $height){
 	        $('.messanger').css('display', 'block');
 	      }
 	      else{
