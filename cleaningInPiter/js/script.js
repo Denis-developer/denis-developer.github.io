@@ -65,7 +65,7 @@ jQuery(document).ready(function($) {
 	var lastScrollTop = 0;
 	var $height = $(window).height(); // Высота экрана 
 	var heightToCommun = $(".communication").offset().top;
- // $(this).scrollTop() >= 200 && 
+
 	$(window).scroll(function(event){
 		var st = $(this).scrollTop();
 		 if(window.pageYOffset < heightToCommun){
@@ -75,7 +75,9 @@ jQuery(document).ready(function($) {
 			} 
 			else if ($(this).scrollTop() < 200 && st <= lastScrollTop){
 			   $('.header').css('position', 'fixed');
-		       $('.header').css('backgroundColor', 'transparent');
+			   if($(this).scrollTop() <= 0){
+					 $('.header').css('backgroundColor', 'transparent');
+			   }
 			} 
 			else {
 			   $('.header').css('position', 'fixed');
