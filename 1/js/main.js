@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Меню
-    $('.menu__link, .header-list__link').on('click', function() {
+    $('.menu__link, .menu__links').on('click', function() {
             menu.classList.toggle('dn');
             $('.humburger').removeClass('active');
     });
