@@ -153,8 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Очистка полей формы
 
-    var inputForm = $('.form-input');
-    inputForm.focus(function(event) {
+    $('.form-input, .calc-input').focus(function(event) {
         if($(this).hasClass('foc')){
         }
         else{

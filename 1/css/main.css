@@ -271,6 +271,7 @@
 	padding: 8px 0;
 	transition: all .1s;
 	width: 145px;
+	outline: none;
 }
 .calc-btn,.calc-next
 {
@@ -418,6 +419,7 @@
 {
 	border: 2px solid #5e9b3d;
 	font-family: 'Proxima B';
+	background: #5e9b3d;
 }
 .calc-link__additionally
 {
@@ -861,31 +863,41 @@ span.heed-number
 	width: 100%;
 	height: 100vh;
 	z-index: 4;
+	overflow-y: auto;
 }
 .menu__list
 {
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: space-around;
-	padding-left: 20px;
 }
 .menu__item
 {
 	font-size: 2rem;
 	list-style: none;
+	display: block;
+	min-height: 70px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-bottom: 1px solid grey;
+	padding-left: 20px;
+}
+.menu__item:last-child{
+	border: none;
 }
 .menu__link
 {
 	color: #fff;
 	text-decoration: none;
+	display: block;
 }
 .menu__link:hover
 {
@@ -1230,6 +1242,12 @@ span.heed-number
 		margin: 0 auto;
 		width: auto;
 	}
+	.humburger{
+		display: block;
+	}
+	.header-nav{
+		display: none;
+	}
 }
 @media (max-width:576px)
 {
@@ -1309,12 +1327,6 @@ span.heed-number
 	{
 		height: 356px;
 	}
-	.humburger{
-		display: block;
-	}
-	.header-nav{
-		display: none;
-	}
 }
 @media (max-width:525px)
 {
@@ -1357,6 +1369,8 @@ span.heed-number
 	.about-block
 	{
 		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 30px;
 	}
 }
 @media (max-width:425px)
@@ -1384,7 +1398,7 @@ span.heed-number
 	}
 	.header
 	{
-		margin-bottom: 50px;
+		margin-bottom: 40px;
 	}
 	.heed-block__img
 	{
@@ -1425,7 +1439,7 @@ span.heed-number
 	}
 	.example
 	{
-		padding-bottom: 130px;
+		padding-bottom: 80px;
 		padding-top: 40px;
 	}
 	.calc-block
@@ -1439,6 +1453,78 @@ span.heed-number
 	.calc-flex_3 .calc-link__additionally
 	{
 		width: 100%;
+	}
+	.contact, .calc{
+		padding-top: 35px;
+		padding-bottom: 50px;
+	}
+	.form-btn{
+		margin-top: 10px;
+		width: 70%;
+		height: 60px;
+	}
+	.form-input{
+		margin-right: 0;
+	}
+	.contact-subtitle{
+		margin-bottom: 60px;
+	}
+	.example-title, .why-title{
+		font-size: 2.6rem;
+	}
+	.heed-title, .features-title{
+		font-size: 2.4rem;
+	}
+	.work-title{
+		font-size: 3rem;
+	}
+	.work-block{
+		margin-bottom: 40px;
+	}
+	.heed-block:last-child{
+		margin-bottom: 0;
+	}
+	.heed{
+		padding-top: 35px;
+	}
+	.heed-subtitle{
+		margin-bottom: 40px;
+	}
+	.calc-next{
+		margin-top: 20px;
+	}
+	.calc-title{
+		margin-bottom: 20px;
+	}
+	.calc-size{
+		margin-bottom: 30px;
+	}
+	.option{
+		padding-bottom: 10px;
+		padding-top: 170px;	
+	}
+	.features-title{
+		margin-bottom: 30px;
+	}
+	.features{
+		padding-top: 40px;
+	}
+	.about{
+		padding-bottom: 35px;
+	}
+	.why-title{
+		margin-bottom: 25px;
+	}
+	.about-title{
+		font-size: 2.8rem;
+		margin-bottom: 30px;
+	}
+	.main-subtitle{
+		margin-bottom: 55px;
+	}
+	.main-item{
+		font-size: 2rem;
+		margin-bottom: 15px;
 	}
 }
 @media (max-width:360px)
