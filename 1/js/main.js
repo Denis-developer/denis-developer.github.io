@@ -152,7 +152,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Очистка полей формы
-
     $('.form-input, .calc-input').focus(function(event) {
         if($(this).hasClass('foc')){
         }
@@ -161,10 +160,8 @@ document.addEventListener('DOMContentLoaded', function () {
             $(this).addClass('foc')
         }
     });
-
     // Якоря
-
-        $('.header-list__link, .link-down').on('click', function(event) {
+        $('.header-list__link, .link-down, .link-smooth').on('click', function(event) {
               event.preventDefault();
               var id = $(this).attr('href'),
               top = $(id).offset().top;
@@ -173,7 +170,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let humburger = document.getElementsByClassName('humburger'),
         menu = document.querySelector('.menu');
-
   // АНИМАЦИЯ ГАМБУРГЕРА
 
     for (var i = 0; i < humburger.length; i++) {
@@ -183,7 +179,6 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.menu .sub-list').removeClass('db');
         });
     }
-
     // Меню
     $('.link-down, .menu__links').on('click', function() {
             menu.classList.toggle('dn');
@@ -194,5 +189,4 @@ document.addEventListener('DOMContentLoaded', function () {
     $('.dropdown').on('click', function() {
         $('.menu .sub-list').addClass('db');
     });
-
 });
