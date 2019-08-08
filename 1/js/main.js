@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Якоря
 
-        $('.header-list__link, .menu__link').on('click', function(event) {
+        $('.header-list__link, .link-down').on('click', function(event) {
               event.preventDefault();
               var id = $(this).attr('href'),
               top = $(id).offset().top;
@@ -181,13 +181,19 @@ document.addEventListener('DOMContentLoaded', function () {
         humburger[i].addEventListener('click', function() {
             this.classList.toggle('active');
             menu.classList.toggle('dn');
+            $('.menu .sub-list').removeClass('db');
         });
     }
 
     // Меню
-    $('.menu__link, .menu__links').on('click', function() {
+    $('.link-down, .menu__links').on('click', function() {
             menu.classList.toggle('dn');
             $('.humburger').removeClass('active');
+            $('.menu .sub-list').removeClass('db');
+    });
+
+    $('.dropdown').on('click', function() {
+        $('.menu .sub-list').addClass('db');
     });
 
 });

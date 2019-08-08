@@ -37,7 +37,7 @@
 
     .header {
         padding-top: 30px;
-        margin-bottom: 40px
+        margin-bottom: 30px
     }
 
     .header-flex {
@@ -158,7 +158,15 @@
         top: -10px
     }
     .header-nav{
-        margin-top: 30px;
+        margin-top: 20px;
+        height: 60px;   
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     .header-list{
         display: -webkit-flex;
@@ -170,6 +178,7 @@
         -ms-align-items: center;
         align-items: center;
         padding: 0;
+        margin: 0;
         list-style-type: none;
     }
     .header-list__item{
@@ -192,7 +201,8 @@
         padding-left: 15px;
         position: absolute;
         left: 0;
-        width: 330%;
+        width: 340%;
+        background: rgba(0,0,0,0.9)
     }
     .sub-list__item{
         display: block;
@@ -204,13 +214,13 @@
         font-family: 'Proxima Sb';
     }
     .menu__list .sub-list{
-        display: block;
         padding: 0;
     }
     .menu .sub-list{
         width: auto;
         position: static;
-        margin-top: 10px;
+        margin-top: 15px;
+        padding-left: 15px;
     }
 
     .about {
@@ -287,19 +297,17 @@
       </div>
       <div class="menu dn">
         <ul class="menu__list">
-          <li class="menu__item"><a href="#about" class="menu__link">О нас</a></li>
-          <li class="menu__item"><a href="#why" class="menu__link">Баня бочка</a>
+          <li class="menu__item"><a href="#about" class="menu__link link-down">О нас</a></li>
+          <li class="menu__item"><a href="#" class="menu__link dropdown">Баня бочка</a>
             <ul class="sub-list">
                 <li class="sub-list__item"><a href="#why" class="header-list__link menu__links">Почему баня бочка</a></li>
                 <li class="sub-list__item"><a href="#features" class="header-list__link menu__links"> Особенности бани бочки</a></li>
                 <li class="sub-list__item"><a href="#heed" class="header-list__link menu__links">Проблемы при покупке бани бочки</a></li>
             </ul>
           </li>
-          <li class="menu__item"><a href="#features-title" class="menu__link">Варианты бани бочки</a></li>
-          <li class="menu__item"><a href="#calc" class="menu__link">Калькулятор бани бочки</a></li>
-          <li class="menu__item"><a href="#features-title" class="menu__link">Купели</a></li>
-          <li class="menu__item"><a href="#example" class="menu__link">Примеры работ</a></li>
-          <li class="menu__item"><a href="#contact" class="menu__link">Контакты</a></li>
+          <li class="menu__item"><a href="#features-title" class="menu__link link-down">Купели</a></li>
+          <li class="menu__item"><a href="#example" class="menu__link link-down">Примеры работ</a></li>
+          <li class="menu__item"><a href="#contact" class="menu__link link-down">Контакты</a></li>
         </ul>
       </div>
         <div class="container">
@@ -314,18 +322,12 @@
                         <a href="#about" class="header-list__link">О нас</a>
                     </li>
                     <li class="header-list__item">
-                        <a href="#why" class="header-list__link">Баня бочка</a>
+                        <a href="#" class="header-list__link">Баня бочка</a>
                         <ul class="sub-list">
                             <li class="sub-list__item"><a href="#why" class="header-list__link">Почему баня бочка</a></li>
                             <li class="sub-list__item"><a href="#features" class="header-list__link"> Особенности бани бочки</a></li>
                             <li class="sub-list__item"><a href="#heed" class="header-list__link">Проблемы при покупке бани бочки</a></li>
                         </ul>
-                    </li>
-                    <li class="header-list__item">
-                        <a href="#features-title" class="header-list__link">Варианты бани бочки</a>
-                    </li>
-                    <li class="header-list__item">
-                        <a href="#calc" class="header-list__link">Калькулятор бани бочки</a>
                     </li>
                     <li class="header-list__item">
                         <a href="#features-title" class="header-list__link">Купели</a>

@@ -857,7 +857,6 @@ span.heed-number
 	left: 0;
 	opacity: .98;
 	position: fixed;
-	text-align: center;
 	top: 0;
 	width: 100%;
 	height: 100vh;
@@ -874,7 +873,9 @@ span.heed-number
 	display: -o-flex;
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
 	justify-content: space-around;
+	padding-left: 20px;
 }
 .menu__item
 {
@@ -893,6 +894,9 @@ span.heed-number
 .dn
 {
 	display: none;
+}
+.db{
+	display: block;
 }
 @media (max-width:1200px)
 {
@@ -1112,12 +1116,6 @@ span.heed-number
 	{
 		width: 33%;
 	}
-	.humburger{
-		display: block;
-	}
-	.header-nav{
-		display: none;
-	}
 }
 @media (max-width:767px)
 {
@@ -1310,6 +1308,12 @@ span.heed-number
 	.slick-center img,.slick-slide img
 	{
 		height: 356px;
+	}
+	.humburger{
+		display: block;
+	}
+	.header-nav{
+		display: none;
 	}
 }
 @media (max-width:525px)
