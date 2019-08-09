@@ -1,27 +1,44 @@
 // Fonts
 @font-face {
+    font-family: 'Geometria Rg';
+    src: url('../fonts/Geometria.woff2') format('woff2'),
+        url('../fonts/Geometria.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geometria Th';
+    src: url('../fonts/Geometria-Thin.woff2') format('woff2'),
+        url('../fonts/Geometria-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geometria B';
+    src: url('../fonts/Geometria-Bold.woff2') format('woff2'),
+        url('../fonts/Geometria-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Geometria Lt';
-    src: url('../fonts/Geometria-Light.eot');
-    src: url('../fonts/Geometria-Light.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Geometria-Light.woff2') format('woff2'),
-        url('../fonts/Geometria-Light.woff') format('woff'),
-        url('../fonts/Geometria-Light.ttf') format('truetype'),
-        url('../fonts/Geometria-Light.svg#Geometria-Light') format('svg');
+    src: url('../fonts/Geometria-Light.woff2') format('woff2'),
+        url('../fonts/Geometria-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Geometria Rg';
-    src: url('../fonts/Geometria.eot');
-    src: url('../fonts/Geometria.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Geometria.woff2') format('woff2'),
-        url('../fonts/Geometria.woff') format('woff'),
-        url('../fonts/Geometria.ttf') format('truetype'),
-        url('../fonts/Geometria.svg#Geometria') format('svg');
-    font-weight: normal;
+    font-family: 'Geometria Med';
+    src: url('../fonts/Geometria-Medium.woff2') format('woff2'),
+        url('../fonts/Geometria-Medium.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
 }
+
 
 *{
 	box-sizing: border-box;
@@ -34,7 +51,7 @@ html, body{
 body{
 	padding: 0;
 	margin: 0;
-	font-family: 'Geometria Lt';
+	font-family: 'Geometria Th';
 }
 
 .container{
@@ -48,7 +65,7 @@ body{
 	line-height: 91px;
 	color: #000;
 	margin: 0;
-	font-family: 'Geometria Lt';
+	font-family: 'Geometria Th';
 	font-weight: normal;
 	position: relative;
 	&::before{
@@ -67,7 +84,7 @@ body{
 .text{
 	font-size: 24px;
 	line-height: 44px;
-	font-family: 'Geometria Lt';
+	font-family: 'Geometria Th';
     font-weight: 300;
 	margin: 0;
 	padding: 0;
@@ -83,7 +100,7 @@ body{
 		line-height: 70px;
 		font-size: 34px;
 		span{
-			font-family: 'Geometria Rg';
+			font-family: 'Geometria Med';
 		}
 	}
 }
@@ -205,7 +222,7 @@ body{
 }
 .slider-number, .active-number{
 	font-size: 16px;
-	font-family: 'Geometria Rg';
+	font-family: 'Geometria Med';
 }
 .slider-nav{
 	position: absolute;
@@ -246,7 +263,7 @@ body{
 		right: 5px;
 		transform: translateY(-50%);
 		font-size: 18px;
-		font-family: 'Geometria Lt';
+		font-family: 'Geometria Th';
 	}
 	&::after{
 		content: '';
@@ -275,7 +292,7 @@ body{
 		left: 60px;
 		transform: translateY(-50%);
 		font-size: 18px;
-		font-family: 'Geometria Lt';
+		font-family: 'Geometria Th';
 		&:hover{
 			color: red;
 		}
@@ -331,7 +348,7 @@ body{
 			font-size: 48px;
 			margin: 0;
 			padding: 0;
-			font-family: 'Geometria Rg';
+			font-family: 'Geometria Med';
 			font-weight: bold;
 		}
 		&__text{
@@ -382,13 +399,13 @@ body{
 	&-num{
 		color: #093BEC;
 		font-size: 48px;
-		font-family: 'Geometria Rg';
+		font-family: 'Geometria Med';
 		font-weight: bold;
 	}
 	&-text{
 		font-size: 16px;
 		color: #1A1A1A;
-		font-family: 'Geometria Lt';
+		font-family: 'Geometria Th';
 		font-weight: 300;
 		margin-right: 10px;
 	}
