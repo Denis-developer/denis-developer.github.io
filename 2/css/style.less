@@ -1,30 +1,49 @@
 // Fonts
 @font-face {
+    font-family: 'Geometria Rg';
+    src: url('../fonts/Geometria.woff2') format('woff2'),
+        url('../fonts/Geometria.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geometria Th';
+    src: url('../fonts/Geometria-Thin.woff2') format('woff2'),
+        url('../fonts/Geometria-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geometria B';
+    src: url('../fonts/Geometria-Bold.woff2') format('woff2'),
+        url('../fonts/Geometria-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Geometria Lt';
-    src: url('../fonts/Geometria-Light.eot');
-    src: url('../fonts/Geometria-Light.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Geometria-Light.woff2') format('woff2'),
-        url('../fonts/Geometria-Light.woff') format('woff'),
-        url('../fonts/Geometria-Light.ttf') format('truetype'),
-        url('../fonts/Geometria-Light.svg#Geometria-Light') format('svg');
+    src: url('../fonts/Geometria-Light.woff2') format('woff2'),
+        url('../fonts/Geometria-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Geometria Rg';
-    src: url('../fonts/Geometria.eot');
-    src: url('../fonts/Geometria.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Geometria.woff2') format('woff2'),
-        url('../fonts/Geometria.woff') format('woff'),
-        url('../fonts/Geometria.ttf') format('truetype'),
-        url('../fonts/Geometria.svg#Geometria') format('svg');
-    font-weight: normal;
+    font-family: 'Geometria Med';
+    src: url('../fonts/Geometria-Medium.woff2') format('woff2'),
+        url('../fonts/Geometria-Medium.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
 }
 
+
 *{
-	box-sizing: border-box;
+	box-sizing: border-box; 
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html, body{
@@ -59,8 +78,8 @@ body{
 		font-weight: bold;
 		color: #000;
 		opacity: 0.06;
-		top: -94%;
-		left: -12px;
+		top: -16px;
+		left: -10px;
 	}
 }
 .text{
@@ -72,7 +91,7 @@ body{
 	margin: 0;
 	padding: 0;
 	span{
-		font-family: 'Geometria Rg';
+		font-family: 'Geometria Med';
 		font-weight: bold;
 	}
 }
@@ -83,11 +102,11 @@ body{
 	font-family: 'Geometria Lt';
 	&-text{
 		font-size: 36px;
-		line-height: 60px;
+		line-height: 72px;
 		margin: 0;
 		margin-bottom: 90px;
 		span{
-			font-family: 'Geometria Rg';
+			font-family: 'Geometria Med';
 		}
 	}
 	&-link{
@@ -158,7 +177,7 @@ body{
 }
 .slider-number, .active-number{
 	font-size: 16px;
-	font-family: 'Geometria Rg';
+	font-family: 'Geometria Med';
 	color: #fff;
 }
 .slider-nav{
@@ -256,7 +275,8 @@ body{
 		margin-bottom: 60px;
 		&::before{
 			content: 'promotion';
-			top: -30px;
+			top: 33px;
+			left: -15px;
 		}
 	}
 	&-text{
@@ -272,7 +292,7 @@ body{
 		&__text{
 			margin-bottom: 40px;
 			span{
-				font-weight: 300;
+				font-weight: 600;
 			}
 		}
 	}
