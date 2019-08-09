@@ -41,7 +41,7 @@ body {
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Geometria Th';
+  font-family: 'Geometria Lt';
 }
 .container {
   display: block;
@@ -53,7 +53,7 @@ body {
   line-height: 91px;
   color: #000;
   margin: 0;
-  font-family: 'Geometria Th';
+  font-family: 'Geometria Lt';
   font-weight: normal;
   position: relative;
 }
@@ -65,13 +65,13 @@ body {
   font-weight: bold;
   color: #000;
   opacity: 0.06;
-  top: -94%;
+  top: -25px;
   left: -12px;
 }
 .text {
   font-size: 24px;
   line-height: 44px;
-  font-family: 'Geometria Th';
+  font-family: 'Geometria Lt';
   font-weight: 300;
   margin: 0;
   padding: 0;
@@ -88,7 +88,7 @@ body {
   font-size: 34px;
 }
 .realization-text span {
-  font-family: 'Geometria Med';
+  font-family: 'Geometria Rg';
 }
 .result {
   padding-top: 120px;
@@ -154,7 +154,7 @@ body {
 }
 .promotion-title::before {
   content: 'promotion';
-  top: -20%;
+  top: 30px;
 }
 .promotion-text {
   margin-bottom: 25px;
@@ -169,7 +169,8 @@ body {
 }
 .activity-title::before {
   content: 'activity';
-  top: -20%;
+  top: 26px;
+  left: 0px;
 }
 .sectionSlider {
   background: #F2F2F2;
@@ -223,7 +224,7 @@ body {
 .slider-number,
 .active-number {
   font-size: 16px;
-  font-family: 'Geometria Med';
+  font-family: 'Geometria Rg';
 }
 .slider-nav {
   position: absolute;
@@ -265,7 +266,7 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: 18px;
-  font-family: 'Geometria Th';
+  font-family: 'Geometria Lt';
 }
 .slick-prev::after {
   content: '';
@@ -296,7 +297,7 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: 18px;
-  font-family: 'Geometria Th';
+  font-family: 'Geometria Lt';
 }
 .slick-next::before:hover {
   color: red;
@@ -362,7 +363,7 @@ body {
   font-size: 48px;
   margin: 0;
   padding: 0;
-  font-family: 'Geometria Med';
+  font-family: 'Geometria Rg';
   font-weight: bold;
 }
 .statistics-block__text {
@@ -427,13 +428,13 @@ body {
 .indicators-num {
   color: #093BEC;
   font-size: 48px;
-  font-family: 'Geometria Med';
+  font-family: 'Geometria Rg';
   font-weight: bold;
 }
 .indicators-text {
   font-size: 16px;
   color: #1A1A1A;
-  font-family: 'Geometria Th';
+  font-family: 'Geometria Lt';
   font-weight: 300;
   margin-right: 10px;
 }
@@ -607,9 +608,13 @@ body {
   }
   .title {
     font-size: 45px;
+    line-height: 70px;
   }
   .title::before {
     font-size: 105px;
+  }
+  .promotion-title::before {
+    top: 15px;
   }
   .slick-next {
     right: -90px;
@@ -684,10 +689,15 @@ body {
   }
   .title {
     font-size: 30px;
+    line-height: 1.8;
   }
   .title:before {
     font-size: 50px;
     top: -34%;
+    left: 0px;
+  }
+  .activity-title::before {
+    top: 0px;
   }
   .slider-nav {
     display: none;

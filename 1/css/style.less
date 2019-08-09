@@ -53,7 +53,7 @@ html, body{
 body{
 	padding: 0;
 	margin: 0;
-	font-family: 'Geometria Th';
+	font-family: 'Geometria Lt';
 }
 
 .container{
@@ -67,7 +67,7 @@ body{
 	line-height: 91px;
 	color: #000;
 	margin: 0;
-	font-family: 'Geometria Th';
+	font-family: 'Geometria Lt';
 	font-weight: normal;
 	position: relative;
 	&::before{
@@ -78,7 +78,7 @@ body{
 		font-weight: bold;
 		color: #000;
 		opacity: 0.06;
-		top: -94%;
+		top: -25px;
 		left: -12px;
 	}
 }
@@ -86,7 +86,7 @@ body{
 .text{
 	font-size: 24px;
 	line-height: 44px;
-	font-family: 'Geometria Th';
+	font-family: 'Geometria Lt';
     font-weight: 300;
 	margin: 0;
 	padding: 0;
@@ -102,7 +102,7 @@ body{
 		line-height: 70px;
 		font-size: 34px;
 		span{
-			font-family: 'Geometria Med';
+			font-family: 'Geometria Rg';
 		}
 	}
 }
@@ -159,7 +159,7 @@ body{
 		margin-bottom: 55px;
 		&::before{
 			content: 'promotion';
-			top: -20%;
+			top: 30px;
 		}
 	}
 	&-text{
@@ -175,7 +175,8 @@ body{
 		margin-bottom: 55px;
 		&::before{
 			content: 'activity';
-			top: -20%;
+			top: 26px;
+			left: 0px;
 		}
 	}
 }
@@ -224,7 +225,7 @@ body{
 }
 .slider-number, .active-number{
 	font-size: 16px;
-	font-family: 'Geometria Med';
+	font-family: 'Geometria Rg';
 }
 .slider-nav{
 	position: absolute;
@@ -265,7 +266,7 @@ body{
 		right: 5px;
 		transform: translateY(-50%);
 		font-size: 18px;
-		font-family: 'Geometria Th';
+		font-family: 'Geometria Lt';
 	}
 	&::after{
 		content: '';
@@ -294,7 +295,7 @@ body{
 		left: 60px;
 		transform: translateY(-50%);
 		font-size: 18px;
-		font-family: 'Geometria Th';
+		font-family: 'Geometria Lt';
 		&:hover{
 			color: red;
 		}
@@ -350,7 +351,7 @@ body{
 			font-size: 48px;
 			margin: 0;
 			padding: 0;
-			font-family: 'Geometria Med';
+			font-family: 'Geometria Rg';
 			font-weight: bold;
 		}
 		&__text{
@@ -401,13 +402,13 @@ body{
 	&-num{
 		color: #093BEC;
 		font-size: 48px;
-		font-family: 'Geometria Med';
+		font-family: 'Geometria Rg';
 		font-weight: bold;
 	}
 	&-text{
 		font-size: 16px;
 		color: #1A1A1A;
-		font-family: 'Geometria Th';
+		font-family: 'Geometria Lt';
 		font-weight: 300;
 		margin-right: 10px;
 	}
@@ -569,9 +570,13 @@ body{
 	}
 	.title{
 		font-size: 45px;
+		line-height: 70px;
 		&::before{
 			font-size: 105px;
 		}
+	}
+	.promotion-title::before{
+		top: 15px;
 	}
 	.slick-next{
 		right: -90px;
@@ -640,10 +645,15 @@ body{
 	}
 	.title{
 		font-size: 30px;
+		line-height: 1.8;
 		&:before{
 			font-size: 50px;
 			top: -34%;
+			left: 0px;
 		}
+	}
+	.activity-title::before{
+		top: 0px;
 	}
 	.slider-nav{
 		display: none;
