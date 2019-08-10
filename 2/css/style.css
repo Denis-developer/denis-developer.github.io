@@ -46,7 +46,7 @@ body {
 .container {
   display: block;
   margin: 0 auto;
-  width: 1180px;
+  width: 1135px;
 }
 .title {
   font-size: 72px;
@@ -91,6 +91,7 @@ body {
   line-height: 72px;
   margin: 0;
   margin-bottom: 90px;
+  max-width: 1060px;
 }
 .realization-text span {
   font-family: 'Geometria Med';
@@ -123,7 +124,7 @@ body {
   margin-bottom: 56px;
 }
 .realization-link:first-child {
-  margin-left: 35px;
+  margin-left: 41px;
 }
 .sectionSlider {
   background: #000;
