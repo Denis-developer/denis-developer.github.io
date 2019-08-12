@@ -63,7 +63,7 @@ body{
 }
 
 .title{
-	font-size: 72px;
+	font-size: 4.1vw;
 	line-height: 91px;
 	color: #000;
 	margin: 0;
@@ -74,7 +74,7 @@ body{
 		content: 'realisation';
 		display: block;
 		position: absolute;
-		font-size: 170px;
+		font-size: 8.8vw;
 		font-weight: bold;
 		color: #000;
 		opacity: 0.06;
@@ -84,7 +84,7 @@ body{
 }
 
 .text{
-	font-size: 24px;
+	font-size: 1.2vw;
 	line-height: 44px;
 	font-family: 'Geometria Lt';
     font-weight: 300;
@@ -98,15 +98,16 @@ body{
 }
 
 .main{
-	min-height: 740px;
+	min-height: 480px;
 	height: 100vh;	
 	padding: 100px 0px;
 	background: #67726F;
 	position: relative;
 	&-block{
 		background: url(../img/main/main-bg.jpg) no-repeat center / cover;
-		width: 970px;
-		height: 560px;
+		width: 50.5vw;
+		height: 52.2vh;
+		min-height: 350px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -119,8 +120,8 @@ body{
 			left: -114px;
 			font-family: 'Geometria Lt';
 			color: #fff;
-			font-weight: normal;
-			font-size: 188px;
+			font-weight: normal;	
+			font-size: 9.8vw;
 		}
 	}
 	&-list{
@@ -150,12 +151,12 @@ body{
 }
 
 .content{
-	padding-top: 220px;
-	padding-bottom: 250px;
+	padding-top: 11.5vw;
+	padding-bottom: 13vw;
 	&-text{
 		margin-bottom: 60px;
 		line-height: 72px;
-		font-size: 38px;
+		font-size: 1.9vw;
 	}
 	&-smallText{
 		margin-bottom: 60px;
@@ -193,8 +194,8 @@ body{
 }
 
 .fire{
-	padding-top: 260px;
-	padding-bottom: 160px;
+	padding-top: 13vw;
+	padding-bottom: 8vw;
 	&-title{
 		margin-bottom: 60px;
 		&::before{
@@ -211,7 +212,7 @@ body{
 	margin-bottom: 0;
 }
 .blockImg{
-	padding: 100px 0px;
+	padding: 5vw 0px;
 	background: #F2F2F2;
 	.container{
 		display: flex;
@@ -221,7 +222,7 @@ body{
 }
 
 .result{
-	padding-top: 260px;
+	padding-top: 13.5vw;
 	padding-bottom: 160px;
 	&-title{
 		margin-bottom: 50px;
@@ -234,7 +235,7 @@ body{
 
 .grafic{
 	background: #F2F2F2;
-	padding: 100px 0px;
+	padding: 5vw 0px;
 	.container{
 		display: flex;
 		justify-content: center;
@@ -249,7 +250,7 @@ body{
 }
 
 .statistics{
-	padding: 150px 0px;
+	padding: 7.7vw 0px;
 	color: #fff;
 	background: #1A1A1A;
 	display: flex;
@@ -300,10 +301,9 @@ body{
 		width: 960px;
 	}
 	.main{
-		min-height: 590px;
+		min-height: 420px;
 		&-block{
-			width: 750px;
-			height: 430px;
+			min-height: 300px;
 		}
 	}
 	.content-text{
@@ -322,6 +322,7 @@ body{
 		&-block{
 			width: 600px;
 			height: 345px;
+			min-height: auto;
 			&__title{
 				font-size: 100px;
 				left: -50px;
@@ -374,7 +375,7 @@ body{
 			width: 450px;
 			height: 260px;
 			&__title{
-				font-size: 80px;
+				font-size: 100px;
 				left: -50px;
 			}
 		}
@@ -428,7 +429,6 @@ body{
 		padding: 0;
 		padding-top: 20px;
 		background-image: url(../img/main/main-bg.jpg);
-		background-position: center center;
 		background-size: cover;
 		background-attachment: fixed;
 		&-block{
@@ -440,9 +440,9 @@ body{
 			background: transparent;
 			&__title{
 				font-size: 80px;
-				left: 50%;
 				width: 100%;
 				text-align: center;
+				left: 50%;
 				top: 50%;
 				transform: translate(-50%, -50%);
 			}
