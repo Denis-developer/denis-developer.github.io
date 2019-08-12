@@ -94,15 +94,18 @@ body{
 }
 
 .main{
-	min-height: 740px;
+	min-height: 480px;
 	height: 100vh;	
 	padding: 100px 0px;
 	background: #E17817;
 	position: relative;
 	&-block{
 		background: url(../img/main/main-bg.jpg) no-repeat center / cover;
-		width: 970px;
-		height: 560px;
+		// width: 970px;
+		width: 50.5vw;
+		// height: 560px;
+		height: 52.2vh;
+		min-height: 350px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -116,7 +119,8 @@ body{
 			font-family: 'Geometria Rg';
 			color: #fff;
 			font-weight: normal;
-			font-size: 188px;	
+			// font-size: 188px;	
+			font-size: 9.8vw;
 		}
 	}
 	&-list{
@@ -490,10 +494,9 @@ body{
 		width: 960px;
 	}
 	.main{
-		min-height: 590px;
+		min-height: 420px;
 		&-block{
-			width: 750px;
-			height: 430px;
+			min-height: 300px;
 		}
 	}
 	.realization-text{
@@ -540,6 +543,7 @@ body{
 		&-block{
 			width: 600px;
 			height: 345px;
+			min-height: auto;
 			&__title{
 				font-size: 100px;
 				left: -50px;
