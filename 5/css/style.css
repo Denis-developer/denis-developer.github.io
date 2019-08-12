@@ -453,6 +453,9 @@ body {
   .statistics-block {
     width: 100%;
   }
+  .statistics-block:nth-child(3){
+    margin-bottom: 90px;
+  }
 }
 @media (max-width: 576px) {
   .container {
@@ -538,6 +541,9 @@ body {
   }
   .audience-title {
     margin-bottom: 30px;
+  }
+  .statistics-block, .statistics-block:nth-child(3){
+    margin-bottom: 60px;
   }
 }
 @media (max-height: 850px) {
