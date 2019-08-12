@@ -60,7 +60,7 @@ body{
 }
 
 .title{
-	font-size: 72px;
+	font-size: 4.1vw;
 	line-height: 91px;
 	color: #000;
 	margin: 0;
@@ -71,7 +71,7 @@ body{
 		content: 'realisation';
 		display: block;
 		position: absolute;
-		font-size: 170px;
+		font-size: 8.8vw;
 		font-weight: bold;
 		color: #000;
 		opacity: 0.06;
@@ -80,7 +80,7 @@ body{
 	}
 }
 .text{
-	font-size: 24px;
+	font-size: 1.2vw;
 	line-height: 44px;
 	font-family: 'Geometria Lt';
 	font-weight: 300;
@@ -94,14 +94,15 @@ body{
 }
 
 .main{
-	min-height: 740px;
+	min-height: 590px;
 	height: 100vh;	
 	background: #1A1A1A;
 	position: relative;
 	&-block{
 		background: url(../img/main/main-bg.jpg) no-repeat center / cover;
-		width: 970px;
-		height: 560px;
+		width: 50.5vw;
+		height: 52.2vh;
+		min-height: 350px;
 		position: absolute;
 		top: 20vh;
 		left: 50%;
@@ -115,7 +116,7 @@ body{
 			font-family: 'Geometria Rg';
 			color: #fff;
 			font-weight: normal;
-			font-size: 188px;	
+			font-size: 9.8vw;	
 		}
 	}
 	&-text{
@@ -125,6 +126,7 @@ body{
 		left: 50%;
 		transform: translateX(-50%);
 		color: #fff;
+		width: 100%;
 		font-size: 16px;
 		font-family: 'Geometria Lt'
 	}
@@ -155,11 +157,10 @@ body{
 }
 
 .realization{
-	padding-top: 250px;
-	padding-bottom: 130px;
+	padding-top: 12.8vw;
 	font-family: 'Geometria Lt';
 	&-text{
-		font-size: 36px;
+		font-size: 1.9vw;	
 		line-height: 60px;
 		margin: 0;
 		margin-bottom: 90px;
@@ -191,8 +192,8 @@ body{
 		}
 	}
 	&-img{
-		margin-top: 280px;
-		margin-bottom: 200px;
+		margin-top: 14vw;
+		margin-bottom: 14vw;
 		display: block;
 	}
 }
@@ -201,12 +202,12 @@ body{
 }
 
 .visual{
-	padding-bottom: 150px;
+	padding-bottom: 7vw;
 	&-title{
 		margin-bottom: 75px;
 		&::before{
 			content: 'visual';
-			top: -25px;
+			top: 45px;
 			left: 5px;
 		}
 	}
@@ -221,7 +222,7 @@ body{
 }
 
 .gallery{
-	padding: 140px 0px;
+	padding: 7.2vw 0px;
 	background: #F2F2F2;
 	&-grid{
 		display: grid;
@@ -231,8 +232,8 @@ body{
 }
 
 .feedback{
-	padding-top: 286px;
-	padding-bottom: 150px;
+	padding-top: 15vw;
+	padding-bottom: 8vw;
 	&-title{
 		margin-bottom: 70px;
 		&::before{
@@ -244,7 +245,7 @@ body{
 }
 
 .feedbackPhoto{
-	padding: 100px 0px;
+	padding: 5vw 0px;
 	background: #000;
 	&-block{
 		width: 100%;
@@ -256,8 +257,8 @@ body{
 }
 
 .promotion{
-	padding-top: 280px;
-	padding-bottom: 150px;
+	padding-top: 14.4vw;
+	padding-bottom: 7vw;
 	&-title{
 		margin-bottom: 60px;
 		&::before{
@@ -304,8 +305,8 @@ body{
 }
 
 .promotionVk{
-	padding-top: 280px;
-	padding-bottom: 150px;
+	padding-top: 14.4vw;
+	padding-bottom: 7vw;
 	&-title{
 		margin-bottom: 60px;
 		&::before{
@@ -320,7 +321,7 @@ body{
 
 .promotionStat{
 	background: #000;
-	padding: 175px 0px;
+	padding: 9vw 0px;
 	color: #fff;
 	.container{
 		display: flex;
@@ -332,7 +333,7 @@ body{
 }
 
 .blockImg{
-	padding: 100px 0px;
+	padding: 5vw 0px;
 	background: #f2f2f2;
 	.container{
 		display: flex;
@@ -373,7 +374,7 @@ body{
 }
 
 .indicators{
-	padding-bottom: 250px;
+	padding-bottom: 11vw;
 	&-flex{
 		display: flex;
 		justify-content: space-between;
@@ -418,8 +419,8 @@ body{
 }
 
 .statistics{
-	padding-top: 160px;
-	padding-bottom: 140px;
+	padding-top: 8.5vw;
+	padding-bottom: 7.5vw;
 	color: #fff;
 	display: flex;
 	align-items: center;
@@ -465,13 +466,9 @@ body{
 		width: 960px;
 	}
 	.main{
-		min-height: 620px;
-		&-text{
-			width: 100%;
-		}
+		min-height: 525px;
 		&-block{
-			width: 750px;
-			height: 430px;
+			min-height: 300px;
 		}
 	}
 	.title{
@@ -499,10 +496,11 @@ body{
 		width: 720px;
 	}
 	.main{
-		min-height: 530px;
+		min-height: 585px;
 		&-block{
 			width: 600px;
 			height: 345px;
+			min-height: auto;
 			&__title{
 				font-size: 100px;
 				left: -50px;
@@ -595,10 +593,7 @@ body{
 		width: 540px;
 	}
 	.main{
-		min-height: 430px;
-		&-text{
-			font-size: 13px;
-		}
+		min-height: 500px;
 		&-block{
 			width: 450px;
 			height: 260px;
@@ -657,7 +652,7 @@ body{
 		width: 98%;
 	}
 	.main{
-		min-height: 255px;
+		min-height: 380px;
 		padding: 0;
 		padding-top: 20px;
 		background-image: url(../img/main/main-bg.jpg);
@@ -671,7 +666,7 @@ body{
 			transform: none;
 			background: transparent;
 			&__title{
-				font-size: 70px;
+				font-size: 64px;
 				left: 50%;
 				top: 50%;
 				transform: translate(-50%, -50%);
@@ -795,18 +790,13 @@ body{
 	.main-arrow{
 		bottom: 30px;
 	}
-	.main-text{
-		bottom: 60px;
-	}
-}
-@media(max-height: 850px){
-	.main-block{
-		top: 60px;
-	}
 }
 @media(max-height: 750px){
 	.main-arrow{
 		bottom: 20px;
+	}
+	.main-text{
+		bottom: 60px;
 	}
 }
 @media(max-height: 320px){
