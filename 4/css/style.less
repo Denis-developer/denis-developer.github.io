@@ -63,7 +63,7 @@ body{
 }
 
 .title{
-	font-size: 72px;
+	font-size: 4.1vw;
 	line-height: 91px;
 	color: #000;
 	margin: 0;
@@ -74,7 +74,7 @@ body{
 		content: 'realisation';
 		display: block;
 		position: absolute;
-		font-size: 170px;
+		font-size: 8.8vw;
 		font-weight: bold;
 		color: #000;
 		opacity: 0.06;
@@ -84,7 +84,7 @@ body{
 }
 
 .text{
-	font-size: 24px;
+	font-size: 1.2vw;
 	line-height: 44px;
 	font-family: 'Geometria Lt';
     font-weight: 300;
@@ -98,15 +98,16 @@ body{
 }
 
 .main{
-	min-height: 740px;
+	min-height: 480px;
 	height: 100vh;	
 	padding: 100px 0px;
 	background: #008BB7;
 	position: relative;
 	&-block{
 		background: url(../img/main/main-bg.jpg) no-repeat center / cover;
-		width: 970px;
-		height: 560px;
+		width: 50.5vw;
+		height: 52.2vh;
+		min-height: 350px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -119,8 +120,8 @@ body{
 			left: -114px;
 			font-family: 'Geometria Rg';
 			color: #fff;
-			font-weight: normal;
-			font-size: 188px;	
+			font-weight: normal;	
+			font-size: 9.8vw;	
 		}
 	}
 	&-list{
@@ -150,8 +151,8 @@ body{
 }
 
 .content{
-	padding-top: 220px;
-	padding-bottom: 250px;
+	padding-top: 11.5vw;
+	padding-bottom: 12vw;
 	&-text{
 		margin-bottom: 60px;
 		line-height: 72px;
@@ -193,8 +194,8 @@ body{
 }
 
 .realization{
-	padding-top: 270px;
-	padding-bottom: 160px;
+	padding-top: 13vw;
+	padding-bottom: 8.5vw;
 	&-title{
 		margin-bottom: 60px;
 	}
@@ -210,16 +211,13 @@ body{
 .sectionSlider{
 	background: #F2F2F2;
 	position: relative;
-	padding: 160px 0px;
+	padding: 8.6vw 0px;
 	&-flex{
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		height: 100vh;
 	}
-}
-.sectionSlider1{
-	padding: 0;
 }
 .slider-wrapper{
 	position: relative;
@@ -348,34 +346,23 @@ body{
 }
 
 .blockText{
-	padding-top: 180px;
-	padding-bottom: 160px;
+	padding-top: 9vw;
+	padding-bottom: 8vw;
 }
 .blockText2 .blockText-text:nth-child(1){
 	margin-bottom: 40px;
 }
 
 .result{
-	padding-top: 270px;
-	padding-bottom: 160px;
+	padding-top: 14vw;
+	padding-bottom: 8.4vw;
 	&-title::before{
 		content: 'result'
 	}
 }
 
-.blockPhoto:first-child{
-	text-align: right;
-}
-.blockPhoto{
-	text-align: left;
-	margin: 20px;
-}
-.blockPhoto-img{
-	margin-bottom: 10px;
-}
-
 .statistics{
-	padding: 150px 0px;
+	padding: 7.5vw 0px;
 	color: #fff;
 	background: #008BB7;
 	display: flex;
@@ -419,7 +406,7 @@ body{
 }
 
 .blockVK{
-	padding: 100px 0px;
+	padding: 5vw 0px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -432,55 +419,6 @@ body{
 	&-img{
 		margin: 20px;
 	}
-}
-
-.indicators{
-	padding-top: 300px;
-	padding-bottom: 160px;
-	&-title{
-		margin-bottom: 160px;
-		&::before{
-			content: 'indicators';
-			top: -20px;
-		}
-	}
-	&-flex{
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-	}
-	&-num{
-		color: #093BEC;
-		font-size: 48px;
-		font-family: 'Geometria Rg';
-		font-weight: bold;
-	}
-	&-text{
-		font-size: 16px;
-		color: #1A1A1A;
-		font-family: 'Geometria Lt';
-		font-weight: 300;
-		margin-right: 10px;
-	}
-	&-line{
-		width: 60px;
-		height: 0;
-		border: 1px solid #1a1a1a;
-		margin-top: 40px;
-		margin-bottom: 44px;
-	}
-	&-block{
-		margin-bottom: 90px;
-	}
-}
-
-.sectionGrafic{
-	min-height: 100vh;
-	padding: 20px 0px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #000;
 }
 @media(max-width: 1500px){
 	.slick-slide img{
@@ -510,10 +448,9 @@ body{
 		width: 960px;
 	}
 	.main{
-		min-height: 590px;
+		min-height: 420px;
 		&-block{
-			width: 750px;
-			height: 430px;
+			min-height: 300px;
 		}
 	}
 	.content-text{
@@ -570,6 +507,7 @@ body{
 		&-block{
 			width: 600px;
 			height: 345px;
+			min-height: auto;
 			&__title{
 				font-size: 100px;
 				left: -50px;
@@ -587,16 +525,10 @@ body{
 	.content, .blockText, .realization, .blockVK, .result, .statistics{
 		padding: 60px 0px;
 	}
-	.indicators-title{
-		margin-bottom: 50px;
-	}
 	.sectionSlider{
 		padding: 60px 0px;
 		height: auto;
 		min-height: auto;
-	}
-	.sectionSlider1{
-		padding: 0;
 	}
 	.text{
 		font-size: 16px;
@@ -607,15 +539,8 @@ body{
 			font-size: 140px;
 		}
 	}
-	.sectionSlider1{
-		height: auto;
-		padding: 30px 0px;
-	}
 	.statistics{
 		height: auto;
-	}
-	.indicators-img{
-		width: 400px;
 	}
 	.statistics2{
 		flex-wrap: wrap;
@@ -703,10 +628,6 @@ body{
 		flex-wrap: wrap;
 		height: auto;
 	}
-	.blockPhoto, .blockPhoto:first-child{
-		width: 100%;
-		text-align: center;
-	}
 	.blockVK{
 		height: auto;
 	}
@@ -715,19 +636,6 @@ body{
 	}
 	.statistics-block{
 		width: 100%;
-	}
-	.indicators{
-		padding-top: 60px;
-		padding-bottom: 0px;
-	}
-	.indicators-title{
-		margin-bottom: 70px;
-	}
-	.indicators-img{
-		width: 230px;
-	}
-	.sectionGrafic-img{
-		width: 90%;
 	}
 }
 @media (max-width: 576px){
@@ -745,7 +653,6 @@ body{
 		padding: 0;
 		padding-top: 20px;
 		background-image: url(../img/main/main-bg.jpg);
-		background-position: center center;
 		background-size: cover;
 		background-attachment: fixed;
 		&-block{
@@ -756,7 +663,7 @@ body{
 			transform: none;
 			background: transparent;
 			&__title{
-				font-size: 56px;
+				font-size: 100px;
 				left: 50%;
 				top: 50%;
 				transform: translate(-50%, -50%);
@@ -809,9 +716,6 @@ body{
 	}
 	.blockVK-img{
 		width: 300px;
-	}
-	.indicators-img{
-		display: none;
 	}
 }
 
