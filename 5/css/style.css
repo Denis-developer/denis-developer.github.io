@@ -49,7 +49,7 @@ body {
   width: 1135px;
 }
 .title {
-  font-size: 72px;
+  font-size: 4.1vw;
   line-height: 91px;
   color: #000;
   margin: 0;
@@ -61,7 +61,7 @@ body {
   content: 'realisation';
   display: block;
   position: absolute;
-  font-size: 170px;
+  font-size: 8.8vw;
   font-weight: bold;
   color: #000;
   opacity: 0.06;
@@ -69,7 +69,7 @@ body {
   left: -12px;
 }
 .text {
-  font-size: 24px;
+  font-size: 1.2vw;
   line-height: 44px;
   font-family: 'Geometria Lt';
   font-weight: 300;
@@ -82,7 +82,7 @@ body {
   font-weight: bold;
 }
 .main {
-  min-height: 740px;
+  min-height: 480px;
   height: 100vh;
   padding: 100px 0px;
   background: #000;
@@ -90,8 +90,9 @@ body {
 }
 .main-block {
   background: url(../img/main/main-bg.jpg) no-repeat center / cover;
-  width: 970px;
-  height: 560px;
+  width: 50.5vw;
+  height: 52.2vh;
+  min-height: 350px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -108,10 +109,10 @@ body {
   font-family: 'Geometria Lt';
   color: #fff;
   font-weight: normal;
-  font-size: 188px;
+  font-size: 9.8vw;
 }
 .main-block__title span {
-  font-size: 73px;
+  font-size: 4vw;
   margin-left: 20px;
 }
 .main-list {
@@ -140,13 +141,13 @@ body {
   bottom: 70px;
 }
 .content {
-  padding-top: 220px;
-  padding-bottom: 250px;
+  padding-top: 11.5vw;
+  padding-bottom: 13vw;
 }
 .content-text {
   margin-bottom: 60px;
   line-height: 72px;
-  font-size: 38px;
+  font-size: 1.9vw;
 }
 .content-smallText {
   margin-bottom: 60px;
@@ -185,8 +186,8 @@ body {
   width: 100%;
 }
 .audience {
-  padding-top: 270px;
-  padding-bottom: 145px;
+  padding-top: 14vw;
+  padding-bottom: 8vw;
 }
 .audience-title {
   margin-bottom: 60px;
@@ -209,15 +210,15 @@ body {
   margin-bottom: 0;
 }
 .blockImg {
-  padding: 100px 0px;
+  padding: 5.6vw 0px;
   background: #F2F2F2;
 }
 .blockImg-img {
   width: 100%;
 }
 .result {
-  padding-top: 270px;
-  padding-bottom: 200px;
+  padding-top: 14vw;
+  padding-bottom: 10.5vw;
 }
 .result-title {
   margin-bottom: 150px;
@@ -264,7 +265,7 @@ body {
   margin-bottom: 0;
 }
 .statistics {
-  padding: 150px 0px;
+  padding: 7.5vw 0px;
   color: #fff;
   background: #1A1A1A;
   display: -webkit-box;
@@ -324,11 +325,10 @@ body {
     width: 960px;
   }
   .main {
-    min-height: 590px;
+    min-height: 420px;
   }
   .main-block {
-    width: 750px;
-    height: 430px;
+    min-height: 300px;
   }
   .content-text {
     font-size: 26px;
@@ -347,6 +347,7 @@ body {
   .main-block {
     width: 600px;
     height: 345px;
+    min-height: auto;
   }
   .main-block__title {
     font-size: 100px;
@@ -453,7 +454,7 @@ body {
   .statistics-block {
     width: 100%;
   }
-  .statistics-block:nth-child(3){
+  .statistics-block:nth-child(3) {
     margin-bottom: 90px;
   }
 }
@@ -473,7 +474,6 @@ body {
     padding: 0;
     padding-top: 20px;
     background-image: url(../img/main/main-bg.jpg);
-    background-position: center center;
     background-size: cover;
     background-attachment: fixed;
   }
@@ -487,17 +487,17 @@ body {
     background: transparent;
   }
   .main-block__title {
-    font-size: 50px;
-    left: 50%;
     width: 100%;
     text-align: center;
+    font-size: 50px;
+    left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
   .main-block__title span {
-    font-size: 28px;
-    margin-left: 8px;
+    font-size: 25px;
+    margin-left: 5px;
   }
   .main-list {
     position: static;
@@ -542,7 +542,8 @@ body {
   .audience-title {
     margin-bottom: 30px;
   }
-  .statistics-block, .statistics-block:nth-child(3){
+  .statistics-block,
+  .statistics-block:nth-child(3) {
     margin-bottom: 60px;
   }
 }
