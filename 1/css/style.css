@@ -49,7 +49,7 @@ body {
   width: 1135px;
 }
 .title {
-  font-size: 72px;
+  font-size: 4.1vw;
   line-height: 91px;
   color: #000;
   margin: 0;
@@ -61,7 +61,7 @@ body {
   content: 'realisation';
   display: block;
   position: absolute;
-  font-size: 170px;
+  font-size: 8.8vw;
   font-weight: bold;
   color: #000;
   opacity: 0.06;
@@ -70,6 +70,7 @@ body {
 }
 .text {
   font-size: 24px;
+  font-size: 1.2vw;
   line-height: 44px;
   font-family: 'Geometria Lt';
   font-weight: 300;
@@ -133,20 +134,20 @@ body {
   bottom: 70px;
 }
 .realization {
-  padding-top: 260px;
-  padding-bottom: 130px;
+  padding-top: 13.5vw;
+  padding-bottom: 6.7vw;
 }
 .realization-text {
   margin-bottom: 200px;
   line-height: 70px;
-  font-size: 34px;
+  font-size: 1.9vw;
 }
 .realization-text span {
   font-family: 'Geometria Rg';
 }
 .result {
-  padding-top: 120px;
-  padding-bottom: 80px;
+  padding-top: 6vw;
+  padding-bottom: 4.3vw;
 }
 .result-title {
   margin-bottom: 10px;
@@ -164,7 +165,7 @@ body {
   font-size: 24px;
 }
 .sectionPhoto {
-  padding: 100px 0px;
+  padding: 5vw 0px;
   background: #000;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -198,8 +199,8 @@ body {
   height: 450px;
 }
 .promotion {
-  padding-top: 280px;
-  padding-bottom: 100px;
+  padding-top: 14.5vw;
+  padding-bottom: 7vw;
 }
 .promotion-title {
   margin-bottom: 55px;
@@ -214,8 +215,8 @@ body {
   max-width: 1055px;
 }
 .activity {
-  padding-top: 250px;
-  padding-bottom: 100px;
+  padding-top: 13vw;
+  padding-bottom: 7vw;
 }
 .activity-title {
   margin-bottom: 55px;
@@ -231,7 +232,7 @@ body {
 .sectionSlider {
   background: #F2F2F2;
   position: relative;
-  padding: 180px 0px;
+  padding: 9vw 0px;
 }
 .sectionSlider-flex {
   display: -webkit-box;
@@ -384,7 +385,7 @@ body {
 .blockText {
   height: 280px;
   text-align: center;
-  padding-top: 150px;
+  padding-top: 8vw;
 }
 .statistics {
   height: 100vh;
@@ -460,8 +461,8 @@ body {
   margin: 20px;
 }
 .indicators {
-  padding-top: 300px;
-  padding-bottom: 160px;
+  padding-top: 15vw;
+  padding-bottom: 8vw;
 }
 .indicators-title {
   margin-bottom: 160px;
