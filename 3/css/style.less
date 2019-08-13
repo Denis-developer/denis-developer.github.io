@@ -56,7 +56,7 @@ body{
 .container{
 	display: block;
 	margin: 0 auto;
-	width: 1180px;
+	width: 61.5vw;
 }
 
 .title{
@@ -195,6 +195,7 @@ body{
 		margin-top: 14vw;
 		margin-bottom: 14vw;
 		display: block;
+		width: 100%;
 	}
 }
 .realization-link:first-child{
@@ -219,6 +220,9 @@ body{
 		justify-content: space-between;
 		align-items: flex-start;
 	}
+	&-img{
+		width: 48%;
+	}
 }
 
 .gallery{
@@ -229,6 +233,9 @@ body{
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 40px;
 	}
+	&-img{
+		width: 100%;
+	}
 }
 
 .feedback{
@@ -238,8 +245,8 @@ body{
 		margin-bottom: 70px;
 		&::before{
 			content: 'feedback';
-			top: -30px;
-			left: 0;
+			top: 55px;
+			left: 5px;
 		}
 	}
 }
@@ -263,7 +270,7 @@ body{
 		margin-bottom: 60px;
 		&::before{
 			content: 'promotion';
-			top: -30px;
+			top: 35px;
 		}
 	}
 	&-text{
@@ -278,6 +285,7 @@ body{
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		width: 1180px;
 	}
 	&-picture{
 		width: 580px;
@@ -341,6 +349,7 @@ body{
 	}
 	&-img{
 		margin-right: 160px;
+		width: 40%;
 	}
 }
 
@@ -355,7 +364,7 @@ body{
 		margin-bottom: 60px;
 		&::before{
 			content: 'promotion';
-			top: -30px;
+			top: 35px;
 		}
 	}
 	&-text{
@@ -367,6 +376,7 @@ body{
 	}
 	&-img{
 		margin-right: 90px;
+		width: 44%;
 	}
 }
 .work-img:last-child{
@@ -375,6 +385,9 @@ body{
 
 .indicators{
 	padding-bottom: 11vw;
+	.container{
+		width: 1180px;
+	}
 	&-flex{
 		display: flex;
 		justify-content: space-between;
@@ -413,8 +426,11 @@ body{
 		margin-bottom: 200px;
 		&::before{
 			content: 'statistics';
-			top: -30px;
+			top: 35px;
 		}
+	}
+	&-img{
+		width: 100%;
 	}
 }
 
@@ -428,6 +444,7 @@ body{
 	.container{
 		display: flex;
 		justify-content: space-between;
+		width: 1180px;
 	}
 	&-block{
 		min-width: 30%;
@@ -462,7 +479,7 @@ body{
 
 
 @media (max-width: 1200px){
-	.container{
+	.container, .promotionInfo .container, .indicators .container, .statistics .container{
 		width: 960px;
 	}
 	.main{
@@ -492,7 +509,7 @@ body{
 	}
 }
 @media (max-width: 992px){
-	.container{
+	.container, .promotionInfo .container, .indicators .container, .statistics .container{
 		width: 720px;
 	}
 	.main{
@@ -589,7 +606,7 @@ body{
 	}
 }
 @media (max-width: 768px){
-	.container{
+	.container, .promotionInfo .container, .indicators .container, .statistics .container{
 		width: 540px;
 	}
 	.main{
@@ -648,7 +665,7 @@ body{
 	}
 }
 @media (max-width: 576px){
-	.container{
+	.container, .promotionInfo .container, .indicators .container, .statistics .container{
 		width: 98%;
 	}
 	.main{
