@@ -145,11 +145,15 @@ body {
   font-size: 1.9vw;
   line-height: 72px;
   margin: 0;
-  margin-bottom: 90px;
+  margin-bottom: 60px;
   max-width: 1060px;
 }
 .realization-text span {
-  font-family: 'Geometria Med';
+  font-family: 'Geometria Rg';
+  font-weight: bold;
+}
+.realization-smallText {
+  margin-bottom: 90px;
 }
 .realization-link {
   color: #1a1a1a;
@@ -339,12 +343,13 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .promotion-block__img {
   margin-right: 55px;
+  width: 18vw;
 }
 .promotion-block__text {
   margin-bottom: 40px;
@@ -564,6 +569,12 @@ body {
   }
   .main-list {
     left: -40px;
+  }
+  .realization-text {
+    margin-bottom: 40px;
+  }
+  .realiztion-smallText {
+    margin-bottom: 60px;
   }
   .sectionSlider1 {
     padding: 0;
@@ -807,6 +818,9 @@ body {
     font-size: 16px;
   }
   .realization-text {
+    margin-bottom: 30px;
+  }
+  .realization-smallText {
     margin-bottom: 40px;
   }
   .realization-link {
