@@ -151,11 +151,18 @@ body{
 	padding-top: 13.5vw;
 	padding-bottom: 6.7vw;
 	&-text{
-		margin-bottom: 200px;
+		margin-bottom: 60px;
 		line-height: 70px;
 		font-size: 1.9vw;
 		span{
 			font-family: 'Geometria Rg';
+		}
+	}
+	&-smallText{
+		margin-bottom: 13vw;
+		span{
+			font-family: 'Geometria Rg';
+			font-weight: bold;
 		}
 	}
 }
@@ -171,18 +178,27 @@ body{
 	}
 	&-text{
 		margin-top: 40px;
+		span{
+			font-family: 'Geometria Rg';
+			font-weight: bold;
+		}
 	}
 	&-list{
 		padding-left: 25px;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		margin-top: 8px;
 		&__item{
 			font-size: 24px;
+			margin-bottom: 6px;
 		}
 	}
 }
 
 .sectionPhoto{
 	padding: 5vw 0px;
-	background: #000;
+	background: #F2F2F2;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -216,7 +232,11 @@ body{
 	}
 	&-text{
 		margin-bottom: 25px;
-		max-width: 1055px
+		max-width: 1055px;
+		span{
+			font-family: 'Geometria Rg';
+			font-weight: bold;
+		}
 	}
 }
 
@@ -233,6 +253,10 @@ body{
 	}
 	&-text{
 		max-width: 1040px;
+		span{
+			font-family: 'Geometria Med';
+			font-weight: bold;
+		}
 	}
 }
 
@@ -462,7 +486,7 @@ body{
 		align-items: flex-start;
 	}
 	&-num{
-		color: #093BEC;
+		color: #E17817;
 		font-size: 48px;
 		font-family: 'Geometria Rg';
 		font-weight: bold;
@@ -561,6 +585,9 @@ body{
 	.realization-text{
 		font-size: 22px;
 		line-height: 2;
+		margin-bottom: 30px;
+	}
+	.realization-smallText{
 		margin-bottom: 40px;
 	}
 	.realization, .promotion, .activity, .indicators{
