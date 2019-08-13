@@ -46,7 +46,7 @@ body {
 .container {
   display: block;
   margin: 0 auto;
-  width: 1135px;
+  width: 59.5vw;
 }
 .title {
   font-size: 4.1vw;
@@ -186,6 +186,9 @@ body {
   padding-top: 6.1vw;
   padding-bottom: 8vw;
   position: relative;
+}
+.sectionSlider .container {
+  width: 1135px;
 }
 .slider-wrapper {
   position: relative;
@@ -368,6 +371,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+.blockImg-img {
+  width: 100%;
+}
 .blockImg1 {
   padding: 9.5vw 0px;
   background: #000;
@@ -382,7 +388,7 @@ body {
           align-items: center;
 }
 .blockImg1-img {
-  width: 48%;
+  width: 46%;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -479,7 +485,8 @@ body {
   margin-bottom: 44px;
 }
 @media (max-width: 1200px) {
-  .container {
+  .container,
+  .sectionSlider .container {
     width: 960px;
   }
   .main {
@@ -539,7 +546,8 @@ body {
   }
 }
 @media (max-width: 992px) {
-  .container {
+  .container,
+  .sectionSlider .container {
     width: 720px;
   }
   .main {
@@ -640,7 +648,8 @@ body {
   }
 }
 @media (max-width: 768px) {
-  .container {
+  .container,
+  .sectionSlider .container {
     width: 540px;
   }
   .main {
@@ -739,7 +748,8 @@ body {
   }
 }
 @media (max-width: 576px) {
-  .container {
+  .container,
+  .sectionSlider .container {
     width: 98%;
   }
   .main {
