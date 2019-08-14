@@ -293,7 +293,7 @@ body{
 		top: 0;
 		left: 50%;
 		transform: translateX(-50%);
-		background: rgba(0,0,0,0.4);
+		background: rgba(255,255,255,0.3);
 		z-index: 9999;
 	}
 }
@@ -339,67 +339,29 @@ body{
 	display: none;
 }
 .slick-prev{
-	height: 533px;
-	width: 300px;
+	height: 90px;
+	width: 90px;
+	background-color: rgba(25,25,25,0.3);
+	border-radius: 50%;
 	position: absolute;
-	left: 60px;
+	left: 150px;
+	background-image: url(../img/prev.png);
+	background-position: center center;
+	background-repeat: no-repeat;
 	z-index: 9999;
-	&::before{
-		content: 'предыдущее';
-		position: absolute;
-		top: 50%;
-		right: 5px;
-		transform: translateY(-50%);
-		font-size: 18px;
-		font-family: 'Geometria Lt';
-	}
-	&::after{
-		content: '';
-		position: absolute;
-		top: 50.5%;
-		right: 130px;
-		transform: translateY(-50%);
-		height: 1px;
-		width: 50px;
-		background: #fff;
-		&:hover{
-			color: red;
-		}
-	}
 }
 .slick-next{
-	height: 533px;
-	width: 300px;
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	background-color: rgba(25,25,25,0.3);
+	background-image: url(../img/next.png);
+	background-position: center center;
+	background-repeat: no-repeat;
 	position: absolute;
-	right: 60px;
+	right: 150px;
 	z-index: 9999;
-	&::before{
-		content: 'следующее';
-		position: absolute;
-		top: 50%;
-		left: 60px;
-		transform: translateY(-50%);
-		font-size: 18px;
-		font-family: 'Geometria Lt';
-		&:hover{
-			color: red;
-		}
-	}
-	&::after{
-		content: '';
-		position: absolute;
-		top: 50.5%;
-		left: 5px;
-		transform: translateY(-50%);
-		height: 1px;
-		width: 50px;
-		background: #fff;
-		&:hover{
-			color: red;
-		}
-	}
 }
-
 .blockPhoto:first-child{
 	text-align: right;
 }
@@ -548,14 +510,6 @@ body{
 	.slider-wrapper::before{
 		width: 260px;
 	}
-	.slick-next{
-		width: 260px;
-		right: 44px;
-	}
-	.slick-prev{
-		width: 260px;
-		left: 44px;
-	}
 	.text, .result-list__item{
 		font-size: 21px;
 	}
@@ -624,13 +578,13 @@ body{
 		opacity: 1;
 	}
 	.slick-next{
-		right: 0px;
+		right: 2vw;
 		&::after{
 			display: none;
 		}
 	}
 	.slick-prev{
-		left: -60px;
+		left: 2vw;
 		&::after{
 			display: none;
 		}
@@ -711,12 +665,6 @@ body{
 	}
 	.promotion-title::before{
 		top: 15px;
-	}
-	.slick-next{
-		right: -90px;
-	}
-	.slick-prev{
-		left: -130px;
 	}
 	.sectionPhoto-block_1, .sectionPhoto-block_2{
 		width: 100%;
