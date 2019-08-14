@@ -50,7 +50,7 @@ body {
 }
 .title {
   font-size: 4.1vw;
-  line-height: 91px;
+  line-height: 80px;
   color: #000;
   margin: 0;
   font-family: 'Geometria Lt';
@@ -70,7 +70,7 @@ body {
 }
 .text {
   font-size: 1.2vw;
-  line-height: 44px;
+  line-height: 40px;
   font-family: 'Geometria Lt';
   font-weight: 300;
   margin: 0;
@@ -141,16 +141,12 @@ body {
   padding-bottom: 13vw;
 }
 .content-text {
-  margin-bottom: 60px;
-  line-height: 72px;
+  margin-bottom: 40px;
+  line-height: 60px;
   font-size: 1.9vw;
 }
-.content-smallText {
-  margin-bottom: 60px;
-  max-width: 930px;
-}
 .content-listText {
-  margin-bottom: 90px;
+  margin-bottom: 60px;
 }
 .content-link {
   color: #1a1a1a;
@@ -191,7 +187,7 @@ body {
   top: 50px;
 }
 .fire-text {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .fire-text:last-child {
   margin-bottom: 0;
