@@ -70,7 +70,7 @@ body {
 }
 .text {
   font-size: 1.2vw;
-  line-height: 44px;
+  line-height: 40px;
   font-family: 'Geometria Lt';
   font-weight: 300;
   margin: 0;
@@ -137,15 +137,16 @@ body {
   padding-bottom: 6.7vw;
 }
 .realization-text {
-  margin-bottom: 60px;
-  line-height: 70px;
+  margin-bottom: 40px;
+  line-height: 60px;
   font-size: 1.9vw;
 }
 .realization-text span {
   font-family: 'Geometria Rg';
+  font-weight: bold;
 }
 .realization-smallText {
-  margin-bottom: 13vw;
+  margin-bottom: 12vw;
 }
 .realization-smallText span {
   font-family: 'Geometria Rg';
@@ -178,6 +179,8 @@ body {
 .result-list__item {
   font-size: 24px;
   margin-bottom: 6px;
+  font-family: 'Geometria Lt';
+  font-weight: 300;
 }
 .sectionPhoto {
   padding: 5vw 0px;
@@ -255,7 +258,9 @@ body {
 .sectionSlider {
   background: #F2F2F2;
   position: relative;
-  padding: 9vw 0px;
+  padding-top: 5vw;
+  padding-bottom: 160px;
+  padding-bottom: 8.6vw;
 }
 .sectionSlider .container {
   width: 1135px;
@@ -310,7 +315,7 @@ body {
 }
 .slider-nav {
   position: absolute;
-  bottom: 50px;
+  bottom: 5vw;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
