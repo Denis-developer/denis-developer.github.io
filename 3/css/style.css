@@ -48,7 +48,7 @@ body {
 }
 .title {
   font-size: 4.1vw;
-  line-height: 91px;
+  line-height: 85px;
   color: #000;
   margin: 0;
   font-family: 'Geometria Lt';
@@ -153,14 +153,14 @@ body {
   font-size: 1.9vw;
   line-height: 60px;
   margin: 0;
-  margin-bottom: 60px;
+  margin-bottom: 45px;
 }
 .realization-text span {
   font-family: 'Geometria Rg';
   font-weight: bold;
 }
 .realization-smallText {
-  margin-bottom: 90px;
+  margin-bottom: 60px;
 }
 .realization-link {
   color: #1a1a1a;
@@ -198,7 +198,7 @@ body {
   padding-bottom: 7vw;
 }
 .visual-title {
-  margin-bottom: 75px;
+  margin-bottom: 40px;
 }
 .visual-title::before {
   content: 'visual';
@@ -206,7 +206,7 @@ body {
   left: 5px;
 }
 .visual-text {
-  margin-bottom: 150px;
+  margin-bottom: 140px;
 }
 .visual-flex {
   display: -webkit-box;
@@ -223,7 +223,7 @@ body {
   width: 48%;
 }
 .gallery {
-  padding: 7.2vw 0px;
+  padding: 8.2vw 0px;
   background: #F2F2F2;
 }
 .gallery-grid {
@@ -239,7 +239,7 @@ body {
   padding-bottom: 8vw;
 }
 .feedback-title {
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 .feedback-title::before {
   content: 'feedback';
@@ -262,18 +262,18 @@ body {
   padding-bottom: 7vw;
 }
 .promotion-title {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 .promotion-title::before {
   content: 'promotion';
-  top: 35px;
+  top: 40px;
 }
 .promotion-text {
   line-height: 1.5;
 }
 .promotionInfo {
   background: #f2f2f2;
-  padding: 60px 0px;
+  padding: 5vw 0px;
 }
 .promotionInfo .container {
   display: -webkit-box;
@@ -319,7 +319,7 @@ body {
   top: -30px;
 }
 .promotionVk-text {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 .promotionStat {
   background: #1a1a1a;
