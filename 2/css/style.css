@@ -254,69 +254,28 @@ body {
   display: none;
 }
 .slick-prev {
-  height: 533px;
-  width: 300px;
+  height: 90px;
+  width: 90px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
   position: absolute;
-  left: 60px;
+  left: 140px;
+  background-image: url(../img/prev.png);
+  background-position: center center;
+  background-repeat: no-repeat;
   z-index: 9999;
-}
-.slick-prev::before {
-  content: 'предыдущее';
-  position: absolute;
-  top: 50%;
-  right: 5px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  font-size: 18px;
-  font-family: 'Geometria Lt';
-}
-.slick-prev::after {
-  content: '';
-  position: absolute;
-  top: 50.5%;
-  right: 130px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  height: 1px;
-  width: 50px;
-  background: #fff;
-}
-.slick-prev::after:hover {
-  color: red;
 }
 .slick-next {
-  height: 533px;
-  width: 300px;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  background-image: url(../img/next.png);
+  background-position: center center;
+  background-repeat: no-repeat;
   position: absolute;
-  right: 60px;
+  right: 140px;
   z-index: 9999;
-}
-.slick-next::before {
-  content: 'следующее';
-  position: absolute;
-  top: 50%;
-  left: 60px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  font-size: 18px;
-  font-family: 'Geometria Lt';
-}
-.slick-next::before:hover {
-  color: red;
-}
-.slick-next::after {
-  content: '';
-  position: absolute;
-  top: 50.5%;
-  left: 5px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  height: 1px;
-  width: 50px;
-  background: #fff;
-}
-.slick-next::after:hover {
-  color: red;
 }
 .promotion {
   padding-top: 14.3vw;
@@ -520,14 +479,6 @@ body {
   .slider-wrapper::before {
     width: 260px;
   }
-  .slick-next {
-    width: 260px;
-    right: 44px;
-  }
-  .slick-prev {
-    width: 260px;
-    left: 44px;
-  }
   .blockImg-img {
     width: 100%;
   }
@@ -598,13 +549,13 @@ body {
     opacity: 1;
   }
   .slick-next {
-    right: 0px;
+    right: 2vw;
   }
   .slick-next::after {
     display: none;
   }
   .slick-prev {
-    left: -60px;
+    left: 2vw;
   }
   .slick-prev::after {
     display: none;
@@ -739,12 +690,6 @@ body {
     width: 85%;
     margin: 0;
     margin-bottom: 20px;
-  }
-  .slick-next {
-    right: -90px;
-  }
-  .slick-prev {
-    left: -130px;
   }
   .statistics1 .statistics-block:nth-child(1),
   .statistics1 .statistics-block:nth-child(3) {
