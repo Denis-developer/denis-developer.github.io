@@ -100,11 +100,12 @@ body{
 	padding: 100px 0px;
 	background: #E17817;
 	position: relative;
-	&-block{
-		background: url(../img/main/main-bg.jpg) no-repeat center / cover;
+	&-img{
+		text-align: center;
 		width: 50.5vw;
-		height: 52.2vh;
-		min-height: 350px;
+		height: auto;
+	}
+	&-block{
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -178,7 +179,8 @@ body{
 		}
 	}
 	&-text{
-		margin-top: 40px;
+		margin-top: 30px;
+		font-size: 24px;
 		span{
 			font-family: 'Geometria Rg';
 			font-weight: bold;
@@ -482,7 +484,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #000;
+	background: #F2F2F2;
 }
 @media (max-width: 1200px){
 	.container, .statistics .container, .indicators .container, .sectionSlider .container{
@@ -490,9 +492,6 @@ body{
 	}
 	.main{
 		min-height: 420px;
-		&-block{
-			min-height: 300px;
-		}
 	}
 	.realization-text{
 		font-size: 26px;
@@ -527,10 +526,10 @@ body{
 	}
 	.main{
 		min-height: 480px;
-		&-block{
+		&-img{
 			width: 600px;
-			height: 345px;
-			min-height: auto;
+		}
+		&-block{
 			&__title{
 				font-size: 100px;
 				left: -50px;
@@ -644,9 +643,10 @@ body{
 	}
 	.main{
 		min-height: 380px;
+		&-img{
+			width: 440px;
+		}
 		&-block{
-			width: 450px;
-			height: 260px;
 			&__title{
 				font-size: 100px;
 				left: -50px;
@@ -727,6 +727,9 @@ body{
 		background-image: url(../img/main/main-bg.jpg);
 		background-size: cover;
 		background-attachment: fixed;
+		&-img{
+			display: none;
+		}
 		&-block{
 			position: static;
 			height: 100vh;
