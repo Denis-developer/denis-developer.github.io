@@ -94,15 +94,16 @@ body{
 }
 
 .main{
-	min-height: 590px;
+	min-height: 605px;
 	height: 100vh;	
 	background: #1A1A1A;
 	position: relative;
-	&-block{
-		background: url(../img/main/main-bg.jpg) no-repeat center / cover;
+	&-img{
+		text-align: center;
 		width: 50.5vw;
-		height: 52.2vh;
-		min-height: 350px;
+		height: auto;
+	}
+	&-block{
 		position: absolute;
 		top: 20vh;
 		left: 50%;
@@ -122,13 +123,14 @@ body{
 	&-text{
 		position: absolute;
 		text-align: center;
-		bottom: 140px;
+		bottom: -85px;
 		left: 50%;
+		width: 150%;	
 		transform: translateX(-50%);
 		color: #fff;
-		width: 100%;
 		font-size: 16px;
-		font-family: 'Geometria Lt'
+		font-family: 'Geometria Lt';
+		font-weight: normal;
 	}
 	&-list{
 		position: absolute;
@@ -487,9 +489,6 @@ body{
 	}
 	.main{
 		min-height: 525px;
-		&-block{
-			min-height: 300px;
-		}
 	}
 	.title{
 		font-size: 67px;
@@ -517,10 +516,10 @@ body{
 	}
 	.main{
 		min-height: 585px;
-		&-block{
+		&-img{
 			width: 600px;
-			height: 345px;
-			min-height: auto;
+		}
+		&-block{
 			&__title{
 				font-size: 100px;
 				left: -50px;
@@ -620,9 +619,10 @@ body{
 	}
 	.main{
 		min-height: 500px;
+		&-img{
+			width: 440px;
+		}
 		&-block{
-			width: 450px;
-			height: 260px;
 			&__title{
 				font-size: 100px;
 				left: -50px;
@@ -630,6 +630,9 @@ body{
 		}
 		&-list{
 			left: -40px;
+		}
+		&-text{
+			width: 100%;
 		}
 	}
 	.title{
@@ -684,6 +687,12 @@ body{
 		background-image: url(../img/main/main-bg.jpg);
 		background-size: cover;
 		background-attachment: fixed;
+		&-img{
+			display: none;
+		}
+		&-text{
+			bottom: 70px;
+		}
 		&-block{
 			position: static;
 			height: 100vh;
@@ -820,9 +829,6 @@ body{
 @media(max-height: 750px){
 	.main-arrow{
 		bottom: 20px;
-	}
-	.main-text{
-		bottom: 60px;
 	}
 }
 @media(max-height: 320px){
