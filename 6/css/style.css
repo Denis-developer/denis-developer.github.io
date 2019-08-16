@@ -88,11 +88,12 @@ body {
   background: #67726F;
   position: relative;
 }
-.main-block {
-  background: url(../img/main/main-bg.jpg) no-repeat center / cover;
+.main-img {
+  text-align: center;
   width: 50.5vw;
-  height: 52.2vh;
-  min-height: 350px;
+  height: auto;
+}
+.main-block {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -302,9 +303,6 @@ body {
   .main {
     min-height: 420px;
   }
-  .main-block {
-    min-height: 300px;
-  }
   .content-text {
     font-size: 26px;
   }
@@ -319,10 +317,8 @@ body {
   .main {
     min-height: 480px;
   }
-  .main-block {
+  .main-img {
     width: 600px;
-    height: 345px;
-    min-height: auto;
   }
   .main-block__title {
     font-size: 100px;
@@ -376,9 +372,8 @@ body {
   .main {
     min-height: 380px;
   }
-  .main-block {
-    width: 450px;
-    height: 260px;
+  .main-img {
+    width: 440px;
   }
   .main-block__title {
     font-size: 100px;
@@ -441,6 +436,9 @@ body {
     background-image: url(../img/main/main-bg.jpg);
     background-size: cover;
     background-attachment: fixed;
+  }
+  .main-img {
+    display: none;
   }
   .main-block {
     position: static;

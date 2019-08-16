@@ -103,11 +103,12 @@ body{
 	padding: 100px 0px;
 	background: #67726F;
 	position: relative;
-	&-block{
-		background: url(../img/main/main-bg.jpg) no-repeat center / cover;
+	&-img{
+		text-align: center;
 		width: 50.5vw;
-		height: 52.2vh;
-		min-height: 350px;
+		height: auto;
+	}
+	&-block{
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -298,9 +299,6 @@ body{
 	}
 	.main{
 		min-height: 420px;
-		&-block{
-			min-height: 300px;
-		}
 	}
 	.content-text{
 		font-size: 26px;
@@ -315,10 +313,10 @@ body{
 	}
 	.main{
 		min-height: 480px;
-		&-block{
+		&-img{
 			width: 600px;
-			height: 345px;
-			min-height: auto;
+		}
+		&-block{
 			&__title{
 				font-size: 100px;
 				left: -50px;
@@ -367,9 +365,10 @@ body{
 	}
 	.main{
 		min-height: 380px;
+		&-img{
+			width: 440px;
+		}
 		&-block{
-			width: 450px;
-			height: 260px;
 			&__title{
 				font-size: 100px;
 				left: -50px;
@@ -427,6 +426,9 @@ body{
 		background-image: url(../img/main/main-bg.jpg);
 		background-size: cover;
 		background-attachment: fixed;
+		&-img{
+			display: none;
+		}
 		&-block{
 			position: static;
 			height: 100vh;
