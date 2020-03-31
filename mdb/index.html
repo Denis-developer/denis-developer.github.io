@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="grey lighten-3">
+
+  <header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria=controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span></button>
+
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a href="#" class="nav-link waves-effect">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link waves-effect">О нас</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link waves-effect">Новости</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link waves-effect">Контакты</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav nav-flex-icons">
+              <li class="nav-item mr-2">
+                <a href="#" class="nav-link border border-light rounded waves-effect">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li class="nav-item mr-2">
+                <a href="#" class="nav-link border border-light rounded waves-effect">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+              <li class="nav-item mr-2">
+                <a href="#" class="nav-link border border-light rounded waves-effect">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+
+    <div class="sidebar-fixed position-fixed">
+      <a href="#" class="logo-wrapper waves-effect">
+        <img src="https://mdbootstrap.com/img/logo/mdb-email.png" alt="" class="img-fluid">
+      </a>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item active waves-effect">
+          <i class="fa fa-pie-chart mr-3"></i> Обзор
+        </a>
+        <a href="#" class="list-group-item waves-effect">
+          <i class="fa fa-user mr-3"></i> Профиль
+        </a>
+        <a href="#" class="list-group-item waves-effect">
+          <i class="fa fa-table mr-3"></i> Таблицы
+        </a>
+        <a href="#" class="list-group-item waves-effect">
+          <i class="fa fa-map mr-3"></i> Карты
+        </a>
+        <a href="#" class="list-group-item waves-effect">
+          <i class="fa fa-money mr-3"></i> Цены
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-5 max-lg-5">
+    <div class="container-fluid mt-5">
+      <div class="card mb-4 wow fadeIn">
+        <div class="main-header card-body d-sm-flex justify-content-between">
+          <h4 class="mb-2 mb-sm-0 pt-1">
+            <a href="#">Главная страница</a>
+            <span> / </span>
+            <span>Обзор</span>
+          </h4>
+          <form action="#" class="d-flex justify-content-center">
+            <input type="search" required class="form-control" placeholder="Введите ваш запрос">
+            <button class="btn btn-primary btn-sm my-0 p" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="row wow fadeIn">
+        <div class="col-lg-9 mb-4">
+          <div class="card">
+            <div class="card-body bar">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-4">
+          <div class="card mb-2">
+            <div class="card-body">
+              <canvas id="pieChart"></canvas>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="list-group list-group-flush mt-4">
+                <a href="#" class="list-group-item list-group-item-action waves-effect">
+                  Биткоин
+                  <span class="badge badge-success badge-pill pull-right">25% <i class="fa fa-arrow-up ml-1"></i></span>
+                </a>
+              </div>
+              <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action waves-effect">
+                  Эфириум
+                  <span class="badge badge-success badge-pill pull-right">15% <i class="fa fa-arrow-up ml-1"></i></span>
+                </a>
+              </div>
+              <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action waves-effect">
+                  Рипл
+                  <span class="badge badge-danger badge-pill pull-right">5% <i class="fa fa-arrow-down ml-1"></i></span>
+                </a>
+              </div>
+              <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action waves-effect">
+                  Bitcoin Cash
+                  <span class="badge badge-success badge-pill pull-right">5% <i class="fa fa-arrow-up ml-1"></i></span>
+                </a>
+              </div>
+              <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action waves-effect">
+                  EOS
+                  <span class="badge badge-success badge-pill pull-right">20% <i class="fa fa-arrow-up ml-1"></i></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row wow fadeIn">
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body card-table">
+              <table class="table table-hover">
+                <thead class="blue-grey lighten-4">
+                  <tr>
+                    <th>#</th>
+                    <th>Страна</th>
+                    <th>Население</th>
+                    <th>Площадь</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <th>Индия</th>
+                    <th>1 352 754 507 чел.</th>
+                    <th>3 287 263 км²</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <th>Япония</th>
+                    <th>124 776 364 чел.</th>
+                    <th>377 944 км²</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <th>Германия</th>
+                    <th>83 149 300 чел.</th>
+                    <th>357 385 км²</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <th>Швейцария</th>
+                    <th>8 558 758 чел.</th>
+                    <th>41 285 км²</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body card-table">
+              <table class="table table-hover">
+                <thead class="blue lighten-3">
+                  <tr>
+                    <th>#</th>
+                    <th>Страна</th>
+                    <th>Население</th>
+                    <th>Площадь</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <th>Индия</th>
+                    <th>1 352 754 507 чел.</th>
+                    <th>3 287 263 км²</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <th>Япония</th>
+                    <th>124 776 364 чел.</th>
+                    <th>377 944 км²</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <th>Германия</th>
+                    <th>83 149 300 чел.</th>
+                    <th>357 385 км²</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <th>Швейцария</th>
+                    <th>8 558 758 чел.</th>
+                    <th>41 285 км²</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row wow fadeIn">
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="card">
+            <div class="card-header">Line chart</div>
+            <div class="card-body">
+              <canvas id="lineChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="card-header">Radar-chart</div>
+            <div class="card-body">
+              <canvas id="radarChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="card-header">Doughnut-chart</div>
+            <div class="card-body">
+              <canvas id="doughnutChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/js/mdb.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
