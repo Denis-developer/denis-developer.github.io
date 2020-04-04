@@ -1,0 +1,544 @@
+$red: #FF3F3F
+$black: #1D1D1D
+
+@keyframes show
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+// FONTS
+@font-face
+  font-family: 'Monument Extended'
+  src: url('../fonts/MonumentExtended-Regular.eot')
+  src: url('../fonts/MonumentExtended-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/MonumentExtended-Regular.woff2') format('woff2'), url('../fonts/MonumentExtended-Regular.woff') format('woff'), url('../fonts/MonumentExtended-Regular.ttf') format('truetype'), url('../fonts/MonumentExtended-Regular.svg#MonumentExtended-Regular') format('svg')
+  font-weight: normal
+  font-style: normal
+
+*
+  box-sizing: border-box
+
+body
+  padding: 0
+  margin: 0
+  font-family: 'Roboto Mono'
+  font-weight: 400
+
+.container
+  width: 1170px
+  margin: 0 auto
+
+.section-title
+  color: #000
+  font-family: 'Monument Extended'
+  font-size: 60px
+  margin: 0
+  text-transform: uppercase
+
+// ШАПКА
+.header
+  position: relative
+  .container
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &-logo
+    margin-right: 40px
+  &-lang
+    display: inline-block
+    &__link
+      color: $black
+      display: inline-block
+      font-size: 16px
+      margin-right: 16px
+      text-decoration: none
+  &-req
+    color: $red
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    font-size: 16px
+    text-decoration: none
+
+.active-lang
+  color: $red
+
+// МЕНЮ
+.nav
+  display: inline-block
+  &-link
+    color: $black
+    font-size: 16px
+    margin-left: 44px
+    text-decoration: none
+
+// ГЛАВНАЯ
+.main
+  padding-top: 45px
+  .container
+    position: relative
+  &-title
+    font-family: 'Monument Extended'
+    font-size: 90px
+    color: #000
+    margin: 0 auto
+    margin-top: 125px
+    max-width: 850px
+    text-transform: uppercase
+    line-height: 135px
+  &-block
+    position: absolute
+    right: 25px
+    bottom: -65px
+  &-text
+    display: inline-block
+    font-size: 16px
+    text-transform: lowercase
+    line-height: 1.9
+    max-width: 264px
+    margin: 0
+    margin-right: 50px
+  &-btn
+    display: inline-block
+    width: 135px
+    height: 135px
+    border-radius: 50%
+    background: $red
+    color: #fff
+    text-transform: uppercase
+    text-align: center
+    font-size: 14px
+    font-weight: 500
+    text-decoration: none
+    padding-top: 45px
+    position: relative
+    top: -38px
+  &-props
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+    padding-top: 45px
+    &__text
+      font-size: 14px
+      font-weight: 500
+      color: $red
+      margin-bottom: 25px
+  &-propsSec
+    position: absolute
+    right: 29%
+    bottom: -250px
+
+// О НАС
+.about
+  padding-top: 270px
+
+// НАШИ ПРОЕКТЫ
+.project
+  padding-bottom: 94px
+  &-link
+    font-family: 'Monument Extended'
+    font-size: 18px
+    text-decoration: none
+    text-align: right
+    float: right
+    color: $black
+    text-transform: uppercase
+  &-linkWrapper
+    width: 100%
+  &-block
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+  &-wrapper
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    align-items: flex-start
+    margin-top: 80px
+  &-work
+    margin-bottom: 45px
+    &:nth-child(2)
+      margin-top: 50px
+      margin-right: 60px
+    &:nth-child(3)
+      margin-top: 100px
+    &__title
+      font-family: 'Monument Extended'
+      margin: 0
+      font-size: 40px
+      color: #141414
+      margin-bottom: 10px
+    &__line
+      height: 0
+      width: 100%
+      border: 1px solid #000000
+      margin-bottom: 10px
+    &__category
+      color: #272727
+      display: block
+      font-size: 20px
+.category
+  color: #272727
+  font-size: 15px
+  margin-top: 5px
+  display: block
+
+.work-block
+  display: -webkit-flex
+  display: -ms-flex
+  display: flex
+  justify-content: space-between
+  align-items: center
+  cursor: pointer
+
+.tabs
+  min-width: 185px
+  .tab
+    display: block
+    font-size: 16px
+    font-weight: 400
+    color: $black
+    margin-bottom: 35px
+    cursor: pointer
+  .active-tab
+    color: $red
+
+.show
+  display: flex
+  animation: show 1.5s
+.hide
+  display: none
+
+.whatWeDo
+  color: #fff
+  background: $black
+  padding-top: 70px
+  .container
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+  .section-title
+    color: #fff
+    min-width: 570px
+    margin-right: 180px
+    margin-bottom: 20px
+  &-text
+    font-size: 16px
+    line-height: 1.9
+    max-width: 360px
+    margin: 0
+    color: #fff
+  &-kind
+    display: block
+    &:first-child
+      margin-top: 20px
+      margin-bottom: 70px
+    &__title
+      font-family: 'Monument Extended'
+      font-size: 24px
+      text-transform: uppercase
+      margin: 0
+      letter-spacing: 2px
+      margin-bottom: 10px
+    &__text
+      display: block
+      font-size: 16px
+      margin-bottom: 8px
+
+.request
+  padding: 80px 0px
+  background: #fff url(../img/request-bg.png) no-repeat center / cover
+  .container
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    justify-content: space-between
+  &-title
+    font-family: 'Monument Extended'
+    font-size: 45px
+    color: $black
+    max-width: 590px
+    margin: 0px
+  &-content
+    max-width: 420px
+  &-text
+    font-size: 16px
+    color: $black
+    margin-top: 15px
+    margin-bottom: 25px
+  &-undertext
+    font-size: 12px
+    color: $black
+    margin: 0
+    margin-top: 20px
+  &-input
+    width: 355px
+    height: 50px
+    border: 1px solid #000
+    padding-left: 18px
+    line-height: 50px
+    color: #000
+    font-size: 16px
+  &-btn
+    width: 50px
+    height: 50px
+    background: $red url(../img/arrow-white.png) no-repeat center
+    border: none
+    cursor: pointer
+  &-form
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+
+.contact
+  background: $black
+  padding-top: 65px
+  padding-bottom: 80px
+  color: #fff
+  .container
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    justify-content: space-between
+  &-title
+    font-size: 60px
+    font-family: 'Monument Extended'
+    color: #fff
+    margin: 0
+    margin-bottom: 40px
+  &-tel
+    margin-bottom: 30px
+    span
+      display: inline-block
+      width: 305px
+      font-size: 18px
+      color: #fff
+    a
+      font-size: 18px
+      text-decoration: none
+      color: #fff
+  &-btn
+    display: block
+    background: $red
+    position: relative
+    color: #fff
+    font-size: 24px
+    text-decoration: none
+    width: 406px
+    height: 72px
+    line-height: 72px
+    padding-left: 40px
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      width: 24px
+      height: 18px
+      background: url(../img/arrow-white.png) no-repeat center
+      right: 30px
+      top: 50%
+      transform: translateY(-50%)
+  &-text
+    font-size: 16px
+    font-weight: 500
+    margin: 0
+    margin-top: 20px
+  &-logo
+    margin-top: 110px
+    float: right
+
+@media (max-width: 1200px)
+  .container
+    width: 960px
+  .main-title
+    font-size: 75px
+    margin-top: 75px
+    margin-left: 95px
+  .main-block
+    bottom: -45px
+    right: 0
+  .main-propsSec
+    bottom: -160px
+  .project-work
+    width: 45%
+  .project-work__img
+    width: 100%
+  .whatWeDo .section-title
+    margin-right: 50px
+  .contact-wrapper
+    width: 60%
+
+@media (max-width: 992px)
+  .container
+    width: 720px
+  .header .container
+    flex-wrap: wrap
+  .header-req
+    position: static
+  .header-req
+    transform: none
+    text-align: center
+    width: 100%
+    margin-top: 30px
+  .nav
+    margin-top: 30px
+    text-align: center
+    width: 100%
+  .header-lang
+    position: absolute
+    top: 0
+    right: 0
+  .wrapper-logo
+    width: 100%
+    text-align: center
+  .header-logo
+    margin: 0
+  .main-title
+    font-size: 65px
+    margin-top: 40px
+    line-height: 1.7
+  .main-block
+    position: static
+    margin-left: 95px
+  .main-props
+    top: 30%
+  .main-propsSec
+    right: 0
+    bottom: 50px
+  .about
+    padding-top: 80px
+  .project-work__title
+    font-size: 25px
+  .tabs
+    width: 160px
+  .section-title
+    font-size: 45px
+  .project-wrapper
+    margin-top: 60px
+  .project-work
+    margin: 0
+    margin-bottom: 30px
+    width: 48%
+    &:nth-child(2),
+    &:nth-child(3)
+      margin: 0
+      margin-bottom: 30px
+  .project
+    padding-bottom: 80px
+  .whatWeDo .section-title
+    margin-right: 40px
+    min-width: auto
+    font-size: 45px
+  .request-title
+    font-size: 27px
+    margin-top: 50px
+  .contact-title
+    font-size: 45px
+  .contact-btn
+    width: 360px
+  .contact-wrapper
+    width: 300px
+  .contact-logo
+    margin-top: 150px
+
+@media (max-width: 768px)
+  .container
+    width: 540px
+  .main .container
+    position: static
+  .main-props, .main-propsSec
+    display: none
+  .main-title
+    margin: 0
+    margin-top: 30px
+    font-size: 50px
+  .main-block
+    margin: 0
+    margin-top: 30px
+  .project-work
+    width: 100%
+  .whatWeDo .container, .contact .container
+    flex-wrap: wrap
+  .whatWeDo-kind
+    display: inline-block
+    vertical-align: top
+  .whatWeDo-text
+    margin-bottom: 40px
+  .whatWeDo-kind:first-child
+    margin: 0
+    margin-right: 40px
+  .contact-wrapper
+    margin-bottom: 30px
+  .contact-wrapper2
+    width: 100%
+  .contact-logo
+    text-align: center
+    float: none
+    margin-top: 90px
+  .request .container
+    flex-wrap: wrap
+  .request-title
+    margin: 0
+  .contact-text, .contact-btn
+    text-align: left
+  .contact-wrapper2
+    text-align: center
+
+@media (max-width: 576px)
+  .container
+    width: 100%
+    padding: 0px 15px
+    margin: 0
+  .nav-link
+    margin-left: 10px
+    &:first-child
+      margin-left: 0
+  .header-lang
+    top: -35px
+  .main-title
+    font-size: 32px
+  .main-text
+    max-width: auto
+    width: 100%
+    text-align: left
+  .main-btn
+    position: static
+    margin-top: 25px
+  .main-block
+    text-align: center
+    margin-top: 25px
+  .section-title, .whatWeDo .section-title, .request-title, .contact-title
+    font-size: 25px
+  .project-wrapper
+    flex-wrap: wrap
+  .tabs
+    width: 100%
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    flex-wrap: wrap
+  .tab
+    margin: 0px 10px
+  .project
+    padding-bottom: 40px
+  .whatWeDo
+    padding-top: 40px
+  .whatWeDo-kind
+    margin-bottom: 30px
+    &:first-child
+      margin-bottom: 30px
+  .request, .contact
+    padding: 40px 0px
+  .request-content
+    width: 100%
+  .request-input
+    width: 250px
+  .contact-btn
+    width: 100%
+    font-size: 18px
