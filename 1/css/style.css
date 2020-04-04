@@ -28,6 +28,9 @@ body {
   width: 1170px;
   margin: 0 auto; }
 
+.logo {
+  text-decoration: none; }
+
 .section-title {
   color: #000;
   font-family: "Monument Extended";
