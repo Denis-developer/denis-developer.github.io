@@ -1,6 +1,7 @@
 $red: #FF3F3F
 $black: #1D1D1D
 
+// ПЛАВНОЕ ПОЯВЛЕНИЕ
 @keyframes show
   0%
     opacity: 0
@@ -17,7 +18,8 @@ $black: #1D1D1D
 
 *
   box-sizing: border-box
-
+html, body
+  overflow-x: hidden
 body
   padding: 0
   margin: 0
@@ -41,6 +43,7 @@ body
 // ШАПКА
 .header
   position: relative
+  z-index: 2
   .container
     display: -webkit-flex
     display: -ms-flex
@@ -49,6 +52,9 @@ body
     justify-content: space-between
   &-logo
     margin-right: 40px
+    fill: #000
+    width: 135px
+    height: 18px
   &-lang
     display: inline-block
     &__link
@@ -66,14 +72,20 @@ body
     font-size: 16px
     text-decoration: none
 
+// МОБИЛЬНОЕ МЕНЬЮ И ГАМБУРГЕР
+@import menu-btn
+@import mobile-menu
+
 .active-lang
   color: $red
+  font-weight: 500
 
 // МЕНЮ
 .nav
   display: inline-block
   &-link
     color: $black
+    font-weight: 400
     font-size: 16px
     margin-left: 44px
     text-decoration: none
@@ -86,7 +98,7 @@ body
   &-title
     font-family: 'Monument Extended'
     font-size: 90px
-    color: #000
+    color: #202020
     margin: 0 auto
     margin-top: 125px
     max-width: 850px
@@ -95,12 +107,12 @@ body
   &-block
     position: absolute
     right: 25px
-    bottom: -65px
+    bottom: -50px
   &-text
     display: inline-block
     font-size: 16px
     text-transform: lowercase
-    line-height: 1.9
+    line-height: 148.5%
     max-width: 264px
     margin: 0
     margin-right: 50px
@@ -122,26 +134,27 @@ body
   &-props
     position: absolute
     left: 0
-    top: 50%
+    top: 42%
     transform: translateY(-50%)
     padding-top: 45px
     &__text
       font-size: 14px
-      font-weight: 500
+      font-weight: 700
       color: $red
-      margin-bottom: 25px
+      margin-bottom: 7px
   &-propsSec
     position: absolute
-    right: 29%
-    bottom: -250px
+    right: 30%
+    bottom: -175px
 
 // О НАС
 .about
   padding-top: 270px
+  padding-bottom: 310px
 
 // НАШИ ПРОЕКТЫ
 .project
-  padding-bottom: 94px
+  padding-bottom: 50px
   &-link
     font-family: 'Monument Extended'
     font-size: 18px
@@ -170,7 +183,7 @@ body
       margin-top: 50px
       margin-right: 60px
     &:nth-child(3)
-      margin-top: 100px
+      margin-top: 60px
     &__title
       font-family: 'Monument Extended'
       margin: 0
@@ -180,12 +193,22 @@ body
     &__line
       height: 0
       width: 100%
-      border: 1px solid #000000
+      border-top: 1px solid #000000
       margin-bottom: 10px
+      margin-top: 11px
     &__category
       color: #272727
       display: block
       font-size: 20px
+    &__property
+      color: #000
+      text-transform: lowercase
+      font-size: 12px
+      text-align: right
+      span
+        margin-right: 15px
+        &:last-child
+          margin-right: 0
 .category
   color: #272727
   font-size: 15px
@@ -199,7 +222,9 @@ body
   justify-content: space-between
   align-items: center
   cursor: pointer
+  margin-bottom: 8px
 
+// ТАБЫ
 .tabs
   min-width: 185px
   .tab
@@ -211,6 +236,7 @@ body
     cursor: pointer
   .active-tab
     color: $red
+    font-weight: 500
 
 .show
   display: flex
@@ -218,6 +244,7 @@ body
 .hide
   display: none
 
+// ЧЕМ МЫ ЗАНИМАЕМСЯ
 .whatWeDo
   color: #fff
   background: $black
@@ -229,12 +256,12 @@ body
   .section-title
     color: #fff
     min-width: 570px
-    margin-right: 180px
+    margin-right: 192px
     margin-bottom: 20px
   &-text
-    font-size: 16px
-    line-height: 1.9
-    max-width: 360px
+    font-size: 20px
+    line-height: 146.69%
+    max-width: 440px
     margin: 0
     color: #fff
   &-kind
@@ -261,25 +288,27 @@ body
     display: -webkit-flex
     display: -ms-flex
     display: flex
-    justify-content: space-between
   &-title
     font-family: 'Monument Extended'
     font-size: 45px
     color: $black
     max-width: 590px
     margin: 0px
+    margin-right: 113px
+    line-height: 64px
   &-content
     max-width: 420px
   &-text
     font-size: 16px
     color: $black
-    margin-top: 15px
+    margin-top: 21px
     margin-bottom: 25px
   &-undertext
     font-size: 12px
     color: $black
     margin: 0
     margin-top: 20px
+    max-width: 400px
   &-input
     width: 355px
     height: 50px
@@ -302,30 +331,38 @@ body
 .contact
   background: $black
   padding-top: 65px
-  padding-bottom: 80px
+  padding-bottom: 75px
   color: #fff
-  .container
+  &-wrapper, &-wrapper2
     display: -webkit-flex
     display: -ms-flex
     display: flex
     justify-content: space-between
+    align-items: flex-start
+    width: 100%
+  &-wrapper2
+    margin-top: -10px
+    align-items: flex-end
   &-title
     font-size: 60px
     font-family: 'Monument Extended'
     color: #fff
     margin: 0
-    margin-bottom: 40px
   &-tel
     margin-bottom: 30px
+    &:last-child
+      margin-bottom: 0
     span
       display: inline-block
       width: 305px
       font-size: 18px
       color: #fff
+      font-weight: 400
     a
       font-size: 18px
       text-decoration: none
       color: #fff
+      font-weight: 400
   &-btn
     display: block
     background: $red
@@ -351,10 +388,43 @@ body
     font-size: 16px
     font-weight: 500
     margin: 0
-    margin-top: 20px
+    margin-top: 18px
   &-logo
-    margin-top: 110px
-    float: right
+    margin-right: 148px
+    color: #fff
+    text-decoration: none
+    font-size: 18px
+    font-weight: 400
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    align-items: flex-end
+    img
+      margin-right: 17px
+
+// ПОДВАЛ
+.footer
+  height: 43px
+  .container
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &-text
+    color: $black
+    font-size: 12px
+    font-weight: 300
+  &-logo
+    display: block
+    padding: 0
+    margin: 0
+    text-decoration: none
+    position: relative
+    top: 2px
+    fill: #000
+    width: 135px
+    height: 18px
 
 @media (max-width: 1200px)
   .container
@@ -368,14 +438,16 @@ body
     right: 0
   .main-propsSec
     bottom: -160px
+  .request .container, .contact .container
+    justify-content: space-between
+  .request-title
+    margin: 0
   .project-work
     width: 45%
   .project-work__img
     width: 100%
   .whatWeDo .section-title
     margin-right: 50px
-  .contact-wrapper
-    width: 60%
 
 @media (max-width: 992px)
   .container
@@ -440,15 +512,20 @@ body
     font-size: 45px
   .request-title
     font-size: 27px
-    margin-top: 50px
+  .request .container
+    align-items: center
   .contact-title
     font-size: 45px
   .contact-btn
     width: 360px
-  .contact-wrapper
-    width: 300px
+  .contact-wrapper2
+    margin-top: 30px
+  .contact-tel span
+    display: block
+    width: auto
+    margin-bottom: 8px
   .contact-logo
-    margin-top: 150px
+    margin-right: 126px
 
 @media (max-width: 768px)
   .container
@@ -476,72 +553,177 @@ body
   .whatWeDo-kind:first-child
     margin: 0
     margin-right: 40px
-  .contact-wrapper
-    margin-bottom: 30px
-  .contact-wrapper2
-    width: 100%
-  .contact-logo
-    text-align: center
-    float: none
-    margin-top: 90px
   .request .container
     flex-wrap: wrap
   .request-title
     margin: 0
-  .contact-text, .contact-btn
-    text-align: left
-  .contact-wrapper2
-    text-align: center
+  .contact-wrapper, .contact-wrapper2
+    flex-wrap: wrap
+  .contact-title
+    width: 100%
+    margin-bottom: 17px
+  .contact-tel
+    margin-bottom: 34px
+  .contact-logo
+    margin-top: 37px
+  .footer
+    height: auto
+    padding-bottom: 15px
+    .container
+      flex-wrap: wrap
+      justify-content: center
+      text-align: center
+  .footer-logo
+    position: static
 
 @media (max-width: 576px)
   .container
     width: 100%
     padding: 0px 15px
     margin: 0
-  .nav-link
-    margin-left: 10px
-    &:first-child
-      margin-left: 0
+  .menu-btn
+    display: block
   .header-lang
-    top: -35px
+    right: inherit
+    top: 50%
+    left: 56%
+    transform: translate(-50%, -50%)
+    &__link
+      font-size: 12px
+      margin-right: 5px
+  .header-logo, .footer-logo
+    float: left
+    width: 105px
+    height: 13.87px
+  .header .container
+    flex-wrap: nowrap
+  .header-req, .nav, .footer-logo
+    display: none
+  .main
+    padding-top: 35px
+    padding-bottom: 0
+  .main .container
+    position: relative
   .main-title
-    font-size: 32px
+    font-size: 30px
+    margin-top: 60px
   .main-text
-    max-width: auto
+    max-width: none
+    display: block
     width: 100%
     text-align: left
   .main-btn
     position: static
     margin-top: 25px
   .main-block
-    text-align: center
-    margin-top: 25px
+    text-align: right
+    margin-top: 10px
+  .main-props, .main-propsSec
+    display: block
+  .main-propsSec
+    transform: none
+    top: inherit
+    bottom: 25px
+    left: 16px
+  .main-props
+    transform: none
+    top: inherit
+    left: inherit
+    bottom: -120px
+    right: 66px
+  .main-props__text
+    margin: 10px 0px
   .section-title, .whatWeDo .section-title, .request-title, .contact-title
-    font-size: 25px
+    font-size: 26px
   .project-wrapper
-    flex-wrap: wrap
+    display: block
+  .tabs::-webkit-scrollbar
+    width: 0
   .tabs
+    -ms-overflow-style: none
+  .tabs
+    overflow: -moz-scrollbars-none
+  .tabs
+    margin-bottom: 35px
+    display: block
     width: 100%
-    display: -webkit-flex
-    display: -ms-flex
-    display: flex
-    flex-wrap: wrap
-  .tab
-    margin: 0px 10px
+    overflow: auto
+    &-wrapper
+      width: 580px
+  .tabs .tab
+    margin: 0
+    margin-right: 15px
+    display: inline-block
   .project
-    padding-bottom: 40px
+    padding: 20px 0px
+    &-wrapper
+      margin-top: 24px
+    &-work
+      margin-bottom: 28px
+      &:last-child
+        margin-bottom: 35px
+    &-link
+      float: none
+      text-align: left
+      font-size: 16px
   .whatWeDo
-    padding-top: 40px
-  .whatWeDo-kind
-    margin-bottom: 30px
-    &:first-child
+    padding: 45px 0px
+    .section-title
+      margin: 0
+      margin-bottom: 10px
+    &-text
       margin-bottom: 30px
-  .request, .contact
-    padding: 40px 0px
-  .request-content
-    width: 100%
-  .request-input
-    width: 250px
-  .contact-btn
-    width: 100%
-    font-size: 18px
+      font-size: 16px
+      line-height: 25px
+    &-kind
+      margin-bottom: 30px
+      &__title
+        font-size: 20px
+      &:first-child
+        margin: 0
+        margin-bottom: 30px
+      &:last-child
+        margin-bottom: 0
+  .request
+    padding-top: 35px
+    padding-bottom: 200px
+    background-position: left -20px bottom
+    background-size: 1420px
+    &-input
+      width: 100%
+    &-content
+      width: auto
+      max-width: none
+    &-title
+      line-height: 39px
+  .contact
+    padding-top: 50px
+    padding-bottom: 35px
+    &-tel
+      margin-bottom: 30px
+      span
+        font-size: 16px
+        font-weight: 500
+      a
+        font-size: 16px
+    &-text
+      font-size: 12px
+      margin-top: 8px
+    &-logo
+      font-size: 16px
+      align-items: center
+      margin-right: 0
+    &-btn
+      height: 53px
+      line-height: 53px
+      padding-left: 20px
+      width: 100%
+      font-size: 16px
+      &::before
+        right: 17px
+  .footer
+    padding-top: 15px
+    padding-bottom: 20px
+    &-text
+      line-height: 15px
+      margin: 0

@@ -1,3 +1,4 @@
+// ТАБЫ
   let tab = document.getElementsByClassName('tab'),
 		tabContent = document.getElementsByClassName('project-block'),
 		info = document.getElementsByClassName('tabs')[0];
@@ -36,3 +37,19 @@
 			}
 		}
 	})
+
+  // БУРГЕР МЕНЮ
+  let menuBtn = document.querySelector('.menu-btn'),
+      mobileMenu = document.querySelector('.mobile-menu'),
+      headerLang = document.getElementsByClassName('header-lang__link'),
+      headerLogo = document.querySelector('.header-logo');
+
+  menuBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    this.classList.toggle('menu-btn_active');
+    mobileMenu.classList.toggle('menu-active');
+    headerLogo.classList.toggle('fillWhite');
+    for (var i = 0; i < headerLang.length; i++) {
+      headerLang[i].classList.toggle('colorWhite');
+    }
+  });

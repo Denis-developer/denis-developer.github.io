@@ -1,0 +1,45 @@
+.menu-btn
+  display: none
+  width: 20px
+  height: 20px
+  border-radius: 50%
+  position: relative
+  top: -2px
+  z-index: 3
+  span
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-left: -10px
+    &::before, &::after
+      position: absolute
+      top: 50%
+      margin-top: -1px
+      left: 50%
+      margin-left: -10px
+      width: 37px
+      height: 4px
+      background-color: $black
+    &::before, &::after
+      content: ''
+      display: block
+      transition: 0.2s
+    &::before
+      transform: translateY(-4px)
+
+.menu-btn_active span
+  height: 0
+
+.menu-btn span::after
+  transform: translateY(4px)
+
+.menu-btn_active span
+  &:before
+    transform: rotate(-45deg)
+    transform-origin: center
+    background-color: #fff
+
+  &:after
+    transform: rotate(45deg)
+    transform-origin: center
+    background-color: #fff
