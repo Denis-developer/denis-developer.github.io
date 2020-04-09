@@ -27,6 +27,9 @@ body {
   font-family: "Roboto Mono";
   font-weight: 400; }
 
+input, input:focus, input:hover {
+  outline: none; }
+
 .container {
   width: 1170px;
   margin: 0 auto; }
@@ -80,9 +83,8 @@ body {
 
 .menu-btn {
   display: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  width: 45px;
+  height: 30px;
   position: relative;
   top: -2px;
   z-index: 3; }
