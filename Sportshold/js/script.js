@@ -42,18 +42,31 @@ window.addEventListener('DOMContentLoaded', function() {
     	});
     };
 
+    function offset(el) {
+      var rect = el.getBoundingClientRect(),
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+  }
+
     let menuBtn = document.querySelector('.menu-btn'),
         mobileMenu = document.querySelector('.mobile-menu'),
-        mobileMenuLinks = document.getElementsByClassName('mobile-menu__link');
+        mobileMenuLinks = document.getElementsByClassName('mobile-menu__link'),
+        mobileMenuOffset = offset(document.querySelector('.header-top'));
 
     menuBtn.addEventListener('click', function(event) {
       event.preventDefault();
       this.classList.toggle('menu-btn_active');
       if(this.classList.contains('menu-btn_active')){
         mobileMenu.style.transform = 'scale(1)';
+        document.getElementsByTagName('body')[0].style.overflow = "hidden"
+        document.getElementsByTagName('html')[0].style.overflow = "hidden"
+        $('body,html').animate({scrollTop: 50}, 200)
       }
       else{
         mobileMenu.style.transform = 'scale(0)';
+        document.getElementsByTagName('body')[0].style.overflow = "scroll"
+        document.getElementsByTagName('html')[0].style.overflow = "scroll"
       }
     });
 
@@ -65,12 +78,26 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     // 3D CARD EFFECT
-    var card = $(".product-block");
+    let goods = document.querySelector('.goods'),
+        goodsBlock = document.getElementsByClassName('goods-block'),
+        product = document.querySelector('.product'),
+        productBlock = document.getElementsByClassName('product-block');
 
-    $('.product').on("mousemove",function(e) {
-      var ax = -($('.product').innerWidth()/5- e.pageX)/20;
-      var ay = ($('.product').innerHeight()/5- e.pageY)/60;
-      card.attr("style", "transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-webkit-transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-moz-transform: rotateY("+ax+"deg) rotateX("+ay+"deg)");
+    goods.addEventListener('mousemove', function(e) {
+      let xAxis = (window.innerWidth / 2 - e.pageX) / 30;
+      let yAxis = ((window.innerHeight / 2 - e.pageY) / 150);
+      for (var i = 0; i < goodsBlock.length; i++) {
+        goodsBlock[i].style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+      }
     });
+    product.addEventListener('mousemove', function(e) {
+      let xAxis = (window.innerWidth / 2 - e.pageX) / 30;
+      let yAxis = ((window.innerHeight / 2 - e.pageY) / 10)+150;
+      for (var i = 0; i < productBlock.length; i++) {
+        productBlock[i].style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+      }
+    });
+
+    new WOW().init();
 
 });

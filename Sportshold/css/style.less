@@ -152,6 +152,7 @@ html, body{
   &-bottom{
     height: 76px;
     background-color: #623232;
+    overflow-y: hidden;
     .container{
       display: -webkit-flex;
       display: -ms-flex;
@@ -261,34 +262,45 @@ html, body{
 
 .goods{
   padding: 50px 0px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
   .container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
   }
+  &-content{
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+  }
   &-block{
     text-align: center;
     font-size: 30px;
     position: relative;
+    transform-style: preserve-3d;
     &__overtitle{
       font-family: 'Trueno Lt';
       position: relative;
       z-index: 2;
+      transform: translateZ(60px);
     }
     &__title{
       font-family: 'Trueno Bd';
       position: relative;
       text-transform: uppercase;
       z-index: 2;
+      transform: translateZ(80px);
     }
     &__btn{
       position: relative;
-      z-index: 2;
+      z-index: 22;
       text-transform: uppercase;
       font-family: 'Trueno Bd';
       text-align: center;
       border: none;
       cursor: pointer;
+      transform: translateZ(50px);
     }
     &_1{
       height: 540px;
@@ -296,9 +308,11 @@ html, body{
       grid-column-end: 3;
       grid-row-start: 1;
       grid-row-end: 3;
-      padding-top: 44px;
-      padding-bottom: 50px;
-      padding-left: 15px;
+      .goods-content{
+        padding-top: 44px;
+        padding-bottom: 50px;
+        padding-left: 15px;
+      }
       .goods-block__overtitle{
         color: #fff;
       }
@@ -330,7 +344,7 @@ html, body{
         position: absolute;
         bottom: 50px;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) translateZ(50px);
       }
     }
     &_2{

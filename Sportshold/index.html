@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sportshold</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -48,7 +49,7 @@
     <!-- /.header-top -->
     <div class="header-bottom">
       <div class="container">
-        <a href="index.html" class="header-logo">
+        <a href="index.html" class="header-logo wow zoomInDown" data-wow-duration="1s" data-wow-delay="1s">
           <img src="img/logo.svg" alt="Sportshold">
         </a>
         <nav class="header-nav">
@@ -72,7 +73,7 @@
 
   <main class="main">
     <div class="container">
-      <img src="img/main/sneaker.png" alt="" class="main-sneaker">
+      <img src="img/main/sneaker.png" alt="" class="main-sneaker wow slideInLeft">
       <div class="main-content">
         <h2 class="main-overtitle">From $80.00</h2>
         <h1 class="main-title">Nike Air Max</h1>
@@ -85,27 +86,29 @@
   </main>
   <!-- /.main -->
 
-  <div class="goods">
+  <div class="goods" id="goods">
     <div class="container">
-      <div class="goods-block goods-block_1">
-        <img src="img/ad/1/img-1.png" alt="" class="goods-block__img">
-        <img src="img/ad/1/logo.svg" alt="" class="goods-block__logo">
-        <p class="goods-block__overtitle">Discover the new</p>
-        <h4 class="goods-block__title">Nike Kyrie 3</h4>
-        <button class="goods-block__btn flare">View collection</button>
+      <div class="goods-block goods-block_1 wow fadeInLeft">
+        <div class="goods-content">
+          <img src="img/ad/1/img-1.png" alt="" class="goods-block__img">
+          <img src="img/ad/1/logo.svg" alt="" class="goods-block__logo">
+          <p class="goods-block__overtitle">Discover the new</p>
+          <h4 class="goods-block__title">Nike Kyrie 3</h4>
+          <button class="goods-block__btn flare">View collection</button>
+        </div>
       </div>
-      <div class="goods-block goods-block_2">
+      <div class="goods-block goods-block_2 wow fadeInRight" data-wow-delay="0.5s">
         <img src="img/ad/2/img-1.png" alt="" class="goods-block__img">
         <p class="goods-block__overtitle">Check out the</p>
         <h4 class="goods-block__title">New Arrivals</h4>
         <button class="goods-block__btn flare">Discover</button>
       </div>
-      <div class="goods-block goods-block_3">
+      <div class="goods-block goods-block_3 wow fadeInDown" data-wow-delay="1s">
         <img src="img/ad/3/img-1.jpg" alt="" class="goods-block__img">
         <p class="goods-block__overtitle">Best for</p>
         <h4 class="goods-block__title">Athletes</h4>
       </div>
-      <div class="goods-block goods-block_4">
+      <div class="goods-block goods-block_4 wow fadeInDown" data-wow-delay="1.2s">
         <img src="img/ad/4/img-1.png" alt="" class="goods-block__img">
         <p class="goods-block__overtitle">Fell</p>
         <h4 class="goods-block__title">Premium</h4>
@@ -126,7 +129,7 @@
         <!-- /.tab -->
       </div>
       <!-- /.tabs -->
-      <div class="product-wrapper tab-content">
+      <div class="product-wrapper tab-content wow fadeIn">
         <div class="product-block">
           <div class="product-price">
             $45.00
@@ -222,7 +225,7 @@
           </div>
         </div>
       </div>
-      <div class="product-wrapper tab-content">
+      <div class="product-wrapper tab-content wow fadeIn">
         <div class="product-block">
           <div class="product-price">
             $60.00
@@ -294,7 +297,7 @@
           </div>
         </div>
       </div>
-      <div class="product-wrapper tab-content">
+      <div class="product-wrapper tab-content wow fadeIn">
         <div class="product-block">
           <div class="product-price">
             $45.00
@@ -373,12 +376,12 @@
 
   <div class="sponsors">
     <div class="container">
-      <img src="img/sponsors/adidas.png" alt="" class="sponsors-img">
-      <img src="img/sponsors/nike.png" alt="" class="sponsors-img">
-      <img src="img/sponsors/puma.png" alt="" class="sponsors-img">
-      <img src="img/sponsors/asics.png" alt="" class="sponsors-img">
-      <img src="img/sponsors/nb.png" alt="" class="sponsors-img">
-      <img src="img/sponsors/fila.png" alt="" class="sponsors-img">
+      <img src="img/sponsors/adidas.png" alt="" class="sponsors-img wow fadeInUp">
+      <img src="img/sponsors/nike.png" alt="" class="sponsors-img wow fadeInUp" data-wow-delay="0.2s">
+      <img src="img/sponsors/puma.png" alt="" class="sponsors-img wow fadeInUp"  data-wow-delay="0.4s">
+      <img src="img/sponsors/asics.png" alt="" class="sponsors-img wow fadeInUp"  data-wow-delay="0.6s">
+      <img src="img/sponsors/nb.png" alt="" class="sponsors-img wow fadeInUp"  data-wow-delay="0.8s">
+      <img src="img/sponsors/fila.png" alt="" class="sponsors-img wow fadeInUp"  data-wow-delay="1s">
     </div>
     <!-- /.container -->
   </div>
@@ -388,7 +391,7 @@
     <div class="container">
       <h2 class="news-title">Latest news</h2>
       <div class="news-wrapper">
-        <div class="news-post">
+        <div class="news-post wow fadeInRight">
           <div class="news-content">
             <img src="img/news/post-1.png" alt="" class="news-post__img">
           <div class="news-blockContent">
@@ -407,7 +410,7 @@
           <!-- /back -->
         </div>
         <!-- /.news-post -->
-        <div class="news-post">
+        <div class="news-post wow fadeInRight" data-wow-delay="0.5s">
           <div class="news-content">
             <img src="img/news/post-2.png" alt="" class="news-post__img">
           <div class="news-blockContent">
@@ -426,7 +429,7 @@
           <!-- /back -->
         </div>
         <!-- /.news-post -->
-        <div class="news-post">
+        <div class="news-post wow fadeInRight" data-wow-delay="1s">
           <div class="news-content">
             <img src="img/news/post-3.png" alt="" class="news-post__img">
           <div class="news-blockContent">
@@ -454,14 +457,14 @@
 
   <section class="support">
     <div class="container">
-      <div class="support-content">
+      <div class="support-content wow fadeInLeft">
         <img src="img/support/envelop.svg" alt="" class="support-icon">
         <div>
           <h2 class="support-title">Looking for help?</h2>
           <p class="support-text">Have any questions or need help with order? Let us know!</p>
         </div>
       </div>
-      <button class="support-btn flare">Make an inquiry</button>
+      <button class="support-btn flare wow fadeInRight">Make an inquiry</button>
     </div>
     <!-- /.container -->
   </section>
@@ -470,37 +473,37 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-top">
-        <div class="footer-item">
+        <div class="footer-item wow fadeInUp">
           <img src="img/footer/footer-top/icon-1.svg" alt="" class="footer-item__icon">
           <p class="footer-item__text">Free Shipping in Europe</p>
           <!-- /.footer-item__text -->
         </div>
         <!-- /.footer-item -->
-        <div class="footer-item">
+        <div class="footer-item wow fadeInUp" data-wow-delay="0.2s">
           <img src="img/footer/footer-top/icon-2.svg" alt="" class="footer-item__icon">
           <p class="footer-item__text">Money Back Guarantee</p>
           <!-- /.footer-item__text -->
         </div>
         <!-- /.footer-item -->
-        <div class="footer-item">
+        <div class="footer-item wow fadeInUp" data-wow-delay="0.4s">
           <img src="img/footer/footer-top/icon-3.svg" alt="" class="footer-item__icon">
           <p class="footer-item__text">24/7 Customer Support</p>
           <!-- /.footer-item__text -->
         </div>
         <!-- /.footer-item -->
-        <div class="footer-item">
+        <div class="footer-item wow fadeInUp" data-wow-delay="0.6s">
           <img src="img/footer/footer-top/icon-4.svg" alt="" class="footer-item__icon">
           <p class="footer-item__text">Lowest Prices Guaranteed</p>
           <!-- /.footer-item__text -->
         </div>
         <!-- /.footer-item -->
-        <div class="footer-item">
+        <div class="footer-item wow fadeInUp" data-wow-delay="0.8s">
           <img src="img/footer/footer-top/icon-5.svg" alt="" class="footer-item__icon">
           <p class="footer-item__text">Exclusive Items for Sportshold</p>
           <!-- /.footer-item__text -->
         </div>
         <!-- /.footer-item -->
-        <div class="footer-item">
+        <div class="footer-item wow fadeInUp" data-wow-delay="1s">
           <img src="img/footer/footer-top/icon-6.svg" alt="" class="footer-item__icon">
           <p class="footer-item__text">5-Day Delivery in Europe</p>
           <!-- /.footer-item__text -->
@@ -509,7 +512,7 @@
       </div>
       <!-- /.footer-top -->
       <div class="footer-middle">
-        <div class="footer-contact">
+        <div class="footer-contact wow fadeInLeft">
           <div class="footer-contactBlock">
             <div class="footer-blockIcon">
               <img src="img/footer/footer-middle/tel-icon.svg" alt="">
@@ -542,7 +545,7 @@
           <!-- /.footer-contactBlock -->
         </div>
         <!-- /.footer-contact -->
-        <ul class="footer-list">
+        <ul class="footer-list wow fadeInLeft">
           <li class="footer-list__title">Navigation</li>
           <li class="footer-list__item"><a href="#" class="footer-list__link">Home</a></li>
           <li class="footer-list__item"><a href="#" class="footer-list__link">About Us</a></li>
@@ -550,7 +553,7 @@
           <li class="footer-list__item"><a href="#" class="footer-list__link">Reviews</a></li>
           <li class="footer-list__item"><a href="#" class="footer-list__link">Brands</a></li>
         </ul>
-        <ul class="footer-list">
+        <ul class="footer-list wow fadeInLeft">
           <li class="footer-list__title">Categories</li>
           <li class="footer-list__item"><a href="#" class="footer-list__link">Men</a></li>
           <li class="footer-list__item"><a href="#" class="footer-list__link">Women</a></li>
@@ -558,14 +561,14 @@
           <li class="footer-list__item"><a href="#" class="footer-list__link">Baby</a></li>
           <li class="footer-list__item"><a href="#" class="footer-list__link">Accessories</a></li>
         </ul>
-        <ul class="footer-list">
+        <ul class="footer-list wow fadeInLeft">
           <li class="footer-list__title">Sales</li>
           <li class="footer-list__item"><a href="#" class="footer-list__link">New Arrivals</a></li>
           <li class="footer-list__item"><a href="#" class="footer-list__link">Most Popular</a></li>
           <li class="footer-list__item"><a href="#" class="footer-list__link">Top Picks</a></li>
           <li class="footer-list__item"><a href="#" class="footer-list__link">Outlet</a></li>
         </ul>
-        <ul class="footer-list">
+        <ul class="footer-list wow fadeInLeft">
           <li class="footer-list__title">Support</li>
           <li class="footer-list__item"><a href="#" class="footer-list__link">Shipping &amp; Delivery</a></li>
           <li class="footer-list__item"><a href="#" class="footer-list__link">Return Policy</a></li>
@@ -576,11 +579,11 @@
       </div>
       <!-- /.footer-middle -->
       <div class="footer-bottom">
-        <a href="index.html" class="footer-logo">
+        <a href="index.html" class="footer-logo wow fadeInLeft">
           <img src="img/logo.svg" alt="">
         </a>
-        <p class="footer-bottom__text">&copy; 2017 Sportshold. All rights reserved.</p>
-        <div class="footer-soc">
+        <p class="footer-bottom__text wow fadeInUp">&copy; 2017 Sportshold. All rights reserved.</p>
+        <div class="footer-soc wow fadeInRight">
           <a href="#" class="footer-soc__link">
             <img src="img/footer/footer-bottom/twitter.svg" alt="twitter">
           </a>
@@ -602,6 +605,7 @@
   <!-- /.footer -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
