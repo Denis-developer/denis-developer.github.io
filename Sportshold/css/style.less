@@ -279,6 +279,7 @@ html, body{
     font-size: 30px;
     position: relative;
     transform-style: preserve-3d;
+    transition: transform 0.1s;
     &__overtitle{
       font-family: 'Trueno Lt';
       position: relative;
@@ -449,6 +450,7 @@ html, body{
     transform: translateZ(0);
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     transform-origin: center center;
+    transition: transform 0.1s;
   }
   &-discount{
     position: absolute;
@@ -942,6 +944,9 @@ html, body{
   .footer-middle{
     grid-column-gap: 50px;
   }
+  .goods-block, .product-block{
+    transition: transform 0.3s;
+  }
   .goods-block_1{
     height: 450px;
     width: 450px;
@@ -1088,7 +1093,7 @@ html, body{
     }
   }
   .main-sneaker{
-    left: -100px;
+    left: -145px;
   }
   .main-content{
     width: 100%;
@@ -1289,5 +1294,15 @@ html, body{
   }
   .goods-block_3{
     padding-top: 150px;
+  }
+}
+
+@media(min-width: 1800px){
+  .main .container{
+    position: static;
+    .main-sneaker{
+      top: 60px;
+      left: -100px
+    }
   }
 }
