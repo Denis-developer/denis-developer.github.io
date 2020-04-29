@@ -648,6 +648,8 @@ body {
   cursor: pointer;
   z-index: 10;
   position: relative;
+  -webkit-box-shadow: 0px 0px 15px 2px #ffffff;
+          box-shadow: 0px 0px 15px 2px #ffffff;
 }
 .news-blockContent {
   position: absolute;
@@ -1065,7 +1067,7 @@ body {
   }
   .goods-block_2 {
     width: 450px;
-    padding-top: 40px;
+    padding-top: 20px;
   }
   .goods-block_2 .goods-block__img {
     width: 173px;
@@ -1370,7 +1372,7 @@ body {
     padding-top: 25px;
   }
   .goods {
-    padding-bottom: 10px;
+    padding-bottom: 0px;
   }
   .footer-bottom__text {
     font-size: 15px;
@@ -1381,8 +1383,8 @@ body {
   .goods-block {
     margin: 0 auto;
     margin-bottom: 40px;
-    width: 260px;
-    height: 260px;
+    width: 290px;
+    height: 290px;
   }
   .goods-block__logo {
     width: 40px;

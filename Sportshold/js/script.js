@@ -83,6 +83,8 @@ window.addEventListener('DOMContentLoaded', function() {
         product = document.querySelector('.product'),
         productBlock = document.getElementsByClassName('product-block');
 
+    const max576 = window.matchMedia( "(max-width: 576px)" );
+
     goods.addEventListener('mousemove', function(e) {
       let xAxis = (window.innerWidth / 2 - e.pageX) / 30;
       let yAxis = ((window.innerHeight / 2 - e.pageY) / 150);
@@ -90,11 +92,25 @@ window.addEventListener('DOMContentLoaded', function() {
         goodsBlock[i].style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
       }
     });
-    product.addEventListener('mousemove', function(e) {
-      let xAxis = (window.innerWidth / 2 - e.pageX) / 30;
-      let yAxis = ((window.innerHeight / 2 - e.pageY) / 10)+150;
-      for (var i = 0; i < productBlock.length; i++) {
-        productBlock[i].style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+    if(!max576.matches){
+      product.addEventListener('mousemove', function(e) {
+        let xAxis = (window.innerWidth / 5 - e.pageX) / 30;
+        let yAxis = ((window.innerHeight / 5 - e.pageY) / 30)+70;
+        for (var i = 0; i < productBlock.length; i++) {
+          productBlock[i].style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        }
+      });
+    }
+
+    window.addEventListener('resize', function (e) {
+      if(!max576.matches){
+        product.addEventListener('mousemove', function(e) {
+          let xAxis = (window.innerWidth / 5 - e.pageX) / 30;
+          let yAxis = ((window.innerHeight / 5 - e.pageY) / 30)+70;
+          for (var i = 0; i < productBlock.length; i++) {
+            productBlock[i].style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+          }
+        });
       }
     });
 
