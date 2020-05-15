@@ -566,6 +566,7 @@ html, body{
     backface-visibility: hidden;
     width: 100%;
     height: 100%;
+    transition: all 1s;
   }
   &-content{
     color: #fff;
@@ -604,10 +605,13 @@ html, body{
     height: 350px;
     width: 350px;
     perspective: 1000px;
-    transform-style: preserve-3d;
-    transition: all 1s;
     &:hover{
-      transform: rotateY(180deg);
+      .news-content{
+        transform: rotateY(180deg);
+      }
+      .news-back{
+        transform: rotateY(360deg);
+      }
     }
     &__img{
       position: absolute;
