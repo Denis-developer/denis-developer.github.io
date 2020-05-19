@@ -9,12 +9,12 @@ window.addEventListener('DOMContentLoaded', function() {
       this.classList.toggle('menu-btn_active');
       mobileMenu.classList.toggle('df');
       if(this.classList.contains('menu-btn_active')){
-        document.getElementsByTagName('body')[0].style.overflow = "hidden";
-        document.getElementsByTagName('html')[0].style.overflow = "hidden";
+        document.getElementsByTagName('body')[0].style.overflowY = "hidden";
+        document.getElementsByTagName('html')[0].style.overflowY = "hidden";
       }
       else{
-        document.getElementsByTagName('body')[0].style.overflow = "scroll";
-        document.getElementsByTagName('html')[0].style.overflow = "scroll";
+        document.getElementsByTagName('body')[0].style.overflowY = "scroll";
+        document.getElementsByTagName('html')[0].style.overflowY = "scroll";
       }
     });
 
@@ -22,8 +22,8 @@ window.addEventListener('DOMContentLoaded', function() {
       mobileMenuLinks[i].addEventListener('click', function(event) {
         menuBtn.classList.toggle('menu-btn_active');
         mobileMenu.classList.toggle('df');
-        document.getElementsByTagName('body')[0].style.overflow = "scroll";
-        document.getElementsByTagName('html')[0].style.overflow = "scroll";
+        document.getElementsByTagName('body')[0].style.overflowY = "scroll";
+        document.getElementsByTagName('html')[0].style.overflowY = "scroll";
       });
     }
 
