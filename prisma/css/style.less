@@ -763,7 +763,7 @@ body{
   }
   .show{
     padding-bottom: 195px;
-    height: 675px;
+    height: auto;
   }
   .show::before{
     width: 700px;
@@ -780,6 +780,9 @@ body{
   .show .container{
     width: 100%;
     padding: 0;
+  }
+  .show-title{
+    margin-bottom: 80px;
   }
   .show-wrapper{
     overflow: auto;
@@ -861,17 +864,18 @@ body{
   }
 }
 
-@media (max-width: 376px){
+@media (max-width: 425px){
   .about{
     padding-top: 190px;
   }
   .about-img{
     background: url(../img/about/about-img_mobile.png) no-repeat center;
-    background-size: auto;
+    background-size: 100%;
+    width: 100%;
     position: static;
-    height: 416px;
+    height: 450px;
     margin-top: 80px;
-    margin-bottom: 170px;
+    margin-bottom: 150px;
   }
   .about-background_mobile{
     display: block;
@@ -880,7 +884,8 @@ body{
     left: 0;
     right: 0;
     height: 4777px;
-    width: 375px;
+    width: 100%;
+    min-width: 375px;
     top: 20px;
   }
   .about-block__title{
