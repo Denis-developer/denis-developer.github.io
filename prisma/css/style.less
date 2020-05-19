@@ -616,6 +616,15 @@ body{
   .container{
     width: 720px;
   }
+  .header{
+    position: static !important;
+  }
+  .main .container{
+    padding-top: 100px;
+  }
+  .main{
+    height: 600px;
+  }
   .header-nav, .header-btn, .about-background{
     display: none;
   }
@@ -631,8 +640,8 @@ body{
   }
   .about-img{
     margin-bottom: 100px;
-    background-size: 140%;
-    height: 400px;
+    background-size: 122%;
+    height: 430px;
   }
   .about-block{
     margin-bottom: 80px;
@@ -695,7 +704,6 @@ body{
   }
   .header{
     height: 56px;
-    position: static !important;
     padding-top: 20px;
   }
   .header-logo{
@@ -730,40 +738,7 @@ body{
     font-size: 16px;
     margin-top: 20px;
   }
-  .about-img{
-    background: url(../img/about/about-img_mobile.png) no-repeat center;
-    background-size: auto;
-    position: static;
-    height: 416px;
-    margin-top: 80px;
-    margin-bottom: 140px;
-  }
-  .about-background_mobile{
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    top: 20px;
-  }
-  .about-block__title{
-    font-size: 36px;
-  }
-  .about-block__text{
-    font-size: 16px;
-    line-height: 27px;
-  }
-  .about-block__title::before{
-    top: -90px;
-    left: -90px;
-  }
-  .about-block{
-    margin-bottom: 540px;
-    &:last-child{
-      margin-bottom: 430px;
-    }
-  }
+
   .show{
     padding-bottom: 195px;
     height: 675px;
@@ -856,5 +831,62 @@ body{
   }
   .footer .container{
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 376px){
+  .about-img{
+    background: url(../img/about/about-img_mobile.png) no-repeat center;
+    background-size: auto;
+    position: static;
+    height: 416px;
+    margin-top: 80px;
+    margin-bottom: 140px;
+  }
+  .about-background_mobile{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4777px;
+    width: 375px;
+    top: 20px;
+  }
+  .about-block__title{
+    font-size: 36px;
+  }
+  .about-block__text{
+    font-size: 16px;
+    line-height: 27px;
+  }
+  .about-block__title::before{
+    top: -90px;
+    left: -90px;
+  }
+  .about-block{
+    margin-bottom: 540px;
+    &:last-child{
+      margin-bottom: 430px;
+    }
+  }
+}
+
+@media (max-width: 360px){
+  .mobile-menu__btn{
+    width: 300px;
+  }
+}
+
+@media (max-height: 501px){
+  .mobile-menu{
+    align-items: flex-start;
+    padding-top: 30px;
+    &__link{
+      font-size: 21px;
+    }
+  }
+  .mobile-menu__btn{
+    bottom: 15px;
   }
 }
