@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <title>Golden Key</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/ion.rangeSlider.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="main">
+    <header class="header">
+      <div class="container">
+        <div class="header__top">
+          <a href="index.html">
+            <img src="img/main/logo.png" alt="Golden Key" class="header__logo">
+          </a>
+          <div class="header__contact">
+            <a href="#" class="header__icon">
+              <svg width="23px" height="22px">
+                <path fill-rule="evenodd" d="M18.110,21.814 C13.841,21.816 9.572,21.816 5.303,21.814 C2.740,21.812 0.931,19.998 0.930,17.431 C0.928,14.059 0.929,10.687 0.929,7.272 C1.023,7.259 1.076,7.246 1.129,7.246 C3.107,7.245 5.086,7.245 7.140,7.245 C5.876,8.935 5.465,10.757 6.057,12.750 C6.456,14.091 7.260,15.153 8.417,15.934 C10.732,17.498 13.728,17.221 15.816,15.272 C17.481,13.717 18.625,10.402 16.311,7.272 C18.369,7.272 20.405,7.272 22.483,7.272 C22.483,7.421 22.483,7.558 22.483,7.694 C22.483,10.940 22.485,14.186 22.483,17.432 C22.482,19.999 20.673,21.812 18.110,21.814 ZM16.752,11.086 C16.745,13.883 14.476,16.119 11.660,16.103 C8.880,16.087 6.649,13.825 6.661,11.035 C6.673,8.262 8.938,6.031 11.732,6.040 C14.517,6.049 16.759,8.303 16.752,11.086 ZM7.484,10.982 C7.472,13.333 9.339,15.236 11.672,15.253 C14.008,15.270 15.922,13.381 15.929,11.052 C15.936,8.708 14.055,6.809 11.720,6.803 C9.400,6.797 7.496,8.676 7.484,10.982 ZM22.062,6.381 C19.941,6.381 17.821,6.387 15.700,6.372 C15.495,6.371 15.260,6.291 15.090,6.173 C13.075,4.767 10.339,4.764 8.327,6.173 C8.177,6.278 7.978,6.371 7.801,6.372 C5.596,6.386 3.392,6.381 1.187,6.380 C1.119,6.380 1.051,6.372 0.951,6.364 C0.893,4.547 0.743,2.750 2.322,1.356 C2.322,2.685 2.322,3.964 2.322,5.274 C2.627,5.274 2.885,5.274 3.206,5.274 C3.206,5.133 3.206,4.985 3.206,4.837 C3.206,3.656 3.207,2.476 3.207,1.295 C3.207,0.613 3.206,0.613 3.946,0.467 C3.946,2.068 3.946,3.662 3.946,5.280 C4.240,5.280 4.499,5.280 4.797,5.280 C4.797,3.617 4.797,1.966 4.797,0.280 C5.053,0.280 5.269,0.280 5.535,0.280 C5.535,1.928 5.535,3.592 5.535,5.280 C5.840,5.280 6.099,5.280 6.391,5.280 C6.391,3.617 6.391,1.964 6.391,0.245 C6.572,0.245 6.719,0.245 6.866,0.245 C10.616,0.245 14.365,0.243 18.114,0.247 C20.675,0.249 22.478,2.065 22.482,4.634 C22.483,5.195 22.482,5.756 22.482,6.381 C22.329,6.381 22.195,6.381 22.062,6.381 ZM19.855,1.831 C19.195,1.818 18.536,1.818 17.877,1.831 C17.442,1.841 17.187,2.115 17.174,2.558 C17.166,2.866 17.173,3.175 17.173,3.484 C17.173,3.807 17.168,4.130 17.175,4.453 C17.184,4.944 17.439,5.210 17.925,5.218 C18.556,5.227 19.188,5.227 19.819,5.217 C20.285,5.210 20.554,4.947 20.562,4.488 C20.573,3.843 20.573,3.197 20.562,2.551 C20.555,2.110 20.291,1.840 19.855,1.831 Z"/>
+              </svg>
+            </a>
+            <a href="#" class="header__icon">
+              <svg width="23px" height="22px">
+                <path fill-rule="evenodd" d="M18.913,21.786 L4.941,21.786 C2.720,21.786 0.920,19.985 0.920,17.764 L0.920,14.533 C0.920,12.312 2.720,10.510 4.941,10.510 L18.913,10.510 C21.133,10.510 22.934,12.312 22.934,14.533 L22.934,17.764 C22.934,19.985 21.133,21.786 18.913,21.786 ZM7.876,11.928 L4.024,11.928 L4.024,13.026 L5.322,13.026 L5.322,19.480 L6.578,19.480 L6.578,13.026 L7.876,13.026 L7.876,11.928 ZM11.546,13.908 L10.433,13.908 L10.433,18.141 C10.328,18.262 10.213,18.361 10.087,18.441 C9.962,18.518 9.857,18.557 9.777,18.557 C9.672,18.557 9.596,18.529 9.548,18.468 C9.503,18.410 9.479,18.315 9.479,18.183 L9.479,13.908 L8.365,13.908 L8.365,18.567 C8.365,18.900 8.432,19.147 8.561,19.314 C8.692,19.480 8.884,19.563 9.143,19.563 C9.352,19.563 9.567,19.505 9.790,19.384 C10.013,19.268 10.226,19.096 10.433,18.870 L10.433,19.480 L11.546,19.480 L11.546,13.908 ZM15.587,15.238 C15.587,14.782 15.494,14.434 15.308,14.196 C15.122,13.959 14.853,13.841 14.501,13.841 C14.328,13.841 14.157,13.884 13.986,13.974 C13.820,14.062 13.660,14.192 13.509,14.360 L13.509,11.928 L12.383,11.928 L12.383,19.480 L13.509,19.480 L13.509,19.054 C13.655,19.226 13.815,19.350 13.985,19.431 C14.155,19.513 14.349,19.552 14.568,19.552 C14.898,19.552 15.152,19.448 15.325,19.237 C15.500,19.026 15.587,18.724 15.587,18.330 L15.587,15.238 ZM19.449,17.624 L18.303,17.624 L18.303,17.878 C18.303,18.206 18.265,18.417 18.192,18.514 C18.119,18.610 17.990,18.658 17.805,18.658 C17.627,18.658 17.502,18.603 17.427,18.489 C17.354,18.375 17.319,18.171 17.319,17.878 L17.319,16.828 L19.449,16.828 L19.449,15.408 C19.449,14.880 19.312,14.475 19.039,14.193 C18.765,13.911 18.373,13.770 17.863,13.770 C17.364,13.770 16.959,13.922 16.644,14.226 C16.329,14.530 16.170,14.926 16.170,15.408 L16.170,17.911 C16.170,18.448 16.316,18.870 16.601,19.174 C16.887,19.480 17.280,19.633 17.779,19.633 C18.335,19.633 18.751,19.489 19.029,19.202 C19.310,18.912 19.449,18.482 19.449,17.911 L19.449,17.624 ZM17.319,15.399 C17.319,15.164 17.356,14.997 17.434,14.899 C17.512,14.795 17.638,14.745 17.815,14.745 C17.985,14.745 18.111,14.795 18.186,14.899 C18.263,14.997 18.303,15.164 18.303,15.399 L18.303,15.962 L17.319,15.962 L17.319,15.399 ZM14.042,18.680 C13.948,18.680 13.860,18.658 13.773,18.620 C13.688,18.580 13.599,18.511 13.509,18.421 L13.509,14.950 C13.585,14.874 13.661,14.816 13.739,14.780 C13.817,14.743 13.896,14.726 13.975,14.726 C14.125,14.726 14.241,14.775 14.322,14.871 C14.401,14.968 14.439,15.110 14.439,15.299 L14.439,18.177 C14.439,18.355 14.406,18.482 14.343,18.561 C14.279,18.640 14.179,18.680 14.042,18.680 ZM16.907,7.895 C16.678,8.145 16.437,8.336 16.186,8.468 C15.936,8.597 15.694,8.664 15.458,8.664 C15.167,8.664 14.950,8.571 14.803,8.386 C14.657,8.206 14.583,7.932 14.583,7.566 L14.583,2.436 L15.835,2.436 L15.835,7.142 C15.835,7.287 15.864,7.392 15.916,7.456 C15.967,7.523 16.053,7.555 16.171,7.555 C16.263,7.555 16.380,7.512 16.521,7.426 C16.661,7.339 16.791,7.229 16.907,7.096 L16.907,2.436 L18.162,2.436 L18.162,8.574 L16.907,8.574 L16.907,7.895 ZM11.737,8.729 C11.188,8.729 10.749,8.574 10.420,8.266 C10.091,7.956 9.927,7.543 9.927,7.021 L9.927,3.839 C9.927,3.362 10.096,2.985 10.433,2.704 C10.770,2.422 11.224,2.281 11.794,2.281 C12.313,2.281 12.738,2.430 13.071,2.726 C13.400,3.023 13.566,3.407 13.566,3.875 L13.566,7.046 C13.566,7.571 13.404,7.981 13.080,8.281 C12.754,8.580 12.307,8.729 11.737,8.729 ZM12.288,3.793 C12.288,3.659 12.237,3.552 12.136,3.467 C12.033,3.385 11.899,3.345 11.733,3.345 C11.580,3.345 11.456,3.385 11.360,3.467 C11.265,3.552 11.217,3.659 11.217,3.793 L11.217,7.137 C11.217,7.305 11.262,7.434 11.351,7.527 C11.440,7.621 11.568,7.666 11.733,7.666 C11.903,7.666 12.037,7.619 12.138,7.525 C12.238,7.431 12.288,7.301 12.288,7.137 L12.288,3.793 ZM8.182,8.574 L6.770,8.574 L6.770,5.278 L5.089,0.253 L6.511,0.253 L7.428,3.579 L7.517,3.579 L8.390,0.253 L9.825,0.253 L8.182,5.122 L8.182,8.574 Z"/>
+              </svg>
+            </a>
+            <a href="#" class="header__icon">
+              <svg width="11px" height="23px">
+                <path fill-rule="evenodd" d="M10.369,7.778 L6.960,7.778 L6.960,5.543 C6.960,4.704 7.516,4.508 7.908,4.508 C8.299,4.508 10.313,4.508 10.313,4.508 L10.313,0.817 L7.001,0.804 C3.323,0.804 2.487,3.557 2.487,5.318 L2.487,7.778 L0.360,7.778 L0.360,11.581 L2.487,11.581 C2.487,16.462 2.487,22.343 2.487,22.343 L6.960,22.343 C6.960,22.343 6.960,16.404 6.960,11.581 L9.978,11.581 L10.369,7.778 Z"/>
+              </svg>
+            </a>
+            <a href="#" class="header__icon">
+              <svg width="22px" height="18px">
+                <path fill-rule="evenodd" d="M8.569,11.437 L8.226,16.245 C8.716,16.245 8.928,16.035 9.183,15.783 L11.479,13.591 L16.238,17.071 C17.111,17.556 17.726,17.301 17.961,16.269 L21.085,1.656 L21.086,1.655 C21.362,0.367 20.619,-0.137 19.769,0.179 L1.408,7.198 C0.155,7.683 0.174,8.381 1.195,8.696 L5.889,10.154 L16.793,3.343 C17.306,3.004 17.772,3.191 17.388,3.530 L8.569,11.437 Z"/>
+              </svg>
+            </a>
+            <address class="header__wrapper">
+              <p class="header__text">Пн.-Сб.: с 10:00 до 20:00</p>
+              <a href="tel:+77777777777 " class="header__tel">+7 (777) 777 77 77</a>
+              <span class="header__tel__icon">
+                <svg width="13px" height="19px">
+                  <path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M11.644,14.249 C10.923,13.200 10.104,12.462 8.966,13.012 L8.286,13.346 C7.788,13.588 6.600,15.023 4.593,10.912 C2.585,6.806 4.450,6.750 4.947,6.511 L5.631,6.177 C6.764,5.623 6.687,4.524 6.302,3.310 L6.070,2.575 C5.681,1.363 5.139,0.490 4.004,1.042 L3.389,1.343 C2.903,1.530 1.507,2.188 0.741,3.944 C-0.180,6.050 0.194,8.845 1.856,12.247 C3.515,15.649 5.491,17.665 7.721,18.236 C9.575,18.712 10.957,18.020 11.402,17.753 L12.018,17.452 C13.151,16.900 12.798,15.935 12.077,14.883 L11.644,14.249 Z"/>
+                </svg>
+              </span>
+            </address>
+          </div>
+        </div>
+        <!-- /.header__top -->
+        <div class="header__bottom">
+          <ul class="header__nav">
+            <li class="header__item"><a href="#" class="header__link">Главная страница</a></li>
+            <li class="header__point"></li>
+            <li class="header__item"><a href="#" class="header__link">О нас</a></li>
+            <li class="header__point"></li>
+            <li class="header__item header__item__down"><a href="#" class="header__link">Квартиры</a></li>
+            <li class="header__point"></li>
+            <li class="header__item header__item__down"><a href="#" class="header__link">Коттеджы/особняки</a></li>
+            <li class="header__point"></li>
+            <li class="header__item"><a href="#" class="header__link">Комерческая недвижимость</a></li>
+          </ul>
+        </div>
+        <!-- /.header__bottom -->
+      </div>
+      <!-- /.container -->
+    </header>
+    <!-- /.header -->
+    <div class="container">
+      <div class="main__wrapper">
+        <div class="main__block">
+          <form action="#" class="form">
+            <div class="form__block">
+              <label for="#address" class="form__label">Поиск</label>
+              <input type="text" class="form__input" id="#address" placeholder="Название ЖК, улица, метро, район">
+              <span class="form__label">Количество комнат</span>
+              <input type="checkbox" class="form__checkbox" id="oneRoom">
+              <label for="oneRoom" data-room="1"></label>
+              <input type="checkbox" class="form__checkbox" id="twoRoom">
+              <label for="twoRoom" data-room="2"></label>
+              <input type="checkbox" class="form__checkbox" id="threeRoom">
+              <label for="threeRoom" data-room="3"></label>
+              <input type="checkbox" class="form__checkbox" id="fourRoom">
+              <label for="fourRoom" data-room="4"></label>
+              <input type="checkbox" class="form__checkbox" id="fiveRoom">
+              <label for="fiveRoom" data-room="5"></label>
+              <input type="checkbox" class="form__checkbox" id="fivePlusRoom">
+              <label for="fivePlusRoom" data-room="5+"></label>
+              <br>
+              <div class="form__range">
+                <span class="form__label">Площадь, м<sup>2</sup></span>
+                <input type="number" class="form__range__input form__range__from" value="50" disabled>
+                <span class="form__range__line"></span>
+                <input type="number" class="form__range__input form__range__to" value="300" disabled>
+              </div>
+              <input type="text" class="js-range-slider" name="my_range" value="" />
+            </div>
+            <div class="form__block">
+              <label for="#property" class="form__label">Вид недвижимости</label>
+              <select id="property" class="form__select form__input">
+                <option value="Таунхаусы" class="form__option">Таунхаусы</option>
+                <option value="Лофт" class="form__option">Лофт</option>
+                <option value="Пентхаус" class="form__option">Пентхаус</option>
+                <option value="Дуплекс" class="form__option">Дуплекс</option>
+              </select>
+              <span class="form__label">Цена</span>
+              <div class="form__price">
+                <input type="text" class="form__price__input form__price__from" placeholder="1 300 000 000">
+                <span class="form__price__line"></span>
+                <input type="text" class="form__price__input form__price__to" placeholder="3 800 000 000">
+                <div class="form__currency">
+                  <div class="form__currency__block form__currency__block-active">
+                    <span class="form__currency__b">&#8381;</span>
+                    Rub
+                  </div>
+                  <div class="form__currency__block">
+                    <span class="form__currency__b">&#36;</span>
+                    Usd
+                  </div>
+                  <div class="form__currency__block">
+                    <span class="form__currency__b">&euro;</span>
+                    Eur
+                  </div>
+                </div>
+              </div>
+              <input type="submit" class="form__btn" value="Поиск">
+            </div>
+          </form>
+          <!-- /.form -->
+        </div>
+        <!-- /.main__block -->
+      </div>
+      <!-- /.main__wrapper -->
+      <div class="main__bottom">
+        <div class="main__features">
+          <a href="#" class="main__features__link">Подбор <br> недвижимости</a>
+          <div class="main__circle">
+            <img src="img/main/selection.png" alt="">
+          </div>
+        </div>
+        <div class="main__features">
+          <div class="main__circle">
+            <img src="img/main/video.png" alt="">
+          </div>
+          <a href="#" class="main__features__link">Видео <br> презентация</a>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </main>
+  <!-- /.main -->
+
+  <section class="offers">
+    <h2 class="offers__title">Лучшие предложения</h2>
+    <div class="container">
+      <div class="offers__card">
+        <img src="img/offers/img-1.jpg" alt="" class="offers__img">
+        <div class="offers__wrapper">
+          <h3 class="offers__card__title">3-х комнатная квартира,  Московская обл., г. Реутов</h3>
+          <span class="offers__card__price">13 500 000 руб.</span>
+          <div class="offers__card__prop">
+            <img src="img/offers/icon-area.png" alt="" class="offers__card__icon">
+            82,2 м<sup>2</sup>
+          </div>
+          <div class="offers__card__prop">
+            <img src="img/offers/icon-address.png" alt="" class="offers__card__icon">
+            ул. Золоторожский <br> Вал, вл. 11, корп. 10
+          </div>
+        </div>
+      </div>
+      <!-- /.offers-card -->
+      <div class="offers__card">
+        <img src="img/offers/img-2.jpg" alt="" class="offers__img">
+        <div class="offers__wrapper">
+          <h3 class="offers__card__title">2-х комнатная квартира,  г.Москва</h3>
+          <span class="offers__card__price">9 763 000 руб.</span>
+          <div class="offers__card__prop">
+            <img src="img/offers/icon-area.png" alt="" class="offers__card__icon">
+            64,2 м<sup>2</sup>
+          </div>
+          <div class="offers__card__prop">
+            <img src="img/offers/icon-address.png" alt="" class="offers__card__icon">
+            пр-д 3-й Автозаводский, вл. 13
+          </div>
+        </div>
+      </div>
+      <!-- /.offers-card -->
+      <div class="offers__card">
+        <img src="img/offers/img-3.jpg" alt="" class="offers__img">
+        <div class="offers__wrapper">
+          <h3 class="offers__card__title">3-х комнатная квартира,  Московская обл., г. Луховицы</h3>
+          <span class="offers__card__price">7 253 000 руб.</span>
+          <div class="offers__card__prop">
+            <img src="img/offers/icon-area.png" alt="" class="offers__card__icon">
+            73,1 м<sup>2</sup>
+          </div>
+          <div class="offers__card__prop">
+            <img src="img/offers/icon-address.png" alt="" class="offers__card__icon">
+            ул. Верхняя, д. 20, <br> корп. 1
+          </div>
+        </div>
+      </div>
+      <!-- /.offers-card -->
+      <div class="offers__card">
+        <img src="img/offers/img-4.jpg" alt="" class="offers__img">
+        <div class="offers__wrapper">
+          <h3 class="offers__card__title">4-х комнатная квартира,  Московская обл., г. Мытищи</h3>
+          <span class="offers__card__price">35 270 000 руб.</span>
+          <div class="offers__card__prop">
+            <img src="img/offers/icon-area.png" alt="" class="offers__card__icon">
+            121,5 м<sup>2</sup>
+          </div>
+          <div class="offers__card__prop">
+            <img src="img/offers/icon-address.png" alt="" class="offers__card__icon">
+            б-р Ореховый, вл. 24, <br> корп. 2, стр. 2
+          </div>
+        </div>
+      </div>
+      <!-- /.offers-card -->
+      <div class="offers__card">
+        <img src="img/offers/img-5.jpg" alt="" class="offers__img">
+        <div class="offers__wrapper">
+          <h3 class="offers__card__title">3-х комнатная квартира,  г.Москва</h3>
+          <span class="offers__card__price">19 516 000 руб.</span>
+          <div class="offers__card__prop">
+            <img src="img/offers/icon-area.png" alt="" class="offers__card__icon">
+            71,7 м<sup>2</sup>
+          </div>
+          <div class="offers__card__prop">
+            <img src="img/offers/icon-address.png" alt="" class="offers__card__icon">
+            пр-д 3-й <br> Автозаводский, вл. 13
+          </div>
+        </div>
+      </div>
+      <!-- /.offers-card -->
+      <div class="offers__card">
+        <img src="img/offers/img-6.jpg" alt="" class="offers__img">
+        <div class="offers__wrapper">
+          <h3 class="offers__card__title">3-х комнатная квартира,  Московская обл., г. Балашиха</h3>
+          <span class="offers__card__price">17 982 000 руб.</span>
+          <div class="offers__card__prop">
+            <img src="img/offers/icon-area.png" alt="" class="offers__card__icon">
+            114,6 м<sup>2</sup>
+          </div>
+          <div class="offers__card__prop">
+            <img src="img/offers/icon-address.png" alt="" class="offers__card__icon">
+            ул. Погодинская, д. 4
+          </div>
+        </div>
+      </div>
+      <!-- /.offers-card -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.offers -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/ion.rangeSlider.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
