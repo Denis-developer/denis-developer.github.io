@@ -5,7 +5,15 @@ window.addEventListener('DOMContentLoaded', function() {
     speed: 300,
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: false
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2
+        }
+      }
+    ]
   });
 
   $('.gallery-slider').slick({
@@ -23,7 +31,15 @@ window.addEventListener('DOMContentLoaded', function() {
     centerMode: true,
     focusOnSelect: true,
     prevArrow: $('.prev'),
-    nextArrow: $('.next')
+    nextArrow: $('.next'),
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2
+        }
+      }
+    ]
   });
 
   $(".contact-form__tel").mask("+7 (999)999-99-99");
