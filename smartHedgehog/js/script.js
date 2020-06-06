@@ -12,6 +12,12 @@ window.addEventListener('DOMContentLoaded', function() {
         settings: {
           slidesToShow: 2
         }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1
+        }
       }
     ]
   });
@@ -37,6 +43,13 @@ window.addEventListener('DOMContentLoaded', function() {
         breakpoint: 1200,
         settings: {
           slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          arrows: false
         }
       }
     ]
