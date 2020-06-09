@@ -15,42 +15,54 @@
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <!-- CSS -->
-  <link rel="stylesheet" href="css/header.css">
+  <!-- <link rel="stylesheet" href="css/header.css"> -->
 </head>
 <body>
 
   <div class="mobile-menu">
-    <a href="#" class="mobile-menu__link ">Блок 1</a>
-    <a href="#" class="mobile-menu__link">Блок 2</a>
-    <a href="#" class="mobile-menu__link">Блок 3</a>
-    <a href="#" class="mobile-menu__link">Блок 4</a>
-    <a href="#" class="mobile-menu__link">Блок 5</a>
-    <a href="#" class="mobile-menu__link">Блок 6</a>
+    <a href="#main-blockTitle" class="mobile-menu__link anchor">Преимущества</a>
+    <a href="#question" class="mobile-menu__link anchor">Проблемы</a>
+    <a href="#plan" class="mobile-menu__link anchor">Программа развития</a>
+    <a href="#statistics" class="mobile-menu__link anchor">Наши достижения</a>
+    <a href="#appeal" class="mobile-menu__link anchor">Видео обращение</a>
+    <a href="#result" class="mobile-menu__link anchor">Результаты обучения</a>
+    <a href="#comment" class="mobile-menu__link anchor">Отзывы</a>
+    <a href="#offer" class="mobile-menu__link anchor">Ограниченное предложение</a>
+    <a href="#gallery" class="mobile-menu__link anchor">Наша жизнь</a>
+    <a href="#contact" class="mobile-menu__link anchor">Обратная связь</a>
     <div class="main-tel">
       <div class="main-circle"><img src="img/main/icon-tel.svg" alt=""></div>
       <a href="tel:+77777777777" class="main-tel__link">+7 (777) 777-77-77</a>
     </div>
   </div>
 
-  <main class="main">
+  <a href="#main" class="link-up anchor">
+    <img src="img/arrow-up.svg" alt="">
+  </a>
+
+  <main class="main" id="main">
     <header class="header">
       <div class="container">
         <a href="index.html" class="header-logo">
           <img src="img/main/main-logo.png" alt="">
         </a>
-        <nav class="nav">
-          <a href="#" class="nav-link underline">Блок 1</a>
-          <a href="#" class="nav-link underline">Блок 2</a>
-          <a href="#" class="nav-link underline">Блок 3</a>
-          <a href="#" class="nav-link underline">Блок 4</a>
-          <a href="#" class="nav-link underline">Блок 5</a>
-          <a href="#" class="nav-link underline">Блок 6</a>
-        </nav>
+        <!-- <nav class="nav">
+          <a href="#main-blockTitle" class="nav-link underline anchor">Преимущества</a>
+          <a href="#question" class="nav-link underline anchor">Проблемы</a>
+          <a href="#plan" class="nav-link underline anchor">Программа развития</a>
+          <a href="#statistics" class="nav-link underline anchor">Наши достижения</a>
+          <a href="#appeal" class="nav-link underline anchor">Видео обращение</a>
+          <a href="#result" class="nav-link underline anchor">Результаты обучения</a>
+          <a href="#comment" class="nav-link underline anchor">Отзывы</a>
+          <a href="#offer" class="nav-link underline anchor">Ограниченное предложение</a>
+          <a href="#gallery" class="nav-link underline anchor">Наша жизнь</a>
+          <a href="#contact" class="nav-link underline anchor">Обратная связь</a>
+        </nav> -->
         <!-- /.nav -->
-        <div class="main-tel">
+        <!-- <div class="main-tel">
           <div class="main-circle"><img src="img/main/icon-tel.svg" alt=""></div>
           <a href="tel:+77777777777" class="main-tel__link">+7 (777) 777-77-77</a>
-        </div>
+        </div> -->
         <button class="menu-btn">
           <span></span>
         </button>
@@ -59,7 +71,7 @@
     </header>
     <!-- /.header -->
     <div class="container">
-      <div class="main-blockTitle">
+      <div class="main-blockTitle" id="main-blockTitle">
         <h1 class="main-title">Онлайн детский сад</h1>
       </div>
       <p class="main-subtitle">по авторской методике Юлии Чучуло</p>
@@ -93,7 +105,7 @@
   </main>
   <!-- /.main -->
 
-  <section class="question">
+  <section class="question" id="question">
     <div class="container">
       <div class="question-block question-block_1">
         <h3 class="question-block__title">Хотите дать своему малышу лучшее</h3>
@@ -118,8 +130,8 @@
   </section>
   <!-- /.question -->
 
-  <section class="plan">
-    <h2 class="plan-title section-title">Программа развития нужных психологических функций и моторных навыков длядеток 2+</h2>
+  <section class="plan" id="plan">
+    <h2 class="plan-title section-title">Программа развития нужных психологических функций и моторных навыков для деток 2+</h2>
     <div class="container">
       <div class="plan-item plan-item_1"><img src="img/plan/img-1.png" alt="" class="plan-item__img"><span>36 занятий в месяц</span><img src="img/plan/line.svg" alt="" class="plan-line"></div>
       <!-- /.plan-item plan-item_1 -->
@@ -136,7 +148,7 @@
   </section>
   <!-- /.plan -->
 
-  <section class="statistics">
+  <section class="statistics" id="statistics">
     <h2 class="statistics-title section-title">Немного цифр</h2>
     <div class="statistics-body">
       <div class="statistics-top">
@@ -168,7 +180,7 @@
   </section>
   <!-- /.statistics -->
 
-  <section class="appeal">
+  <section class="appeal" id="appeal">
     <div class="appeal-wrapper">
       <h2 class="appeal-title section-title">Обращение от автора программы</h2>
       <svg width="234" height="146" viewBox="0 0 234 146" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -181,7 +193,7 @@
   </section>
   <!-- /.appeal -->
 
-  <section class="result">
+  <section class="result" id="result">
     <h2 class="result-title section-title">Результаты обучения по методике</h2>
     <div class="container">
       <div class="result-block">
@@ -216,7 +228,7 @@
   </section>
   <!-- /.result -->
 
-  <section class="comment">
+  <section class="comment" id="comment">
     <h2 class="comment-title section-title">Отзывы о нашей работе</h2>
     <div class="container">
       <div class="comment-slider">
@@ -322,7 +334,7 @@
   </section>
   <!-- /.comment -->
 
-  <section class="offer">
+  <section class="offer" id="offer">
     <img src="img/offer/offer-bg.png" alt="" class="offer-bg">
     <div class="container">
       <div class="offer-access">
@@ -360,7 +372,7 @@
   </section>
   <!-- /.offer -->
 
-  <div class="gallery">
+  <div class="gallery" id="gallery">
     <div class="container">
       <h2 class="gallery-title section-title">Наша жизнь</h2>
       <div class="gallery-slider">
@@ -400,7 +412,7 @@
   </div>
   <!-- /.gallery -->
 
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="contact-block">
       <h2 class="contact-title">Мы с радостью ответим на ваши вопросы в любой из соц сетей или позвоним вам</h2>
       <span class="contact-subtitle">Позвоните мне</span>
@@ -435,6 +447,7 @@
     </div>
   </section>
   <!-- /.contact -->
+
   <!-- css -->
   <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/slick-theme.css">
