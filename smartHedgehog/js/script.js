@@ -87,42 +87,51 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   })
 
-  let menuBtn = document.querySelector('.menu-btn'),
+  let menuBtn = document.getElementsByClassName('menu-btn'),
       mobileMenu = document.querySelector('.mobile-menu'),
       mobileMenuLinks = document.getElementsByClassName('mobile-menu__link');
 
-  menuBtn.addEventListener('click', function(event) {
-    event.preventDefault();
-    this.classList.toggle('menu-btn_active');
-    if(this.classList.contains('menu-btn_active')){
-      mobileMenu.style.visibility = 'visible';
-      mobileMenu.style.opacity = '1';
-      if(min1200.matches){
-        header.css({
-          'position': 'fixed',
-          'top': '0px',
-          'background': '#fff'
-        });
+  for (var i = 0; i < menuBtn.length; i++) {
+    menuBtn[i].addEventListener('click', function(event) {
+      event.preventDefault();
+      this.classList.toggle('menu-btn_active');
+      if(this.classList.contains('menu-btn_active')){
+        mobileMenu.style.visibility = 'visible';
+        mobileMenu.style.opacity = '1';
+        if(min1200.matches){
+          header.css({
+            'position': 'fixed',
+            'top': '0px',
+            'background': '#fff'
+          });
+        }
       }
-    }
-    else{
-      mobileMenu.style.visibility = 'hidden';
-      mobileMenu.style.opacity = '0';
-      if(min1200.matches){
-        header.css({
-          'position': 'absolute',
-          'top': '50px',
-          'background': 'transparent'
-        });
+      else{
+        mobileMenu.style.visibility = 'hidden';
+        mobileMenu.style.opacity = '0';
+        if(min1200.matches && document.documentElement.scrollTop >= 50){
+          header.css({
+            'position': 'fixed',
+            'top': '0px',
+            'background': '#fff'
+          });
+        }
+        else if(min1200.matches && document.documentElement.scrollTop < 50){
+          header.css({
+            'background': 'transparent'
+          });
+        }
       }
-    }
-  });
+    });
+  }
 
   for (var i = 0; i < mobileMenuLinks.length; i++) {
     mobileMenuLinks[i].addEventListener('click', function(event) {
       mobileMenu.style.visibility = 'hidden';
       mobileMenu.style.opacity = '0';
-      menuBtn.classList.toggle('menu-btn_active');
+      for (var i = 0; i < menuBtn.length; i++) {
+        menuBtn[i].classList.toggle('menu-btn_active');
+      }
       if(min1200.matches){
         header.css({
           'position': 'fixed',
