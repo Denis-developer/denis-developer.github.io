@@ -71,11 +71,20 @@ window.addEventListener('DOMContentLoaded', function() {
         });
       }
       else{
-        header.css({
-          'position': 'absolute',
-          'top': '50px',
-          'background': 'transparent'
-        });
+        if(mobileMenu.style.opacity == "1"){
+          header.css({
+            'position': 'fixed',
+            'top': '0px',
+            'background': '#fff'
+          });
+        }
+        else{
+          header.css({
+            'position': 'absolute',
+            'top': '50px',
+            'background': 'transparent'
+          });
+        }
       }
     }
     else{
