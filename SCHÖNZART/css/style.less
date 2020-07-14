@@ -1,0 +1,391 @@
+// FONTS
+@font-face {
+    font-family: 'Poppins B';
+    src: url('../fonts/Poppins-Bold.eot');
+    src: url('../fonts/Poppins-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Poppins-Bold.woff2') format('woff2'),
+        url('../fonts/Poppins-Bold.woff') format('woff'),
+        url('../fonts/Poppins-Bold.ttf') format('truetype'),
+        url('../fonts/Poppins-Bold.svg#Poppins-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suez R';
+    src: url('../fonts/SuezOne-Regular.eot');
+    src: url('../fonts/SuezOne-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SuezOne-Regular.woff2') format('woff2'),
+        url('../fonts/SuezOne-Regular.woff') format('woff'),
+        url('../fonts/SuezOne-Regular.ttf') format('truetype'),
+        url('../fonts/SuezOne-Regular.svg#SuezOne-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins R';
+    src: url('../fonts/Poppins-Regular.eot');
+    src: url('../fonts/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Poppins-Regular.woff2') format('woff2'),
+        url('../fonts/Poppins-Regular.woff') format('woff'),
+        url('../fonts/Poppins-Regular.ttf') format('truetype'),
+        url('../fonts/Poppins-Regular.svg#Poppins-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*, *::after, *::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container{
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.section-title{
+  font-family: 'Suez R';
+  font-size: 50px;
+  span{
+    color: #c19356;
+  }
+}
+
+.section-btn{
+  background-color: #c19356;
+  font-family: 'Poppins B';
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.header{
+  height: 112px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 126px;
+  .container{
+    height: 100%;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-logo{
+    font-family: "Suez R";
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    text-transform: uppercase;
+    span{
+      color: #c19356;
+    }
+  }
+  &-nav{
+    &__link{
+      font-family: 'Poppins R';
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      margin-left: 43px;
+    }
+  }
+}
+
+.main{
+  background: #121212 url(../img/main/main-bg.png) no-repeat;
+  background-position: right bottom;
+  padding-bottom: 130px;
+  &-name{
+    font-family: "Suez R";
+    color: #fff;
+    font-size: 30px;
+    line-height: 22px;
+  }
+  &-title{
+    font-family: "Suez R";
+    font-size: 90px;
+    line-height: 98px;
+    max-width: 565px;
+    color: #fff;
+    margin-top: 25px;
+    margin-bottom: 40px;
+  }
+  &-text{
+    font-family: 'Poppins R';
+    font-size: 16px;
+    color: #fff;
+    line-height: 28px;
+    max-width: 578px;
+    margin-bottom: 45px;
+  }
+  &-btn{
+    width: 225px;
+    height: 60px;
+    border-radius: 30px;
+    margin-right: 30px;
+  }
+  &-soc{
+    margin-top: 90px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    &__link{
+      margin-right: 30px;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      height: 30px;
+      align-items: flex-end;
+    }
+    svg{
+      fill: #fff;
+    }
+  }
+}
+
+.services{
+  padding-top: 86px;
+  padding-bottom: 100px;
+  &-wrapper{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &-title{
+    margin-right: 116px;
+    color: #1a1a1a;
+  }
+  &-text{
+    font-family: 'Poppins R';
+    color: #737373;
+    font-size: 16px;
+    line-height: 28px;
+  }
+  &-grid{
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+  }
+  &-block{
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #e6e6e6;
+    background-color: #ffffff;
+    padding: 50px;
+    &__img{
+      width: 26%;
+      margin-bottom: 30px;
+    }
+    &__title{
+      font-family: 'Suez R';
+      color: #1a1a1a;
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+    &__text{
+      font-family: 'Poppins R';
+      color: #737373;
+      font-size: 14px;
+      line-height: 24px;
+    }
+    &:nth-child(1){
+      .services-block__img{
+        height: 69px;
+        width: 73px;
+      }
+    }
+    &:nth-child(2){
+      .services-block__img{
+        height: 69px;
+        width: 46px;
+      }
+    }
+    &:nth-child(3){
+      .services-block__img{
+        height: 62px;
+        width: 60px;
+      }
+    }
+  }
+}
+
+.statistics{
+  padding: 50px 0px;
+  .container{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+  }
+  &-block{
+    text-align: center;
+    width: 100%;
+    position: relative;
+    &::before{
+      content: '';
+      display: block;
+      width: 0px;
+      height: 80%;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border-right: 1px solid #dedede;
+    }
+    &:last-child::before{
+      display: none;
+    }
+    &__number{
+      font-family: 'Poppins B';
+      color: #1a1a1a;
+      font-size: 60px;
+      line-height: 22px;
+      margin-bottom: 20px;
+    }
+    &__desc{
+      font-family: 'Poppins R';
+      color: #1a1a1a;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+.person{
+  padding: 100px 0px;
+  &-flex{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+  }
+  &-img{
+    margin-right: 80px;
+    border-radius: 15px;
+  }
+  &-title{
+    margin-bottom: 23px;
+    font-size: 48px;
+    color: #1a1a1a;
+  }
+  &-text{
+    font-family: 'Poppins R';
+    color: #737373;
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 25px;
+  }
+  &-btn{
+    width: 266px;
+    height: 55px;
+    border-radius: 28px;
+    margin-top: 15px;
+  }
+}
+
+.contact{
+  padding: 100px 0px;
+  .container{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+  }
+  &-soc{
+    svg{
+      fill: #a6a6a6;
+    }
+  }
+  &-img{
+    margin-left: 132px;
+    border-radius: 15px;
+  }
+  &-title{
+    color: #1a1a1a;
+    font-size: 48px;
+  }
+  &-text{
+    font-family: 'Poppins R';
+    font-size: 16px;
+    line-height: 28px;
+    color: #737373;
+    margin-bottom: 40px;
+    margin-top: 14px;
+  }
+  &-address{
+    display: inline-block;
+    margin-right: 75px;
+    &__img{
+      width: 40px;
+    }
+    &__link{
+      font-family: 'Poppins B';
+      display: inline-block;
+      color: #1a1a1a;
+      font-size: 16px;
+      margin-top: 18px;
+      margin-bottom: 5px;
+      text-decoration: none;
+    }
+    &__text{
+      font-family: 'Poppins R';
+      color: #737373;
+      font-size: 14px;
+    }
+  }
+}
+
+.footer{
+  height: 89px;
+  background-color: #121212;
+  .container{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  &-text, &-link{
+    font-family: 'Poppins R';
+    color: #a6a6a6;
+    font-size: 14px;
+    text-decoration: none;
+    span{
+      margin: 0 20px;
+    }
+  }
+}
