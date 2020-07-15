@@ -52,7 +52,19 @@ window.addEventListener('DOMContentLoaded', function() {
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true,
-    }
+    },
+    breakpoints: {
+       600: {
+         slidesPerView: 1,
+         spaceBetween: 20,
+         slidesPerGroup: 1
+       },
+       1200: {
+         slidesPerView: 2,
+         spaceBetween: 20,
+         slidesPerGroup: 2
+       }
+     }
   })
 
   // ANCHOR
