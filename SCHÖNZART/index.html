@@ -20,23 +20,54 @@
 </head>
 <body>
 
+  <div class="mobile-menu">
+    <div class="mobile-menuWrapper">
+      <a href="#person" class="mobile-menu__link ">Die Person</a>
+      <a href="#voice" class="mobile-menu__link">Die Stimme</a>
+      <a href="#services" class="mobile-menu__link">Leistungen</a>
+      <a href="#credentials" class="mobile-menu__link">Referenzen</a>
+      <a href="#contact" class="mobile-menu__link">Kontakt</a>
+    </div>
+    <div class="main-soc">
+      <a href="#" rel="nofollow" class="main-soc__link">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a href="#" rel="nofollow" class="main-soc__link">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a href="#" rel="nofollow" class="main-soc__link">
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+      </a>
+      <a href="#" rel="nofollow" class="main-soc__link">
+        <i class="fa fa-dribbble" aria-hidden="true"></i>
+      </a>
+      <a href="#" rel="nofollow" class="main-soc__link">
+        <i class="fa fa-behance" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+
   <main class="main">
     <header class="header">
       <div class="container">
         <a href="index.html" class="header-logo">SCHÖNZ<span>ART</span></a>
         <nav class="header-nav">
-          <a href="#person" rel="nofollow" class="header-nav__link">Die Person</a>
-          <a href="#voice" rel="nofollow" class="header-nav__link">Die Stimme</a>
-          <a href="#services" rel="nofollow" class="header-nav__link">Leistungen</a>
-          <a href="#conditions" rel="nofollow" class="header-nav__link">Referenzen</a>
-          <a href="#contact" rel="nofollow" class="header-nav__link">Kontakt</a>
+          <a href="#person" class="header-nav__link">Die Person</a>
+          <a href="#voice" class="header-nav__link">Die Stimme</a>
+          <a href="#services" class="header-nav__link">Leistungen</a>
+          <a href="#credentials" class="header-nav__link">Referenzen</a>
+          <a href="#contact" class="header-nav__link">Kontakt</a>
         </nav>
+        <button class="menu-btn">
+          <span></span>
+        </button>
       </div>
       <!-- /.container -->
     </header>
     <!-- /.header -->
     <div class="container">
       <div class="main-wrapperBg">
+        <img src="img/main/main-bg.png" alt="" class="main-mobileImg">
         <p class="main-name">Walther Schönzart</p>
         <h1 class="main-title">Sprecher aus Leidenschaft</h1>
         <p class="main-text">«Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.»</p>
@@ -44,25 +75,25 @@
           <a href="#voice" class="section-btn main-btn">Check My Works</a>
           <span class="main-play">
             <span class="main-playWrapper">
-              <a id="play-pause-button" class="fa fa-play-circle play"></a>
+              <a href="#" id="play-pause-button" class="fa fa-play-circle play"></a>
               Lorem Ipsum
             </span>
           </span>
         </div>
         <div class="main-soc">
-          <a href="#" class="main-soc__link">
+          <a href="#" rel="nofollow" class="main-soc__link">
             <i class="fa fa-facebook" aria-hidden="true"></i>
           </a>
-          <a href="#" class="main-soc__link">
+          <a href="#" rel="nofollow" class="main-soc__link">
             <i class="fa fa-instagram" aria-hidden="true"></i>
           </a>
-          <a href="#" class="main-soc__link">
+          <a href="#" rel="nofollow" class="main-soc__link">
             <i class="fa fa-linkedin" aria-hidden="true"></i>
           </a>
-          <a href="#" class="main-soc__link">
+          <a href="#" rel="nofollow" class="main-soc__link">
             <i class="fa fa-dribbble" aria-hidden="true"></i>
           </a>
-          <a href="#" class="main-soc__link">
+          <a href="#" rel="nofollow" class="main-soc__link">
             <i class="fa fa-behance" aria-hidden="true"></i>
           </a>
         </div>
@@ -71,6 +102,20 @@
     <!-- /.container -->
   </main>
   <!-- /.main -->
+
+  <section class="passion">
+    <div class="container">
+      <h2 class="section-title passion-title">Sprecher aus Leidenschaft</h2>
+      <p class="passion-text">«Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.»</p>
+      <a href="#voice" class="section-btn passion-btn">Check My Works</a>
+      <span class="passion-play">
+        <a href="#" class="fa fa-play-circle play"></a>
+        Lorem Ipsum
+      </span>
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.passion -->
 
   <section class="services" id="services">
     <div class="container">
@@ -131,57 +176,63 @@
     <div class="container">
       <h2 class="section-title voice-title">Die Stimme<span>.</span></h2>
       <p class="voice-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="voice-grid">
-        <div class="voice-block">
-          <div class="voice-wrapper">
-            <div class="voice-block__play fa fa-play-circle play"></div>
-            <p class="voice-block__text">Lorem ipsum dolor consectetur</p>
-            <img src="img/voice/soundwave.png" alt="" class="voice-block__wave">
-            <img src="img/voice/voice-img1.jpg" alt="" class="voice-block__bg">
+      <div class="voice-sliderWrapper">
+        <div class="voice-container">
+          <div class="voice-grid swiper-wrapper">
+            <div class="voice-block swiper-slide">
+              <div class="voice-wrapper">
+                <div class="voice-block__play fa fa-play-circle play"></div>
+                <p class="voice-block__text">Lorem ipsum dolor consectetur</p>
+                <img src="img/voice/soundwave.png" alt="" class="voice-block__wave">
+                <img src="img/voice/voice-img1.jpg" alt="" class="voice-block__bg">
+              </div>
+            </div>
+            <div class="voice-block swiper-slide">
+              <div class="voice-wrapper">
+                <div class="voice-block__play fa fa-play-circle play"></div>
+                <p class="voice-block__text">Lorem ipsum dolor consectetur</p>
+                <img src="img/voice/soundwave.png" alt="" class="voice-block__wave">
+                <img src="img/voice/voice-img2.jpg" alt="" class="voice-block__bg">
+              </div>
+            </div>
+            <div class="voice-block swiper-slide">
+              <div class="voice-wrapper">
+                <div class="voice-block__play fa fa-play-circle play"></div>
+                <p class="voice-block__text">Lorem ipsum dolor consectetur</p>
+                <img src="img/voice/soundwave.png" alt="" class="voice-block__wave">
+                <img src="img/voice/voice-img3.jpg" alt="" class="voice-block__bg">
+              </div>
+            </div>
+            <div class="voice-block swiper-slide">
+              <div class="voice-wrapper">
+                <div class="voice-block__play fa fa-play-circle play"></div>
+                <p class="voice-block__text">Lorem ipsum dolor consectetur</p>
+                <img src="img/voice/soundwave.png" alt="" class="voice-block__wave">
+                <img src="img/voice/voice-img3.jpg" alt="" class="voice-block__bg">
+              </div>
+            </div>
+            <div class="voice-block swiper-slide">
+              <div class="voice-wrapper">
+                <div class="voice-block__play fa fa-play-circle play"></div>
+                <p class="voice-block__text">Lorem ipsum dolor consectetur</p>
+                <img src="img/voice/soundwave.png" alt="" class="voice-block__wave">
+                <img src="img/voice/voice-img1.jpg" alt="" class="voice-block__bg">
+              </div>
+            </div>
+            <div class="voice-block swiper-slide">
+              <div class="voice-wrapper">
+                <div class="voice-block__play fa fa-play-circle play"></div>
+                <p class="voice-block__text">Lorem ipsum dolor consectetur</p>
+                <img src="img/voice/soundwave.png" alt="" class="voice-block__wave">
+                <img src="img/voice/voice-img2.jpg" alt="" class="voice-block__bg">
+              </div>
+            </div>
           </div>
+          <!-- /.voice-grid -->
         </div>
-        <div class="voice-block">
-          <div class="voice-wrapper">
-            <div class="voice-block__play fa fa-play-circle play"></div>
-            <p class="voice-block__text">Lorem ipsum dolor consectetur</p>
-            <img src="img/voice/soundwave.png" alt="" class="voice-block__wave">
-            <img src="img/voice/voice-img2.jpg" alt="" class="voice-block__bg">
-          </div>
-        </div>
-        <div class="voice-block">
-          <div class="voice-wrapper">
-            <div class="voice-block__play fa fa-play-circle play"></div>
-            <p class="voice-block__text">Lorem ipsum dolor consectetur</p>
-            <img src="img/voice/soundwave.png" alt="" class="voice-block__wave">
-            <img src="img/voice/voice-img3.jpg" alt="" class="voice-block__bg">
-          </div>
-        </div>
-        <div class="voice-block">
-          <div class="voice-wrapper">
-            <div class="voice-block__play fa fa-play-circle play"></div>
-            <p class="voice-block__text">Lorem ipsum dolor consectetur</p>
-            <img src="img/voice/soundwave.png" alt="" class="voice-block__wave">
-            <img src="img/voice/voice-img3.jpg" alt="" class="voice-block__bg">
-          </div>
-        </div>
-        <div class="voice-block">
-          <div class="voice-wrapper">
-            <div class="voice-block__play fa fa-play-circle play"></div>
-            <p class="voice-block__text">Lorem ipsum dolor consectetur</p>
-            <img src="img/voice/soundwave.png" alt="" class="voice-block__wave">
-            <img src="img/voice/voice-img1.jpg" alt="" class="voice-block__bg">
-          </div>
-        </div>
-        <div class="voice-block">
-          <div class="voice-wrapper">
-            <div class="voice-block__play fa fa-play-circle play"></div>
-            <p class="voice-block__text">Lorem ipsum dolor consectetur</p>
-            <img src="img/voice/soundwave.png" alt="" class="voice-block__wave">
-            <img src="img/voice/voice-img2.jpg" alt="" class="voice-block__bg">
-          </div>
-        </div>
+        <!-- /.voice-container -->
+        <div class="swiper-pagination1"></div>
       </div>
-      <!-- /.voice-grid -->
     </div>
     <!-- /.container -->
   </section>
@@ -340,6 +391,25 @@
       <div class="contact-content">
         <h2 class="section-title contact-title">Kontakt<span>.</span></h2>
         <p class="contact-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exercitation</p>
+        <div class="contact-block">
+          <div class="contact-socMobile main-soc">
+            <a href="#" rel="nofollow" class="main-soc__link">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="#" rel="nofollow" class="main-soc__link">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="#" rel="nofollow" class="main-soc__link">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="#" rel="nofollow" class="main-soc__link">
+              <i class="fa fa-dribbble" aria-hidden="true"></i>
+            </a>
+            <a href="#" rel="nofollow" class="main-soc__link">
+              <i class="fa fa-behance" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
         <div class="contact-address">
           <img src="img/contact/email.svg" alt="" class="contact-address__img">
           <a href="mailTo:example@info.com" class="contact-address__link">example@info.com</a>
@@ -378,7 +448,7 @@
   <footer class="footer">
     <div class="container">
       <p class="footer-text">&copy; 2020 All right reserved</p>
-      <div class="footer-text"><a href="#" class="footer-link">Terms and conditions</a> <span>|</span> <a href="#" class="footer-link">Privacy policy</a></div>
+      <div class="footer-text"><a href="#" class="footer-link footer-link__term">Terms and conditions</a> <span>|</span> <a href="#" class="footer-link">Privacy policy</a></div>
     </div>
     <!-- /.container -->
   </footer>

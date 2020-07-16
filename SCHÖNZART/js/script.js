@@ -54,7 +54,12 @@ window.addEventListener('DOMContentLoaded', function() {
       clickable: true,
     },
     breakpoints: {
-       600: {
+       320: {
+         slidesPerView: 1,
+         spaceBetween: 10,
+         slidesPerGroup: 1
+       },
+       740: {
          slidesPerView: 1,
          spaceBetween: 20,
          slidesPerGroup: 1
@@ -66,6 +71,22 @@ window.addEventListener('DOMContentLoaded', function() {
        }
      }
   })
+
+  const max739 = window.matchMedia( "(max-width: 739px)" );
+  if(max739.matches){
+    var mySwiper = new Swiper('.voice-container', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      autoplay: {
+        delay: 4000,
+      },
+      pagination: {
+        el: '.swiper-pagination1',
+        type: 'bullets',
+        clickable: true,
+      }
+    })
+  }
 
   // ANCHOR
 
@@ -80,6 +101,34 @@ window.addEventListener('DOMContentLoaded', function() {
         block: "start"
       });
     })
+  }
+
+  let menuBtn = document.querySelector('.menu-btn'),
+      mobileMenu = document.querySelector('.mobile-menu'),
+      mobileMenuLinks = document.getElementsByClassName('mobile-menu__link');
+
+  menuBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    this.classList.toggle('menu-btn_active');
+    if(this.classList.contains('menu-btn_active')){
+      mobileMenu.style.transform = 'scale(1)';
+      document.getElementsByTagName('body')[0].style.overflowY = "hidden";
+      document.getElementsByTagName('html')[0].style.overflowY = "hidden";
+    }
+    else{
+      mobileMenu.style.transform = 'scale(0)';
+      document.getElementsByTagName('body')[0].style.overflowY = "scroll";
+      document.getElementsByTagName('html')[0].style.overflowY = "scroll";
+    }
+  });
+
+  for (var i = 0; i < mobileMenuLinks.length; i++) {
+    mobileMenuLinks[i].addEventListener('click', function(event) {
+      mobileMenu.style.transform = 'scale(0)';
+      menuBtn.classList.toggle('menu-btn_active');
+      document.getElementsByTagName('body')[0].style.overflowY = "scroll";
+      document.getElementsByTagName('html')[0].style.overflowY = "scroll";
+    });
   }
 
 });
