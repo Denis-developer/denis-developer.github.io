@@ -41,11 +41,11 @@
 // FONT AWESOME
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?1vd4au');
-  src:  url('../fonts/icomoon.eot?1vd4au#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?1vd4au') format('truetype'),
-    url('../fonts/icomoon.woff?1vd4au') format('woff'),
-    url('../fonts/icomoon.svg?1vd4au#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?n7whzh');
+  src:  url('../fonts/icomoon.eot?n7whzh#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?n7whzh') format('truetype'),
+    url('../fonts/icomoon.woff?n7whzh') format('woff'),
+    url('../fonts/icomoon.svg?n7whzh#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -66,11 +66,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-play2:before {
-  content: "\ea15";
+.icon-pause-circle:before {
+  content: "\e901";
 }
-.icon-pause:before {
-  content: "\ea16";
+.icon-play-circle:before {
+  content: "\e900";
 }
 .icon-facebook:before {
   content: "\ea90";
@@ -224,7 +224,7 @@ img {
   &-wrapperBg{
     background: #121212 url(../img/main/main-bg.png) no-repeat;
     background-position: bottom 0px right -90px;
-    padding-bottom: 130px;
+    padding-bottom: 110px;
     padding-top: 120px;
   }
   &-name{
@@ -285,7 +285,7 @@ img {
     align-items: center;
   }
   &-soc{
-    margin-top: 90px;
+    margin-top: 110px;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
@@ -770,7 +770,7 @@ img {
       margin: 0 20px;
     }
   }
-  &-link{  
+  &-link{
     position: relative;
     &::before{
       content: '';
@@ -1057,7 +1057,7 @@ img {
     &-address{
       margin-right: 70px;
     }
-    &-address:nth-child(4){
+    &-address:nth-child(5){
       margin-right: 0;
     }
   }
@@ -1133,8 +1133,10 @@ img {
       grid-template-columns: 1fr 1fr;
       grid-gap: 20px;
       grid-row-gap: 46px;
+      justify-items: center;
     }
     &-block{
+      width: 340px;
       &__text{
         padding: 6px 0px;
         bottom: -26px;
@@ -1325,6 +1327,7 @@ img {
     &-img{
       order: 2;
       width: 100%;
+      margin: 0 auto;
     }
     &-btn{
       position: absolute;

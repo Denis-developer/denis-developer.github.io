@@ -5,14 +5,14 @@ window.addEventListener('DOMContentLoaded', function() {
   let mainPlay = document.querySelector('.main-play');
 
   mainPlay.addEventListener('click', function() {
-    if(this.querySelector('.play').classList.contains('fa-play-circle')){
-      this.querySelector('.play').classList.remove('fa-play-circle');
-      this.querySelector('.play').classList.add('fa-pause-circle');
+    if(this.querySelector('.play').classList.contains('icon-play-circle')){
+      this.querySelector('.play').classList.remove('icon-play-circle');
+      this.querySelector('.play').classList.add('icon-pause-circle');
       audio.play();
     }
     else{
-      this.querySelector('.play').classList.remove('fa-pause-circle');
-      this.querySelector('.play').classList.add('fa-play-circle');
+      this.querySelector('.play').classList.remove('icon-pause-circle');
+      this.querySelector('.play').classList.add('icon-play-circle');
       audio.pause();
     }
   })
@@ -20,14 +20,14 @@ window.addEventListener('DOMContentLoaded', function() {
   for (var i = 0; i < btnPlay.length; i++) {
     btnPlay[i].addEventListener('click', function(event) {
       event.preventDefault();
-      if(this.classList.contains('fa-play-circle')){
-        this.classList.remove('fa-play-circle');
-        this.classList.add('fa-pause-circle');
+      if(this.classList.contains('icon-play-circle')){
+        this.classList.remove('icon-play-circle');
+        this.classList.add('icon-pause-circle');
         audio.play();
       }
       else{
-        this.classList.remove('fa-pause-circle');
-        this.classList.add('fa-play-circle');
+        this.classList.remove('icon-pause-circle');
+        this.classList.add('icon-play-circle');
         audio.pause();
       }
     })
@@ -35,8 +35,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
   audio.onended = function() {
     for (var i = 0; i < btnPlay.length; i++) {
-      btnPlay[i].classList.remove('fa-pause-circle');
-      btnPlay[i].classList.add('fa-play-circle');
+      btnPlay[i].classList.remove('icon-pause-circle');
+      btnPlay[i].classList.add('icon-play-circle');
     }
   };
 
