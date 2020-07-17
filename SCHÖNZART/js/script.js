@@ -2,20 +2,25 @@ window.addEventListener('DOMContentLoaded', function() {
   let audio = new Audio("http://denis-developer.ru/я%20танцую.mp3");
 
   let btnPlay = document.getElementsByClassName('play');
-  let mainPlay = document.querySelector('.main-play');
+  // let btnPlayMain = document.getElementsByClassName('play-pause-button');
+  let mainPlay = document.getElementsByClassName('main-play');
 
-  mainPlay.addEventListener('click', function() {
-    if(this.querySelector('.play').classList.contains('icon-play-circle')){
-      this.querySelector('.play').classList.remove('icon-play-circle');
-      this.querySelector('.play').classList.add('icon-pause-circle');
-      audio.play();
-    }
-    else{
-      this.querySelector('.play').classList.remove('icon-pause-circle');
-      this.querySelector('.play').classList.add('icon-play-circle');
-      audio.pause();
-    }
-  })
+  for (var i = 0; i < mainPlay.length; i++) {
+    mainPlay[i].addEventListener('click', function() {
+      let btnPlayMain = this.querySelector('.play-pause-button');
+      if(btnPlayMain.classList.contains('icon-play-circle')){
+        btnPlayMain.classList.remove('icon-play-circle');
+        btnPlayMain.classList.add('icon-pause-circle');
+        audio.play();
+      }
+      else{
+        btnPlayMain.classList.remove('icon-pause-circle');
+        btnPlayMain.classList.add('icon-play-circle');
+        audio.pause();
+      }
+    })
+  }
+
 
   for (var i = 0; i < btnPlay.length; i++) {
     btnPlay[i].addEventListener('click', function(event) {
@@ -90,7 +95,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
   // ANCHOR
 
-  const anchors = document.querySelectorAll('a[href*="#"]');
+  const anchors = document.querySelectorAll('a[href^="#"]');
 
   for(let anchor of anchors){
     anchor.addEventListener("click", function(event) {
