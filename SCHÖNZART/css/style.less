@@ -100,7 +100,9 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  line-height: 28px;
+  font-family: 'Poppins R';
+  font-size: 16px;
   overflow-x: hidden;
 }
 
@@ -118,17 +120,31 @@ img {
   display: block;
 }
 
-.container{
-  max-width: 1180px;
-  margin: 0 auto;
+p{
+  font-family: 'Poppins R';
+  font-size: 16px;
+  color: #737373;
 }
 
-.section-title{
-  font-family: 'Suez R';
+h1{
+  color: #ffffff;
+  font-family: "Suez R";
+  font-size: 90px;
+  line-height: 98px;
+}
+h2{
+  color: #1a1a1a;
+  font-family: "Suez R";
   font-size: 50px;
+  line-height: 22px;
   span{
     color: #c19356;
   }
+}
+
+.container{
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 .section-btn{
@@ -159,7 +175,7 @@ img {
     justify-content: space-between;
     align-items: center;
   }
-  &-logo{
+  a{
     font-family: "Suez R";
     color: #fff;
     text-decoration: none;
@@ -174,13 +190,14 @@ img {
     }
   }
   &-nav{
-    &__link{
+    a{
       font-family: 'Poppins R';
       color: #fff;
       text-decoration: none;
       font-size: 16px;
       margin-left: 43px;
       position: relative;
+      text-transform: none;
       &::before{
         content: '';
         display: block;
@@ -194,6 +211,7 @@ img {
         transition: all 0.3s;
       }
       &:hover{
+        opacity: 1;
         &::before{
           transform: scale(1);
         }
@@ -227,13 +245,13 @@ img {
     padding-bottom: 110px;
     padding-top: 120px;
   }
-  &-name{
+  h3{
     font-family: "Suez R";
     color: #fff;
     font-size: 30px;
     line-height: 22px;
   }
-  &-title{
+  h1{
     font-family: "Suez R";
     font-size: 90px;
     line-height: 98px;
@@ -242,13 +260,16 @@ img {
     margin-top: 25px;
     margin-bottom: 40px;
   }
-  &-text{
+  p{
     font-family: 'Poppins R';
     font-size: 16px;
     color: #fff;
     line-height: 28px;
     max-width: 578px;
     margin-bottom: 45px;
+  }
+  img{
+    display: none;
   }
   &-btn{
     width: 225px;
@@ -289,7 +310,7 @@ img {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
-    &__link{
+    a{
       margin-right: 30px;
       color: #fff;
       text-decoration: none;
@@ -316,11 +337,11 @@ img {
     justify-content: space-between;
     align-items: flex-start;
   }
-  &-title{
+  h2{
     margin-right: 116px;
     color: #1a1a1a;
   }
-  &-text{
+  p{
     font-family: 'Poppins R';
     color: #737373;
     font-size: 16px;
@@ -338,37 +359,37 @@ img {
     border: 1px solid #e6e6e6;
     background-color: #ffffff;
     padding: 50px;
-    &__img{
+    img{
       width: 26%;
       margin-bottom: 30px;
     }
-    &__title{
+    h5{
       font-family: 'Suez R';
       color: #1a1a1a;
       font-size: 20px;
       line-height: 30px;
       margin-bottom: 20px;
     }
-    &__text{
+    p{
       font-family: 'Poppins R';
       color: #737373;
       font-size: 14px;
       line-height: 24px;
     }
     &:nth-child(1){
-      .services-block__img{
+      img{
         height: 69px;
         width: 73px;
       }
     }
     &:nth-child(2){
-      .services-block__img{
+      img{
         height: 69px;
         width: 46px;
       }
     }
     &:nth-child(3){
-      .services-block__img{
+      img{
         height: 62px;
         width: 60px;
       }
@@ -402,14 +423,14 @@ img {
     &:last-child::before{
       display: none;
     }
-    &__number{
+    strong{
       font-family: 'Poppins B';
       color: #1a1a1a;
       font-size: 60px;
       line-height: 22px;
       margin-bottom: 20px;
     }
-    &__desc{
+    p{
       font-family: 'Poppins R';
       color: #1a1a1a;
       font-size: 16px;
@@ -423,11 +444,11 @@ img {
   padding-bottom: 100px;
   background: url(../img/voice/voice-bg.jpg) no-repeat center / cover;
   background-attachment: fixed;
-  &-title{
+  h2{
     color: #fff;
     text-align: center;
   }
-  &-text{
+  p{
     color: #fff;
     text-align: center;
     font-size: 16px;
@@ -464,7 +485,7 @@ img {
       bottom: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.6);
       z-index: 2;
       opacity: 0;
       transition: all 0.3s;
@@ -499,7 +520,7 @@ img {
       z-index: 2;
       transition: all 0.3s;
     }
-    &__text{
+    p{
       max-width: 145px;
       font-family: 'Poppins B';
       color: #fff;
@@ -511,6 +532,7 @@ img {
       position: relative;
       z-index: 2;
       transition: all 0.3s;
+      margin: 0;
       margin-bottom: -60px;
       opacity: 0;
     }
@@ -546,6 +568,7 @@ img {
       }
       .voice-block__play{
         opacity: 1;
+        margin-bottom: 15px;
       }
     }
   }
@@ -559,16 +582,16 @@ img {
     display: flex;
     align-items: center;
   }
-  &-img{
+  img{
     margin-right: 80px;
     border-radius: 15px;
   }
-  &-title{
-    margin-bottom: 23px;
+  h2{
+    margin-bottom: 40px;
     font-size: 48px;
     color: #1a1a1a;
   }
-  &-text{
+  p{
     font-family: 'Poppins R';
     color: #737373;
     font-size: 16px;
@@ -579,7 +602,7 @@ img {
     width: 266px;
     height: 55px;
     border-radius: 28px;
-    margin-top: 15px;
+    margin-top: 45px;
     transition: all 0.3s;
     &:hover{
       box-shadow: 0px 0px 15px #c19356;
@@ -592,11 +615,11 @@ img {
   padding-bottom: 180px;
   background: url(../img/credentials/credentials-bg.jpg) no-repeat center / cover;
   background-attachment: fixed;
-  &-title{
+  h2{
     color: #fff;
     text-align: center;
   }
-  &-text{
+  p{
     color: #fff;
     text-align: center;
     font-size: 16px;
@@ -628,19 +651,20 @@ img {
     align-items: center;
     flex: 0 0 auto;
     overflow: hidden;
-    &__title{
+    h5{
       color: #1a1a1a;
       font-family: 'Suez R';
       font-size: 20px;
       line-height: 30px;
       margin-bottom: 15px;
     }
-    &__text{
+    p{
       font-family: 'Poppins R';
       color: #737373;
       font-size: 14px;
       line-height: 24px;
       margin-bottom: 25px;
+      text-align: left;
     }
     &__btn{
       border-radius: 20px;
@@ -702,38 +726,39 @@ img {
     display: flex;
     align-items: center;
   }
+  &-block{
+    display: none;
+  }
   &-soc{
-    .main-soc__link{
+    a{
       color: #a6a6a6;
     }
   }
-  &-img{
+  img{
     margin-left: 125px;
     border-radius: 15px;
   }
-  &-title{
+  h2{
     color: #1a1a1a;
     font-size: 48px;
   }
-  &-text{
+  p{
     font-family: 'Poppins R';
     font-size: 16px;
     line-height: 28px;
     color: #737373;
     margin-bottom: 40px;
-    margin-top: 14px;
+    margin-top: 40px;
   }
   &-address{
     display: inline-block;
     margin-right: 75px;
-    &__img{
+    img{
       width: 40px;
-      &_phone{
-        position: relative;
-        transform: rotate(-90deg);
-      }
+      margin: 0;
+      border-radius: 0;
     }
-    &__link{
+    a{
       font-family: 'Poppins B';
       display: inline-block;
       color: #1a1a1a;
@@ -742,10 +767,11 @@ img {
       margin-bottom: 5px;
       text-decoration: none;
     }
-    &__text{
+    p{
       font-family: 'Poppins R';
       color: #737373;
       font-size: 14px;
+      margin: 0;
     }
   }
 }
@@ -761,16 +787,17 @@ img {
     justify-content: space-between;
     height: 100%;
   }
-  &-text, &-link{
+  p, a{
     font-family: 'Poppins R';
     color: #a6a6a6;
     font-size: 14px;
     text-decoration: none;
-    span{
-      margin: 0 20px;
-    }
   }
-  &-link{
+  span{
+    margin: 0 20px;
+    color: #a6a6a6;
+  }
+  a{
     position: relative;
     &::before{
       content: '';
@@ -892,7 +919,7 @@ img {
     max-width: 100%;
     padding: 0px 20px;
   }
-  .section-title{
+  h2{
     font-size: 44px;
     line-height: 22px;
   }
@@ -903,16 +930,16 @@ img {
       background-size: 620px;
       background-position: bottom -170px right -60px;
     }
-    &-name{
+    h3{
       font-size: 24px;
     }
-    &-title{
+    h1{
       font-size: 60px;
       line-height: 65px;
       margin-top: 20px;
       margin-bottom: 30px;
     }
-    &-text{
+    p{
       font-size: 14px;
       line-height: 24px;
       max-width: 453px;
@@ -930,15 +957,15 @@ img {
     }
     &-soc{
       margin-top: 52px;
-      &__link{
+      a{
         font-size: 16px;
       }
     }
   }
-  .services-title{
+  .services h2{
     margin-right: 68px;
   }
-  .services-text{
+  .services p{
     font-size: 14px;
     line-height: 24px;
   }
@@ -954,11 +981,11 @@ img {
   }
   .statistics{
     &-block{
-      &__number{
+      strong{
         font-size: 48px;
         line-height: 22px;
       }
-      &__desc{
+      p{
         font-size: 14px;
         line-height: 24px;
       }
@@ -967,7 +994,7 @@ img {
   .voice{
     padding-top: 55px;
     padding-bottom: 120px;
-    &-text{
+    p{
       font-size: 14px;
       line-height: 24px;
       max-width: 645px;
@@ -978,6 +1005,7 @@ img {
     }
     &-block{
       height: 215px;
+      width: 300px;
       &::before{
         display: none;
       }
@@ -997,7 +1025,7 @@ img {
         width: 50px;
         font-size: 60px;
       }
-      &__text{
+      p{
         position: absolute;
         bottom: -45px;
         left: 0;
@@ -1019,11 +1047,11 @@ img {
   .person{
     padding-top: 60px;
     padding-bottom: 70px;
-    &-img{
+    img{
       width: 460px;
       margin-right: 50px;
     }
-    &-text{
+    p{
       font-size: 14px;
       line-height: 24px;
     }
@@ -1045,18 +1073,28 @@ img {
   }
   .contact{
     padding: 70px 0px;
-    &-img{
+    img{
       width: 460px;
       margin-left: 60px;
     }
-    &-text{
+    p{
       font-size: 14px;
       line-height: 24px;
       margin-top: 35px;
       margin-bottom: 44px;
     }
+    .main-soc{
+      margin-top: 100px;
+    }
     &-address{
       margin-right: 70px;
+      img{
+        width: 40px;
+        margin: 0;
+      }
+      p{
+        margin: 0;
+      }
     }
     &-address:nth-child(5){
       margin-right: 0;
@@ -1080,7 +1118,7 @@ img {
     background: #121212 url(../img/main/main-bg.png) no-repeat;
     background-position: bottom 0px right -100px;
     background-size: 530px;
-    &-text{
+    p{
       max-width: 368px;
       margin-bottom: 45px;
     }
@@ -1098,12 +1136,12 @@ img {
       flex-wrap: wrap;
       justify-content: center;
     }
-    &-title{
+    h2{
       text-align: center;
       margin-right: 0;
       margin-bottom: 20px;
     }
-    &-text{
+    p{
       text-align: center;
     }
     &-grid{
@@ -1112,12 +1150,12 @@ img {
     }
     &-block{
       text-align: center;
-      &__img{
+      img{
         display: block;
         margin: 0 auto;
         margin-bottom: 20px;
       }
-      &__text{
+      p{
         max-width: 555px;
         margin: 0 auto;
       }
@@ -1128,7 +1166,7 @@ img {
       &::before{
         height: 100%;
       }
-      &__desc{
+      p{
         max-width: 80px;
         margin: 0 auto;
       }
@@ -1143,7 +1181,7 @@ img {
     }
     &-block{
       width: 340px;
-      &__text{
+      p{
         padding: 6px 0px;
         bottom: -26px;
       }
@@ -1151,7 +1189,7 @@ img {
   }
   .person{
     padding: 70px 0px;
-    &-img{
+    img{
       width: 340px;
       margin-right: 39px;
       margin-top: -5px;
@@ -1160,22 +1198,43 @@ img {
     &-flex{
       align-items: flex-start;
     }
+    &-btn{
+      margin-top: 35px;
+    }
+  }
+  .credentials{
+    p{
+      margin-bottom: 45px;
+    }
+    &-slide{
+      p{
+        margin-top: 20px;
+        margin-bottom: 25px;
+      }
+    }
   }
   .contact{
-    &-text{
+    p{
       margin-bottom: 25px;
     }
-    &-img{
+    img{
       width: 340px;
       margin-left: 54px;
     }
     &-address{
       margin-right: 38px;
-      &__link{
+      a{
         font-size: 14px;
       }
+      img{
+        width: 40px;
+        margin: 0;
+      }
+      p{
+        margin-bottom: 0;
+      }
     }
-    &-soc{
+    .main-soc{
       margin-top: 50px;
     }
   }
@@ -1185,13 +1244,13 @@ img {
   .container{
     padding: 0px 10px;
   }
-  .section-title{
+  h2{
     font-size: 30px;
     line-height: 36px;
   }
   .header{
     height: 62px;
-    &-logo{
+    a{
       font-size: 18px;
     }
   }
@@ -1201,13 +1260,13 @@ img {
     &-wrapperBg{
       padding: 0;
     }
-    &-title, &-text, &-wrapperFlex, &-soc{
+    h1, p, &-wrapperFlex, &-soc{
       display: none;
     }
-    &-mobileImg{
+    img{
       display: block;
     }
-    &-name{
+    h3{
       position: absolute;
       bottom: 39px;
       left: 50%;
@@ -1222,12 +1281,12 @@ img {
     padding-top: 22px;
     padding-bottom: 40px;
     text-align: center;
-    &-title{
+    h2{
       font-family: 'Suez R';
       color: #1a1a1a;
       margin-bottom: 20px;
     }
-    &-text{
+    p{
       font-family: 'Poppins R';
       font-size: 14px;
       line-height: 24px;
@@ -1272,11 +1331,11 @@ img {
     &-block{
       background: transparent;
       padding: 30px 20px;
-      &__title{
+      h5{
         font-size: 18px;
         margin-bottom: 15px;
       }
-      &__text{
+      p{
         font-size: 14px;
         line-height: 24px;
       }
@@ -1288,7 +1347,7 @@ img {
   .voice{
     padding-top: 30px;
     padding-bottom: 99px;
-    &-text{
+    p{
       margin-top: 20px;
       margin-bottom: 25px;
     }
@@ -1302,8 +1361,9 @@ img {
       width: 265px;
     }
     &-block{
-      &__text{
+      p{
         padding: 8px 0px;
+        margin: 0;
       }
     }
     .swiper-pagination-bullet{
@@ -1330,7 +1390,7 @@ img {
     &-flex{
       flex-wrap: wrap;
     }
-    &-img{
+    img{
       order: 2;
       width: 100%;
       margin: 0 auto;
@@ -1341,10 +1401,12 @@ img {
       left: 50%;
       transform: translateX(-50%);
     }
-    &-title{
+    h2{
       text-align: center;
+      font-size: 30px;
+      margin-bottom: 20px;
     }
-    &-text{
+    p{
       text-align: center;
     }
   }
@@ -1359,15 +1421,20 @@ img {
     .swiper-pagination{
       bottom: -40px;
     }
+    p{
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 25px;
+    }
     &-slide{
       flex-wrap: wrap;
       border-radius: 10px;
-      &__title{
+      h5{
         font-size: 18px;
         line-height: 26px;
         max-width: 173px;
       }
-      &__text{
+      p{
         margin-bottom: 20px;
       }
       &__play{
@@ -1393,7 +1460,13 @@ img {
       justify-content: center;
       text-align: center;
     }
+    h2{
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
     &-block{
+      display: block;
       background: url(../img/contact/contact-img.jpg) no-repeat center / cover;
       height: 345px;
       width: 300px;
@@ -1409,13 +1482,16 @@ img {
       left: 50%;
       transform: translateX(-50%);
       width: 70%;
-      .main-soc__link{
+      a{
         margin-right: 0;
       }
     }
-    &-text{
+    p{
       margin-top: 20px;
       margin-bottom: 28px;
+    }
+    img{
+      display: none;
     }
     &-address{
       padding-top: 28px;
@@ -1425,15 +1501,18 @@ img {
       width: 300px;
       margin: 0 auto;
       margin-top: 10px;
-      &__link{
+      a{
         font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 0;
       }
-      &__img{
+      p{
+        margin: 0;
+      }
+      img{
+        display: block;
         margin: 0 auto;
       }
-    }
-    &-img{
-      display: none;
     }
   }
   .footer{
@@ -1444,21 +1523,21 @@ img {
       justify-content: center;
       text-align: center;
     }
-    &-text{
+    span{
+      display: none;
+    }
+    p{
       font-size: 14px;
-      span{
-        display: none;
-      }
       &:first-child{
         margin-bottom: 20px;
       }
     }
-    &-link{
+    a{
       text-align: center;
       font-size: 12px;
       margin: 0;
       border-bottom: 1px solid #a6a6a6;
-      &__term{
+      &:first-child{
         display: block;
         margin-bottom: 8px;
       }

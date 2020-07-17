@@ -2,7 +2,6 @@ window.addEventListener('DOMContentLoaded', function() {
   let audio = new Audio("http://denis-developer.ru/я%20танцую.mp3");
 
   let btnPlay = document.getElementsByClassName('play');
-  // let btnPlayMain = document.getElementsByClassName('play-pause-button');
   let mainPlay = document.getElementsByClassName('main-play');
 
   for (var i = 0; i < mainPlay.length; i++) {
