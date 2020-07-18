@@ -108,7 +108,7 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   let menuBtn = document.querySelector('.menu-btn'),
-      mobileMenu = document.querySelector('.mobile-menu'),
+      mobileMenu = document.querySelector('.mobile-menuWrapper'),
       mobileMenuLinks = document.getElementsByClassName('mobile-menu__link');
 
   menuBtn.addEventListener('click', function(event) {
