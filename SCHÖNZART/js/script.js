@@ -1,4 +1,35 @@
 window.addEventListener('DOMContentLoaded', function() {
+
+  // МОБИЛЬНОЕ МЕНЮ
+  let menuBtn = document.querySelector('.menu-btn'),
+      mobileMenu = document.querySelector('.mobile-menuWrapper'),
+      mobileMenuLinks = document.getElementsByClassName('mobile-menu__link');
+
+  menuBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    this.classList.toggle('menu-btn_active');
+    if(this.classList.contains('menu-btn_active')){
+      mobileMenu.style.transform = 'scale(1)';
+      document.getElementsByTagName('body')[0].style.overflowY = "hidden";
+      document.getElementsByTagName('html')[0].style.overflowY = "hidden";
+    }
+    else{
+      mobileMenu.style.transform = 'scale(0)';
+      document.getElementsByTagName('body')[0].style.overflowY = "scroll";
+      document.getElementsByTagName('html')[0].style.overflowY = "scroll";
+    }
+  });
+
+  for (var i = 0; i < mobileMenuLinks.length; i++) {
+    mobileMenuLinks[i].addEventListener('click', function(event) {
+      mobileMenu.style.transform = 'scale(0)';
+      menuBtn.classList.toggle('menu-btn_active');
+      document.getElementsByTagName('body')[0].style.overflowY = "scroll";
+      document.getElementsByTagName('html')[0].style.overflowY = "scroll";
+    });
+  }
+
+  // АУДИО
   let audio = new Audio("http://denis-developer.ru/я%20танцую.mp3");
 
   let btnPlay = document.getElementsByClassName('play');
@@ -41,6 +72,11 @@ window.addEventListener('DOMContentLoaded', function() {
     for (var i = 0; i < btnPlay.length; i++) {
       btnPlay[i].classList.remove('icon-pause-circle');
       btnPlay[i].classList.add('icon-play-circle');
+    }
+    for (var i = 0; i < mainPlay.length; i++) {
+      let btnPlayMain = this.querySelector('.play-pause-button');
+      btnPlayMain[i].classList.remove('icon-pause-circle');
+      btnPlayMain[i].classList.add('icon-play-circle');
     }
   };
 
@@ -103,34 +139,6 @@ window.addEventListener('DOMContentLoaded', function() {
         block: "start"
       });
     })
-  }
-
-  let menuBtn = document.querySelector('.menu-btn'),
-      mobileMenu = document.querySelector('.mobile-menuWrapper'),
-      mobileMenuLinks = document.getElementsByClassName('mobile-menu__link');
-
-  menuBtn.addEventListener('click', function(event) {
-    event.preventDefault();
-    this.classList.toggle('menu-btn_active');
-    if(this.classList.contains('menu-btn_active')){
-      mobileMenu.style.transform = 'scale(1)';
-      document.getElementsByTagName('body')[0].style.overflowY = "hidden";
-      document.getElementsByTagName('html')[0].style.overflowY = "hidden";
-    }
-    else{
-      mobileMenu.style.transform = 'scale(0)';
-      document.getElementsByTagName('body')[0].style.overflowY = "scroll";
-      document.getElementsByTagName('html')[0].style.overflowY = "scroll";
-    }
-  });
-
-  for (var i = 0; i < mobileMenuLinks.length; i++) {
-    mobileMenuLinks[i].addEventListener('click', function(event) {
-      mobileMenu.style.transform = 'scale(0)';
-      menuBtn.classList.toggle('menu-btn_active');
-      document.getElementsByTagName('body')[0].style.overflowY = "scroll";
-      document.getElementsByTagName('html')[0].style.overflowY = "scroll";
-    });
   }
 
 });
