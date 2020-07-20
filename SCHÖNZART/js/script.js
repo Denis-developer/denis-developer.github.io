@@ -61,7 +61,8 @@ window.addEventListener('DOMContentLoaded', function() {
        320: {
          slidesPerView: 1,
          spaceBetween: 10,
-         slidesPerGroup: 1
+         slidesPerGroup: 1,
+         autoplay: false
        },
        740: {
          slidesPerView: 1,
@@ -81,9 +82,6 @@ window.addEventListener('DOMContentLoaded', function() {
     var mySwiper = new Swiper('.voice-container', {
       slidesPerView: 1,
       spaceBetween: 10,
-      autoplay: {
-        delay: 4000,
-      },
       pagination: {
         el: '.swiper-pagination1',
         type: 'bullets',
