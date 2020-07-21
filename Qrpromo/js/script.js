@@ -10,13 +10,13 @@ window.addEventListener('DOMContentLoaded', function() {
     this.classList.toggle('menu-btn_active');
     if(this.classList.contains('menu-btn_active')){
       mobileMenu.style.transform = 'scale(1)';
-      document.getElementsByTagName('body')[0].style.overflowY = "hidden";
+      // document.getElementsByTagName('body')[0].style.overflowY = "hidden";
       document.getElementsByTagName('html')[0].style.overflowY = "hidden";
     }
     else{
       mobileMenu.style.transform = 'scale(0)';
-      document.getElementsByTagName('body')[0].style.overflowY = "scroll";
-      document.getElementsByTagName('html')[0].style.overflowY = "scroll";
+      // document.getElementsByTagName('body')[0].style.overflowY = "visible";
+      document.getElementsByTagName('html')[0].style.overflowY = "visible";
     }
   });
 
@@ -24,8 +24,8 @@ window.addEventListener('DOMContentLoaded', function() {
     mobileMenuLinks[i].addEventListener('click', function(event) {
       mobileMenu.style.transform = 'scale(0)';
       menuBtn.classList.toggle('menu-btn_active');
-      document.getElementsByTagName('body')[0].style.overflowY = "scroll";
-      document.getElementsByTagName('html')[0].style.overflowY = "scroll";
+      // document.getElementsByTagName('body')[0].style.overflowY = "visible";
+      document.getElementsByTagName('html')[0].style.overflowY = "visible";
     });
   }
 
