@@ -197,7 +197,7 @@ p{
 
 .main{
   padding-bottom: 128px;
-  background: url(../img/main/main-bg.jpg) no-repeat center / cover;
+  background: #48443f url(../img/main/main-bg.jpg) no-repeat center / cover;
   background-attachment: fixed;
   .container{
     position: relative;
@@ -1413,7 +1413,9 @@ p{
 
 @media(max-width: 1200px){
   .container{
-    max-width: 960px;
+    max-width: none;
+    width: 100%;
+    padding: 0px 20px;
   }
   .task{
     padding-top: 80px;
@@ -1440,9 +1442,6 @@ p{
 }
 
 @media(max-width: 992px){
-  .container{
-    max-width: 720px;
-  }
   h2, h3{
     font-size: 30px;
     line-height: 36px;
@@ -1507,9 +1506,6 @@ p{
 }
 
 @media(max-width: 768px){
-  .container{
-    max-width: 540px;
-  }
   .main{
     img{
       width: 108px;
