@@ -99,12 +99,19 @@ html{
   overflow-x: hidden;
 }
 
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 30px;
-  overflow-x: hidden;
+  overflow: auto;
   font-family: 'Roboto Slab', serif;
 }
 
@@ -156,7 +163,9 @@ p{
   line-height: 30px;
 }
 
-
+.header.popup-open{
+  background: #fff !important;
+}
 .header{
   height: 120px;
   position: relative;
@@ -174,11 +183,14 @@ p{
     transition: all 0.3s;
     position: relative;
     z-index: 100;
+    svg{
+      width: 120px;
+      margin-top: 8px;
+    }
+    .st0{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+    .st1{fill:#FFFFFF;}
     &:hover{
       opacity: 0.8;
-    }
-    img{
-      position: static;
     }
   }
 }
@@ -244,7 +256,7 @@ p{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255,255,255,1);
+  background-color: #fff;
   z-index: 99;
   padding-top: 120px;
   transition: all 0.4s;
@@ -920,7 +932,8 @@ p{
     }
   }
   .header{
-    margin: 0;
+    margin: 0 auto;
+    max-width: 740px;
     background: transparent;
     .container{
       max-width: 740px;
@@ -930,16 +943,13 @@ p{
     a{
       margin: 0;
     }
-    img{
-      width: auto;
-      height: auto;
-      margin: 0;
-    }
     .menu-btn span,
     .menu-btn span::before,
     .menu-btn span::after{
       background: #000;
     }
+    .st2{fill:none;stroke:#000;stroke-width:3;stroke-miterlimit:10;}
+    .st3{fill:#000;}
   }
   &-wrapper{
     .footer .container{
@@ -1441,9 +1451,6 @@ p{
       width: 150px;
       right: 10px;
     }
-    .header img{
-      width: auto;
-    }
   }
   .task{
     padding-top: 80px;
@@ -1501,9 +1508,6 @@ p{
   .main{
     img{
       width: 108px;
-    }
-    .header img{
-      width: auto;
     }
   }
   .task{
@@ -1663,9 +1667,6 @@ p{
     font-size: 20px;
     line-height: 44px;
   }
-  .main .header img{
-    width: 102px;
-  }
   .main .container{
     position: static;
   }
@@ -1701,9 +1702,6 @@ p{
     }
     img{
       display: none;
-    }
-    .header img{
-      display: block;
     }
   }
   .task{
@@ -2014,9 +2012,10 @@ p{
   .mobile-menuWrapper{
     background: #fff;
   }
-  .mobile-menu a.mobile-menu__link{
+  .mobile-menu .mobile-menuNav a{
      font-size: 16px;
      margin-bottom: 20px;
+     text-transform: none;
   }
   .mobile-menu{
     .mobile-menuNav{
@@ -2038,17 +2037,9 @@ p{
      margin-top: 31px;
     }
   }
-  .store .header img{
-    width: 102px;
-    margin: 0;
-  }
   .desktop{
     .header .container{
       padding: 0px 10px;
-    }
-    .header img{
-      width: 102px;
-      margin: 0;
     }
     &-container{
       padding: 30px 10px;

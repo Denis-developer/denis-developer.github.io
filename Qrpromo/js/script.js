@@ -4,44 +4,66 @@ window.addEventListener('DOMContentLoaded', function() {
   let menuBtn = document.querySelector('.menu-btn'),
       mobileMenu = document.querySelector('.mobile-menuWrapper'),
       header = document.querySelector('.header'),
-      mobileMenuLinks = document.getElementsByClassName('mobile-menu__link');
+      logoSt0 = document.querySelectorAll('.header .st0'),
+      logoSt1 = document.querySelectorAll('.header .st1'),
+      mobileMenuLinks = document.querySelectorAll('.mobile-menuNav a');
 
   menuBtn.addEventListener('click', function(event) {
     event.preventDefault();
     this.classList.toggle('menu-btn_active');
     if(this.classList.contains('menu-btn_active')){
       mobileMenu.style.transform = 'scale(1)';
-      // document.getElementsByTagName('body')[0].style.overflowY = "hidden";
-      header.style.paddingRight = "15px";
+      header.classList.toggle('popup-open');
       document.getElementsByTagName('html')[0].style.overflowY = "hidden";
+      // Перекраска логотипа в чёрный цвет
+      for (var i = 0; i < logoSt0.length; i++) {
+        logoSt0[i].style.stroke = '#000';
+      }
+      for (var i = 0; i < logoSt1.length; i++) {
+        logoSt1[i].style.fill = '#000';
+      }
     }
     else{
       mobileMenu.style.transform = 'scale(0)';
-      // document.getElementsByTagName('body')[0].style.overflowY = "visible";
-      header.style.paddingRight = "0px";
+      header.classList.toggle('popup-open');
       document.getElementsByTagName('html')[0].style.overflowY = "visible";
+      // Перекраска логотипа в белый цвет
+      for (var i = 0; i < logoSt0.length; i++) {
+        logoSt0[i].style.stroke = '#fff';
+      }
+      for (var i = 0; i < logoSt1.length; i++) {
+        logoSt1[i].style.fill = '#fff';
+      }
     }
   });
 
   for (var i = 0; i < mobileMenuLinks.length; i++) {
     mobileMenuLinks[i].addEventListener('click', function(event) {
       mobileMenu.style.transform = 'scale(0)';
+      header.classList.toggle('popup-open');
       menuBtn.classList.toggle('menu-btn_active');
-      // document.getElementsByTagName('body')[0].style.overflowY = "visible";
-      header.style.paddingRight = "0px";
       document.getElementsByTagName('html')[0].style.overflowY = "visible";
+      // Перекраска логотипа в белый цвет
+      for (var i = 0; i < logoSt0.length; i++) {
+        logoSt0[i].style.stroke = '#fff';
+      }
+      for (var i = 0; i < logoSt1.length; i++) {
+        logoSt1[i].style.fill = '#fff';
+      }
     });
   }
 
   // STORE FORM
   let storeForm = document.querySelector('.store form'),
-      openForm = document.querySelector('.open-form');
+      openForm = document.querySelectorAll('.open-form');
 
-  openForm.addEventListener('click', function (event) {
-    event.preventDefault();
-    openForm.style.display = 'none';
-    storeForm.style.display = 'block';
-  });
+      for (var i = 0; i < openForm.length; i++) {
+        openForm[i].addEventListener('click', function (event) {
+          event.preventDefault();
+          this.style.display = 'none';
+          storeForm.style.display = 'block';
+        });
+      }
 
   // SWIPER JS
   var mySwiper = new Swiper('.clients-container', {
