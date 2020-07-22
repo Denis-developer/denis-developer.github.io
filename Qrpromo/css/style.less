@@ -924,12 +924,6 @@ p{
     background: transparent;
     .container{
       max-width: 740px;
-      display: -webkit-flex;
-      display: -ms-flex;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
       background: #fff;
       padding: 0 20px;
     }
@@ -1007,6 +1001,91 @@ p{
     &:hover{
       span{
         text-decoration: none;
+      }
+    }
+  }
+  form{
+    width: 361px;
+    margin: 0 auto;
+    text-align: left;
+    display: none;
+    input[type="text"]{
+      width: 361px;
+      height: 49px;
+      border-radius: 25px;
+      border: 1px solid #e6e6e6;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      font-family: "SF R";
+      font-size: 14px;
+      line-height: 24px;
+      padding-left: 20px;
+      outline: none !important;
+    }
+    button{
+      width: 361px;
+      height: 49px;
+      border: none;
+      display: block;
+      border-radius: 25px;
+      background-color: #f7c127;
+      color: #ffffff;
+      font-family: "SF H";
+      font-size: 12px;
+      line-height: 34px;
+      text-transform: uppercase;
+      margin: 10px auto;
+    }
+    input[type="checkbox"]{
+      display: none;
+    }
+    input[type="checkbox"] + label{
+      display: inline-block;
+      margin-bottom: 35px;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #e6e6e6;
+      background-color: #ffffff;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s;
+      &::after{
+        content: 'Принимаю условия сервиса';
+        display: block;
+        width: 300px;
+        color: #737373;
+        font-family: "SF R";
+        font-size: 12px;
+        line-height: 24px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 25px;
+        text-align: left;
+        transition: all 0.3s;
+      }
+      &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 7px;
+        width: 9px;
+        background: url(../img/store/checked.png) no-repeat center;
+        display: none;
+      }
+      &:hover{
+        border: 1px solid #1a1a1a;
+        &::after{
+          color: #1a1a1a;
+        }
+      }
+    }
+    input[type="checkbox"]:checked + label{
+      &::before{
+        display: block;
       }
     }
   }
@@ -1145,12 +1224,6 @@ p{
     background: #1a1a1a;
     .container{
       max-width: 1170px;
-      display: -webkit-flex;
-      display: -ms-flex;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
       padding: 0px 20px;
     }
   }
@@ -1512,6 +1585,16 @@ p{
     }
     a{
       margin-bottom: 25px;
+    }
+    form{
+      width: 300px;
+      input[type="text"], button{
+        width: 300px;
+        height: 45px;
+      }
+      label{
+        margin-bottom: 25px;
+      }
     }
     &-promo{
       span{
@@ -1955,13 +2038,17 @@ p{
      margin-top: 31px;
     }
   }
+  .store .header img{
+    width: 102px;
+    margin: 0;
+  }
   .desktop{
-    .header{
-      height: 50px;
-      margin-bottom: 0;
-      img{
-        margin: 0;
-      }
+    .header .container{
+      padding: 0px 10px;
+    }
+    .header img{
+      width: 102px;
+      margin: 0;
     }
     &-container{
       padding: 30px 10px;

@@ -33,6 +33,16 @@ window.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // STORE FORM
+  let storeForm = document.querySelector('.store form'),
+      openForm = document.querySelector('.open-form');
+
+  openForm.addEventListener('click', function (event) {
+    event.preventDefault();
+    openForm.style.display = 'none';
+    storeForm.style.display = 'block';
+  });
+
   // SWIPER JS
   var mySwiper = new Swiper('.clients-container', {
     slidesPerView: 6,
