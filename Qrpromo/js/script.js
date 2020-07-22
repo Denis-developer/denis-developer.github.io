@@ -68,6 +68,29 @@ window.addEventListener('DOMContentLoaded', function() {
      }
   })
 
+  var mySwiper = new Swiper('.store-slider', {
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    breakpoints: {
+       320: {
+         slidesPerView: 'auto',
+         spaceBetween: 10,
+         slidesPerGroup: 1
+       },
+       740: {
+         slidesPerView: 'auto',
+         spaceBetween: 20,
+         slidesPerGroup: 1
+       }
+     }
+  })
+
   // ANCHOR
 
   const anchors = document.querySelectorAll('a[href^="#"]');
