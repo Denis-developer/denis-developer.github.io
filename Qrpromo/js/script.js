@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', function() {
   // МОБИЛЬНОЕ МЕНЮ
   let menuBtn = document.querySelector('.menu-btn'),
       mobileMenu = document.querySelector('.mobile-menuWrapper'),
+      header = document.querySelector('.header'),
       mobileMenuLinks = document.getElementsByClassName('mobile-menu__link');
 
   menuBtn.addEventListener('click', function(event) {
@@ -11,11 +12,13 @@ window.addEventListener('DOMContentLoaded', function() {
     if(this.classList.contains('menu-btn_active')){
       mobileMenu.style.transform = 'scale(1)';
       // document.getElementsByTagName('body')[0].style.overflowY = "hidden";
+      header.style.paddingRight = "15px";
       document.getElementsByTagName('html')[0].style.overflowY = "hidden";
     }
     else{
       mobileMenu.style.transform = 'scale(0)';
       // document.getElementsByTagName('body')[0].style.overflowY = "visible";
+      header.style.paddingRight = "0px";
       document.getElementsByTagName('html')[0].style.overflowY = "visible";
     }
   });
@@ -25,6 +28,7 @@ window.addEventListener('DOMContentLoaded', function() {
       mobileMenu.style.transform = 'scale(0)';
       menuBtn.classList.toggle('menu-btn_active');
       // document.getElementsByTagName('body')[0].style.overflowY = "visible";
+      header.style.paddingRight = "0px";
       document.getElementsByTagName('html')[0].style.overflowY = "visible";
     });
   }
