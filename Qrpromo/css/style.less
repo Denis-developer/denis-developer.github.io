@@ -591,7 +591,7 @@ p{
 
 .statistics{
   padding: 88px 0px;
-  background: url(../img/statistics/statistics-bg.jpg) no-repeat center / cover;
+  background: url(../img/statistics/statistics-bg.jpg) no-repeat center;
   .container{
     display: -webkit-flex;
     display: -ms-flex;
@@ -919,13 +919,13 @@ p{
     }
   }
 }
-// Store
-.store{
-  background: #000 url(../img/page-desktop/main-bg.png) no-repeat;
-  text-align: center;
-  &-wrapper{
-    .footer{
-      background: #1a1a1a;
+// PAGE
+.page{
+  .footer{
+    background: #1a1a1a;
+    .container{
+      max-width: 740px;
+      padding: 0px 20px;
     }
   }
   .header{
@@ -939,6 +939,7 @@ p{
     }
     a{
       margin: 0;
+      display: inline-block;
     }
     .menu-btn span,
     .menu-btn span::before,
@@ -948,19 +949,21 @@ p{
     .st2{fill:none;stroke:#000;stroke-width:3;stroke-miterlimit:10;}
     .st3{fill:#000;}
   }
-  &-wrapper{
-    .footer .container{
-      max-width: 740px;
-      padding: 0px 20px;
-    }
-  }
   &-container{
     max-width: 740px;
     background: #fff;
     margin: 0 auto;
     padding: 0 20px;
+    padding-bottom: 40px;
+  }
+  .store .page-container{
     padding-bottom: 100px;
   }
+}
+// Store
+.store{
+  background: #000 url(../img/page-desktop/main-bg.png) no-repeat;
+  text-align: center;
   &-logo{
     width: 100%;
     padding-top: 104px;
@@ -1216,7 +1219,7 @@ p{
     background-color: #0fc0e9;
   }
   .swiper-pagination{
-    bottom: -40px;
+    bottom: -57px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -1224,22 +1227,7 @@ p{
 
 // PAGE-DESKTOP
 .desktop{
-  background: #1a1a1a url(../img/page-desktop/main-bg.png) no-repeat;
-  background-position: top 121px right 0;
-  .header{
-    margin: 0;
-    background: #1a1a1a;
-    .container{
-      max-width: 1170px;
-      padding: 0px 20px;
-    }
-  }
-  &-container{
-    padding: 45px 20px 65px 20px;
-    max-width: 1170px;
-    margin: 0 auto;
-    background: #fff;
-  }
+  background: #000 url(../img/page-desktop/main-bg.png) no-repeat;
   h1{
     color: #1a1a1a;
     font-family: "Roboto Slab";
@@ -1420,21 +1408,6 @@ p{
       padding-right: 10px;
     }
   }
-  .desktop{
-    background: #fff;
-    .header{
-      .container{
-        max-width: 100%;
-        padding: 0px 20px;
-      }
-    }
-    &-container{
-      max-width: 100%;
-    }
-    &-wrapper .footer{
-      background: #1a1a1a;
-    }
-  }
 }
 
 @media(max-width: 992px){
@@ -1559,8 +1532,7 @@ p{
   .header{
     height: 84px;
   }
-  .store{
-    background: #fff;
+  .page{
     .header{
       margin-bottom: 0;
       .container{
@@ -1568,8 +1540,14 @@ p{
       }
     }
     &-container{
-      padding: 0px 10px 78px 10px;
+      padding: 0px 10px 30px 10px;
     }
+    .store .page-container{
+      padding-bottom: 78px;
+    }
+  }
+  .store{
+    background: #fff;
     &-logo{
       padding-top: 59px;
       padding-bottom: 73px;
@@ -1578,6 +1556,9 @@ p{
         width: 60%;
         max-width: 200px;
       }
+    }
+    .swiper-pagination{
+      bottom: -47px;
     }
     h1{
       font-size: 16px;
@@ -2041,12 +2022,6 @@ p{
     }
   }
   .desktop{
-    .header .container{
-      padding: 0px 10px;
-    }
-    &-container{
-      padding: 30px 10px;
-    }
     h1{
       font-size: 22px;
     }
@@ -2060,6 +2035,7 @@ p{
     }
     img{
       margin-bottom: 15px;
+      float: none;
     }
     blockquote{
       flex-direction: column;
