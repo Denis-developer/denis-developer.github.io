@@ -1,11 +1,10 @@
 window.addEventListener('DOMContentLoaded', function() {
 
-  // МОБИЛЬНОЕ МЕНЮ
+  // HIDE MENU
   let menuBtn = document.querySelector('.menu-btn'),
       mobileMenu = document.querySelector('.mobile-menuWrapper'),
       header = document.querySelector('.header'),
-      logoSt0 = document.querySelectorAll('.header .st0'),
-      logoSt1 = document.querySelectorAll('.header .st1'),
+      logo = document.querySelector('.main .header img');
       mobileMenuLinks = document.querySelectorAll('.mobile-menuNav a');
 
   menuBtn.addEventListener('click', function(event) {
@@ -16,28 +15,16 @@ window.addEventListener('DOMContentLoaded', function() {
       document.getElementsByTagName('html')[0].style.overflowY = "hidden";
       setTimeout(() => {
         header.classList.toggle('popup-open');
-      },400)
+      },400);
       setTimeout(() => {
-        // Перекраска логотипа в чёрный цвет
-        for (var i = 0; i < logoSt0.length; i++) {
-          logoSt0[i].style.stroke = '#000';
-        }
-        for (var i = 0; i < logoSt1.length; i++) {
-          logoSt1[i].style.fill = '#000';
-        }
-      }, 200)
+        logo.src = 'img/logo-black.svg';
+      },200);
     }
     else{
       mobileMenu.style.transform = 'scale(0)';
       header.classList.toggle('popup-open');
       document.getElementsByTagName('html')[0].style.overflowY = "visible";
-      // Перекраска логотипа в белый цвет
-      for (var i = 0; i < logoSt0.length; i++) {
-        logoSt0[i].style.stroke = '#fff';
-      }
-      for (var i = 0; i < logoSt1.length; i++) {
-        logoSt1[i].style.fill = '#fff';
-      }
+      logo.src = 'img/logo.svg';
     }
   });
 
@@ -47,17 +34,11 @@ window.addEventListener('DOMContentLoaded', function() {
       header.classList.toggle('popup-open');
       menuBtn.classList.toggle('menu-btn_active');
       document.getElementsByTagName('html')[0].style.overflowY = "visible";
-      // Перекраска логотипа в белый цвет
-      for (var i = 0; i < logoSt0.length; i++) {
-        logoSt0[i].style.stroke = '#fff';
-      }
-      for (var i = 0; i < logoSt1.length; i++) {
-        logoSt1[i].style.fill = '#fff';
-      }
+      logo.src = 'img/logo-black.svg';
     });
   }
 
-  // STORE FORM
+  // STORE HIDE FORM
   let storeForm = document.querySelector('.store form'),
       openForm = document.querySelectorAll('.open-form');
 
