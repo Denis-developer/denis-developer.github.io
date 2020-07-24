@@ -1083,7 +1083,7 @@ p{
         height: 8px;
         width: 10px;
         background: url(../img/store/checked.svg) no-repeat center / cover;
-        display: none;
+        opacity: 0;
       }
       &:hover{
         border: 1px solid #1a1a1a;
@@ -1094,7 +1094,7 @@ p{
     }
     input[type="checkbox"]:checked + label{
       &::before{
-        display: block;
+        opacity: 1;
       }
     }
   }
