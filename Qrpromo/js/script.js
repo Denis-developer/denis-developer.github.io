@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', function() {
       header.classList.toggle('popup-open');
       menuBtn.classList.toggle('menu-btn_active');
       document.getElementsByTagName('html')[0].style.overflowY = "visible";
-      logo.src = 'img/logo-black.svg';
+      logo.src = 'img/logo.svg';
     });
   }
 
