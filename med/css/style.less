@@ -931,15 +931,16 @@ img {
 }
 
 @media(max-width: 1600px){
-  .header-top .container{
-    flex-wrap: wrap;
-  }
   .header{
     .header-conact{
       margin-left: auto;
     }
     &-subway{
-      width: 52%;
+      width: 40%;
+      margin: 0px 20px;
+    }
+    .header-form{
+      width: 45%;
     }
     .header-subway .header__red{
       font-size: 36px;
@@ -951,13 +952,8 @@ img {
       font-size: 14px;
     }
   }
-  .main-block .container{
-    grid-template-columns: 1fr 1fr;
-  }
-  .main-sertif__img{
-    position: relative;
-    text-align: center;
-    margin: 0 auto;
+  .main-slider{
+    width: 660px;
   }
   .location{
     &-content{
@@ -972,13 +968,40 @@ img {
     padding-bottom: 50px;
   }
 }
-
+@media(max-width: 1500px){
+  .main-block .container{
+    grid-template-columns: 1fr 1fr;
+  }
+  .main-sertif__img{
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+@media(max-width: 1400px){
+  .header-subway{
+    width: 30%;
+    padding: 5px 10px;
+  }
+  .header .header-subway .header__red{
+    font-size: 34px;
+  }
+  .header .header-subway .header__blue{
+    font-size: 28px;
+  }
+}
 @media(max-width: 1200px){
   .top-panel__text{
     margin-right: 60px;
   }
   .top-panel__item{
     margin-right: 40px;
+  }
+  .header .container{
+    flex-wrap: wrap;
+  }
+  .header-logo img{
+    width: 260px;
   }
   .header-nav{
     flex-wrap: wrap;
