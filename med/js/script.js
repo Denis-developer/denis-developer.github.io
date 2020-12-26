@@ -60,12 +60,16 @@ window.addEventListener('DOMContentLoaded', function() {
   })
 
   let menuBtn = document.querySelector('.menu-btn'),
-      mobileMenu = document.querySelector('.mobile-menuWrapper');
+      mobileMenu = document.querySelector('.mobile-menuWrapper'),
+      mobilePanel = document.querySelector('.mobile-panel'),
+      body = document.querySelector('body');
 
   menuBtn.addEventListener('click', function(event) {
     event.preventDefault();
     this.classList.toggle('menu-btn_active');
     mobileMenu.classList.toggle('show');
+    body.classList.toggle('pageFixed');
+    mobilePanel.classList.toggle('colorPanel');
   });
 
 
