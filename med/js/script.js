@@ -25,9 +25,9 @@ window.addEventListener('DOMContentLoaded', function() {
          slidesPerView: 1,
          slidesPerGroup: 1
        },
-       685: {
+       600: {
          slidesPerView: 2,
-         spaceBetween: 20,
+         spaceBetween: 30,
          slidesPerGroup: 1
        },
        992: {
