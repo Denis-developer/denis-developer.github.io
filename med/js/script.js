@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', function() {
     slidesPerView: 4,
     slidesPerGroup: 1,
     spaceBetween: '4%',
+    autoHeight: true,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -21,9 +22,11 @@ window.addEventListener('DOMContentLoaded', function() {
       prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-       320: {
+       300: {
          slidesPerView: 1,
-         slidesPerGroup: 1
+         spaceBetween: 16,
+         slidesPerGroup: 1,
+         centeredSlides: true
        },
        600: {
          slidesPerView: 2,
@@ -39,16 +42,6 @@ window.addEventListener('DOMContentLoaded', function() {
          slidesPerView: 4,
          slidesPerGroup: 1
        }
-       // 768: {
-       //   slidesPerView: 5,
-       //   spaceBetween: 20,
-       //   slidesPerGroup: 1
-       // },
-       // 992: {
-       //   slidesPerView: 6,
-       //   spaceBetween: 34,
-       //   slidesPerGroup: 1
-       // }
      }
   });
 
@@ -65,5 +58,32 @@ window.addEventListener('DOMContentLoaded', function() {
       prevEl: '.swiper-button-prev2',
     }
   })
+
+  let menuBtn = document.querySelector('.menu-btn'),
+      mobileMenu = document.querySelector('.mobile-menuWrapper'),
+      mobileMenuLinks = document.querySelectorAll('.mobile-menuNav a');
+
+  menuBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    this.classList.toggle('menu-btn_active');
+    // if(this.classList.contains('menu-btn_active')){
+    //   mobileMenu.style.transform = 'scale(1)';
+    //   document.getElementsByTagName('html')[0].style.overflowY = "hidden";
+    // }
+    // else{
+    //   mobileMenu.style.transform = 'scale(0)';
+    //   document.getElementsByTagName('html')[0].style.overflowY = "visible";
+    // }
+  });
+
+  for (var i = 0; i < mobileMenuLinks.length; i++) {
+    mobileMenuLinks[i].addEventListener('click', function(event) {
+      mobileMenu.style.transform = 'scale(0)';
+      header.classList.toggle('popup-open');
+      menuBtn.classList.toggle('menu-btn_active');
+      document.getElementsByTagName('html')[0].style.overflowY = "visible";
+      logo.src = 'img/logo.svg';
+    });
+  }
 
 });
