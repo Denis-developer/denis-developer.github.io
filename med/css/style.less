@@ -323,6 +323,7 @@ img {
     align-items: center;
   }
   &__text{
+    display: block;
     font-family: 'SF Reg';
     font-size: 16px;
     color: #525861;
@@ -438,6 +439,7 @@ img {
       font-size: 36px;
     }
     &__text{
+      display: block;
       font-family: 'SF Reg';
       font-size: 16px;
       color: #525861;
@@ -454,6 +456,7 @@ img {
       margin-right: 15px;
     }
     &__text{
+      display: block;
       font-family: 'SF Reg';
       font-size: 16px;
       color: #4259C1;
@@ -478,6 +481,7 @@ img {
     }
     &__text{
       font-family: 'SF Reg';
+      display: block;
       font-size: 16px;
       color: #4259C1;
       margin-top: -2px;
@@ -1314,15 +1318,11 @@ img {
   .price table td{
     padding: 10px;
   }
-  .footer-column_2, .footer-column_3{
-    display: none;
+  .footer .container{
+    padding: 0px 20px;
   }
   .footer-top{
-    justify-content: center;
     padding-bottom: 0;
-  }
-  .footer-bottom{
-    justify-content: center;
   }
   .footer-column_1{
     flex: 0 0 auto;
@@ -1361,6 +1361,17 @@ img {
   .main-slider .swiper-pagination2{
     bottom: 10px;
     position: relative;
+  }
+  .footer-column_1{
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    .header-conact{
+      margin: 0;
+    }
+  }
+  .footer-top{
+    flex-wrap: wrap;
   }
 }
 @media(max-width: 600px){
@@ -1409,7 +1420,7 @@ img {
   }
 }
 @media(max-width: 576px){
-  .top-panel, .header, .main-crumbs{
+  .top-panel, .header{
     display: none;
   }
   .container{
@@ -1559,10 +1570,11 @@ img {
     order: 2;
   }
   .footer{
-    padding-top: 42px;
+    padding-top: 23px;
     padding-bottom: 36px;
     &-column_1{
       align-items: flex-start;
+      width: 100%;
     }
     .header-conact{
       margin: 30px 0px;
@@ -1575,5 +1587,11 @@ img {
   .footer-bottom{
     padding: 0;
     padding-top: 70px;
+  }
+}
+
+@media(max-width: 400px){
+  .footer-top{
+    flex-direction: column;
   }
 }
