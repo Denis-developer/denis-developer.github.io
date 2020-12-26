@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', function() {
     slidesPerView: 4,
     slidesPerGroup: 1,
     spaceBetween: '4%',
-    autoHeight: true,
+    // autoHeight: true,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
