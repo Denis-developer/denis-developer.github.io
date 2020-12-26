@@ -108,7 +108,7 @@ img {
 .blue{
   color: #544DF3 !important;
 }
-.mobile-menuWrapper, .mobile-panel, .mobile-section{
+.mobile-panel, .mobile-section{
   display: none;
 }
 .mobile-panel{
@@ -118,6 +118,8 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 0px 16px;
+  position: relative;
+  z-index: 100;
   .header-conact__tel{
     font-size: 21px;
     position: relative;
@@ -208,6 +210,75 @@ img {
   img{
     margin-right: 9px;
   }
+}
+.mobile-menuWrapper{
+  position: absolute;
+  height: 100vh;
+  overflow: auto;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(206,216,255);
+  z-index: 99;
+  padding-top: 85px;
+  padding-bottom: 20px;
+  display: none;
+}
+.mobile-menu{
+  height: 100%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.mobile-menuBig, .mobile-menuSmall{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__link{
+    font-family: 'SF Med';
+    font-size: 18px;
+    color: #544DF3;
+    margin-bottom: 20px;
+    text-decoration: none;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background: #544DF3;
+      transform-origin: center;
+      transform: scale(0);
+      transition: all 0.3s;
+    }
+    &:hover::before{
+      transform: scale(1);
+    }
+  }
+}
+.mobile-menuSmall{
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  &__link{
+    font-family: 'SF Reg';
+    font-size: 15px;
+    display: block;
+  }
+}
+.show{
+  display: block;
 }
 .container{
   max-width: 1760px;
@@ -841,6 +912,7 @@ img {
 
 .price{
   padding-bottom: 40px;
+  display: none;
   .table-line{
     border-bottom: 4px solid #15BDB2;
     width: 100%;
