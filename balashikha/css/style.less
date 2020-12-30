@@ -10,7 +10,6 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   overflow-x: hidden;
-  // font-family: 'Roboto', sans-serif;
   font-family: 'Calibri', sans-serif;
   background: url(../img/main-bg_1.jpg);
 }
@@ -47,7 +46,6 @@ img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
   }
   &-logo{
     margin-top: 35px;
@@ -77,20 +75,9 @@ img {
     border-radius: 23px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    .__select__title {
-      &::before {
-        transform: translate(-3px, -50%) rotate(-45deg);
-      }
-
-      &::after {
-        transform: translate(3px, -50%) rotate(45deg);
-      }
-    }
-
     .__select__content {
       opacity: 1;
     }
-
     .__select__label + .__select__input + .__select__label {
       max-height: 40px;
       border-top-width: 1px;
@@ -129,7 +116,6 @@ img {
 }
 .__select__input {
   display: none;
-
   &:checked + label {
     background-color: #dedede;
   }
