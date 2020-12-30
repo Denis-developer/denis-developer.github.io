@@ -185,6 +185,7 @@ img {
 .form{
   &-tel{
     font-family: 'Roboto', sans-serif;
+    display: none;
   }
   &-checkbox{
     display: none;
@@ -279,6 +280,12 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    &-2, &-3{
+      display: none;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
   }
   &-more{
     text-align: center;
@@ -309,21 +316,39 @@ img {
   + label{
     width: 100%;
     &::after{
+      line-height: 22px;
+      top: -5px;
       content: 'хочу видеть предложения только в комментариях';
     }
   }
 }
-
+.select-wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 30px;
+  z-index: 99;
+  display: none;
+}
 .disabledInput{
   background: #e1e1e1;
+  color: grey;
+  .__select__title{
+    color: grey;
+  }
 }
 
 @media(max-width: 475px){
   .form-name, .form-budget, .form-address, .form-tel, .__select__title{
-    font-size: 18px;
+    font-size: 17px;
   }
   .form-checkbox + label::after{
-    font-size: 18px;
+    font-size: 17px;
     top: -7px;
   }
   .form-file+label{

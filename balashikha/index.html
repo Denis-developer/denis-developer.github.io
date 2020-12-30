@@ -50,24 +50,41 @@
         <input id="contract" type="checkbox" name="contract" value="Договорная" class="form-checkbox">
         <label for="contract"></label>
         <input type="text" class="form-address" placeholder="Адрес (кроме номера квартиры)">
-        <input type="text" class="form-tel" placeholder="+7(999)999-99-99">
         <div class="__select __select2" data-state="">
+          <div class="select-wrapper"></div>
           <div class="__select__title" data-default="Option 0">Способ связи</div>
           <div class="__select__content">
             <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
             <label for="singleSelect0" class="__select__label">Способ связи</label>
             <input id="singleSelect1" class="__select__input" type="radio" name="singleSelect" />
-            <label for="singleSelect1" class="__select__label">Доставка</label>
+            <label for="singleSelect1" class="__select__label select-tel">Телефон</label>
             <input id="singleSelect2" class="__select__input" type="radio" name="singleSelect" />
-            <label for="singleSelect2" class="__select__label">Клининг</label>
+            <label for="singleSelect2" class="__select__label">Личные сообщения</label>
             <input id="singleSelect3" class="__select__input" type="radio" name="singleSelect" />
-            <label for="singleSelect3" class="__select__label">Ремонт</label>
+            <label for="singleSelect3" class="__select__label">Оба варианта</label>
           </div>
         </div>
+        <input type="text" class="form-tel" placeholder="+7(999)999-99-99">
         <input id="contact" type="checkbox" name="contact" value="Предложения в комментариях" class="form-checkbox">
         <label for="contact"></label>
         <textarea class="form-textarea" placeholder="Опишите подробно вашу задачу"></textarea>
         <div class="form-flex">
+          <input id="file-1" type="file" class="form-file">
+          <label for="file-1" class="form-download"></label>
+          <input id="file-2" type="file" class="form-file">
+          <label for="file-2" class="form-file"></label>
+          <input id="file-3" type="file" class="form-file">
+          <label for="file-3" class="form-file"></label>
+        </div>
+        <div class="form-flex form-flex-2">
+          <input id="file-1" type="file" class="form-file">
+          <label for="file-1" class="form-download"></label>
+          <input id="file-2" type="file" class="form-file">
+          <label for="file-2" class="form-file"></label>
+          <input id="file-3" type="file" class="form-file">
+          <label for="file-3" class="form-file"></label>
+        </div>
+        <div class="form-flex form-flex-3">
           <input id="file-1" type="file" class="form-file">
           <label for="file-1" class="form-download"></label>
           <input id="file-2" type="file" class="form-file">
