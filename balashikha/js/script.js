@@ -49,14 +49,15 @@ window.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  $('.form-tel').mask('+7(999)999-99-99');
+  $('.form-tel').mask('+7 (999) 999-99-99');
 
   let budget = document.querySelector('.form-budget'),
       contract = document.querySelector('#contract'),
       selectWrapper = document.querySelector('.select-wrapper'),
       select2 = document.querySelector('.__select2'),
       contact = document.querySelector('#contact'),
-      selectTel = document.querySelector('.select-tel'),
+      selectTel = document.querySelectorAll('.select-tel'),
+      labelSelect2 = document.querySelectorAll('.__select2 .__select__label'),
       formTel = document.querySelector('.form-tel'),
       index = 0,
       formMore = document.querySelector('.form-more a'),
@@ -83,12 +84,30 @@ window.addEventListener('DOMContentLoaded', function() {
     else{
       select2.classList.remove('disabledInput');
       selectWrapper.style.display = 'none';
+      let label = document.querySelector('.active-label');
+      if(label.classList.contains('select-tel')){
+        formTel.style.display = 'block';
+      }
     }
   })
 
-  selectTel.addEventListener('click', function(){
-    formTel.style.display = 'block';
-  })
+  for(let i = 0; i < selectTel.length; i++){
+    selectTel[i].addEventListener('click', function(){
+      formTel.style.display = 'block';
+    })
+  }
+
+  for(let i = 0; i < labelSelect2.length; i++){
+    labelSelect2[i].addEventListener('click', function(){
+      for(let j = 0; j < labelSelect2.length; j++){
+        labelSelect2[j].classList.remove('active-label');
+      }
+      labelSelect2[i].classList.add('active-label');
+      if(!this.classList.contains('select-tel')){
+        formTel.style.display = 'none';
+      }
+    })
+  }
 
     formMore.addEventListener('click', function(event) {
       event.preventDefault();
