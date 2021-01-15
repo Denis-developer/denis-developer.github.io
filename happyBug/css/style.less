@@ -3,7 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+html{
+  overflow-x: hidden;
+}
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
@@ -124,6 +126,10 @@ img {
       &_arrow{
         width: 60px;
         position: relative;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: #fff;
         svg{
           position: absolute;
           z-index: 20;
@@ -977,6 +983,15 @@ img {
     width: 100%;
     padding: 0px 20px;
   }
+  .link-up{
+    width: 60px;
+    height: 60px;
+    right: 40px;
+    bottom: 40px;
+    svg{
+      width: 40px;
+    }
+  }
 }
 
 @media(max-width: 768px){
@@ -1098,7 +1113,7 @@ img {
   .header-logo img{
     width: 110px;
   }
-  .header-nav__item_arrow .header-nav__link, .header-lang__link{
+  .header-nav__item_arrow .header-nav__link, .header-lang__link, .header-nav__item_arrow{
     font-size: 18px;
   }
   .header-lang{
@@ -1201,7 +1216,10 @@ img {
     }
   }
   .swiper-button-prev, .swiper-button-next{
-    width: 12px;
+    width: 30px;
+    svg{
+      width: 12px;
+    }
   }
   .blog .swiper-button-prev{
     top: inherit;
@@ -1300,6 +1318,15 @@ img {
     img{
       width: 15px;
       margin-right: 6px;
+    }
+  }
+  .link-up{
+    width: 50px;
+    height: 50px;
+    right: 10px;
+    bottom: 20px;
+    svg{
+      width: 30px;
     }
   }
 }

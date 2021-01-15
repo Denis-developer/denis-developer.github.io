@@ -3,9 +3,12 @@ window.addEventListener('DOMContentLoaded', function() {
   let blogMore = document.getElementsByClassName('blog-more');
   let blogTextHide = document.getElementsByClassName('blog-hide');
   let btnSlide = document.getElementsByClassName('btnSlide');
+  let paginationSlide = document.querySelector('.swiper-pagination');
+  let blog = document.querySelector('.blog');
 
   for (var i = 0; i < btnSlide.length; i++) {
     btnSlide[i].addEventListener('click', function(){
+      $('body,html').animate({scrollTop: $(blog).offset().top}, 800);
       for (var j = 0; j < blogTextHide.length; j++) {
         blogTextHide[j].classList.remove('db');
         if(blogTextHide[j].classList.contains('db')){
@@ -18,9 +21,40 @@ window.addEventListener('DOMContentLoaded', function() {
     })
   }
 
+  // alert($(blog).offset().top);
+
+  paginationSlide.addEventListener('click', function(){
+    $('body,html').animate({scrollTop: $(blog).offset().top}, 800);
+    for (var j = 0; j < blogTextHide.length; j++) {
+      blogTextHide[j].classList.remove('db');
+      if(blogTextHide[j].classList.contains('db')){
+        blogMore[j].innerHTML = 'Скрыть';
+      }
+      else{
+        blogMore[j].innerHTML = 'Подробнее';
+      }
+    }
+  })
+
+  // for (var i = 0; i < paginationSlide.length; i++) {
+  //   paginationSlide[i].addEventListener('click', function(){
+  //     alert('sads');
+  //     for (var j = 0; j < blogTextHide.length; j++) {
+  //       blogTextHide[j].classList.remove('db');
+  //       if(blogTextHide[j].classList.contains('db')){
+  //         blogMore[j].innerHTML = 'Скрыть';
+  //       }
+  //       else{
+  //         blogMore[j].innerHTML = 'Подробнее';
+  //       }
+  //     }
+  //   })
+  // }
+
   for (var i = 0; i < blogMore.length; i++) {
     blogMore[i].addEventListener('click', function(event){
       event.preventDefault();
+      $('body,html').animate({scrollTop: $(blog).offset().top}, 800);
       for (var j = 0; j < blogTextHide.length; j++) {
         blogTextHide[j].classList.toggle('db');
         if(blogTextHide[j].classList.contains('db')){
@@ -49,13 +83,15 @@ window.addEventListener('DOMContentLoaded', function() {
 
   let menuBtn = document.querySelector('.menu-btn'),
       mobileMenu = document.querySelector('.mobile-menuWrapper'),
-      body = document.querySelector('body');
+      body = document.querySelector('body'),
+      html = document.querySelector('html');
 
   menuBtn.addEventListener('click', function(event) {
     event.preventDefault();
     this.classList.toggle('menu-btn_active');
     mobileMenu.classList.toggle('db');
     body.classList.toggle('pageFixed');
+    html.classList.toggle('pageFixed');
   });
 
   var mySwiper = new Swiper('.swiper-container', {
