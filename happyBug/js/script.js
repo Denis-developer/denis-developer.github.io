@@ -36,20 +36,6 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   })
 
-  // for (var i = 0; i < paginationSlide.length; i++) {
-  //   paginationSlide[i].addEventListener('click', function(){
-  //     alert('sads');
-  //     for (var j = 0; j < blogTextHide.length; j++) {
-  //       blogTextHide[j].classList.remove('db');
-  //       if(blogTextHide[j].classList.contains('db')){
-  //         blogMore[j].innerHTML = 'Скрыть';
-  //       }
-  //       else{
-  //         blogMore[j].innerHTML = 'Подробнее';
-  //       }
-  //     }
-  //   })
-  // }
 
   for (var i = 0; i < blogMore.length; i++) {
     blogMore[i].addEventListener('click', function(event){
@@ -83,6 +69,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
   let menuBtn = document.querySelector('.menu-btn'),
       mobileMenu = document.querySelector('.mobile-menuWrapper'),
+      mobileMenuLinks = document.getElementsByClassName('mobile-menu__link'),
       body = document.querySelector('body'),
       html = document.querySelector('html');
 
@@ -93,6 +80,16 @@ window.addEventListener('DOMContentLoaded', function() {
     body.classList.toggle('pageFixed');
     html.classList.toggle('pageFixed');
   });
+
+  for (var i = 0; i < mobileMenuLinks.length; i++) {
+    mobileMenuLinks[i].addEventListener('click', function(event){
+      event.preventDefault();
+      menuBtn.classList.toggle('menu-btn_active');
+      mobileMenu.classList.toggle('db');
+      body.classList.toggle('pageFixed');
+      html.classList.toggle('pageFixed');
+    })
+  }
 
   var mySwiper = new Swiper('.swiper-container', {
       direction: 'horizontal',
@@ -109,7 +106,7 @@ window.addEventListener('DOMContentLoaded', function() {
       },
   });
 
-  $('.link-anchor').on('click', function(event) {
+  $('.link-anchor, .mobile-menu__link, .header-nav__link').on('click', function(event) {
     event.preventDefault();
     var id = $(this).attr('href'),
     top = $(id).offset().top;
