@@ -145,11 +145,26 @@ window.addEventListener('DOMContentLoaded', function() {
       },
   });
 
+  // ANCHOR
   $('.link-anchor, .mobile-menu__link, .header-nav__link, .footer-list__link').on('click', function(event) {
     event.preventDefault();
     var id = $(this).attr('href'),
     top = $(id).offset().top;
     $('body,html').animate({scrollTop: top}, 800);
   });
+
+  // LINK UP
+  let linkUp = document.querySelector('.link-up');
+
+  document.addEventListener('scroll', function (e) {
+    if(document.documentElement.scrollTop >= 500){
+      linkUp.style.visibility = 'visible';
+      linkUp.style.opacity = '1';
+    }
+    else{
+      linkUp.style.visibility = 'hidden';
+      linkUp.style.opacity = '0';
+    }
+  })
 
 });
