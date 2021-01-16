@@ -12,10 +12,20 @@ window.addEventListener('DOMContentLoaded', function() {
       for (var j = 0; j < blogTextHide.length; j++) {
         blogTextHide[j].classList.remove('db');
         if(blogTextHide[j].classList.contains('db')){
-          blogMore[j].innerHTML = 'Скрыть';
+          if(document.getElementsByTagName('html')[0].getAttribute('lang') == 'ru'){
+            blogMore[j].innerHTML = 'Скрыть';
+          }
+          else{
+            blogMore[j].innerHTML = 'Hide';
+          }
         }
         else{
-          blogMore[j].innerHTML = 'Подробнее';
+          if(document.getElementsByTagName('html')[0].getAttribute('lang') == 'ru'){
+            blogMore[j].innerHTML = 'Подробнее';
+          }
+          else{
+            blogMore[j].innerHTML = 'More';
+          }
         }
       }
     })
@@ -28,10 +38,20 @@ window.addEventListener('DOMContentLoaded', function() {
     for (var j = 0; j < blogTextHide.length; j++) {
       blogTextHide[j].classList.remove('db');
       if(blogTextHide[j].classList.contains('db')){
-        blogMore[j].innerHTML = 'Скрыть';
+        if(document.getElementsByTagName('html')[0].getAttribute('lang') == 'ru'){
+          blogMore[j].innerHTML = 'Скрыть';
+        }
+        else{
+          blogMore[j].innerHTML = 'Hide';
+        }
       }
       else{
-        blogMore[j].innerHTML = 'Подробнее';
+        if(document.getElementsByTagName('html')[0].getAttribute('lang') == 'ru'){
+          blogMore[j].innerHTML = 'Подробнее';
+        }
+        else{
+          blogMore[j].innerHTML = 'More';
+        }
       }
     }
   })
@@ -44,10 +64,20 @@ window.addEventListener('DOMContentLoaded', function() {
       for (var j = 0; j < blogTextHide.length; j++) {
         blogTextHide[j].classList.toggle('db');
         if(blogTextHide[j].classList.contains('db')){
-          blogMore[j].innerHTML = 'Скрыть';
+          if(document.getElementsByTagName('html')[0].getAttribute('lang') == 'ru'){
+            blogMore[j].innerHTML = 'Скрыть';
+          }
+          else{
+            blogMore[j].innerHTML = 'Hide';
+          }
         }
         else{
-          blogMore[j].innerHTML = 'Подробнее';
+          if(document.getElementsByTagName('html')[0].getAttribute('lang') == 'ru'){
+            blogMore[j].innerHTML = 'Подробнее';
+          }
+          else{
+            blogMore[j].innerHTML = 'More';
+          }
         }
       }
     });
@@ -60,10 +90,20 @@ window.addEventListener('DOMContentLoaded', function() {
     event.preventDefault();
     storyTextHide.classList.toggle('db');
     if(storyTextHide.classList.contains('db')){
-      storyMore.innerHTML = 'Скрыть';
+      if(document.getElementsByTagName('html')[0].getAttribute('lang') == 'ru'){
+        storyMore.innerHTML = 'Скрыть';
+      }
+      else{
+        storyMore.innerHTML = 'Hide';
+      }
     }
     else{
-      storyMore.innerHTML = 'Читать дальше';
+      if(document.getElementsByTagName('html')[0].getAttribute('lang') == 'ru'){
+        storyMore.innerHTML = 'Читать дальше';
+      }
+      else{
+        storyMore.innerHTML = 'More';
+      }
     }
   });
 
@@ -94,7 +134,6 @@ window.addEventListener('DOMContentLoaded', function() {
   var mySwiper = new Swiper('.swiper-container', {
       direction: 'horizontal',
       allowTouchMove: false,
-      // loop: true,
       pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
@@ -106,7 +145,7 @@ window.addEventListener('DOMContentLoaded', function() {
       },
   });
 
-  $('.link-anchor, .mobile-menu__link, .header-nav__link').on('click', function(event) {
+  $('.link-anchor, .mobile-menu__link, .header-nav__link, .footer-list__link').on('click', function(event) {
     event.preventDefault();
     var id = $(this).attr('href'),
     top = $(id).offset().top;
