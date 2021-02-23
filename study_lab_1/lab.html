@@ -99,6 +99,9 @@
       color: #fff;
       text-align: center;
     }
+    a{
+      color: #fff;
+    }
     @media(max-width: 768px){
       .footer .container{
         flex-direction: column-reverse;
@@ -158,37 +161,40 @@
   <div class="content">
     <div class="container">
       <a href="#footer">Перемотать в самый низ страницы</a>
-      <p>Цвет body #42405C</p>
-      <font color=red>Англ. название цветов</font> <br>
+      <font color=red>Английское название цветов</font> <br>
       <font color=#000fff>Мнемонический код цвета</font> <br>
       <i>Курсивный текст</i> <br>
       <b>Жирный текст</b> <br>
       <u>Текст с подчёркиванием</u> <br>
-      <h1>h1</h1>
-      <h2>h2</h2>
-      <h3>h3</h3>
-      <h4>h4</h4>
-      <h5>h5</h5>
-      <h6>h6</h6>
+      <h1>h1 - заголовок</h1>
+      <h2>h2 - заголовок</h2>
+      <h3>h3 - заголовок</h3>
+      <h4>h4 - заголовок</h4>
+      <h5>h5 - заголовок</h5>
+      <h6>h6 - заголовок</h6>
       <p>Абзац без атрибутов</p>
-      <p align=right>Абзац с атрибутом align=right</p>
-      <p>&copy; -спец символ</p>
+      <p align=left>Абзац с атрибутом align=left</p>
+      <p>&copy; -спец символ</p> <br>
+      <p>Маркированный список</p>
       <ul>
         <li>Первый элемент</li>
         <li>Второй элемент</li>
         <li>Третий элемент</li>
-      </ul>
+      </ul> <br>
+      <p>Нумерованный список</p>
       <ol>
         <li>Первый элемент</li>
         <li>Второй элемент</li>
         <li>Третий элемент</li>
-      </ol>
+      </ol> <br>
+      <p>Список определений</p>
       <dl>
         <dt>Термин 1</dt>
           <dd>Определение 1</dd>
         <dt>Термин 2</dt>
           <dd>Определение 2</dd>
-      </dl>
+      </dl> <br>
+      <p>Вложенный список</p>
       <ul>
         <li>
           Первый элемент
@@ -201,16 +207,103 @@
         <li>Второй элемент</li>
         <li>Третий элемент</li>
       </ul>
-      <a href="downl.rar">Загрузка файла</a>
-      <a href="mailto:patron.2001den@mail.ru">Отправка писем</a>
-      <img src="html.png" alt=""> Изображение в той же папке, что и html
-      <img src="img/logo.png" alt=""> Изображение в отдельной папке
-      <img src="html.png" alt="" width="50px" height="50px"> Абсолютная велечина
-      <img src="html.png" alt="" width="5%" height="5%"> Относительная велечина
-      <img src="html.png" alt="" width="5%" height="5%" align=left> Выравнивание по горизонтали
-      <img src="html.png" alt="" width="5%" height="5%" align=top> Выравнивание по вертикали
-      <img src="html.png" alt="" width="5%" height="5%" border=1 vspace=100>
-      текст для картинки
+      <a href="downl.rar">Загрузка файла</a> <br>
+      <a href="mailto:patron.2001den@mail.ru">Отправка писем</a> <br>
+      <img src="html.png" alt="" width="100" align=center> Изображение в той же папке, что и html <br><br>
+      <img src="img/logo.png" alt="" align=center> Изображение в отдельной папке <br><br>
+      <img src="html.png" alt="" width="50" height="50" align=center> Абсолютная велечина <br><br>
+      <img src="html.png" alt="" width="5%" height="5%" align=center> Относительная велечина <br><br>
+      <img src="html.png" alt="" width="5%" height="5%" align=left> Выравнивание по горизонтали <br><br> <br> <br>
+      <img src="html.png" alt="" width="5%" height="5%" align=center> Выравнивание по вертикали <br><br>
+      <img src="html.png" alt="" width="5%" height="5%" border=1 vspace=1 align=center>
+      текст для картинки <br><br>
+      <img src="html.png" alt="" width="200" height="200" usemap="#Navigation" align=center>
+      <map name="Navigation">
+        <area shape="rect" coords="50,50,100,100" href="index.html" alt="Информация">
+        <area shape="rect" coords="110,110,150,150" href="about.html" alt="Информация">
+      </map> карта изображений <br><br>
+      <table border="1" border-collapse="collapse">
+        <caption>Таблица 1</caption>
+        <tr>
+          <th>№ Заказа</th>
+          <th>Цена</th>
+          <th>Срок доставки</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1000 руб.</td>
+          <td>25.02.2021</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>1500 руб.</td>
+          <td>25.02.2021</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>2000 руб.</td>
+          <td>25.02.2021</td>
+        </tr>
+      </table> <br> <br>
+      <table border="1" border-collapse="collapse">
+        <caption>Таблица 2</caption>
+        <tr>
+          <th>Города</th>
+          <th>Страна</th>
+          <th>Планета</th>
+        </tr>
+        <tr>
+          <td>Омск</td>
+          <td rowspan="3">Россия</td>
+          <td rowspan="3">Земля</td>
+        </tr>
+        <tr>
+          <td>Томск</td>
+        </tr>
+        <tr>
+          <td>Москва</td>
+        </tr>
+      </table> <br> <br>
+      <table border="1" border-collapse="collapse">
+        <caption>Таблица 3</caption>
+        <tr>
+          <th>Города</th>
+          <th>Страна</th>
+          <th>Планета</th>
+        </tr>
+        <tr>
+          <td>Тюмень</td>
+          <td rowspan="3">Россия</td>
+          <td rowspan="3">Земля</td>
+        </tr>
+        <tr>
+          <td>Тула</td>
+        </tr>
+        <tr>
+          <td>Бакчар</td>
+        </tr>
+      </table> <br> <br>
+      <table border="1" border-collapse="collapse">
+        <caption>Таблица 4</caption>
+        <tr>
+          <th>Города</th>
+          <th>Страна</th>
+          <th>Планета</th>
+          <th>Картинка</th>
+        </tr>
+        <tr>
+          <td>Краснодар</td>
+          <td rowspan="3">Россия</td>
+          <td rowspan="3">Земля</td>
+          <td rowspan="3"><img src="img/logo.png" alt="" width="50"></td>
+        </tr>
+        <tr>
+          <td>Кедровый</td>
+        </tr>
+        <tr>
+          <td>Асино</td>
+        </tr>
+      </table> <br> <br>
       <a href="#body">Перемотать в самый вверх страницы</a>
     </div>
   </div>
