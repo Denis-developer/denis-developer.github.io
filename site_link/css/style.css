@@ -581,13 +581,15 @@ img {
   width: 228px;
   height: 82px;
   color: #60253D;
+  font-size: 20px;
+  font-weight: 500;
   border-radius: 51px;
   border: 2px solid #60253D;
   margin-top: 30px;
-  padding-right: 20px;
+  padding-right: 10px;
 }
 .footer__ref img {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 .footer__nav {
   display: -ms-flex;
