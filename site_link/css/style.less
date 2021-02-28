@@ -1,3 +1,15 @@
+@import "./_stars";
+
+// ANIMATION
+@keyframes animStar {
+  from {
+    transform: translateY(-2000px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
 *, *::after, *::before{
   padding: 0;
   margin: 0;
@@ -138,7 +150,7 @@ img {
 .main{
   padding-top: 100px;
   padding-bottom: 200px;
-  background: url(../img/main/main-bg.png) no-repeat center / cover;
+  // background: url(../img/main/main-bg.png) no-repeat center / cover;
   position: relative;
   &__row{
     margin-top: 110px;
@@ -428,7 +440,7 @@ img {
 .start{
   padding-top: 100px;
   padding-bottom: 125px;
-  background: url(../img/start/start-bg.png) no-repeat center;
+  // background: url(../img/start/start-bg.png) no-repeat center;
   background-size: auto;
   &__title{
     // font-size: 155px;
@@ -484,6 +496,9 @@ img {
       margin-top: 440px;
     }
   }
+  &__img{
+    width: 66%;
+  }
   &__text{
     font-weight: 600;
     // font-size: 48px;
@@ -525,8 +540,8 @@ img {
 }
 
 .footer{
-  padding-top: 165px;
-  padding-bottom: 155px;
+  padding-top: 90px;
+  padding-bottom: 80px;
   background: #F8A8C8;
   &__row{
     display: -webkit-flex;
@@ -545,8 +560,8 @@ img {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    width: 228px;
-    height: 82px;
+    width: 208px;
+    height: 72px;
     color: #60253D;
     font-size: 20px;
     font-weight: 500;
@@ -576,7 +591,7 @@ img {
   }
   &__link{
     font-size: 36px;
-    font-size: 1.9vw;
+    font-size: 1.6vw;
     font-weight: 400;
     margin-bottom: 40px;
     color: #60253D;
@@ -617,6 +632,9 @@ img {
 @media(max-width: 1800px){
   .border{
     width: 95vw;
+  }
+  .start__title{
+    font-size: 6vw;
   }
 }
 @media(max-width: 1450px){
@@ -781,6 +799,15 @@ img {
 }
 
 @media(max-width: 768px){
+  .stars, .stars2, .stars3{
+    display: none;
+  }
+  .main{
+    background: url(../img/main/main-bg.png) no-repeat center / cover;
+  }
+  .start{
+    background: url(../img/start/start-bg.png) no-repeat center;
+  }
   .logo img{
     width: 20px;
     margin-left: 10px;
@@ -893,11 +920,18 @@ img {
   .header__link, .header__link:last-child{
     margin: 0 8px;
   }
+  .main__content{
+    text-align: center;
+    width: 100%;
+  }
   .main__img{
     display: none;
   }
   .main__title{
     max-width: none;
+  }
+  .main__btn{
+    margin: 0 auto;
   }
   .cookies{
     padding-top: 30px;
