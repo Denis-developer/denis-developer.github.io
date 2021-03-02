@@ -586,25 +586,22 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <picture class="gallery__img">
-             <source type="image/webp" data-srcset="img/gallery/img-1.webp">
-             <source type="image/png" data-srcset="img/gallery/img-1.jpg">
-             <img data-src="img/gallery/img-1.jpg" alt="img" class="lazyload">
-            </picture>
+            <div class="gallery__container">
+              <img src="img/gallery/img-1.jpg" alt="img">
+              <img src="img/gallery/img-2.jpg" alt="img">
+            </div>
           </div>
           <div class="swiper-slide">
-            <picture class="gallery__img">
-             <source type="image/webp" data-srcset="img/gallery/img-1.webp">
-             <source type="image/png" data-srcset="img/gallery/img-1.jpg">
-             <img data-src="img/gallery/img-1.jpg" alt="img" class="lazyload">
-            </picture>
+            <div class="gallery__container">
+              <img src="img/gallery/img-1.jpg" alt="img">
+              <img src="img/gallery/img-2.jpg" alt="img">
+            </div>
           </div>
           <div class="swiper-slide">
-            <picture class="gallery__img">
-             <source type="image/webp" data-srcset="img/gallery/img-1.webp">
-             <source type="image/png" data-srcset="img/gallery/img-1.jpg">
-             <img data-src="img/gallery/img-1.jpg" alt="img" class="lazyload">
-            </picture>
+            <div class="gallery__container">
+              <img src="img/gallery/img-1.jpg" alt="img">
+              <img src="img/gallery/img-2.jpg" alt="img">
+            </div>
           </div>
         </div>
       </div>
@@ -723,11 +720,14 @@
 
 
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/twentytwenty.css">
   <link rel="stylesheet" href="css/style.css">
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
   </script>
+  <script src="js/jquery.event.move.js"></script>
+  <script src="js/jquery.twentytwenty.js"></script>
   <script src="js/lazysizes.min.js" async></script>
   <script src="js/script.js"></script>
 </body>

@@ -5,6 +5,8 @@ window.addEventListener('DOMContentLoaded', function() {
     spaceBetween: 100,
     slidesPerView: 1,
     slidesPerGroup: 1,
+    swipe: false,
+    allowTouchMove: false,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -43,6 +45,10 @@ window.addEventListener('DOMContentLoaded', function() {
         slidesPerGroup: 1
       }
     }
+  });
+
+  $(function(){
+    $(".gallery__container").twentytwenty();
   });
 
 });
