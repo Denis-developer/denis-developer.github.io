@@ -843,6 +843,16 @@ img {
   background: @green;
   font-family: 'Gotham Med';
   color: #fff;
+  &__warning{
+    font-family: 'Gotham Reg';
+    color: #fff;
+    font-size: 7px;
+    max-width: 135px;
+    position: absolute;
+    right: 35px;
+    bottom: -25px;
+    line-height: 100%;
+  }
 	&__row {
     display: -webkit-flex;
     display: -ms-flex;
@@ -889,6 +899,7 @@ img {
     align-items: flex-start;
     justify-content: space-between;
     width: 558px;
+    position: relative;
   }
 	&-form__input {
     width: 172px;
@@ -1195,5 +1206,208 @@ img {
   }
   .services-card{
     margin: 0 auto;
+  }
+}
+
+@media(max-width: 576px){
+  .container{
+    padding: 0px 10px;
+  }
+  .header{
+    background: transparent;
+    padding-top: 20px;
+    height: auto;
+    &-address, &__tel, &-address__mail{
+      color: #000;
+    }
+    &__contact{
+      width: 100%;
+    }
+    &-address{
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 320px;
+      &__mail, &__street{
+        font-size: 15px;
+      }
+    }
+    &__tel{
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+    &__row{
+      flex-direction: column;
+      height: auto;
+    }
+  }
+  .main{
+    background-size: cover;
+    background-position: left 90px top -13px;
+    padding-top: 40px;
+  }
+  .main__title{
+    font-size: 30px;
+  }
+  .main__subtitle{
+    margin-top: 30px;
+  }
+  .checkout{
+    padding-top: 60px;
+  }
+  .checkout__checkbox + label::before{
+    width: 250px;
+    font-size: 14px;
+  }
+  .checkout__block{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .checkout__input{
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+  .checkout__warning, .footer__warning{
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .consultation__row{
+    flex-direction: column;
+  }
+  .consultation__title, .features__title, .price__title, .examination__title, .sale__title{
+    font-size: 26px;
+  }
+  .consultation__title{
+    margin-bottom: 30px;
+  }
+  .consultation__form{
+    width: 100%;
+    align-items: center;
+  }
+  .consultation__input{
+    width: 90%;
+    max-width: 400px;
+  }
+  .services{
+    padding-top: 60px;
+    padding-bottom: 40px;
+    &__title{
+      margin-bottom: 30px;
+    }
+  }
+  .features{
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .features__row{
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .features__row_2{
+    width: 100%;
+    max-width: 360px;
+  }
+  .features-statistics{
+    text-align: center;
+  }
+  .stages{
+    padding-bottom: 10px;
+  }
+  .stages__row{
+    flex-direction: column;
+    align-items: center;
+  }
+  .stages-block{
+    padding: 0;
+    border: none;
+  }
+  .examination{
+    padding-bottom: 20px;
+  }
+  .examination__item{
+    font-size: 18px;
+  }
+  .employees{
+    padding-bottom: 10px;
+  }
+  .employees-block{
+    margin: 0px 10px;
+    margin-bottom: 30px;
+  }
+  .employees__row{
+    justify-content: center;
+  }
+  .sale{
+    background-size: cover;
+    &__text{
+      font-size: 18px;
+    }
+    &__subtitle{
+      margin-top: 40px;
+    }
+  }
+  .payment-method{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    &__text{
+      margin: 0;
+      margin-top: 20px;
+    }
+  }
+  .payment-conditions{
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 0;
+    text-align: center;
+    &__title{
+      font-size: 24px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+    &__number{
+      font-size: 56px;
+    }
+  }
+  .footer{
+    text-align: center;
+    &__tel{
+      font-size: 28px;
+    }
+    &__address{
+      font-size: 24px;
+    }
+    &__mail{
+      margin: 30px 0px;
+    }
+    &-timetable{
+      margin-top: 20px;
+      margin-bottom: 30px;
+      &__title{
+        margin-bottom: 15px;
+      }
+    }
+    &-form{
+      flex-direction: column;
+      align-items: center;
+      &__input{
+        width: 90%;
+        max-width: 400px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media(max-width: 390px){
+  .services__row{
+    grid-template-columns: 1fr;
   }
 }

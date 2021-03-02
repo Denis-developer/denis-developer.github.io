@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', function() {
       clickable: true,
     },
     breakpoints: {
-      576: {
+      319: {
         slidesPerView: 2,
         slidesPerGroup: 2
       },
