@@ -937,65 +937,14 @@ img {
 }
 
 .footer__wrapper {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  background: url('../img/footer/map.png') #ffffff no-repeat;
-  background-position: center center;
-  background-size: cover;
   width: 459px;
-  height: 555px;
-}
-/* Блок, в котором появится Яндекс.Карта */
-#footer__map {
-  position: relative;
-  z-index: 7;
-  width: 100%;
   height: 100%;
-  cursor: pointer;
-  background-color: transparent;
+  iframe{
+    border: none;
+    width: 100%;
+    height: 555px;
+  }
 }
-
-/* Индикатор загрузки, который показывается до загрузки карты */
-.map-loader {
-  position: absolute;
-  z-index: 15;
-  top: -100%;
-  left: 0;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  color: #000000;
-  transition: opacity .7s ease;
-  opacity: 0;
-  background-color: rgba(0,0,0,.55);
-}
-
-.map-loader:after,
-.map-loader:before {
-  box-sizing: border-box;
-}
-
-.map-loader.is-active {
-  top: 0;
-  opacity: 1;
-}
-
-.map-loader-default:after {
-  position: absolute;
-  top: 46%;
-  left: 46%;
-  transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
-  content: '';
-  animation: rotation 1s linear infinite;
-  border: solid 8px #ffffff;
-  border-left-color: transparent;
-  border-radius: 50%;
-}
-
 
 @media(max-width: 1200px){
   .container{
@@ -1051,7 +1000,6 @@ img {
   }
   .footer__wrapper{
     width: 350px;
-    height: 425px;
   }
 }
 
@@ -1172,10 +1120,10 @@ img {
   }
   .footer__wrapper{
     width: 100%;
-    margin-top: 90px;
-    height: 300px;
-    background: url('../img/footer/map-2.png') #ffffff no-repeat;
-    background-size: cover;
+    margin-top: 50px;
+    iframe{
+      height: 400px;
+    }
   }
 }
 
@@ -1475,8 +1423,9 @@ img {
       }
     }
     &__wrapper{
-      margin-top: 60px;
-      height: 200px;
+      iframe{
+        height: 200px;
+      }
     }
   }
 }
