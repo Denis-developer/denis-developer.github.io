@@ -317,8 +317,12 @@ p{
     width: 960px;
     margin: 0 auto;
   }
+  &__contentSlider{
+    width: 1010px;
+  }
   &__row{
     margin-top: 96px;
+    align-items: flex-start;
   }
   &__slider{
     margin-top: 60px;
@@ -381,6 +385,9 @@ p{
   .container{
     width: 1560px;
   }
+  &__mobile{
+    display: none;
+  }
   &-bg{
     position: absolute;
     bottom: 38px;
@@ -432,7 +439,7 @@ p{
   width: 12px;
   height: 12px;
   background: #71BA77;
-  border-radius: 5px;
+  border-radius: 8px;
   margin: 0px 12px;
   opacity: 1;
   outline: none !important;
@@ -454,7 +461,7 @@ p{
     width: 100%;
     &_mob{
       display: none;
-      margin: 32px 0px;
+      margin: 32px auto;
     }
   }
   &__row{
@@ -604,7 +611,6 @@ p{
 .mobile-menu{
   position: absolute;
   height: 100vh;
-  min-height: 480px;
   width: 100%;
   top: 0;
   left: 0;
@@ -1121,6 +1127,9 @@ p{
   .container, .header .container, .footer .container{
     padding: 0px 20px;
   }
+  .mobile-menu__link{
+    font-size: 20px;
+  }
   h1{
     font-size: 32px;
     line-height: 42px;
@@ -1185,14 +1194,19 @@ p{
     }
   }
   .market{
-    background: linear-gradient(to top, #71BA77 36.5%, transparent 36.5%);
-    padding-bottom: 48px;
+    background: transparent;
     &__laptop{
       width: 648px;
       max-width: none;
       margin-left: -10px;
-      margin-top: 90px;
+      margin-top: 0px;
       margin-bottom: 30px;
+    }
+    &__container{
+      background: #71BA77;
+      margin-top: 48px;
+      padding-top: 40px;
+      padding-bottom: 48px;
     }
   }
   .market__row .market__text, .clone__row .clone__text{
@@ -1231,11 +1245,17 @@ p{
     display: none;
   }
   .reporting{
-    background: linear-gradient(to top, transparent 62.5%, #71BA77 62.5%, #71BA77 87.5%, transparent 87.5%);
+    &__container{
+      background: #71BA77;
+      padding: 48px 0px;
+      margin: 32px 0px;
+    }
+    &__btn{
+      margin-bottom: 0;
+    }
     &__img{
       &_mob{
         display: block;
-        margin-top: 80px;
       }
     }
   }
@@ -1243,7 +1263,8 @@ p{
     margin-top: 295px;
   }
   .cultivation{
-    background: url(../img/cultivation/bg-mobile.jpg) no-repeat bottom;
+    // background: url(../img/cultivation/bg-mobile.jpg) no-repeat bottom / cover;
+    background-size: 1000px;
   }
   .grow{
     padding-top: 80px;
@@ -1255,6 +1276,9 @@ p{
     }
     &-bg{
       display: none;
+    }
+    &__mobile{
+      display: block;
     }
     .market__btn_mob{
       margin-top: 24px;
@@ -1284,10 +1308,12 @@ p{
     }
   }
   .app{
-    // background: #E7F2E4;
-    background: linear-gradient(to top, transparent 24%, #71BA77 24%);
-    padding-top: 48px;
+    padding-top: 0;
     padding-bottom: 60px;
+    &__container{
+      padding: 48px 20px;
+      background: #E7F2E4;
+    }
     &__bg{
       display: none;
     }
@@ -1302,7 +1328,7 @@ p{
       width: 100%;
     }
     &__business{
-      margin-top: 130px;
+      margin-top: 82px;
     }
   }
   .tryNow{
@@ -1343,5 +1369,10 @@ p{
         margin-top: 8px;
       }
     }
+  }
+}
+@media(max-width: 345px){
+  .cultivation{
+    background: url(../img/cultivation/bg-mobile.jpg) no-repeat bottom / 100%;
   }
 }
