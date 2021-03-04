@@ -74,5 +74,72 @@ window.addEventListener('DOMContentLoaded', function() {
     })
   }
 
+  let num = document.getElementsByClassName('menu__link');
+  let blocks = document.getElementsByClassName('section');
+
+
+  $(window).scroll(function(){
+    if($('html').scrollTop()+20 >= $('.business').offset().top){
+      for (var i = 0; i < num.length; i++) {
+        num[i].style.fontWeight = "400";
+      }
+      num[9].style.fontWeight = "700";
+    }
+    else if($('html').scrollTop()+20 >= $('.app').offset().top){
+      for (var i = 0; i < num.length; i++) {
+        num[i].style.fontWeight = "400";
+      }
+      num[8].style.fontWeight = "700";
+    }
+    else if($('html').scrollTop()+20 >= $('.clone').offset().top){
+      for (var i = 0; i < num.length; i++) {
+        num[i].style.fontWeight = "400";
+      }
+      num[7].style.fontWeight = "700";
+    }
+    else if($('html').scrollTop()+20 >= $('.grow').offset().top){
+      for (var i = 0; i < num.length; i++) {
+        num[i].style.fontWeight = "400";
+      }
+      num[6].style.fontWeight = "700";
+    }
+    else if($('html').scrollTop()+20 >= $('.cultivation').offset().top){
+      for (var i = 0; i < num.length; i++) {
+        num[i].style.fontWeight = "400";
+      }
+      num[5].style.fontWeight = "700";
+    }
+    else if($('html').scrollTop()+20 >= $('.reporting').offset().top){
+      for (var i = 0; i < num.length; i++) {
+        num[i].style.fontWeight = "400";
+      }
+      num[4].style.fontWeight = "700";
+    }
+    else if($('html').scrollTop()+20 >= $('.certificate').offset().top){
+      for (var i = 0; i < num.length; i++) {
+        num[i].style.fontWeight = "400";
+      }
+      num[3].style.fontWeight = "700";
+    }
+    else if($('html').scrollTop()+20 >= $('.compliance').offset().top){
+      for (var i = 0; i < num.length; i++) {
+        num[i].style.fontWeight = "400";
+      }
+      num[2].style.fontWeight = "700";
+    }
+    else if($('html').scrollTop()+20 >= $('.market').offset().top){
+      for (var i = 0; i < num.length; i++) {
+        num[i].style.fontWeight = "400";
+      }
+      num[1].style.fontWeight = "700";
+    }
+    else if($('html').scrollTop()+20 >= $('.main').offset().top){
+      for (var i = 0; i < num.length; i++) {
+        num[i].style.fontWeight = "400";
+      }
+      num[0].style.fontWeight = "700";
+    }
+  })
+
 
 });
