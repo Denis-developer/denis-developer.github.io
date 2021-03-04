@@ -74,9 +74,5 @@ window.addEventListener('DOMContentLoaded', function() {
     })
   }
 
-  // $(window).scroll(function(){
-  //   alert(document.documentElement.scrollTop);
-  // })
-  // alert($('.cultivation').offset().top);
 
 });

@@ -67,13 +67,13 @@
         <!-- /.header__nav -->
         <div class="header__column">
           <a href="#" class="header__soc">
-            <img src="img/header/facebook.svg" alt="">
+            <span class="icon-facebook"></span>
           </a>
           <a href="#" class="header__soc">
-            <img src="img/header/linkedin.svg" alt="">
+            <span class="icon-linkedin2"></span>
           </a>
           <a href="#" class="header__soc">
-            <img src="img/header/twitter.svg" alt="">
+            <span class="icon-twitter"></span>
           </a>
         </div>
         <!-- /.header__column -->
@@ -121,7 +121,11 @@
     </div>
     <!-- /.container -->
     <div class="container market__container">
-      <img src="img/market/laptop.png" alt="" class="market__laptop">
+      <picture class="market__laptop">
+        <source type="image/webp" srcset="img/market/laptop.webp">
+        <source type="image/png" srcset="img/market/laptop.png">
+        <img src="img/market/laptop.png" alt="">
+      </picture>
       <a href="#" class="btn market__btn">Watch demo</a>
     </div>
     <!-- /.container market__container -->
@@ -210,15 +214,27 @@
           <div class="reporting-container swiper-container">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="img/reporting/slide-1.png" alt="img">
+                <picture>
+                  <source type="image/webp" srcset="img/reporting/slide-1.webp">
+                  <source type="image/png" srcset="img/reporting/slide-1.png">
+                  <img src="img/reporting/slide-1.png" alt="">
+                </picture>
               </div>
               <!-- swiper-slide -->
               <div class="swiper-slide">
-                <img src="img/reporting/slide-1.png" alt="img">
+                <picture>
+                  <source type="image/webp" srcset="img/reporting/slide-1.webp">
+                  <source type="image/png" srcset="img/reporting/slide-1.png">
+                  <img src="img/reporting/slide-1.png" alt="">
+                </picture>
               </div>
               <!-- swiper-slide -->
               <div class="swiper-slide">
-                <img src="img/reporting/slide-1.png" alt="img">
+                <picture>
+                  <source type="image/webp" srcset="img/reporting/slide-1.webp">
+                  <source type="image/png" srcset="img/reporting/slide-1.png">
+                  <img src="img/reporting/slide-1.png" alt="">
+                </picture>
               </div>
               <!-- swiper-slide -->
             </div>
@@ -356,7 +372,11 @@
       <!-- /.row clone__row -->
     </div>
     <!-- /.container -->
-    <img src="img/clone/clone__bg.png" alt="" class="clone__bg">
+    <picture class="clone__bg">
+      <source type="image/webp" srcset="img/clone/clone__bg.webp">
+      <source type="image/jpg" srcset="img/clone/clone__bg.jpg">
+      <img src="img/clone/clone__bg.jpg" alt="">
+    </picture>
     <img src="img/clone/mob__bg.png" alt="" class="clone__bg_mob">
     <div class="container">
       <p class="clone__text">As a genetics provider, one of your assets is the constant development of the next best cannabis strain. Cannavigia helps you in the selection process of your pheno hunting. by selecting new cannabis strains you need to identify the phenotype with the best attributes. If you are looking for the phenotype with the highest yield, best bud to leaf ratio, great root development, densest flower, the special flavor, powdery mildew resistance, botrytis resistance, pathogen resistance in general or just the most resin coated bud. Cannavigia helps you to log all those information in picture or note form from your smartphone. Form the analytical side you can add your terpene and cannabinoid reports to your phenotypes. Always knowing on what plant you have to focus and the ones you can remove from the selection process. </p>
@@ -368,8 +388,16 @@
   <!-- /.clone -->
 
   <section class="app" id="app">
-    <img src="img/app/app__bg.png" alt="" class="app__bg">
-    <img src="img/app/phone.png" alt="" class="app__phone">
+    <picture class="app__bg">
+      <source type="image/webp" srcset="img/app/app__bg.webp">
+      <source type="image/png" srcset="img/app/app__bg.png">
+      <img src="img/app/app__bg.png" alt="">
+    </picture>
+    <picture class="app__phone">
+      <source type="image/webp" srcset="img/app/phone.webp">
+      <source type="image/png" srcset="img/app/phone.png">
+      <img src="img/app/phone.png" alt="">
+    </picture>
     <div class="container app__container">
       <h2 class="app__title">Mobile App</h2>
       <p class="app__text">Managing the workforce has always been a challenge in any industry. Our user-friendly mobile app guarantees a traceable working process where staff and activities can be properly monitored and managed. You can schedule work, processes and track all real-time activities. You can also monitor if a particular plant is fed with nutrients, watered, or has enough lighting.</p>
@@ -413,7 +441,7 @@
           <p class="footer-contact__text">Cannabis enthusiast?</p>
           <p class="footer-contact__text">Sign up to get the latest 411 on 420</p>
           <form action="#" class="footer-form">
-            <input type="text" placeholder="Email" class="footer-form__input" required>
+            <input type="email" placeholder="Email" class="footer-form__input" required>
             <input type="submit" class="footer-form__btn" value="Subscribe">
           </form>
           <!-- /.footer-form -->

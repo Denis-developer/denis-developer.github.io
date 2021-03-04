@@ -1,5 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?59lqo5');
+  src:  url('../fonts/icomoon.eot?59lqo5#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?59lqo5') format('truetype'),
+    url('../fonts/icomoon.woff?59lqo5') format('woff'),
+    url('../fonts/icomoon.svg?59lqo5#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-linkedin2:before {
+  content: "\eaca";
+}
+
+
 *, *::after, *::before{
   padding: 0;
   margin: 0;
@@ -100,6 +138,10 @@ p{
   width: 360px;
   height: 60px;
   margin: 0 auto;
+  transition: all 0.2s;
+  &:hover{
+    background: #222222;
+  }
 }
 
 .container{
@@ -138,7 +180,7 @@ p{
       font-weight: bold;
     }
     &:hover{
-      opacity: 0.7;
+      color: #71BA77;
     }
   }
 }
@@ -159,6 +201,13 @@ p{
   }
   &__soc{
     margin-left: 16px;
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.2s;
+    &:hover{
+      color: #71BA77;
+    }
   }
   &__mobileLogo{
     display: none;
@@ -170,6 +219,10 @@ p{
     text-decoration: none;
     margin-left: 24px;
     text-transform: uppercase;
+    transition: all 0.2s;
+    &:hover{
+      color: #71BA77;
+    }
     &_active{
       font-weight: 700;
     }
@@ -209,11 +262,20 @@ p{
     letter-spacing: normal;
     color: #fff;
     background: #71BA77;
+    transition: all 0.2s;
+    &:hover{
+      background: #B6D8B2;
+    }
     &_2{
       background: transparent;
       color: #000;
       border: 1px solid #000000;
       margin-left: 32px;
+      &:hover{
+        background: transparent;
+        color: #71BA77;
+        border-color: #71BA77;
+      }
     }
   }
   &__blockBtn{
@@ -236,6 +298,7 @@ p{
     }
   }
   &__laptop{
+    display: block;
     margin-top: 100px;
     margin-bottom: 50px;
   }
@@ -459,6 +522,7 @@ p{
   &__bg{
     margin: 64px 0px;
     width: 100%;
+    display: block;
     &_mob{
       display: none;
       margin: 32px auto;
@@ -523,6 +587,10 @@ p{
   &__btn{
     color: #fff;
     background: #71BA77;
+    transition: all 0.2s;
+    &:hover{
+      background: #B6D8B2;
+    }
   }
 }
 
@@ -583,6 +651,12 @@ p{
       width: 154px;
       height: 38px;
       cursor: pointer;
+      transition: all 0.2s;
+      &:hover{
+        background: transparent;
+        color: #71BA77;
+        border-color: #71BA77;
+      }
     }
   }
   &-copyright{
