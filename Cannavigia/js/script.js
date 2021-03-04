@@ -67,7 +67,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
   for (var i = 0; i < mobileMenuLinks.length; i++) {
     mobileMenuLinks[i].addEventListener('click', function(event){
-      event.preventDefault();
       menuBtn.classList.toggle('menu-btn_active')
       mobileMenu.style.display = 'none';
       document.getElementsByTagName('body')[0].style.overflowY = "scroll";
