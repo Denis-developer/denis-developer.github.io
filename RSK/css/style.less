@@ -149,7 +149,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 116px;
+    height: 90px;
   }
   &__column{
     display: -webkit-flex;
@@ -390,18 +390,25 @@ img {
   }
   &-card{
     max-width: 172px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &__img{
       border-radius: 10px;
     }
     &__content{
       padding-top: 24px;
-      padding-bottom: 14px;
+      padding-bottom: 12px;
     }
     &__name{
       font-family: 'Gotham Bold';
       font-size: 14px;
       color: #000;
       margin-bottom: 5px;
+      text-transform: uppercase;
+      min-height: 32px;
     }
     &__price{
       font-family: 'Gotham Reg';
@@ -525,6 +532,9 @@ img {
     padding-right: 9px;
     margin-right: 9px;
     border-right: 2px solid #C4C4C4;
+    &:last-child{
+      border: none;
+    }
     &__step{
       font-family: 'Gotham Bold';
       font-size: 48px;
@@ -793,6 +803,27 @@ img {
 .gallery{
   padding-bottom: 65px;
   position: relative;
+  &__container{
+    max-width: 400px;
+    margin: 0 auto;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    &_wide{
+      max-width: none;
+      width: 85%;
+    }
+    &_thin{
+      max-width: none;
+      max-width: 300px;
+    }
+  }
+  &__img{
+    text-align: center;
+    margin: 0 auto;
+    max-height: 533px;
+    max-width: none;
+  }
   &__title{
     margin-bottom: 38px;
     &::before{

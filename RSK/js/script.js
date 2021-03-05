@@ -1,5 +1,11 @@
 window.addEventListener('DOMContentLoaded', function() {
 
+  $(function(){
+    $(".gallery__container").twentytwenty({
+      no_overlay: true
+    });
+  });
+
   const swiper = new Swiper('.swiper-container', {
     speed: 400,
     spaceBetween: 100,
@@ -7,6 +13,8 @@ window.addEventListener('DOMContentLoaded', function() {
     slidesPerGroup: 1,
     swipe: false,
     allowTouchMove: false,
+    centeredSlides: true,
+    autoHeight: true,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -45,10 +53,6 @@ window.addEventListener('DOMContentLoaded', function() {
         slidesPerGroup: 1
       }
     }
-  });
-
-  $(function(){
-    $(".gallery__container").twentytwenty();
   });
 
 });
