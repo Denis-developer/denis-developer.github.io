@@ -4,7 +4,17 @@ window.addEventListener('DOMContentLoaded', function() {
     speed: 400,
     spaceBetween: 30,
     slidesPerView: 2,
-    slidesPerGroup: 1
+    slidesPerGroup: 1,
+    breakpoints: {
+      319: {
+        slidesPerView: 1,
+        slidesPerGroup: 1
+      },
+      992: {
+        slidesPerView: 2,
+        slidesPerGroup: 1
+      }
+    }
   });
 
   let menuBtn = document.querySelector('.menu-btn'),

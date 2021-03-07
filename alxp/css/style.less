@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html{
+  overflow-x: hidden;
+}
+
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
@@ -672,7 +676,8 @@ p.lang__dropdown-trigger {
   }
   &__tools{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, 175px);
     margin-top: 40px;
     grid-row-gap: 45px;
   }
@@ -703,7 +708,6 @@ p.lang__dropdown-trigger {
   }
   &-slide{
     background: #fff;
-    margin: 0 20px;
     padding: 35px 60px 48px 100px;
     border-radius: 15px;
     filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
@@ -847,6 +851,7 @@ p.lang__dropdown-trigger {
       background: #ED2121;
       margin-right: 15px;
       transition: all 0.2s;
+      overflow: hidden;
       svg{
         fill: white;
       }
@@ -877,5 +882,233 @@ p.lang__dropdown-trigger {
   .project-block__img{
     max-width: 400px;
     right: 15px;
+  }
+  .about-statistics__number{
+    font-size: 80px;
+  }
+  .about-statistics__text{
+    font-size: 22px;
+  }
+}
+@media(max-width: 1200px){
+  .reviews-slide{
+    padding: 25px 25px 25px 70px;
+  }
+  .certificates{
+    &-block{
+      &__img{
+        width: 80%;
+        max-width: 170px;
+      }
+      &__title{
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media(max-width: 992px){
+  .main{
+    background-position: right top;
+  }
+  .about-block{
+    width: 50%;
+    padding: 0px 15px;
+    margin-bottom: 40px;
+  }
+  .about-statistics{
+    width: auto;
+    margin-top: 30px;
+    width: 50%;
+  }
+  .about__row{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .skills__row{
+    flex-direction: column;
+  }
+  .skills-tab{
+    max-width: none;
+    margin-bottom: 30px;
+    &__item{
+      margin-right: 15px;
+    }
+  }
+  .skills__tools{
+    grid-template-columns: repeat(auto-fill, 150px);
+  }
+  .skills-tab__item{
+    margin-right: 5px;
+  }
+  .reviews__slider{
+    width: 90%;
+  }
+  .certificates{
+    padding-bottom: 30px;
+    &__row{
+      flex-wrap: wrap;
+    }
+    &-block{
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media(max-width: 768px){
+  .container{
+    padding: 0px 40px;
+  }
+  .title{
+    font-size: 36px;
+  }
+  .about__text{
+    font-size: 20px;
+  }
+  .about-block{
+    width: 100%;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+  .about-statistics{
+    margin-top: 50px;
+    width: 100%;
+  }
+  .about__row{
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer__row{
+    flex-direction: column;
+  }
+  .footer-address{
+    margin-bottom: 40px;
+  }
+}
+
+@media(max-width: 576px){
+  .container{
+    padding: 0px 20px;
+  }
+  .title{
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .main{
+    padding-top: 10px;
+    padding-bottom: 50px;
+    &__title{
+      font-size: 36px;
+      margin-top: 50px;
+      line-height: 100%;
+    }
+    &__line{
+      margin: 30px 0px;
+    }
+    &__text{
+      font-size: 20px;
+      line-height: 26px;
+    }
+    &__sertif{
+      font-size: 20px;
+      line-height: 24px;
+    }
+    &__blockLink{
+      margin-top: 50px;
+    }
+  }
+  .about{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    &__text{
+      line-height: 28px;
+    }
+  }
+  .about-statistics__number{
+    font-size: 60px;
+  }
+  .about-statistics__text{
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .skills{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    &__title{
+      margin-bottom: 40px;
+    }
+    &-tab{
+      &__item{
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .skills-content__title{
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .skills-block__title{
+    line-height: 24px;
+  }
+  .skills__tools{
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+  .reviews{
+    padding-bottom: 50px;
+    &__title{
+      margin-bottom: 30px;
+    }
+  }
+  .reviews-slide{
+    padding: 25px 10px 20px 15px;
+    &__text{
+      font-size: 15px;
+      line-height: 22px;
+    }
+  }
+  .reviews-contact{
+    flex-direction: column;
+    align-items: center;
+    &__img{
+      margin: 0;
+      margin-bottom: 8px;
+    }
+    &__soc{
+      margin: 0;
+      margin-top: 10px;
+    }
+  }
+  .reviews-slide__text::before{
+    display: none;
+  }
+  .certificates{
+    padding-top: 50px;
+    padding-bottom: 10px;
+    &__title{
+      margin-bottom: 40px;
+    }
+    &__row{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .footer{
+    padding: 50px 0px;
+    &-contact{
+      flex-wrap: wrap;
+      justify-content: center;
+      &__mail{
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 30px;
+      }
+      &__link{
+        margin: 0px 10px;
+      }
+    }
   }
 }
