@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', function() {
 
+
+  // СЛАЙДЕР SWIPER
   const swiper = new Swiper('.reviews__container', {
     speed: 400,
     spaceBetween: 30,
@@ -17,6 +19,8 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+
+  // МОБИЛЬНОЕ МЕНЮ
   let menuBtn = document.querySelector('.menu-btn'),
       mobileMenu = document.querySelector('.mobile-menu'),
       mobileMenuLinks = document.getElementsByClassName('mobile-menu__link');
@@ -46,11 +50,12 @@ window.addEventListener('DOMContentLoaded', function() {
     })
   }
 
-  jQuery('.lang').find('.lang__dropdown-trigger').each(function() {
-  	jQuery(this).click(function(){
-			jQuery(this).parent().toggleClass('active');
-		});
-	});
+  // ВЫБОР ЯЗЫКА
+  let langDropdownTrigger = document.querySelector('.lang__dropdown-trigger');
+
+  langDropdownTrigger.addEventListener('click', function(){
+    langDropdownTrigger.parentNode.classList.toggle('active')
+  })
 
   // ТАБЫ
     let tab = document.getElementsByClassName('skills-tab__item'),
