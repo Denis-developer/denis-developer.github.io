@@ -102,7 +102,7 @@ window.addEventListener('DOMContentLoaded', function() {
     // Ширина контейнера для табов
     const max577 = window.matchMedia( "(max-width: 577px)" );
 
-    if(min769.matches){
+    if(max577.matches){
       let tabWrapper = document.querySelector('.skills-tab__wrapper'),
           tabWrapperWidth = 0;
 
