@@ -433,7 +433,9 @@ p{
 
 .cultivation{
   padding-bottom: 80px;
-  background: url(../img/cultivation/cultivation__bg.png) no-repeat bottom;
+  background-image: url(../img/cultivation/bg-1.png), url(../img/cultivation/bg-2.png);
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom, bottom;
   .container{
     width: 1080px;
   }
@@ -1050,7 +1052,7 @@ p{
     margin-top: 490px;
   }
   .cultivation{
-    background-size: 135%;
+    background-size: 900px, 100%;
     padding-bottom: 50px;
   }
   .grow .container{
@@ -1139,6 +1141,10 @@ p{
   }
   .cultivation__btn{
     margin-top: 390px;
+  }
+  .cultivation{
+    background-size: 100%, 100%;
+    padding-bottom: 50px;
   }
   .grow-slide{
     padding: 20px 40px;
@@ -1238,8 +1244,8 @@ p{
   }
   .btn{
     height: 52px;
-    width: 280px;
-    max-width: 360px;
+    width: 100%;
+    max-width: none;
   }
   .header__logo{
     img{
@@ -1270,9 +1276,8 @@ p{
     }
     &__btn{
       margin: 0;
-      width: 280px;
       height: 52px;
-      max-width: 360px;
+      width: 100%;
       &_2{
         margin-top: 20px;
       }
@@ -1332,7 +1337,7 @@ p{
   .reporting{
     &__container{
       background: #71BA77;
-      padding: 48px 0px;
+      padding: 48px 20px;
       margin: 32px 0px;
     }
     &__btn{
@@ -1341,15 +1346,26 @@ p{
     &__img{
       &_mob{
         display: block;
+        position: relative;
+        left: -10px;
       }
     }
   }
   .cultivation__btn{
-    margin-top: 295px;
+    margin-top: 0px;
   }
   .cultivation{
-    // background: url(../img/cultivation/bg-mobile.jpg) no-repeat bottom / cover;
-    background-size: 1000px;
+    background: transparent;
+    padding-bottom: 0;
+  }
+  .cultivation__container{
+    background: #71BA77 url(../img/cultivation/bg-1.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 145%;
+    padding-bottom: 50px;
+    padding-top: 270px;
+    margin-top: 25px;
   }
   .grow{
     padding-top: 80px;
@@ -1419,6 +1435,7 @@ p{
   .tryNow{
     background: transparent;
     height: auto;
+    padding: 0px 20px;
   }
   .footer{
     padding-bottom: 24px;
