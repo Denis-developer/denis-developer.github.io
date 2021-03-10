@@ -1,6 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
 
-
   // СЛАЙДЕР SWIPER
   const swiper = new Swiper('.reviews__container', {
     speed: 400,
@@ -99,5 +98,18 @@ window.addEventListener('DOMContentLoaded', function() {
     		}
     	});
     };
+
+    // Ширина контейнера для табов
+    const max577 = window.matchMedia( "(max-width: 577px)" );
+
+    if(min769.matches){
+      let tabWrapper = document.querySelector('.skills-tab__wrapper'),
+          tabWrapperWidth = 0;
+
+      for (var i = 0; i < tab.length; i++) {
+        tabWrapperWidth += tab[i].offsetWidth + 5;
+      }
+      tabWrapper.style.width = tabWrapperWidth + 10 + "px";
+    }
 
 });

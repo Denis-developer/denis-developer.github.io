@@ -124,6 +124,7 @@ img {
 
 .lang__dropdown {
   position: relative;
+  top: 3px;
 }
 
 p.lang__dropdown-trigger {
@@ -219,7 +220,7 @@ p.lang__dropdown-trigger {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 30px 0px;
+  padding: 20vh 0px;
   transition: all 0.4s;
   display: none;
   &__link{
@@ -411,6 +412,7 @@ p.lang__dropdown-trigger {
       padding-top: 2px;
       background: #0884F6;
       border-radius: 5px;
+      text-decoration: none;
     }
   }
 }
@@ -477,6 +479,7 @@ p.lang__dropdown-trigger {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
+    text-decoration: none;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
@@ -800,6 +803,9 @@ p.lang__dropdown-trigger {
     align-items: center;
     justify-content: center;
     text-align: center;
+    &__link{
+      text-decoration: none;
+    }
     &__title{
       margin-top: 32px;
       margin-bottom: 7px;
@@ -1079,7 +1085,18 @@ p.lang__dropdown-trigger {
     padding-bottom: 50px;
     &__text{
       line-height: 28px;
+      font-size: 19px;
     }
+    &-block{
+      margin-bottom: 20px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  .about-block__text{
+    font-size: 18px;
+    margin-top: 0px;
   }
   .about-statistics__number{
     font-size: 60px;
@@ -1142,9 +1159,16 @@ p.lang__dropdown-trigger {
       margin-bottom: 40px;
     }
     &-tab{
+      height: 44px;
+      width: 100%;
+      overflow-x: scroll;
+      &__wrapper{
+        width: 500%;
+      }
       &__item{
         font-size: 20px;
         margin-bottom: 5px;
+        float: left;
       }
     }
   }
@@ -1199,6 +1223,17 @@ p.lang__dropdown-trigger {
       align-items: center;
     }
   }
+  .certificates-block__link{
+    width: 70%;
+    max-width: 177px;
+  }
+  .certificates-block__title{
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .certificates-block__text{
+    font-size: 18px;
+  }
   .footer{
     padding: 50px 0px;
     &-contact{
@@ -1214,5 +1249,11 @@ p.lang__dropdown-trigger {
         margin: 0px 10px;
       }
     }
+  }
+}
+
+@media(max-height: 450px){
+  .mobile-menu{
+    padding: 20px 0px;
   }
 }
