@@ -1,0 +1,88 @@
+a{
+  color: #fff;
+  text-decoration: underline;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+table, td{
+  border: 1px solid #fff;
+}
+
+.myheader{
+  width: 100%;
+  background: #fff;
+  color: #000;
+  height: 100px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.mycontainer{
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  height: 300px;
+  margin: 20px 0px;
+}
+.myarticle{
+  background: yellow;
+  color: #000 !important;
+  color: #e1e1e1;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.myaside{
+  width: 30%;
+  background: pink;
+  color: #000;
+  margin-left: 50px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.myfooter{
+  width: 100%;
+  background: #e1e1e1;
+  color: #000;
+  height: 100px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.position{
+  position: relative;
+  height: 100px;
+  width: 200px;
+  margin: 20px;
+}
+.position__over img{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.position__down span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #000;
+}

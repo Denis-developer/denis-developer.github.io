@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Изучи основы HTML</title>
+  <style media="screen">
+    *{
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    body{
+      background: #42405C;
+      padding: 0;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    .container{
+      width: 90%;
+      margin: 0 auto;
+      position: relative;
+      height: 100%;
+    }
+    .main{
+      height: 100vh;
+      background: url(../img/main-bg.png) no-repeat center / cover;
+    }
+    .main__title{
+      font-weight: 500;
+      font-size: 60px;
+      color: #fff;
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+    }
+    .header{
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      -ms-align-items: center;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 40px;
+    }
+    .logo__img{
+      width: 70px;
+    }
+    .nav__link{
+      display: inline-block;
+      font-size: 20px;
+      font-weight: 500;
+      color: #000;
+      text-decoration: none;
+      margin-left: 50px;
+    }
+    .content{
+      color: #fff;
+      padding-top: 50px;
+    }
+    .content__title{
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .content__text{
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 60px;
+    }
+    .content__text a{
+      color: #fff;
+    }
+    .footer{
+      padding: 30px 0px;
+    }
+    .footer .container{
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      -ms-align-items: center;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer a{
+      font-size: 18px;
+      color: #fff;
+      margin-left: 10px;
+      text-decoration: underline;
+    }
+    .footer a:hover{
+      text-decoration: none;
+    }
+    .footer__text{
+      font-size: 18px;
+      color: #fff;
+      text-align: center;
+    }
+    @media(max-width: 768px){
+      .footer .container{
+        flex-direction: column-reverse;
+        justify-content: center;
+      }
+      .footer__text{
+        margin-top: 15px;
+      }
+    }
+    @media(max-width: 576px){
+      .nav{
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        flex-direction: column;
+      }
+      .main__title{
+        font-size: 36px;
+        left: 10px;
+      }
+      .container{
+        width: 100%;
+        padding: 0px 10px;
+      }
+      .content{
+        padding-top: 20px;
+      }
+      .footer__link{
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        -ms-align-items: center;
+        align-items: center;
+        margin: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body id="body">
+  <main class="main">
+    <div class="container">
+      <header class="header">
+        <a href="index.html" class="logo">
+          <img src="../img/logo.png" alt="" class="logo__img">
+          <nav class="nav">
+            <a href="index.html" class="nav__link">Главная</a>
+            <a href="about.html" class="nav__link">О нас</a>
+            <a href="lab.html" class="nav__link">Лаб 1</a>
+            <a href="lab2.html" class="nav__link">Лаб 2</a>
+          </nav>
+        </a>
+      </header>
+      <h1 class="main__title">Изучи основы HTML</h1>
+    </div>
+  </main>
+  <div class="content">
+    <div class="container">
+      <h3 class="content__title">HTML</h3>
+      <p class="content__text">HTML (от англ. HyperText Markup Language — «язык гипертекстовой разметки») — стандартизированный язык разметки веб-страниц во Всемирной паутине. Код HTML интерпретируется браузерами; полученная в результате интерпретации страница отображается на экране монитора компьютера или мобильного устройства. <br>Язык HTML до 5-й версии определялся как приложение SGML (стандартного обобщённого языка разметки по стандарту ISO 8879). Спецификации HTML5 формулируются в терминах DOM (объектной модели документа). <br>Строгим вариантом HTML является XHTML, он наследует синтаксис XML и является приложением языка XML в области разметки гипертекста. <br>HTML-страницы, как правило, открываются браузерами обмениваясь с сервером информацией по протоколу HTTP или HTTPS, в виде простого текста или с использованием шифрования.</p>
+      <h3 class="content__title">Общее представление</h3>
+      <p class="content__text">Язык гипертекстовой разметки HTML был разработан британским учёным Тимом Бернерсом-Ли приблизительно в 1986—1991 годах в стенах ЦЕРНа в Женеве в Швейцарии. HTML создавался как язык для обмена научной и технической документацией, пригодный для использования людьми, не являющимися специалистами в области вёрстки. HTML успешно справлялся с проблемой сложности SGML путём определения небольшого набора структурных и семантических элементов — дескрипторов. Дескрипторы также часто называют «тегами». С помощью HTML можно легко создать относительно простой, но красиво оформленный документ. Помимо упрощения структуры документа, в HTML внесена поддержка гипертекста. Мультимедийные возможности были добавлены позже. <br>Первым общедоступным описанием HTML был документ «Теги HTML», впервые упомянутый в Интернете Тимом Бернерсом-Ли в конце 1991 года. В нём описываются 18 элементов, составляющих первоначальный, относительно простой дизайн HTML. За исключением тега гиперссылки, на них сильно повлиял SGMLguid, внутренний формат документации, основанный на стандартном обобщенном языке разметки (SGML), в CERN. Одиннадцать из этих элементов всё ещё существуют в HTML 4. <br> Изначально язык HTML был задуман и создан как средство структурирования и форматирования документов без их привязки к средствам воспроизведения (отображения). В идеале, текст с разметкой HTML должен был без стилистических и структурных искажений воспроизводиться на оборудовании с различной технической оснащённостью (цветной экран современного компьютера, монохромный экран органайзера, ограниченный по размерам экран мобильного телефона или устройства и программы голосового воспроизведения текстов). Однако современное применение HTML очень далеко от его изначальной задачи. Например, тег предназначен для создания в документах таблиц, но иногда используется и для оформления размещения элементов на странице. С течением времени основная идея платформонезависимости языка HTML была принесена в жертву современным потребностям в мультимедийном и графическом оформлении.</p>
+      <h3 class="content__title">Браузеры</h3>
+      <p class="content__text">Текстовые документы, содержащие разметку на языке HTML (такие документы традиционно имеют расширение .html или .htm), обрабатываются специальными приложениями, которые отображают документ в его форматированном виде. Такие приложения, называемые «браузерами» или «интернет-обозревателями», обычно предоставляют пользователю удобный интерфейс для запроса веб-страниц, их просмотра (и вывода на иные внешние устройства) и, при необходимости, отправки введённых пользователем данных на сервер. Наиболее популярными на сегодняшний день браузерами являются Google Chrome, Mozilla Firefox, Opera, Internet Explorer и Safari. <br> <br>
+      </p>
+    </div>
+  </div>
+  <footer class="footer" id="footer">
+    <div class="container">
+      <p class="footer__text">&copy; Denis company 2021</p>
+      <p class="footer__link">
+        <a href="page1.html">Страница 1</a>
+        <a href="page2.html">Страница 2</a>
+        <a href="page3.html">Страница 3</a>
+        <a href="page4.html">Страница 4</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
