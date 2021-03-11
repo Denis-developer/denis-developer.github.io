@@ -22,46 +22,20 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  const swiper1 = new Swiper('.sertificates-container', {
-    speed: 400,
-    slidesPerView: 6,
-    slidesPerGroup: 1,
-    pagination: {
-      el: '.sertificates-pagination',
-      type: 'bullets',
-      clickable: true,
-    },
-    breakpoints: {
-      319: {
-        slidesPerView: 2,
-        slidesPerGroup: 2
-      },
-      600: {
-        slidesPerView: 3,
-        slidesPerGroup: 2
-      },
-      820: {
-        slidesPerView: 4,
-        slidesPerGroup: 2
-      },
-      992: {
-        slidesPerView: 5,
-        slidesPerGroup: 1
-      },
-      1200: {
-        slidesPerView: 6,
-        slidesPerGroup: 1
-      }
-    }
-  });
 
   let modalWrapper = document.querySelector('.modal__wrapper'),
       modalClose = document.querySelector('.modal__close'),
+      modalTitle = document.querySelector('.modal__title'),
+      modalBtn = document.querySelector('.modal-form__btn'),
       modalOpen = document.getElementsByClassName('btn-modal');
 
   for (var i = 0; i < modalOpen.length; i++) {
     modalOpen[i].addEventListener('click', function(event){
       event.preventDefault();
+      let titleModal = this.getAttribute('data-modalTitle');
+      let textBtn = this.getAttribute('data-modalBtn');
+      modalTitle.innerHTML = titleModal;
+      modalBtn.value = textBtn;
       modalWrapper.style.display = 'flex';
     });
   }

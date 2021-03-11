@@ -650,39 +650,53 @@ img {
 }
 
 .reviews{
-  padding-top: 56px;
-  padding-bottom: 87px;
+  padding-top: 108px;
+  padding-bottom: 150px;
   &__title{
-    margin-bottom: 29px;
+    text-align: center;
+    margin-bottom: 65px;
     &::before{
       display: none;
     }
   }
   &__row{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 25px;
-  }
-  &__video{
-    &:nth-child(1){
-      grid-column-start: 1;
-      grid-column-end: 3;
-      grid-row-start: 1;
-      grid-row-end: 3;
-    }
-    &:nth-child(6){
-      grid-column-start: 3;
-      grid-column-end: 5;
-      grid-row-start: 2;
-      grid-row-end: 4;
-    }
-  }
-  iframe{
-    border: none;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
     width: 100%;
-    height: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &-block{
+    width: 267px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
+    padding: 18px 27px 23px 25px;
+    position: relative;
+    margin: 15px 10px;
+    &__name{
+      font-family: 'Gotham Bold';
+      color: #2BB060;
+      font-size: 14px;
+      margin-bottom: 9px;
+    }
+    &__text{
+      font-size: 14px;
+      color: #000;
+      font-family: 'Gotham Reg';
+      line-height: 100%;
+    }
+    &__date{
+      position: absolute;
+      top: 18px;
+      right: 25px;
+      font-size: 14px;
+      color: #666;
+      font-family: 'Gotham Reg';
+    }
   }
 }
 
@@ -800,7 +814,7 @@ img {
 }
 
 .gallery{
-  padding-bottom: 65px;
+  padding-bottom: 105px;
   position: relative;
   &__container{
     max-width: 400px;
@@ -834,45 +848,9 @@ img {
   }
   .swiper-pagination{
     position: absolute;
-    bottom: 0;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-  }
-  .swiper-pagination-bullet{
-    width: 20px;
-    height: 20px;
-    background: #E5E5E5;
-    opacity: 1;
-    margin: 0px 10px;
-    cursor: pointer;
-  }
-  .swiper-pagination-bullet-active{
-    background: @green;
-  }
-}
-
-.sertificates{
-  padding-top: 100px;
-  padding-bottom: 144px;
-  .container{
-    position: relative;
-  }
-  &__title{
-    margin-bottom: 98px;
-    &::before{
-      display: none;
-    }
-  }
-  &-container{
-    overflow: hidden;
-  }
-  &-pagination{
-    position: absolute;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    text-align: center;
   }
   .swiper-pagination-bullet{
     width: 20px;
@@ -1185,29 +1163,11 @@ img {
   .stages-block{
     margin-bottom: 20px;
   }
-  .reviews__row{
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    flex-direction: column;
-  }
   .reviews{
-    padding-bottom: 50px;
-  }
-  .reviews__video {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-  }
-  .reviews__video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-width: 0;
-    outline-width: 0;
+    padding: 80px 0px;
+    &__title{
+      margin-bottom: 30px;
+    }
   }
   .sale__block{
     display: none;
@@ -1308,13 +1268,6 @@ img {
   .payment{
     padding-top: 70px;
     padding-bottom: 40px;
-  }
-  .sertificates{
-    padding-top: 60px;
-    padding-bottom: 80px;
-    &__title{
-      margin-bottom: 30px;
-    }
   }
   .footer{
     padding-top: 40px;
@@ -1477,6 +1430,12 @@ img {
   }
   .employees__row{
     justify-content: center;
+  }
+  .reviews{
+    padding: 50px 0px;
+    &__title{
+      margin-bottom: 30px;
+    }
   }
   .sale{
     background-size: cover;
