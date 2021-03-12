@@ -150,6 +150,7 @@ img {
 .lang__dropdown {
   position: relative;
   top: 3px;
+  margin-left: 25px;
 }
 
 p.lang__dropdown-trigger {
@@ -165,7 +166,7 @@ p.lang__dropdown-trigger {
 	display: block;
 	position: absolute;
 	content: '';
-	right: 5px;
+	right: -15px;
 	top: 5px;
   height: 17px;
   width: 17px;
@@ -177,7 +178,7 @@ p.lang__dropdown-trigger {
 .lang__dropdown-trigger strong,
 .lang__dropdown ul a {
 	display: block;
-	width: 60px;
+	width: 40px;
 	cursor: pointer;
 	padding: 6px 8px;
 	color: #fff;
@@ -186,7 +187,7 @@ p.lang__dropdown-trigger {
   text-transform: uppercase;
   text-decoration: none;
 	font-weight: normal;
-  margin-left: 23px;
+  margin-left: 0px;
 }
 
 .lang__dropdown ul {
@@ -208,7 +209,7 @@ p.lang__dropdown-trigger {
 .lang__dropdown ul a:visited {
 	position: relative;
 	display: block;
-	float: right;
+	// float: right;
 }
 
 .lang__dropdown ul a:hover,
@@ -227,7 +228,7 @@ p.lang__dropdown-trigger {
 }
 
 .lang strong {
-	float: right;
+	// float: right;
 }
 
 .mobile-menu{
@@ -244,10 +245,20 @@ p.lang__dropdown-trigger {
   display: -ms-flex;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
   padding: 20vh 0px;
   transition: all 0.4s;
   display: none;
+}
+
+.menu-list{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
   &__link{
     font-size: 25px;
     color: #fff;
@@ -260,8 +271,18 @@ p.lang__dropdown-trigger {
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
-    &:hover{
-      color: #e1e1e1;
+  }
+}
+
+.menu-droplist{
+  margin-top: 20px;
+  &__item{
+    margin-bottom: 20px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .menu-list__link{
+      font-size: 20px;
     }
   }
 }
@@ -1115,7 +1136,7 @@ p.lang__dropdown-trigger {
     padding-top: 10px;
     &__title{
       font-size: 36px;
-      margin-top: 50px;
+      margin-top: 65px;
       line-height: 100%;
     }
     &__line{
