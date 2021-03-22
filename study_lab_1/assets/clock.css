@@ -1,0 +1,112 @@
+.clock{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background: #fff url("../img/clock.jpg") no-repeat;
+  background-position: left -5px top -5px;
+  background-size: 156px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.clock::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #000;
+  z-index: 5;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec{
+  position: absolute;
+}
+
+.clock .hour, .hr{
+  width: 55px;
+  height: 55px;
+}
+.clock .min, .mn{
+  width: 80px;
+  height: 80px;
+}
+.clock .sec, .sc{
+  width: 100px;
+  height: 100px;
+}
+
+.hr, .mn, .sc{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: center;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hr::before{
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 50%;
+  background-color: #000;
+  border-radius: 4px;
+}
+.mn::before{
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 50%;
+  background-color: #000;
+  border-radius: 4px;
+}
+.sc::before{
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 50%;
+  background-color: #000;
+  border-radius: 4px;
+}
+
+@media(max-width: 576px){
+  .clock{
+    width: 100px;
+    height: 100px;
+    background-size: 106px;
+    position: absolute;
+    right: auto;
+    top: 40px;
+    left: 100px;
+  }
+  .clock .hour, .hr{
+    width: 35px;
+    height: 35px;
+  }
+  .clock .min, .mn{
+    width: 50px;
+    height: 50px;
+  }
+  .clock .sec, .sc{
+    width: 65px;
+    height: 65px;
+  }
+}

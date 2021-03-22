@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
   <title>Изучи основы HTML</title>
+  <link rel="stylesheet" href="../assets/clock.css">
   <style media="screen">
     *{
       box-sizing: border-box;
@@ -143,6 +144,19 @@
   </style>
 </head>
 <body bgcolor=#42405C id="body">
+  
+  <div class="clock">
+    <div class="hour">
+      <div class="hr" id="hr"></div>
+    </div>
+    <div class="min">
+      <div class="mn" id="mn"></div>
+    </div>
+    <div class="sec">
+      <div class="sc" id="sc"></div>
+    </div>
+  </div>
+  
   <main class="main">
     <div class="container">
       <header class="header">
@@ -153,6 +167,7 @@
             <a href="about.html" class="nav__link">О нас</a>
             <a href="lab.html" class="nav__link">Лаб 1</a>
             <a href="lab2.html" class="nav__link">Лаб 2</a>
+            <a href="lab3.html" class="nav__link">Лаб 3</a>
           </nav>
         </a>
       </header>
@@ -343,5 +358,7 @@
       </p>
     </div>
   </footer>
+  
+  <script src="../assets/js/script.js"></script>
 </body>
 </html>
