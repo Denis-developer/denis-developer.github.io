@@ -75,9 +75,16 @@ let eveningList = document.querySelector('.goodEvening__list');
 eveningInput.addEventListener('input', function () {
   let valueInput = this.value;
   eveningList.innerHTML = "";
-  for (var i = 0; i < valueInput; i++) {
-    let p = document.createElement('p');
-    p.innerHTML = "Добрый вечер";
-    eveningList.prepend(p);
+  if(valueInput < 0){
+    alert('Ты всё шутки шутишь.');
+    eveningInput.value = "0";
   }
+  else{
+    for (var i = 0; i < valueInput; i++) {
+      let p = document.createElement('p');
+      p.innerHTML = "Добрый вечер";
+      eveningList.prepend(p);
+    }
+  }
+  
 })

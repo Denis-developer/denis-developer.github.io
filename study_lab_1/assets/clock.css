@@ -1,4 +1,4 @@
-.clock{
+.clock {
   position: fixed;
   bottom: 50px;
   right: 50px;
@@ -18,7 +18,7 @@
   z-index: 20;
 }
 
-.clock::before{
+.clock::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -35,24 +35,26 @@
 
 .clock .hour,
 .clock .min,
-.clock .sec{
+.clock .sec {
   position: absolute;
 }
 
-.clock .hour, .hr{
+.clock .hour, .hr {
   width: 55px;
   height: 55px;
 }
-.clock .min, .mn{
+
+.clock .min, .mn {
   width: 80px;
   height: 80px;
 }
-.clock .sec, .sc{
+
+.clock .sec, .sc {
   width: 100px;
   height: 100px;
 }
 
-.hr, .mn, .sc{
+.hr, .mn, .sc {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
@@ -62,7 +64,7 @@
   border-radius: 50%;
 }
 
-.hr::before{
+.hr::before {
   content: '';
   position: absolute;
   width: 4px;
@@ -70,7 +72,8 @@
   background-color: #000;
   border-radius: 4px;
 }
-.mn::before{
+
+.mn::before {
   content: '';
   position: absolute;
   width: 3px;
@@ -78,7 +81,8 @@
   background-color: #000;
   border-radius: 4px;
 }
-.sc::before{
+
+.sc::before {
   content: '';
   position: absolute;
   width: 2px;
@@ -87,8 +91,8 @@
   border-radius: 4px;
 }
 
-@media(max-width: 576px){
-  .clock{
+@media(max-width: 576px) {
+  .clock {
     width: 100px;
     height: 100px;
     background-size: 106px;
@@ -97,15 +101,18 @@
     top: 40px;
     left: 100px;
   }
-  .clock .hour, .hr{
+
+  .clock .hour, .hr {
     width: 35px;
     height: 35px;
   }
-  .clock .min, .mn{
+
+  .clock .min, .mn {
     width: 50px;
     height: 50px;
   }
-  .clock .sec, .sc{
+
+  .clock .sec, .sc {
     width: 65px;
     height: 65px;
   }
