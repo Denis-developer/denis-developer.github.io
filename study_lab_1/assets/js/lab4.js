@@ -37,6 +37,8 @@ form.addEventListener('submit', function(event) {
   if(valid == 15){
     alert('Форма была отправлена!');
     form.reset();
-    formInput[i].style.borderColor = "grey";
+    for (var j = 0; j < formInput.length; j++){
+      formInput[j].style.borderColor = "grey";
+    }  
   }
 });
