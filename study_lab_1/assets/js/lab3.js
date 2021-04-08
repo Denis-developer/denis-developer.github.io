@@ -1,12 +1,6 @@
 let link = document.getElementsByTagName('a');
 
 for (var i = 0; i < link.length; i++) {
-  link[i].addEventListener('click', function() {
-    alert('Не бей меня');
-  })
-}
-
-for (var i = 0; i < link.length; i++) {
   link[i].addEventListener('mouseenter', function() {
     this.style.color = 'pink';
   })
@@ -42,7 +36,7 @@ console.log("Самое маленькое нечётное чилсо: " + numb
 
 // Задание 2 (24)
 const remainderH = document.querySelector('.remainder__h');
-let nextMonth = new Date('2021-04-01');
+let nextMonth = new Date('2021-05-01');
 
 function remainder(){
   let nowDate = new Date();
@@ -50,7 +44,7 @@ function remainder(){
   let hours = Math.floor(gap / 1000 / 60 / 60);
   
   if(gap <= 0){
-    alert('Апрель 2021 начался или уже прошёл.');
+    alert('Май 2021 начался или уже прошёл.');
   } 
   else{
     remainderH.innerHTML = hours + " часов";

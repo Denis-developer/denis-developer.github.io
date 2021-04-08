@@ -42,8 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
     } 
   }
   
-  timer();
+  if(timerD && timerH && timerM && timerS){
+    timer();  
+    setInterval(timer, 1000);
+  }
   
-  setInterval(timer, 1000);
-
 })

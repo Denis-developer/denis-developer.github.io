@@ -119,6 +119,20 @@
       font-weight: 400;
       margin-bottom: 60px;
     }
+    .content-form__label{
+      display: block;
+      margin-bottom: 0px;
+      margin-top: 10px;
+    }
+    .content-form__btn{
+      display: block;
+      width: 100px;
+      height: 40px;
+      color: #fff;
+      background: transparent;
+      border: 2px solid #fff;
+      margin-top: 20px;
+    }
     .footer{
       padding: 30px 0px;
     }
@@ -186,58 +200,61 @@
 </head>
 <body>
   
-  <div class="clock">
-    <div class="hour">
-      <div class="hr" id="hr"></div>
-    </div>
-    <div class="min">
-      <div class="mn" id="mn"></div>
-    </div>
-    <div class="sec">
-      <div class="sc" id="sc"></div>
-    </div>
-  </div>
-  
   <main class="main">
     <div class="container">
       <header class="header">
         <a href="index.html" class="logo">
           <img src="../img/logo.png" alt="" class="logo__img">
         </a>
-        <nav class="nav">
-          <a href="index.html" class="nav__link">Главная</a>
-          <a href="about.html" class="nav__link">О нас</a>
-          <a href="lab.html" class="nav__link">Лаб 1</a>
-          <a href="lab2.html" class="nav__link">Лаб 2</a>
-          <a href="lab3.html" class="nav__link">Лаб 3</a>
-          <a href="lab4.html" class="nav__link">Лаб 4</a>
-        </nav>
+          <nav class="nav">
+            <a href="index.html" class="nav__link">Главная</a>
+            <a href="about.html" class="nav__link">О нас</a>
+            <a href="lab.html" class="nav__link">Лаб 1</a>
+            <a href="lab2.html" class="nav__link">Лаб 2</a>
+            <a href="lab3.html" class="nav__link">Лаб 3</a>
+            <a href="lab4.html" class="nav__link">Лаб 4</a>
+          </nav>
       </header>
-      <h1 class="main__title">Лабораторная 3</h1>
+      <h1 class="main__title">Лабораторная 4</h1>
     </div>
   </main>
   <div class="content">
     <div class="container">
-      <h3 class="content__title">До нового года осталось: </h3>
-      <div class="timer">
-        <span class="timer__d">00</span>:
-        <span class="timer__h">00</span>:
-        <span class="timer__m">00</span>:
-        <span class="timer__s">00</span>
-      </div>
-      <h3 class="content__title">До конца месяца осталось: </h3>
-        <div class="remainder">
-          <span class="remainder__h">00</span>
-        </div>
-      <h3 class="content__title">Картинка(клик): </h3>
-        <div class="imgClick">
-          <img src="../img/lab3/1.jpg" alt="">
-        </div>
-      <h3 class="content__title">Сколько раз вам пожелать спокойного вечера: </h3>
-        <form action="#" class="goodEvening">
-          <input type="number" class="goodEvening__input" placeholder="0">
-        </form>
-      <div class="goodEvening__list"></div>
+      <h3 class="content__title">Форма</h3>
+      <form action="#" class="content-form">
+        <label for="content_1" class="content-form__label">Фамилия:</label>
+        <input type="text" id="content_1" class="content-form__input" data-rule="text">
+        <label for="content_2" class="content-form__label">Имя:</label>
+        <input type="text" id="content_2" class="content-form__input" data-rule="text">
+        <label for="content_3" class="content-form__label">Отчество:</label>
+        <input type="text" id="content_3" class="content-form__input" data-rule="text">
+        <label for="content_4" class="content-form__label">Телефон:</label>
+        <input type="text" id="content_4" class="content-form__input" data-rule="number">
+        <label for="content_5" class="content-form__label">Почта:</label>
+        <input type="text" id="content_5" class="content-form__input" data-rule="email">
+        <label for="content_6" class="content-form__label">Где родился:</label>
+        <input type="text" id="content_6" class="content-form__input" data-rule="text">
+        <label for="content_7" class="content-form__label">Где проживаешь:</label>
+        <input type="text" id="content_7" class="content-form__input" data-rule="text">
+        <label for="content_8" class="content-form__label">Какая сейчас погода:</label>
+        <input type="text" id="content_8" class="content-form__input" data-rule="text">
+        <label for="content_9" class="content-form__label">Где учишься:</label>
+        <input type="text" id="content_9" class="content-form__input" data-rule="text">
+        <label for="content_10" class="content-form__label">Любимый язык программирования:</label>
+        <input type="text" id="content_10" class="content-form__input" data-rule="text">
+        <label for="content_11" class="content-form__label">Марка телефона:</label>
+        <input type="text" id="content_11" class="content-form__input" data-rule="text">
+        <label for="content_12" class="content-form__label">Что сейчас делаешь:</label>
+        <input type="text" id="content_12" class="content-form__input" data-rule="text">
+        <label for="content_13" class="content-form__label">Имя матери:</label>
+        <input type="text" id="content_13" class="content-form__input" data-rule="text">
+        <label for="content_14" class="content-form__label">Имя отца:</label>
+        <input type="text" id="content_14" class="content-form__input" data-rule="text">
+        <label for="content_15" class="content-form__label">Сколько лет:</label>
+        <input type="text" id="content_15" class="content-form__input" data-rule="number">
+        <input type="submit" value="Отправить" class="content-form__btn">
+      </form>
+      <!-- /.content-form -->
     </div>
   </div>
   <footer class="footer">
@@ -253,6 +270,6 @@
   </footer>
   
   <script src="../assets/js/script.js"></script>
-  <script src="../assets/js/lab3.js"></script>
+  <script src="../assets/js/lab4.js"></script>
 </body>
 </html>
