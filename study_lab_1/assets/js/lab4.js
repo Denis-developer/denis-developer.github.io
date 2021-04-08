@@ -1,8 +1,6 @@
 var form = document.querySelector('.content-form');
 var formInput = document.querySelectorAll('input[data-rule]');
 
-
-
 form.addEventListener('submit', function(event) {
   event.preventDefault();
   var valid = 0;
@@ -23,7 +21,6 @@ form.addEventListener('submit', function(event) {
         check = /^[a-zA-Zа-яА-Я]+$/.test(value);
         break;
     }
-    
     
     if(check){
       formInput[i].style.borderColor = "green";
