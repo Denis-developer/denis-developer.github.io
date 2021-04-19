@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    div{
+      width: 40px;
+      height: 40px;
+      display: none;
+      position: absolute;
+      top: 20px;
+    }
+    #div1{
+      background-color: black;
+      left: 20px;
+    }
+    #div2{
+      background-color: purple;
+      left: 25%;
+    }
+    #div3{
+      background-color: orange;
+      left: 50%;
+    }
+    #div4{
+      background-color: brown;
+      left: 75%;
+    }
+    #div5{
+      background-color: grey;
+      right: 20px;
+    }
+    button{
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="div1"></div>
+  <div id="div2"></div>
+  <div id="div3"></div>
+  <div id="div4"></div>
+  <div id="div5"></div>
+  <button class="btn">Click!</button>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      // Индивидуальное задание 3. Вариант 4    
+      btn.click(function(event) {
+        $('#div1').fadeIn();
+        $('#div2').delay(500).fadeIn(300);
+        $('#div3').delay(1000).fadeIn(300);
+        $('#div4').delay(1500).fadeIn(300);
+        $('#div5').delay(2000).fadeIn(300);
+        
+        $('#div1').delay(2500).fadeOut(300);
+        $('#div2').delay(2700).fadeOut(300);
+        $('#div3').delay(2900).fadeOut(300);
+        $('#div4').delay(3100).fadeOut(300);
+        $('#div5').delay(3300).fadeOut(300);
+
+        let timerId = setInterval(() => {
+          $('#div1').fadeIn();
+          $('#div2').delay(500).fadeIn(300);
+          $('#div3').delay(1000).fadeIn(300);
+          $('#div4').delay(1500).fadeIn(300);
+          $('#div5').delay(2000).fadeIn(300);
+          
+          $('#div1').delay(2500).fadeOut(300);
+          $('#div2').delay(2700).fadeOut(300);
+          $('#div3').delay(2900).fadeOut(300);
+          $('#div4').delay(3100).fadeOut(300);
+          $('#div5').delay(3300).fadeOut(300);
+        }, 6000)
+      });
+    });
+  </script>
+</body>
+</html>

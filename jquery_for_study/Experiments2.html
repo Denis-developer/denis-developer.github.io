@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <input type="text" class="input">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      // Индивидуальное задание 2. Вариант 4
+      function getRandomInt(min, max)
+      {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      
+      var colors = ['#ffffff', '#ffbf00', '#ff4000', '#4d79ff', '#00c0ff', '#00ff3f', '#ff7a4d', '#00ff40', '#bf00ff', '#ff0040', '#ffd34d', '#a52a2a', '#bf00ff', '#47adcf', '#2a82a0' ];
+      
+      $('input').keypress(function(event) {
+        var index = getRandomInt(0,14);
+        var color = colors[index];
+        $(this).css('background-color', color);
+      });
+    });
+  </script>
+</body>
+</html>
