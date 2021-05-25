@@ -105,6 +105,7 @@ section{
 }
 
 .main{
+  min-height: 75vh;
   background: #eff0f2;
   padding-bottom: 150px;
   padding-top: 250px;
@@ -113,6 +114,7 @@ section{
     position: relative;
   }
   &__title{
+    position: relative;
     font-size: 45px;
     color: #505050;
     font-family: 'Montserrat', sans-serif;
@@ -156,7 +158,7 @@ section{
 
 .header{
   background: #eff0f2;
-  height: 80px;
+  padding: 28px 0px;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
@@ -173,6 +175,10 @@ section{
     color: #000;
     font-weight: bold;
     text-decoration: none;
+    transition: all 0.3s;
+    &:hover{
+      opacity: 0.7;
+    }
   }
   &-nav{
     &__link{
@@ -180,6 +186,22 @@ section{
       color: #000;
       text-decoration: none;
       margin-left: 15px;
+      position: relative;
+      &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #000;
+        transform-origin: center;
+        transform: scale(0);
+        transition: all 0.3s;
+      }
+      &:hover::before{
+        transform: scale(1);
+      }
     }
   }
 }
@@ -217,14 +239,17 @@ section{
 
 .works{
   background: #eff0f2;
+  min-height: 75vh;
   &__row{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 13px;
   }
   &__work{
-    height: 250px;
-    overflow: hidden;
+    transition: all 0.3s;
+    &:hover{
+      opacity: 0.7;
+    }
   }
 }
 
@@ -298,7 +323,7 @@ section{
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.6);
-    transition: all 0.1s;
+    transition: all 0.4s;
     &:hover{
       background: #71f5ea;
       color: #000;
@@ -325,6 +350,12 @@ section{
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px;
   }
+  &__link{
+    transition: all 0.3s;
+    &:hover{
+      opacity: 0.7;
+    }
+  }
   &__img{
     &:nth-child(6){
       height: 371px;
@@ -334,6 +365,7 @@ section{
 
 .contact{
   background: #eff0f2;
+  min-height: 75vh;
   &__row{
     display: -webkit-flex;
     display: -ms-flex;
@@ -385,6 +417,10 @@ section{
       font-weight: 400;
       text-transform: uppercase;
       cursor: pointer;
+      transition: all 0.3s;
+      &:hover{
+        background: #fff;
+      }
     }
   }
   &-address{
@@ -467,12 +503,62 @@ section{
   }
 }
 
+@media(max-width: 1060px){
+  .services__row{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .services-block{
+    width: 100%;
+    height: 400px;
+  }
+  .services__content{
+    padding: 0px 20px;
+  }
+  .services-block_1, .services-block_3{
+    max-width: 650px;
+  }
+  .services-block_2, .services-block_4{
+    max-width: 550px;
+  }
+}
+
+@media(max-width: 992px){
+  .about__img{
+    width: 50%;
+  }
+}
+
 @media(max-width: 768px){
   .container{
     padding: 0px 20px;
   }
+  section{
+    padding-bottom: 80px;
+  }
+  .title{
+    padding-top: 50px;
+    font-size: 32px;
+  }
+  .subtitle{
+    font-size: 20px;
+    margin-bottom: 80px;
+  }
   .header{
-    margin-bottom: 100px;
+    .container{
+      flex-direction: column;
+      justify-content: center;
+    }
+    &__logo{
+      margin-bottom: 15px;
+    }
+  }
+  .main{
+    padding-top: 150px;
   }
   .main__title{
     font-size: 36px;
@@ -480,16 +566,70 @@ section{
   .main__btn{
     margin-top: 50px;
   }
+  .about__img{
+    display: none;
+  }
+  .works__row, .team__row{
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact__row{
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-form{
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .contact-address{
+    width: 100%;
+  }
 }
 
 @media(max-width: 576px){
   .container{
     padding: 0px 10px;
   }
+  section{
+    padding-bottom: 40px;
+  }
+  .title{
+    padding-top: 30px;
+    font-size: 30px;
+  }
+  .subtitle{
+    font-size: 16px;
+    margin-bottom: 60px;
+  }
   .header{
-    margin-bottom: 80px;
+    text-align: center;
+    &-nav__link{
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+  }
+  .main{
+    min-height: 50vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    &__imgGlass{
+      display: none;
+    }
   }
   .main__title{
     font-size: 24px;
+  }
+  .works__row, .team__row{
+    grid-template-columns: 1fr;
+  }
+  .contact-form{
+    padding: 20px 10px;
+    padding-bottom: 20px;
+    &__btn{
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .contact-address{
+    padding: 20px 10px;
   }
 }
