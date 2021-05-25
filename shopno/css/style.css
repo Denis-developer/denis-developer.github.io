@@ -276,6 +276,7 @@ section {
 .services-block {
   position: relative;
   color: #fff;
+  overflow: hidden;
 }
 .services-block__title {
   font-size: 20px;
@@ -670,5 +671,24 @@ section {
   }
   .contact-address {
     padding: 20px 10px;
+  }
+}
+@media (max-height: 500px) {
+  .main {
+    height: 350px;
+    padding: 0;
+    padding-top: 100px;
+  }
+  .main__title {
+    font-size: 36px;
+  }
+  .main__btn {
+    margin-top: 40px;
+  }
+}
+@media (max-height: 400px) {
+  .main {
+    height: 300px;
+    padding-top: 50px;
   }
 }
