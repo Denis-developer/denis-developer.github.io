@@ -39,16 +39,34 @@
   </header>
   <!-- /.header -->
 
-  <main class="main">
+  <section class="contact">
     <div class="container">
-      <h1 class="main__title">Разработка сайтов <span>дёшево!</span> <br><span>Только</span> с Web studio</h1>
-      <a href="contact.html" class="main__btn">Связаться с нами</a>
-      <img src="img/main/glass.png" alt="" class="main__imgGlass">
+      <h2 class="contact__title title">Связаться с нами</h2>
+      <h6 class="contact__subtitle subtitle">Моментальный ответ!</h6>
+      <div class="contact__row">
+        <form action="#" class="contact-form">
+          <input type="text" class="contact-form__input" placeholder="Имя*" required>
+          <input type="text" class="contact-form__input" placeholder="Тема*" required> 
+          <input type="text" class="contact-form__input" placeholder="E-mail*" required>
+          <textarea class="contact-form__textarea" placeholder="Сообщение*" required></textarea>
+          <input type="submit" class="contact-form__btn" value="Отправить письмо">
+        </form>
+        <!-- /.contact-form -->
+        <div class="contact-address">
+          <p class="contact-address__text">ул. Вершинина, 74, Томск, Томская обл., 634034</p>
+          <p class="contact-address__text">Phone: <a href="tel:+79000000000">+7(900)000-00-00</a></p>
+          <p class="contact-address__text">Web: <a href="https://denis-developer.github.io/shopno">denis-developer.github.io/shopno</a></p>
+          <p class="contact-address__text">E-mail: <a href="mailto:patron.2001den@mail.ru">patron.2001den@mail.ru</a></p>
+          <div style="position:relative;overflow:hidden;"><iframe src="https://yandex.ru/map-widget/v1/-/CCU4z6RWOD" allowfullscreen="true" style="position:relative;"></iframe></div>
+        </div>
+        <!-- /.contact-address -->
+      </div>
+      <!-- /.contact__row -->
     </div>
     <!-- /.container -->
-  </main>
-  <!-- /.main -->
-
+  </section>
+  <!-- /.contact -->
+  
   <footer class="footer">
     <div class="container">
       <h6 class="footer__title">Подписаться на нас</h6>

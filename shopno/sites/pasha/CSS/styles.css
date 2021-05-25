@@ -1,0 +1,26 @@
+div {
+     float: left; /*Задаем обтекание*/
+     font-size: 40px;
+     background: dodgerblue;
+     text-align: center; /*Центрируем текст по горизонтали*/
+    }
+p {
+	font-family:Tahoma; font-size:24px;text-align: left;;
+	}
+.nav {
+	display: inline-block; /*Задаем блочно-строчное отображение*/
+  	width: 33%; /*задаем ширину блока*/
+	height:1000px;
+	background: dodgerblue;
+        }
+.header {width:1920px; height:50px; background-color:#717dc9; padding:20px; text-align:center;font-family:Tahoma; font-size:24px;}
+.horizontal_col {width:50%;height:300px; background-color:magenta; padding:15px; vertical-align:top;font-family:Tahoma; font-size:24px;display: inline-block;}
+.vertical_col {width:50%; height:300px; background-color:#dddddd; padding:15px; vertical-align:top;font-family:Tahoma; font-size:24px;display: inline-block;}
+.center_col {background-color:#BCBCBC; padding:15px; vertical-align:top;font-family:Tahoma; font-size:24px; height:70%;width:100%}
+.footer {width:1920px; height:100px; background-color:#2197FF; padding:20px; text-align:center;font-family:Tahoma; font-size:24px;}
+.item {background-color: rgb(170, 170,170);width:500px;height:100px}
+.selected {background-color: magenta;width:500px; height:100px}
+.menu {border-style: ridge} 
+.error {border-color: red;}
+.validinput {border-color: black;}
+.legend{font-family:Tahoma; font-size:24px;}

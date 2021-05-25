@@ -40,6 +40,9 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+html {
+  overflow-x: hidden;
+}
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
@@ -90,9 +93,9 @@ section {
   font-weight: 400;
 }
 .main {
-  height: 100vh;
   background: #eff0f2;
-  padding-top: 65px;
+  padding-bottom: 150px;
+  padding-top: 250px;
   text-align: center;
 }
 .main .container {
@@ -145,10 +148,42 @@ section {
   right: 100px;
 }
 .header {
-  margin-bottom: 200px;
+  background: #eff0f2;
+  height: 80px;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .container {
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.header__logo {
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+.header-nav__link {
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  margin-left: 15px;
 }
 .about {
-  background: #f8fafa;
+  background: #eff0f2;
 }
 .about__row {
   display: -ms-flex;
@@ -158,9 +193,9 @@ section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .about-content {
   width: 550px;
@@ -182,13 +217,20 @@ section {
   opacity: 0.75;
   margin-bottom: 35px;
 }
+.works {
+  background: #eff0f2;
+}
 .works__row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 13px;
 }
+.works__work {
+  height: 250px;
+  overflow: hidden;
+}
 .services {
-  background: #f9fbfb;
+  background: #eff0f2;
 }
 .services__row {
   display: grid;
@@ -254,14 +296,6 @@ section {
   grid-column-start: 8;
   grid-column-end: 13;
 }
-.services-block_5 {
-  grid-column-start: 1;
-  grid-column-end: 6;
-}
-.services-block_6 {
-  grid-column-start: 6;
-  grid-column-end: 13;
-}
 .services__front {
   position: absolute;
   top: 0;
@@ -288,70 +322,19 @@ section {
 .services__front:hover .services-block__text_hide {
   display: block;
 }
+.team {
+  background: #eff0f2;
+}
 .team__row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 15px;
 }
-.aboutTeam {
-  background: #f9fbfb;
-}
-.aboutTeam-slide {
-  display: -ms-flex;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.aboutTeam-content {
-  padding: 90px 80px 70px 80px;
-  background: #eaebed;
-  text-align: center;
-  width: 666px;
-}
-.aboutTeam-content__name {
-  font-family: 'Merriweather', serif;
-  font-weight: 700;
-  font-size: 20px;
-  color: #000;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-.aboutTeam-content__name span {
-  font-style: 400px;
-  font-size: 15px;
-  color: #787878;
-  font-style: italic;
-}
-.aboutTeam-content__text {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  color: #000;
-  opacity: 0.7;
-  line-height: 25px;
-}
-.aboutTeam-content__rating {
-  margin-top: 25px;
-  display: -ms-flex;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.team__img:nth-child(6) {
+  height: 371px;
 }
 .contact {
-  padding: 120px 0px;
-  background: url(../img/contact/bg.jpg) no-repeat center / cover;
+  background: #eff0f2;
 }
 .contact__row {
   display: -ms-flex;
@@ -492,4 +475,34 @@ section {
 .footer__link:hover {
   color: #000;
   background: #6eeee4;
+}
+@media (max-width: 1200px) {
+  .container {
+    padding: 0px 40px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0px 20px;
+  }
+  .header {
+    margin-bottom: 100px;
+  }
+  .main__title {
+    font-size: 36px;
+  }
+  .main__btn {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    padding: 0px 10px;
+  }
+  .header {
+    margin-bottom: 80px;
+  }
+  .main__title {
+    font-size: 24px;
+  }
 }

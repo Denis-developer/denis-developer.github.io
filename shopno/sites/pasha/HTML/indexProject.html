@@ -1,0 +1,85 @@
+<html>
+
+<head>
+<title>Карабатов Павел Вадимович</title>
+<meta charset = "urf-8">
+<meta name = "keywords" lang = "en" content = "html,tusur,student,work,laboratory,ssw, scholarly scientific work,scholarly, scientific">
+<meta name = "keywords" lang = "ru" content = "тусур,университет,работа,лабораторная,нур, научно-учебная работа, научно-учебная">
+<meta name = "robots" content = "noindex, nofollow">
+<meta name = "descriptions" content = "Лабораторная работа №4">
+<meta http-equiv=content-type content=”text/html;charset=Windows-1251”>
+<meta http-equiv=”expires” content=”wed, 20 Jun 2021 00:00:01GMT”>
+
+<style>
+@import "../CSS/styles.css"
+</style>
+
+<script src = "../JS/inputValidation.js" type = "text/javascript"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script>
+ $(document).ready(function () {
+ $("button").click(function () {
+ $("#work").toggle();
+ });
+ });
+</script>
+
+</head>
+
+
+<body bgcolor = "BCBCBC" >
+
+<div class = "header">Карабатов Павел Вадимович</div>
+<div class = "nav">
+<p>ФИО: Карабатов Павел Вадимович</p>
+<p>Родной город: <a href = "anzherka.html">Анжеро-Судженск</a></p>
+<p>Место проживания: <a href = "tomsk.html">Томск</a></p>
+<p>Образование: <a href = "school.html">среднее полное</a></p>
+<p>Знание языков програмирования:</p>
+<p><a href = "html.html">HTML</a></p>
+<p>C++</p>
+<p>JavaScript</p>
+<p></p>
+<p></p>
+</div>
+<div class = "nav"> 
+<button>Хотите связаться? Оставьте свои контактные данные</button>
+<p>
+<img src = "../PIC/PFP.png" width="500" height="500">
+</p>
+</div>
+
+<div class = "nav" id = "work">
+<form name="myForm" onsubmit ="return validate()">
+<FIELDSET>
+<table>
+<tr>
+<td>Фамилия*</td>
+<td><input type="text" id ="last_name" name="last_name" class = "validinput" size="10" maxlength="15""></td>
+<td>Имя*</td>
+<td><input type="text" id="first_name" name="first_name" class = "validinput" size="10" maxlength="15"></td>
+<td>Отчество*</td>
+<td><input type="text" id="third_name" name="third_name" class = "validinput" size="10" maxlength="15"></td>
+</tr>
+
+<tr>
+<td>Email*</td>
+<td><input type="text" id ="email" name="email" class = "validinput" size="10" maxlength="50""></td>
+<td>Телефон*</td>
+<td><input type="text" id ="phone" name="phone" class = "validinput" size="10" maxlength="15""></td>
+<td>Discord</td>
+<td><input type="text" id ="discord" name="discord" class = "validinput" size="10" maxlength="15""></td>
+
+</tr>
+
+
+</table>
+</FIELDSET>
+<input type="submit" value="Отправить">
+</form>
+</div>
+<div class = "footer"></div>
+
+</body>
+</html>
