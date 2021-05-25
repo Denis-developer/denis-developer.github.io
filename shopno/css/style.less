@@ -362,6 +362,18 @@ section{
       height: 371px;
     }
   }
+  &-block{
+    text-align: center;
+    &__name{
+      font-size: 20px;
+    }
+    &__line{
+      width: 100%;
+      height: 1px;
+      background: #000;
+      margin: 10px 0px;
+    }
+  }
 }
 
 .contact{
@@ -532,6 +544,9 @@ section{
   .about__img{
     width: 50%;
   }
+  .team-block__name{
+    font-size: 18px;
+  }
 }
 
 @media(max-width: 768px){
@@ -619,8 +634,19 @@ section{
   .main__title{
     font-size: 24px;
   }
-  .works__row, .team__row{
+  .works__row{
     grid-template-columns: 1fr;
+  }
+  .team-block{
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  .team__row{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .contact-form{
     padding: 20px 10px;
