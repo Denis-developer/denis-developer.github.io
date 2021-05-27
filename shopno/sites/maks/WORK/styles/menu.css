@@ -1,0 +1,35 @@
+table.mainMenu
+{
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #d5cda7;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.mainMenu.selected
+{
+    background-color: #c9a5ca;
+}
+
+.mainMenu th:hover
+{
+    background-color: #c9a5ca;
+}
+
+.mainMenu th
+{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.mainMenu a
+{
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+    font-family: Palatino Linotype, serif;
+    font-size: 16pt;
+    
+}

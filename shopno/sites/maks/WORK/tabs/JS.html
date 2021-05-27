@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+    <title> JS </title>
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link rel="stylesheet" href="../styles/mainStyle.css">
+    <link rel="stylesheet" href="../styles/slider.css">
+    <script src="../scripts/script.js"></script>
+    
+    
+</head>
+
+<body>
+    <table class="mainMenu">
+        <tr>
+            <th>
+                <p><a href="../index.html"> Главная страница</a></p> 
+            </th>
+
+            <th>
+                <p><a href="Cats.html"> Котики</a></p> 
+            </th>
+            <th>
+                <p><a href="Dogs.html"> Собачки</a></p> 
+            </th>
+            <th>
+                <p><a href="Pumk.html"> ТЫКВА!</a></p> 
+            </th>
+            <th>
+                <p><a href="NoIdea.html"> Больше нет идей</a></p> 
+            </th>
+            <th class="mainMenu selected">
+                <p><a href="JS.html"> Скрипты</a></p> 
+            </th>
+        </tr>
+    </table>
+
+   
+    <fieldset id="task1" class="tsk">
+        <legend>Task 1</legend>
+        <form name="task1" >
+            <input type="text" name="textfeld1">
+            <input type="button" name="Send" onclick="GOtask1()" value="push">
+            <p class="tsk result">
+                Максимальный элемент по модулю: <output name="result">нет</output> .
+            </p>
+        </form>
+    </fieldset>
+   
+    <fieldset id="task2" class="tsk">
+        <legend> Task 2 </legend>
+        <form name="task2" >
+            <p> До весеннего равноденствия осталось <output name="spring"></output> дней.</p>
+            <p> До осеннего равноденствия осталось <output name="fall"></output> дней.</p>
+            <script> GOtask2(); </script>
+        </form>
+    </fieldset>
+
+    <fieldset id="task3" class="tsk">
+        <legend> Task 3 </legend>
+        <form name="task3">
+            <input type="text" name="text_1" onchange="alert('Бысто сделай как было!'); ">
+            <script> GOtask3() </script>
+        </form> 
+    </fieldset>
+
+    <fieldset id="task4" class="tsk">
+        <legend> Task 4 </legend>
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+              <img src="../img/pic-1.gif" style="width:60%">
+              <div class="text">Gif 1</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <img src="../img/pic-2.gif" style="width:60%">
+              <div class="text">Gif 2</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <img src="../img/pic-3.gif" style="width:60%">
+              <div class="text">Gif 3</div>
+            </div>
+          
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <script src="../scripts/slider.js"></script>
+        <form name="task4" style="padding-top: 10px;">
+            <input type="button" name="button4" value="Начать анимацию" onclick="GOtask4()">
+            <input type="button" name="stop" value="Закончить анимацию" onclick="stopflag = true">
+        </form>
+    </fieldset>
+
+    
+</body>

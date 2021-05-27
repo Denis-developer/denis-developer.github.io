@@ -1,0 +1,166 @@
+body
+{
+    background-color: #a9bca4;
+}
+
+#pageTitle
+{
+    margin: auto;
+    color: rebeccapurple;
+    text-align: center;   
+    font-family: Сomic Sans MS, monospace;
+}
+
+#sth
+{
+    text-align: center;
+    color: white;
+    font-family: Comic Sans MS, cursive;
+    line-height: 15px;
+}
+#sth i
+{
+    color: wheat;
+}
+
+.postPad
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+div.post
+{
+    background-color: wheat;
+    border: 3px blueviolet solid;
+    
+    width: 35%;
+    height: auto;
+    float: left;
+    padding: 10px;
+    margin: 10px;
+
+     font-family: Comic Sans MS, cursive;
+     font-size: 14pt;
+}
+div.post:last-child
+{
+    width: auto;
+}
+
+#post1
+{
+    text-align: center;
+}
+#post2
+{
+    text-align: center;
+    text-rendering: geometricPrecision;
+}
+#post4
+{
+    font-style: italic;
+    text-align: justify;
+    text-indent: 1cm;
+}
+
+
+#cats
+{
+    position: relative;
+    text-align: center;
+}
+#cats img
+{
+    margin: 10px;
+    border: 2px blueviolet solid;
+}
+
+#textOnPng p
+{
+    position: absolute;
+	top	: 200px;
+	left: 0;
+	width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10pt;
+    color: blue;
+}
+
+#dogs
+{
+    margin: auto;
+    font-family: Comic sans MS, cursive;
+    font-size: x-large;
+    text-align: center;
+    text-shadow: 2px 2px 10px currentColor ;
+}
+#dogs tbody
+{
+    background-color: rgb(235, 179, 159);
+
+}
+#dogs td
+{
+    border: 1px black solid;
+    margin: auto;
+    padding: 5px;
+}
+#dogs img
+{
+    width: 300px;
+}
+
+#whatIsIt
+{
+    background-color: cornflowerblue;
+}
+
+#pumk
+{
+    margin: 100px;
+}
+#pumk img
+{
+    border: 1px solid gold;
+    height: 500px;
+    width: 600px;
+    float: left;
+}
+
+#list 
+{
+   text-align: center;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 12pt;
+   color: rosybrown !important;
+   color: green;
+   font-weight: bolder;
+   
+}
+#list > ul
+{
+    display: inline-table;
+    text-align: left;
+}
+#list > ol
+{
+    display: inline-table;
+    text-align: left;
+}
+
+#table
+{
+    text-align: center;
+    border: 1px black solid;
+}
+#table td
+{
+    background-color: palegreen;
+    padding: 5px;
+    border: 1px black solid;
+    margin: 2px;
+}
