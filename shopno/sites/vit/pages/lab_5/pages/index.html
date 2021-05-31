@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Лабораторная 5</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body onLoad="clocks()">
+  <main>
+    <header class="header">
+        <div class="header__container">
+          <div class="header__inner">
+            <div class="header__logo">My Website</div>
+
+            <nav class="nav">
+              <a class="nav__link" href="index.html">Main</a>
+              <a class="nav__link"  target= "_blank"href="Lab2.pdf">Report</a>
+              <a class="nav__link"  target= "_blank"href="#">Blog</a>
+            </nav>
+          </div>
+        </div>
+      <h1 class="main_title">Laboratory work 5</h1>
+    </header>
+  </main>
+    <section class="section">
+      <div class="container">
+        <h2> Задание 1  </h2>
+          <h2>This is a heading</h2>
+          <p>This is a paragraph.</p>
+          <p>This is another paragraph.</p>
+          <button id="but1">Click me</button>
+        <h3 align="center"> __________________________  </h3>
+        <h2> Задание 2  </h2>
+          <h2>This is a heading 2</h2>
+          <p align="center">This is a paragraph.</p>
+          <p id="test1">This is another paragraph.</p>
+          <button id="but2">Click me</button>
+        <h3> __________________________  </h3>
+        <h2> Задание 3  </h2>
+          <h2>This is a heading 3</h2>
+          <p>This is a paragraph.</p>
+          <p id="test2">This is another paragraph.</p>
+          <button id="but3">Click me</button>
+          <button id="but4">Click me for show</button>
+        <h3> __________________________  </h3>
+        <h2 align="center"> Задание 4  </h2>
+          <h2 class="test">This is a heading 4</h2>
+          <p class="test">This is a paragraph.</p>
+          <p>This is another paragraph.</p>
+          <button id="but5">Click me</button>
+        <h3> __________________________  </h3>
+        <h2> Индивидуальное задание №1  </h2>
+          <button id="but6">hide</button>
+          <button id="but7">show</button>
+        <h3> __________________________  </h3>
+        <h2> Задание 5  </h2>
+          <p class="p1">If you click on me, I will disappear.</p>
+          <p class="p1">Click me away!</p>
+          <p class="p1">Click me too!</p>
+        <h3> __________________________  </h3>
+        <h2> Задание 6  </h2>
+          <p class="p2">If you double-click on me, I will disappear.</p>
+          <p class="p2">Click me away!</p>
+          <p class="p2">Click me too!</p>
+        <h3> __________________________  </h3>
+        <h2> Задание 7  </h2>
+          <p id="p1">Enter this paragraph.</p>
+        <h3> __________________________  </h3>
+        <h2> Задание 8  </h2>
+          Name: <input class="input1" type="text" name="fullname"><br>
+          Email: <input class="input1" type="text" name="email">
+        <h3> __________________________  </h3>
+        <h2> Задание 9  </h2>
+          <button id="but8">Hide</button>
+          <p class="p3">This is a paragraph with little content.</p>
+          <p class="p3">This is another small paragraph.</p>
+        <h3> __________________________  </h3>
+        <h2> Задание 10  </h2>
+          <button id="but9">Toggle</button>
+          <p class="p4">This is a paragraph with little content.</p>
+          <p class="p4">This is another small paragraph.</p>
+        <h3> __________________________  </h3>
+        <h2> Индивидуальное задание №2  </h2>
+          <input class="toggle-color" type="text">
+        <h3> __________________________  </h3>
+        <h2> Задание 11  </h2>
+          <p>Demonstrate fadeIn() with different parameters.</p>
+          <button id="but10">Click to fade in boxes</button>
+          <br><br>
+          <div id="div1" style="width:80px; height:80px; display:none; background-color:red;"></div><br>
+          <div id="div2" style="width:80px; height:80px; display:none; background-color:green;"></div><br>
+          <div id="div3" style="width:80px; height:80px; display:none; background-color:blue;"></div><br>
+        <h3> __________________________  </h3>
+        <h2> Задание 12  </h2>
+          <p>Demonstrate fadeOut() with different parameters.</p>
+          <button id="but11">Click to fade out boxes</button>
+          <br><br>
+          <div id="div4" style="width:80px; height:80px;background-color:red;"></div><br>
+          <div id="div5" style="width:80px; height:80px;background-color:green;"></div><br>
+          <div id="div6" style="width:80px; height:80px;background-color:blue;"></div><br>
+        <h3> __________________________  </h3>
+        <h2> Индивидуальное задание №3  </h2>
+          <button id="but12">Click to fade in boxes</button>
+          <br><br>
+          <div id="div7" style="width:40px; height:40px; display:none; background-color:red;"></div><br>
+          <div id="div8" style="width:40px; height:40px; display:none; background-color:green;"></div><br>
+          <div id="div9" style="width:40px; height:40px; display:none; background-color:blue;"></div><br>
+          <div id="div10" style="width:40px; height:40px; display:none; background-color:yellow;"></div><br>
+          <div id="div11" style="width:40px; height:40px; display:none; background-color:purple;"></div><br>
+        <h3> __________________________  </h3>
+        <h2> Задание 13  </h2>
+          <div id="flip">Click to slide down panel</div>
+          <div id="panel">Hello World!</div>
+        <h3> __________________________  </h3>
+        <h2> Задание 14  </h2>
+          <button id="but13">Start Animation</button>
+          <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+          <div id="div12" style="background:#98bf21; height:100px; width:100px; position:absolute;">
+          </div>
+          <br><br><br><br>
+        <h3> __________________________  </h3>
+        <h2> Задание 15  </h2>
+          <ul>
+            <li><a href="http://jquery.com">jQuery</a></li>
+            <li><a href="http://jqueryui.com">jQuery Ui</a></li>
+            <li><a href="http://blog.jquery.com">jQuery Blog</a></li>
+          </ul>
+          <button id="but14">Start query</button>
+        <h3> __________________________  </h3>
+        <h2> Задание 16  </h2>
+          <ul>
+            <li>
+              <a href="http://jquery.com">jQuery</a>
+              <ul>
+                <li><a href="http://blog.jquery.com">jQuery Blog</a></li>
+              </ul>
+            </li>
+            <li><a href="http://sizzlejs.com">Sizzle</a></li>
+          </ul>
+          <script>
+            alert("Задание 16");
+            var links = $('a','li');
+            for (var i=0; i<links.length; i++)
+            {
+              alert(i+1 + ": " + links[i].href);
+            }
+          </script>
+
+        <h3> __________________________  </h3>
+        <h2> Задание 17  </h2>
+          <a href="http://wikipedia.ru">Википедия</a>
+          <ul>
+            <ol><a href="http://jquery.com">jQuery</a></ol>
+            <ol><a href="http://sizzlejs.com">Sizzle</a></ol>
+            <ol><a href="http://blog.jquery.com">jQuery Blog</a></ol>
+          </ul>
+          <script>
+            alert("Задание 17");
+            var links=$('ol a');
+            links.each(function (i, a)
+            {
+              alert(i+':'+a.innerHTML);
+              if (i==1) return false;
+            });
+          </script>
+        <h3> __________________________  </h3>
+        <h2> Задание 18  </h2>
+          <p id="test4">This is some <b>bold</b> text in a paragraph.</p>
+          <button id="but15">Show Text</button>
+          <button id="but16">Show HTML</button>
+        <h3> __________________________  </h3>
+        <h2> Задание 19  </h2>
+          <p>Name: <input type="text" id="test5" value="Mickey Mouse"></p>
+          <button id="but17">Show Value</button>
+        <h3> __________________________  </h3>
+        <h2> Задание 20  </h2>
+          <p><a href="http://www.w3schools.com" id="w3s">W3Schools.com</a></p>
+          <button id="but18">Show href Value</button>
+        <h3> __________________________  </h3>
+        <h2> Индивидуальное задание №4  </h2>
+          <button id="but19">Start Animation</button>
+          <br><br>
+          <div id="div13" style="background:#CD5C5C; height:100px; width:100px; position:absolute"></div>
+          <div id="div14" style="background:#FFD700; height:100px; width:100px;position:absolute"></div>
+          <div id="div15" style="background:#7CFC00; height:100px; width:100px;position:absolute"></div>
+          <div id="div16" style="background:#4682B4; height:100px; width:100px;position:absolute"></div>
+          <div id="div17" style="background:#8A2BE2; height:100px; width:100px;position:absolute"></div>
+          <div id="div18" style="background:#FF1493; height:100px; width:100px;position:absolute"></div>
+          <br><br><br><br><br><br><br><br>
+      </div>
+  </section>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

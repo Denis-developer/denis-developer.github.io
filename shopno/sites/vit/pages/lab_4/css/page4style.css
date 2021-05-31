@@ -1,0 +1,58 @@
+.about {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about__item,.about__img img {
+  position: relative;
+  display: block;
+  max-width:320px;
+  max-height:180px;
+  width: auto;
+  height: auto;
+
+  background-color: #F52773;
+  transition: opacity 0.5s linear;
+}
+
+.about__item:hover #img1{
+  transform: translate3d(-10px, -10px, 0);
+}
+
+.about__item:hover #img2{
+  transform: translate3d(0, -10px, 0);
+}
+
+.about__item:hover #img3{
+  transform: translate3d(10px, -10px, 0);
+}
+
+
+
+.about__img {
+  display: block;
+  transition: opacity 0.1s linear;
+  transition: transform 0.2s linear;
+}
+
+.button__back {
+  font-size: 18px;
+  position: absolute;
+  left: 50%;
+  text-align: center;
+  background-color: #F52773;
+  width: 5%;
+  height: 3%;
+  margin: 20px 0;
+}
+
+#outerCircleText {
+  font-style: normal;
+  font-weight: normal;
+  font-family: 'comic sans';
+  color: #9B1750;
+  position: absolute;top: 0;left: 0;z-index: 3000;cursor: default;}
+  #outerCircleText div {position: relative;}
+  #outerCircleText div div {position: absolute;top: 0;left: 0;text-align: center;
+}

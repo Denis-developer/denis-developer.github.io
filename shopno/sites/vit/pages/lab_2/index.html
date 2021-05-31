@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Лабораторная 2</title>
+  <style type="text/css">
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    body {
+      color: white;
+      background: #2d253a !important;
+      background: #fff;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .header__container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header {
+      font-size: 50px;
+      padding-top: 30px;
+      width: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .header__logo {
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .header__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header__titile {
+      font-weight: 600;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="header">
+      <div class="header__container">
+        <div class="header__inner">
+          <div class="header__logo">My Website</div>
+
+          <nav class="nav">
+            <a class="nav__link" href="index.html">Main</a>
+            <a class="nav__link"  target= "_blank" href="mogo/index.html">MoGo</a>
+            <a class="nav__link"  target= "_blank"href="Lab2.pdf">Report</a>
+            <a class="nav__link"  target= "_blank"href="#">Blog</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <h1 class="main_title">Laboratory work 2</h1>
+    </main>
+    <div class="container">
+      <div class="basic">
+        <a class="page2" href="page2.html" target= "_blank"><font color ="#E52B50">Посмотреть жесткую табличную верстку</font></a>
+        <p class="content__text"></p>
+        <table class="table">
+      	<tbody>
+      		<tr>
+      			<td colspan="4">Title</td>
+      		</tr>
+      		<tr>
+      			<td>1</td>
+      			<td>2</td>
+      			<td>3</td>
+      			<td>4</td>
+      		</tr>
+      		<tr>
+      			<td>5</td>
+      			<td>6</td>
+      			<td>7</td>
+      			<td>8</td>
+      		</tr>
+      	</tbody>
+      </table>
+      </div>
+      <div class="block_header">Оглавление</div>
+      <div class="block_container">
+        <div class="left_info">Содержание слева</div>
+        <div class="center_info">Центральное содержание</div>
+        <div class="right_info">Содержание справа</div>
+      </div>
+      <a href="mogo/index.html" class="example__mogo" target="_blank">Пример блочной верстки</a>
+      <h3>Position</h3>
+      <div class="position over">
+          <span>Текст</span>
+          <img src="img/image1.jpg" alt="Картинка 1" width="400" height="200">
+      </div>
+      <div class="position down">
+        <span>Текст над картинкой</span>
+        <img src="img/image2.jpg" alt="Картинка 2"  width="400" height="200">
+      </div>
+    </div>
+    </div>
+    <footer>
+      <div class="footer__container">
+        <p class="footer__text">Vitalya</p>
+        <p class="footer__references">
+          <a href="Lab2.pdf">Отчет</a>
+          <a href="#">Наверх</a>
+          <a href="mogo/index.html">MoGo</a>
+        </p>
+      </div>
+    </footer>
+</body>
+</html>
