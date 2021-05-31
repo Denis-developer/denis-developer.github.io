@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>Таблица безопасных цветов</title>
+<link rel="stylesheet" href="css/gorizontalMenu.css">
+<link rel="stylesheet" href="css/style.css">
+<script>
+function getTrueTable(contID)
+{
+var r = 0;
+var g = 0;
+var b = 0;
+var table = "<table width='100%'>";
+
+while (r <= 255)
+{
+g = 0;
+while (g <= 255)
+{
+table += "<tr>";
+b = 0;
+while (b <= 255)
+{
+table += "<td style='width:88px; height:31px; background-color: rgb("+r+","+g+","+b+"); color: rgb("+(255-r)+","+(255-g)+","+(255-b)+")'> RGB("+r+","+g+","+b+")</td>";
+b += 51;
+}
+table += "</tr>";
+g += 51;
+}
+r += 51;
+}
+table += "</table>";
+document.getElementById(contID).innerHTML = table;
+}
+</script>
+</head>
+<body>
+ <table class="mainMenu">
+        <tr>
+            <th>
+                <p><a href="Main.html.html"> ГЛАВНАЯ СТРАНИЦА </a></p> 
+            </th>
+
+            <th>
+                <p><a href="CUB.html"> КУБ </a></p> 
+            </th>
+            <th class="mainMenu selected">
+                <p><a href="TABLIZA.html"> ТАБЛИЦА </a></p> 
+            </th>
+            <th>
+                <p><a href="CLOCK.html"> ЧАСИКИ</a></p> 
+            </th>
+            <th>
+                <p><a href="PASSEDTIME.html"> PASSED TIME </a></p> 
+            </th>
+            <th>
+                <p><a href="FORMA.html"> ФОРМА </a></p> 
+            </th>
+        </tr>
+    </table>
+<center>
+<font size = "5">
+"Безопасные цвета" — это набор из 216 цветов, которые не должны искажаться ни в одном браузере. Правила ее построения: 216 цветов безопасной палитры получаются комбинацией RGB-составляющих, каждая из которых может принимать только следующие шестнадцатеричные значения: 00, 33, 66, 99, CC, FF (или 0, 51, 102, 153, 204, 255 в десятичной системе счисления). 
+<table id="truetable">
+<input type="button" onclick="getTrueTable('truetable');" value="Таблица правильных цветов">
+</font>
+</center>
+</table>
+</body>
+</html>

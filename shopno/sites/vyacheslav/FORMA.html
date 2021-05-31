@@ -1,0 +1,132 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/gorizontalMenu.css">
+    <link rel="stylesheet" href="css/style.css">
+<style type = "text/css">
+.error {border-color: red}
+.validinput {border-color: blue;}
+</style>
+<style type="text/css">
+fieldset {
+width: 20%;
+border-color:blue;
+}
+  </style>
+<script type="text/javascript" src="scripts/12_1.js"></script>
+</head>
+<body>
+     <table class="mainMenu">
+        <tr>
+            <th>
+                <p><a href="Main.html"> ГЛАВНАЯ СТРАНИЦА </a></p> 
+            </th>
+
+            <th>
+                <p><a href="CUB.html"> КУБ </a></p> 
+            </th>
+            <th>
+                <p><a href="TABLIZA.html"> ТАБЛИЦА </a></p> 
+            </th>
+            <th>
+                <p><a href="CLOCK.html"> ЧАСИКИ</a></p> 
+            </th>
+            <th>
+                <p><a href="PASSEDTIME.html"> PASSED TIME </a></p> 
+            </th>
+            <th class="mainMenu selected">
+                <p><a href="FORMA.html"> ФОРМА </a></p> 
+            </th>
+        </tr>
+    </table>
+<center>
+<form name="myForm" onsubmit ="return validate()">
+<FIELDSET>
+<table cellpadding="5">
+<LEGEND>Личные данные</LEGEND>
+<tr>
+<td>Фамилия*</td>
+<td><input type="text" id ="last_name" name="last_name" class =
+"validinput" size="10" maxlength="15""></td>
+</tr>
+<tr>
+<td>Имя*</td>
+<td><input type="text" id="first_name" name="first_name" class =
+"validinput" size="10" maxlength="15"></td>
+</tr>
+<tr>
+<td>Отчество*</td>
+<td><input type="text" id="third_name" name="third_name" class =
+"validinput" size="10" maxlength="15"></td>
+</tr>
+<tr>
+<td>Пол (М/Ж)</td>
+<td><input type="text" id ="gender" name="gender" class = "validinput"
+size="10" maxlength="15""></td>
+</tr>
+<tr>
+<td>Возраст</td>
+<td><input type="text" id ="age" name="age" class = "validinput"
+size="10" maxlength="15""></td>
+</tr>
+<tr>
+<td>День рождения</td>
+<td><input type="text" id ="day" name="day" class = "validinput"
+size="10" maxlength="15""></td>
+</tr>
+<tr>
+<td>Месяц рождения</td>
+<td><input type="text" id ="month" name="month" class = "validinput"
+size="10" maxlength="15""></td>
+</tr>
+<tr>
+<td>Год рождения</td>
+<td><input type="text" id ="year" name="year" class = "validinput"
+size="10" maxlength="15""></td>
+</tr>
+<tr>
+<td>Страна</td>
+<td><input type="text" id ="country" name="country" class = "validinput"
+size="10" maxlength="15""></td>
+</tr>
+<tr>
+<td>Город</td>
+<td><input type="text" id ="town" name="town" class = "validinput"
+size="10" maxlength="15""></td>
+</tr>
+<tr>
+<td>Улица</td>
+<td><input type="text" id ="street" name="street" class = "validinput"
+size="10" maxlength="15""></td>
+</tr>
+<tr>
+<td>Дом</td>
+<td><input type="text" id ="house" name="house" class = "validinput"
+size="10" maxlength="15""></td>
+</tr>
+<tr>
+<td>Квартира</td>
+<td><input type="text" id ="flat" name="flat" class = "validinput"
+size="10" maxlength="15""></td>
+</tr>
+<tr>
+<td>Email*</td>
+<td><input type="text" id ="email" name="email" class = "validinput"
+size="10" maxlength="50""></td>
+</tr>
+<tr>
+<td>Телефон*</td>
+<td><input type="text" id ="phone" name="phone" class = "validinput"
+size="10" maxlength="15""></td>
+</tr>
+<tr>
+<td>Discord</td>
+<td><input type="text" id ="discord" name="discord" class = "validinput"
+size="10" maxlength="15""></td>
+</tr>
+</table>
+</FIELDSET>
+<input type="submit" value="Отправить">
+</form>
+<center>
+</body>
+</html>

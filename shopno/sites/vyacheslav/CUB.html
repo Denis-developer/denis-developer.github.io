@@ -1,0 +1,47 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/gorizontalMenu.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript">         
+function rndColor() {
+var r = Math.floor(Math.random()*256);
+var g = Math.floor(Math.random()*256);
+var b = Math.floor(Math.random()*256);
+var rgb = 'rgb(' + r + ',' + g + ',' + b + ')';
+var zzzBl = document.getElementById('zzz');
+zzzBl.style.backgroundColor = rgb;
+zzzBl.onmouseover = function() {rndColor()}}
+window.onload = rndColor;               
+</script>  
+</head>
+<body>
+     <table class="mainMenu">
+        <tr>
+            <th>
+                <p><a href="Main.html"> ГЛАВНАЯ СТРАНИЦА </a></p> 
+            </th>
+
+            <th class="mainMenu selected">
+                <p><a href="CUB.html"> КУБ </a></p> 
+            </th>
+            <th>
+                <p><a href="TABLIZA.html"> ТАБЛИЦА </a></p> 
+            </th>
+            <th>
+                <p><a href="CLOCK.html"> ЧАСИКИ</a></p> 
+            </th>
+            <th>
+                <p><a href="PASSEDTIME.html"> PASSED TIME </a></p> 
+            </th>
+            <th>
+                <p><a href="FORMA.html"> ФОРМА </a></p> 
+            </th>
+        </tr>
+    </table>
+
+<center>
+<font size = "5">Наведите курсор мыши на куб</font>
+<div style="background-color:#ffffff; width:600px; height:600px" onmouseover="rndColor()" onmouseup="rndColor()" id="zzz"></div>            
+</center>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+ <head>
+<link rel="stylesheet" href="css/gorizontalMenu.css">
+<link rel="stylesheet" href="css/style.css">
+<script language="javascript">
+function clock_form()
+{
+	day=new Date()
+	clock_f=day.getHours()+":"+day.getMinutes()+":"+day.getSeconds()
+	document.form.f_clock.value=clock_f
+	id=setTimeout("clock_form()",100)
+}
+
+function fulltime() 
+{
+var time=new Date();
+document.clock.full.value=time.toLocaleString();
+setTimeout('fulltime()',500)
+}
+</script>
+</head>
+
+
+<body>
+    <table class="mainMenu">
+        <tr>
+            <th>
+                <p><a href="Main.html"> ГЛАВНАЯ СТРАНИЦА </a></p> 
+            </th>
+
+            <th>
+                <p><a href="CUB.html"> КУБ </a></p> 
+            </th>
+            <th>
+                <p><a href="TABLIZA.html"> ТАБЛИЦА </a></p> 
+            </th>
+            <th class="mainMenu selected">
+                <p><a href="CLOCK.html"> ЧАСИКИ</a></p> 
+            </th>
+            <th>
+                <p><a href="PASSEDTIME.html"> PASSED TIME </a></p> 
+            </th>
+            <th>
+                <p><a href="FORMA.html"> ФОРМА </a></p> 
+            </th>
+        </tr>
+    </table>
+<center>
+<font size = "5"> ЧАСИКИ </font>
+<form name=clock>
+<input type=text size=17 name=full>
+</form>
+<script language="JavaScript">
+fulltime();
+</script>
+</center>
+</body>
+
+</html>

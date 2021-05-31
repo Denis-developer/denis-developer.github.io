@@ -1,0 +1,52 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/gorizontalMenu.css">
+<link rel="stylesheet" href="css/style.css">
+<script language="javascript">
+function Test2()
+{
+    var dtc=new Date();
+    var dtmb=new Date(dtc.getFullYear(),dtc.getMonth(),1,0,0,0,0);
+    var qminutes=Math.floor((dtc-dtmb)/1000/60);
+    var qhours=Math.floor(qminutes/60);
+    qminutes-=qhours*60;
+    document.write(qhours + "часов" + ", " + qminutes + "минут");
+}
+ </script>
+</head>
+
+ <body>
+<table class="mainMenu">
+        <tr>
+            <th>
+                <p><a href="Main.html"> ГЛАВНАЯ СТРАНИЦА </a></p> 
+            </th>
+
+            <th>
+                <p><a href="CUB.html"> КУБ </a></p> 
+            </th>
+            <th>
+                <p><a href="TABLIZA.html"> ТАБЛИЦА </a></p> 
+            </th>
+            <th>
+                <p><a href="CLOCK.html"> ЧАСИКИ</a></p> 
+            </th>
+            <th class="mainMenu selected">
+                <p><a href="PASSEDTIME.html"> PASSED TIME </a></p> 
+            </th>
+            <th>
+                <p><a href="FORMA.html"> ФОРМА </a></p> 
+            </th>
+        </tr>
+    </table>
+<center>
+<font size = "6">
+С начала текущего месяца прошло:
+<script language="JavaScript">
+Test2()
+</script>
+</font>
+<center>
+ </body>
+
+</html>

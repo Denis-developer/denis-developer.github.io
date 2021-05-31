@@ -1,0 +1,41 @@
+body
+{
+    background-color: #FFD700;
+    font-family: fantasy;
+}
+
+#logo , #about
+{
+  margin: auto;
+
+  text-align: center;
+}
+
+#logo
+{
+  margin-top: 30px;
+  padding: auto;
+  font-size: 100pt;
+  
+}
+
+#about
+{
+  padding-top: 40px;
+  font-size: 26pt;
+  margin: auto;
+  text-align: start;
+
+  height: 200px;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+img
+{
+  size: 100%;
+  padding-left: 40px;
+  height: 200%;
+}
