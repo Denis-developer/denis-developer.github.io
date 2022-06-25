@@ -57,6 +57,7 @@ body{
 .main{
   height: 100vh;
   background: url('../img/main-bg.jpg') center / cover;
+  background-attachment: fixed;
   position: relative;
   color: #fff;
   min-height: 420px;
