@@ -59,20 +59,22 @@ window.addEventListener('DOMContentLoaded', function() {
       this.classList.toggle('menu-btn_active');
       if(this.classList.contains('menu-btn_active')){
         mobileMenu.style.transform = 'scale(1)';
-        document.getElementsByTagName('body')[0].style.overflow = "hidden"
-        document.getElementsByTagName('html')[0].style.overflow = "hidden"
+        document.getElementsByTagName('body')[0].style.overflow = "hidden";
+        document.getElementsByTagName('html')[0].style.overflow = "hidden";
         $('body,html').animate({scrollTop: 50}, 200)
       }
       else{
         mobileMenu.style.transform = 'scale(0)';
-        document.getElementsByTagName('body')[0].style.overflow = "scroll"
-        document.getElementsByTagName('html')[0].style.overflow = "scroll"
+        document.getElementsByTagName('body')[0].style.overflow = "scroll";
+        document.getElementsByTagName('html')[0].style.overflow = "scroll";
       }
     });
 
     for (var i = 0; i < mobileMenuLinks.length; i++) {
       mobileMenuLinks[i].addEventListener('click', function(event) {
         mobileMenu.style.transform = 'scale(0)';
+        document.getElementsByTagName('body')[0].style.overflow = "scroll";
+        document.getElementsByTagName('html')[0].style.overflow = "scroll";
         menuBtn.classList.toggle('menu-btn_active');
       });
     }
