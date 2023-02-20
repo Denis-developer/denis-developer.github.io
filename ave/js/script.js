@@ -39,13 +39,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 })
 
-const swiper = new Swiper('.product-slider', {
-    loop: false,
-    navigation: {
-        nextEl: '.product-slider__next',
-        prevEl: '.product-slider__prev',
-    }
-});
+if(document.querySelector('.swiper')) {
+    const swiper = new Swiper('.product-slider', {
+        loop: false,
+        navigation: {
+            nextEl: '.product-slider__next',
+            prevEl: '.product-slider__prev',
+        }
+    });
+}
+
 
 // Dynamic adaptive
 const parent_original = document.querySelector('.product__wrapper'),
@@ -59,19 +62,21 @@ if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 76
     }
 }
 
-window.addEventListener('resize', function (event) {
-    const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    if (viewport_width <= 768) {
-        if (!item.classList.contains('done')) {
-            parent.insertBefore(item, parent.children[2]);
-            item.classList.add('done');
+if(item) {
+    window.addEventListener('resize', function (event) {
+        const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        if (viewport_width <= 768) {
+            if (!item.classList.contains('done')) {
+                parent.insertBefore(item, parent.children[2]);
+                item.classList.add('done');
+            }
         }
-    }
-    else {
-        if (item.classList.contains('done')) {
-            parent_original.insertBefore(item, parent_original.children[0]);
-            item.classList.remove('done');
+        else {
+            if (item.classList.contains('done')) {
+                parent_original.insertBefore(item, parent_original.children[0]);
+                item.classList.remove('done');
+            }
         }
-    }
-});
+    });
+}
 
