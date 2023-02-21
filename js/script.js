@@ -28,8 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    SmoothScroll({ stepSize: 40 });
-
     var typed = new Typed('.major', {
         strings: ["I'm frontend developer"],
         typeSpeed: 100,
@@ -37,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     let linkNav = document.querySelectorAll('[href^="#"]'),
-        V = 0;
+        V = 0.5;
     for (let i = 0; i < linkNav.length; i++) {
         linkNav[i].addEventListener('click', function (e) {
             e.preventDefault();
@@ -59,4 +57,5 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }, false);
     }
+    
 })
