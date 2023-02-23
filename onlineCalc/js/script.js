@@ -434,7 +434,8 @@ document.addEventListener('DOMContentLoaded', function () {
             textOverpay.innerHTML = numberSpace(calculateTotalInterestWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee)) + " ₽";
             textTotalAmount.innerHTML = numberSpace(calculateTotalPaymentsWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee)) + " ₽";
             textPercentOverpay.innerHTML = numberSpace(calculateInterestOverpaymentWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee)) + " %";
-            textFullCost.innerHTML = numberSpace(calculateTotalCostWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee)) + " ₽";
+            // textFullCost.innerHTML = numberSpace(calculateTotalCostWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee)) + " ₽";
+            textFullCost.innerHTML = numberSpace(calculateTotalPaymentsWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee)) + " ₽";
             textMonthPayment.innerHTML = numberSpace(calculateMonthlyPaymentWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee)) + " ₽";
 
             let percentDiagram = (calculateTotalInterest(inputAmount, inputTerm, inputRate) * 100 / inputAmount).toFixed(0);
@@ -460,175 +461,145 @@ document.addEventListener('DOMContentLoaded', function () {
     btnSecured.addEventListener('click', function () {
 
         // Функция для вычисления ежемесячного платежа
-        function monthlyPayment(principal, interestRate, term, type) {
-            if (type == "Аннуитетный") {
-                type = "annuity";
+        function calculateMonthlyPayment(loanAmount, paymentType, loanTerm, interestRate) {
+            const monthsInYear = 12;
+            const totalPayments = loanTerm * monthsInYear;
+            let monthlyPayment = 0;
+
+            // Вычисляем месячную процентную ставку
+            const monthlyInterestRate = interestRate / monthsInYear;
+
+            if (paymentType === 'Аннуитетный') {
+                // Вычисляем месячный платеж для аннуитетного платежа
+                const discountFactor = (Math.pow(1 + monthlyInterestRate, totalPayments) - 1) / (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalPayments));
+                monthlyPayment = loanAmount / discountFactor;
+            } else if (paymentType === 'Шаровый') {
+                // Вычисляем месячный платеж для шарового платежа
+                monthlyPayment = loanAmount / totalPayments;
+                monthlyPayment += loanAmount * monthlyInterestRate;
             }
-            else {
-                type = "differentiated";
-            }
-            // Преобразуем процентную ставку в дробную
-            interestRate = interestRate / 100;
 
-            // Вычисляем ежемесячную процентную ставку
-            var monthlyInterestRate = interestRate / 12;
+            // Округляем до двух знаков после запятой
+            monthlyPayment = Math.round(monthlyPayment * 100) / 100;
 
-            if (type === "annuity") {
-                // Формула для расчета ежемесячного аннуитетного платежа
-                var annuityPayment =
-                    (principal *
-                        monthlyInterestRate *
-                        Math.pow(1 + monthlyInterestRate, term)) /
-                    (Math.pow(1 + monthlyInterestRate, term) - 1);
-
-                return annuityPayment.toFixed(2);
-            } else if (type === "differentiated") {
-                // Формула для расчета дифференцированного платежа
-                var totalPayment = 0;
-                var payment = 0;
-
-                for (var i = 1; i <= term; i++) {
-                    payment =
-                        (principal / term) +
-                        monthlyInterestRate *
-                        (principal - (principal * (i - 1)) / term);
-
-                    totalPayment += payment;
-                }
-
-                return (totalPayment / term).toFixed(2);
-            } else {
-                return "Invalid payment type";
-            }
+            return monthlyPayment.toFixed(2);
         }
 
-        function calculateOverpayment(loanAmount, paymentType, loanTerm, interestRate) {
-            if (paymentType == "Аннуитетный") {
-                paymentType = "annuity";
-            }
-            else {
-                paymentType = "differentiated";
-            }
+
+        function calculateTotalInterest2(loanAmount, paymentType, loanTerm, interestRate) {
+            const monthsInYear = 12;
+            const totalPayments = loanTerm * monthsInYear;
             let totalInterest = 0;
-            let monthlyPayment;
 
-            // Вычисляем ежемесячную процентную ставку
-            const monthlyRate = interestRate / 12;
+            // Вычисляем месячную процентную ставку
+            const monthlyInterestRate = interestRate / monthsInYear;
 
-            // Вычисляем количество платежей в зависимости от типа платежа
-            let numPayments;
-            if (paymentType === 'annuity') {
-                numPayments = loanTerm * 12;
-                monthlyPayment = loanAmount * monthlyRate * (1 + monthlyRate) ** numPayments / ((1 + monthlyRate) ** numPayments - 1);
-            } else if (paymentType === 'differentiated') {
-                numPayments = loanTerm;
-                const principal = loanAmount / numPayments;
-                monthlyPayment = principal + loanAmount * monthlyRate;
-            } else {
-                throw new Error('Invalid payment type');
+            if (paymentType === 'Аннуитетный') {
+                // Вычисляем месячный платеж для аннуитетного платежа
+                const discountFactor = (Math.pow(1 + monthlyInterestRate, totalPayments) - 1) / (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalPayments));
+                const monthlyPayment = loanAmount / discountFactor;
+
+                // Вычисляем общую переплату для аннуитетного платежа
+                totalInterest = (monthlyPayment * totalPayments) - loanAmount;
+            } else if (paymentType === 'Шаровый') {
+                // Вычисляем месячный платеж для шарового платежа
+                const monthlyPayment = loanAmount / totalPayments;
+                let remainingLoanAmount = loanAmount;
+
+                // Вычисляем общую переплату для шарового платежа
+                for (let i = 0; i < totalPayments; i++) {
+                    const monthlyInterest = remainingLoanAmount * monthlyInterestRate;
+                    totalInterest += monthlyInterest;
+                    remainingLoanAmount -= monthlyPayment;
+                }
             }
 
-            // Вычисляем общую сумму процентов
-            for (let i = 1; i <= numPayments; i++) {
-                const currentInterest = loanAmount * monthlyRate;
-                totalInterest += currentInterest;
-                loanAmount -= (monthlyPayment - currentInterest);
-            }
+            // Округляем до двух знаков после запятой
+            totalInterest = Math.round(totalInterest * 100) / 100;
 
-            // Вычисляем общую переплату
-            const totalOverpayment = totalInterest + loanAmount;
-
-            return totalOverpayment.toFixed(2);
+            return totalInterest;
         }
+
 
         function calculateTotalPayments(loanAmount, paymentType, loanTerm, interestRate) {
-            if (paymentType == "Аннуитетный") {
-                paymentType = "annuity";
-            }
-            else {
-                paymentType = "equal";
-            }
-            let totalPayments = 0;
-
-            if (paymentType === 'annuity') {
-                const monthlyRate = (interestRate / 100) / 12;
-                const annuityFactor = monthlyRate * Math.pow(1 + monthlyRate, loanTerm) / (Math.pow(1 + monthlyRate, loanTerm) - 1);
-                totalPayments = annuityFactor * loanAmount * loanTerm;
-            } else if (paymentType === 'equal') {
-                const monthlyRate = (interestRate / 100) / 12;
-                const monthlyPayment = loanAmount * monthlyRate / (1 - Math.pow(1 + monthlyRate, -loanTerm));
-                totalPayments = monthlyPayment * loanTerm;
-            }
-
-            return totalPayments.toFixed(2);
-        }
-
-        function calculateInterest(amount, paymentType, loanTerm, interestRate) {
-            if (paymentType == "Аннуитетный") {
-                paymentType = "annuity";
-            }
-            else {
-                paymentType = "differentiated";
-            }
-            let totalInterest = 0;
+            const monthsInYear = 12;
+            const totalPayments = loanTerm * monthsInYear;
             let totalAmount = 0;
 
-            if (paymentType === 'annuity') {
-                // Вычисление процентной ставки в месяц
-                const monthlyInterestRate = interestRate / 1200;
+            // Вычисляем месячную процентную ставку
+            const monthlyInterestRate = interestRate / monthsInYear;
 
-                // Вычисление коэффициента аннуитета
-                const annuityCoefficient = monthlyInterestRate / (1 - Math.pow(1 + monthlyInterestRate, -loanTerm));
+            if (paymentType === 'Аннуитетный') {
+                // Вычисляем месячный платеж для аннуитетного платежа
+                const discountFactor = (Math.pow(1 + monthlyInterestRate, totalPayments) - 1) / (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalPayments));
+                const monthlyPayment = loanAmount / discountFactor;
 
-                // Вычисление общей суммы выплат
-                totalAmount = annuityCoefficient * amount * loanTerm;
+                // Вычисляем общую сумму выплат для аннуитетного платежа
+                totalAmount = monthlyPayment * totalPayments;
+            } else if (paymentType === 'Шаровый') {
+                // Вычисляем месячный платеж для шарового платежа
+                const monthlyPayment = loanAmount / totalPayments;
+                let remainingLoanAmount = loanAmount;
 
-                // Вычисление переплаты
-                totalInterest = totalAmount - amount;
-            } else if (paymentType === 'differentiated') {
-                // Вычисление процентной ставки в месяц
-                const monthlyInterestRate = interestRate / 1200;
-
-                // Вычисление суммы ежемесячного платежа по кредиту
-                const monthlyPayment = amount / loanTerm + amount * monthlyInterestRate;
-
-                // Вычисление общей суммы выплат
-                totalAmount = monthlyPayment * loanTerm;
-
-                // Вычисление переплаты
-                totalInterest = totalAmount - amount;
-            }
-
-            return totalInterest.toFixed(2);
-        }
-
-        function totalCost(loanAmount, paymentType, loanTerm, interestRate) {
-            if (paymentType == "Аннуитетный") {
-                paymentType = "annuity";
-            }
-            else {
-                paymentType = "differentiated";
-            }
-            let totalPayment = 0;
-            let interest = 0;
-            let principal = loanAmount;
-            let monthlyRate = interestRate / 1200;
-            let months = loanTerm * 12;
-
-            if (paymentType === 'annuity') {
-                totalPayment = loanAmount * (monthlyRate + monthlyRate / (Math.pow(1 + monthlyRate, months) - 1)) * months;
-                interest = totalPayment - loanAmount;
-            } else if (paymentType === 'differentiated') {
-                for (let i = 0; i < months; i++) {
-                    let monthlyPrincipal = loanAmount / months;
-                    let monthlyInterest = principal * monthlyRate;
-                    totalPayment += monthlyPrincipal + monthlyInterest;
-                    interest += monthlyInterest;
-                    principal -= monthlyPrincipal;
+                // Вычисляем общую сумму выплат для шарового платежа
+                for (let i = 0; i < totalPayments; i++) {
+                    const monthlyInterest = remainingLoanAmount * monthlyInterestRate;
+                    const monthlyTotal = monthlyPayment + monthlyInterest;
+                    totalAmount += monthlyTotal;
+                    remainingLoanAmount -= monthlyPayment;
                 }
             }
-            return totalPayment.toFixed(2);
+
+            // Округляем до двух знаков после запятой
+            totalAmount = Math.round(totalAmount * 100) / 100;
+
+            return totalAmount;
         }
+
+
+        function calculateInterestOverPayment(loanAmount, paymentType, loanTerm, interestRate) {
+            const totalCost = calculateTotalCost(loanAmount, paymentType, loanTerm, interestRate);
+            const interestOverPayment = totalCost - loanAmount;
+            const interestOverPaymentPercent = (interestOverPayment / loanAmount) * 100;
+            
+            // Округляем до двух знаков после запятой
+            const result = Math.round(interestOverPaymentPercent * 100) / 100;
+            
+            return result;
+          }
+          
+
+
+        function calculateTotalCost(loanAmount, paymentType, loanTerm, interestRate) {
+            const monthsInYear = 12;
+            let totalCost = 0;
+            
+            if (paymentType === 'Аннуитетный') {
+              // Вычисляем общую сумму выплат для аннуитетного платежа
+              const totalPayments = loanTerm * monthsInYear;
+              const monthlyInterestRate = interestRate / monthsInYear / 100;
+              const monthlyPayment = loanAmount * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalPayments)) / (Math.pow(1 + monthlyInterestRate, totalPayments) - 1);
+              totalCost = monthlyPayment * totalPayments;
+            } else if (paymentType === 'Шаровый') {
+              // Вычисляем общую сумму выплат для шарового платежа
+              const totalPayments = loanTerm;
+              const monthlyInterestRate = interestRate / monthsInYear / 100;
+              let remainingLoanAmount = loanAmount;
+              
+              for (let i = 0; i < totalPayments; i++) {
+                const monthlyInterest = remainingLoanAmount * monthlyInterestRate;
+                const monthlyTotal = loanAmount / totalPayments + monthlyInterest;
+                totalCost += monthlyTotal;
+                remainingLoanAmount -= loanAmount / totalPayments;
+              }
+            }
+            
+            // Округляем до двух знаков после запятой
+            totalCost = Math.round(totalCost * 100) / 100;
+            
+            return totalCost;
+          }
+          
 
         const btnParent = this.closest('.calc-content'),
             inputAmount = +btnParent.querySelector('input').value.replace(/ /g, ''),
@@ -646,11 +617,12 @@ document.addEventListener('DOMContentLoaded', function () {
             btnParent.classList.add('account');
 
             textAmout.innerHTML = numberSpace(inputAmount) + " ₽";
-            textOverpay.innerHTML = numberSpace(calculateOverpayment(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
+            textOverpay.innerHTML = numberSpace(calculateTotalInterest2(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
             textTotalAmount.innerHTML = numberSpace(calculateTotalPayments(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
-            textPercentOverpay.innerHTML = numberSpace(calculateInterest(inputAmount, inputPaymentType, inputTerm, inputRate)) + " %";
-            textFullCost.innerHTML = numberSpace(totalCost(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
-            textMonthPayment.innerHTML = numberSpace(monthlyPayment(inputAmount, inputRate, inputTerm, inputPaymentType)) + " ₽";
+            textPercentOverpay.innerHTML = numberSpace(calculateInterestOverPayment(inputAmount, inputPaymentType, inputTerm, inputTerm*12)) + " %";
+            // textFullCost.innerHTML = numberSpace(calculateTotalCost(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
+            textFullCost.innerHTML = numberSpace(calculateTotalPayments(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
+            textMonthPayment.innerHTML = numberSpace(calculateMonthlyPayment(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
 
             let percentDiagram = (calculateTotalInterest(inputAmount, inputTerm, inputRate) * 100 / inputAmount).toFixed(0);
             let calcDiagram = btnParent.querySelector('.calc-diagram'),
