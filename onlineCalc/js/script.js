@@ -212,25 +212,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Input amount
-    const calcInput = document.querySelectorAll('.calc-option__input input');
-
-    for (let i = 0; i < calcInput.length; i++) {
-        calcInput[i].addEventListener('keyup', function (e) {
-            if (e.keyCode < 48 || e.keyCode > 57) {
-                this.value = this.value.replace(/[^\d]/g, '');
-                let outrez = (this.value + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-                this.value = outrez;
-            }
-            else {
-                let inputValue = this.value.replace(/ /g, '');
-                let outrez = (inputValue + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-                this.value = outrez;
-            }
-
-        })
-    }
-
     // Dynamic adaptive
     const parent_original = document.querySelectorAll('.calc-account'),
         parent = document.querySelectorAll('.calc__title_mob'),
@@ -266,8 +247,32 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Input amount
+    const calcInput = document.querySelectorAll('.calc-option__input input');
+
+    for (let i = 0; i < calcInput.length; i++) {
+        calcInput[i].addEventListener('keyup', function (e) {
+            if (e.keyCode < 48 || e.keyCode > 57) {
+                this.value = this.value.replace(/[^\d]/g, '');
+                let outrez = (this.value + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+                this.value = outrez;
+            }
+            else {
+                let inputValue = this.value.replace(/ /g, '');
+                let outrez = (inputValue + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+                this.value = outrez;
+            }
+
+        })
+    }
+
 
     // Calculation 
+    function numberSpace(value) {
+        let outrez = (value + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+        return outrez;
+    }
+
     function calculateMonthlyPayment(loanAmount, loanTerm, interestRate) {
         const monthlyInterestRate = interestRate / 12; // Рассчитываем месячную процентную ставку
         const numberOfPayments = loanTerm * 12; // Рассчитываем общее количество платежей
@@ -361,6 +366,183 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+
+    // Функция для вычисления ежемесячного платежа
+    function monthlyPayment(principal, interestRate, term, type) {
+        if (type == "Аннуитетный") {
+            type = "annuity";
+        }
+        else {
+            type = "differentiated";
+        }
+        // Преобразуем процентную ставку в дробную
+        interestRate = interestRate / 100;
+
+        // Вычисляем ежемесячную процентную ставку
+        var monthlyInterestRate = interestRate / 12;
+
+        if (type === "annuity") {
+            // Формула для расчета ежемесячного аннуитетного платежа
+            var annuityPayment =
+                (principal *
+                    monthlyInterestRate *
+                    Math.pow(1 + monthlyInterestRate, term)) /
+                (Math.pow(1 + monthlyInterestRate, term) - 1);
+
+            return annuityPayment.toFixed(2);
+        } else if (type === "differentiated") {
+            // Формула для расчета дифференцированного платежа
+            var totalPayment = 0;
+            var payment = 0;
+
+            for (var i = 1; i <= term; i++) {
+                payment =
+                    (principal / term) +
+                    monthlyInterestRate *
+                    (principal - (principal * (i - 1)) / term);
+
+                totalPayment += payment;
+            }
+
+            return (totalPayment / term).toFixed(2);
+        } else {
+            return "Invalid payment type";
+        }
+    }
+
+    function calculateOverpayment(loanAmount, paymentType, loanTerm, interestRate) {
+        if (paymentType == "Аннуитетный") {
+            paymentType = "annuity";
+        }
+        else {
+            paymentType = "differentiated";
+        }
+        let totalInterest = 0;
+        let monthlyPayment;
+
+        // Вычисляем ежемесячную процентную ставку
+        const monthlyRate = interestRate / 12;
+
+        // Вычисляем количество платежей в зависимости от типа платежа
+        let numPayments;
+        if (paymentType === 'annuity') {
+            numPayments = loanTerm * 12;
+            monthlyPayment = loanAmount * monthlyRate * (1 + monthlyRate) ** numPayments / ((1 + monthlyRate) ** numPayments - 1);
+        } else if (paymentType === 'differentiated') {
+            numPayments = loanTerm;
+            const principal = loanAmount / numPayments;
+            monthlyPayment = principal + loanAmount * monthlyRate;
+        } else {
+            throw new Error('Invalid payment type');
+        }
+
+        // Вычисляем общую сумму процентов
+        for (let i = 1; i <= numPayments; i++) {
+            const currentInterest = loanAmount * monthlyRate;
+            totalInterest += currentInterest;
+            loanAmount -= (monthlyPayment - currentInterest);
+        }
+
+        // Вычисляем общую переплату
+        const totalOverpayment = totalInterest + loanAmount;
+
+        return totalOverpayment.toFixed(2);
+    }
+
+    function calculateTotalPayments(loanAmount, paymentType, loanTerm, interestRate) {
+        if (paymentType == "Аннуитетный") {
+            paymentType = "annuity";
+        }
+        else {
+            paymentType = "equal";
+        }
+        let totalPayments = 0;
+
+        if (paymentType === 'annuity') {
+            const monthlyRate = (interestRate / 100) / 12;
+            const annuityFactor = monthlyRate * Math.pow(1 + monthlyRate, loanTerm) / (Math.pow(1 + monthlyRate, loanTerm) - 1);
+            totalPayments = annuityFactor * loanAmount * loanTerm;
+        } else if (paymentType === 'equal') {
+            const monthlyRate = (interestRate / 100) / 12;
+            const monthlyPayment = loanAmount * monthlyRate / (1 - Math.pow(1 + monthlyRate, -loanTerm));
+            totalPayments = monthlyPayment * loanTerm;
+        }
+
+        return totalPayments.toFixed(2);
+    }
+
+    function calculateInterest(amount, paymentType, loanTerm, interestRate) {
+        if (paymentType == "Аннуитетный") {
+            paymentType = "annuity";
+        }
+        else {
+            paymentType = "differentiated";
+        }
+        let totalInterest = 0;
+        let totalAmount = 0;
+
+        if (paymentType === 'annuity') {
+            // Вычисление процентной ставки в месяц
+            const monthlyInterestRate = interestRate / 1200;
+
+            // Вычисление коэффициента аннуитета
+            const annuityCoefficient = monthlyInterestRate / (1 - Math.pow(1 + monthlyInterestRate, -loanTerm));
+
+            // Вычисление общей суммы выплат
+            totalAmount = annuityCoefficient * amount * loanTerm;
+
+            // Вычисление переплаты
+            totalInterest = totalAmount - amount;
+        } else if (paymentType === 'differentiated') {
+            // Вычисление процентной ставки в месяц
+            const monthlyInterestRate = interestRate / 1200;
+
+            // Вычисление суммы ежемесячного платежа по кредиту
+            const monthlyPayment = amount / loanTerm + amount * monthlyInterestRate;
+
+            // Вычисление общей суммы выплат
+            totalAmount = monthlyPayment * loanTerm;
+
+            // Вычисление переплаты
+            totalInterest = totalAmount - amount;
+        }
+
+        return totalInterest.toFixed(2);
+    }
+
+    function totalCost(loanAmount, paymentType, loanTerm, interestRate) {
+        if (paymentType == "Аннуитетный") {
+            paymentType = "annuity";
+        }
+        else {
+            paymentType = "differentiated";
+        }
+        let totalPayment = 0;
+        let interest = 0;
+        let principal = loanAmount;
+        let monthlyRate = interestRate / 1200;
+        let months = loanTerm * 12;
+      
+        if (paymentType === 'annuity') {
+          totalPayment = loanAmount * (monthlyRate + monthlyRate / (Math.pow(1 + monthlyRate, months) - 1)) * months;
+          interest = totalPayment - loanAmount;
+        } else if (paymentType === 'differentiated') {
+          for (let i = 0; i < months; i++) {
+            let monthlyPrincipal = loanAmount / months;
+            let monthlyInterest = principal * monthlyRate;
+            totalPayment += monthlyPrincipal + monthlyInterest;
+            interest += monthlyInterest;
+            principal -= monthlyPrincipal;
+          }
+        }
+        return totalPayment.toFixed(2);
+      }
+      
+
+
+
+
+
     let btnСonsumer = document.querySelector('.consumer .calc-option__btn');
     let btnMortgage = document.querySelector('.mortgage .calc-option__btn');
     let btnSecured = document.querySelector('.secured .calc-option__btn');
@@ -380,12 +562,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!inputAmount == "") {
             btnParent.classList.add('account');
 
-            textAmout.innerHTML = inputAmount + " ₽";
-            textOverpay.innerHTML = calculateTotalInterest(inputAmount, inputTerm, inputRate) + " ₽";
-            textTotalAmount.innerHTML = calculateTotalPayments(inputAmount, inputTerm, inputRate) + " ₽";
-            textPercentOverpay.innerHTML = calculateInterest(inputAmount, inputTerm, inputRate) + " %";
-            textFullCost.innerHTML = calculateTotalCost(inputAmount, inputTerm, inputRate) + " ₽";
-            textMonthPayment.innerHTML = calculateMonthlyPayment(inputAmount, inputTerm, inputRate) + " ₽";
+            textAmout.innerHTML = numberSpace(inputAmount) + " ₽";
+            textOverpay.innerHTML = numberSpace(calculateTotalInterest(inputAmount, inputTerm, inputRate)) + " ₽";
+            textTotalAmount.innerHTML = numberSpace(calculateTotalPayments(inputAmount, inputTerm, inputRate)) + " ₽";
+            textPercentOverpay.innerHTML = numberSpace(calculateInterest(inputAmount, inputTerm, inputRate)) + " %";
+            textFullCost.innerHTML = numberSpace(calculateTotalCost(inputAmount, inputTerm, inputRate)) + " ₽";
+            textMonthPayment.innerHTML = numberSpace(calculateMonthlyPayment(inputAmount, inputTerm, inputRate)) + " ₽";
 
             let percentDiagram = (calculateTotalInterest(inputAmount, inputTerm, inputRate) * 100 / inputAmount).toFixed(0);
             let calcDiagram = btnParent.querySelector('.calc-diagram'),
@@ -423,12 +605,55 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!inputAmount == "") {
             btnParent.classList.add('account');
 
-            textAmout.innerHTML = inputAmount + " ₽";
-            textOverpay.innerHTML = calculateTotalInterestWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " ₽";
-            textTotalAmount.innerHTML = calculateTotalPaymentsWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " ₽";
-            textPercentOverpay.innerHTML = calculateInterestOverpaymentWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " %";
-            textFullCost.innerHTML = calculateTotalCostWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " ₽";
-            textMonthPayment.innerHTML = calculateMonthlyPaymentWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " ₽";
+            textAmout.innerHTML = numberSpace(inputAmount) + " ₽";
+            textOverpay.innerHTML = numberSpace(calculateTotalInterestWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee)) + " ₽";
+            textTotalAmount.innerHTML = numberSpace(calculateTotalPaymentsWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee)) + " ₽";
+            textPercentOverpay.innerHTML = numberSpace(calculateInterestOverpaymentWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee)) + " %";
+            textFullCost.innerHTML = numberSpace(calculateTotalCostWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee)) + " ₽";
+            textMonthPayment.innerHTML = numberSpace(calculateMonthlyPaymentWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee)) + " ₽";
+
+            let percentDiagram = (calculateTotalInterest(inputAmount, inputTerm, inputRate) * 100 / inputAmount).toFixed(0);
+            let calcDiagram = btnParent.querySelector('.calc-diagram'),
+                calcProgressValue = 0,
+                calcEndValue,
+                speed = 40;
+            calcEndValue = percentDiagram;
+            let progress = setInterval(() => {
+                calcProgressValue++;
+                calcDiagram.style.background = `conic-gradient(
+                    #005BA4 ${calcProgressValue * 3.6}deg,
+                    #fff ${calcProgressValue * 3.6}deg
+                )`
+                if (calcProgressValue == calcEndValue) {
+                    clearInterval(progress);
+                }
+            }, speed)
+        }
+
+    })
+
+    btnSecured.addEventListener('click', function () {
+        const btnParent = this.closest('.calc-content'),
+            inputAmount = +btnParent.querySelector('input').value.replace(/ /g, ''),
+            inputTerm = +btnParent.querySelector('.term').innerText.replace(/ /g, '').replace(/[a-zа-яё]/gi, ''),
+            inputRate = (+btnParent.querySelector('.rate').innerText) / 100,
+            inputPaymentType = btnParent.querySelector('.paymentType').innerText,
+            textAmout = btnParent.querySelector('.textAmount'),
+            textOverpay = btnParent.querySelector('.textOverpay'),
+            textTotalAmount = btnParent.querySelector('.textTotalAmount'),
+            textPercentOverpay = btnParent.querySelector('.textPercentOverpay'),
+            textFullCost = btnParent.querySelector('.textFullCost'),
+            textMonthPayment = btnParent.querySelector('.calc-diagram__value');
+
+        if (!inputAmount == "") {
+            btnParent.classList.add('account');
+
+            textAmout.innerHTML = numberSpace(inputAmount) + " ₽";
+            textOverpay.innerHTML = numberSpace(calculateOverpayment(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
+            textTotalAmount.innerHTML = numberSpace(calculateTotalPayments(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
+            textPercentOverpay.innerHTML = numberSpace(calculateInterest(inputAmount, inputPaymentType, inputTerm, inputRate)) + " %";
+            textFullCost.innerHTML = numberSpace(totalCost(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
+            textMonthPayment.innerHTML = numberSpace(monthlyPayment(inputAmount, inputRate, inputTerm, inputPaymentType)) + " ₽";
 
             let percentDiagram = (calculateTotalInterest(inputAmount, inputTerm, inputRate) * 100 / inputAmount).toFixed(0);
             let calcDiagram = btnParent.querySelector('.calc-diagram'),
