@@ -31,6 +31,59 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
+    let mobileTabs = ["Потребительский кредит", "Ипотечный калькулятор", "Залоговый калькулятор"],
+        tabPrev = document.querySelector('.calc-tabs__prev'),
+        tabNext = document.querySelector('.calc-tabs__next'),
+        tabCurrent = document.querySelector('.calc-tabs__current'),
+        tabsContent = document.querySelectorAll('.tabs__content'),
+        tabsContentWrapper = document.querySelector('.tabs__wrapper'),
+        tabIndex = 0;
+
+    tabPrev.addEventListener('click', function () {
+        if (tabIndex == 0) {
+            tabIndex = 2;
+        }
+        else {
+            tabIndex--;
+        }
+        tabCurrent.innerHTML = mobileTabs[tabIndex];
+
+        for (let i = 0; i < tabsContent.length; i++) {
+            tabsContent[i].style.opacity = '0';
+            tabsContentWrapper.style.minHeight = tabsContent[tabIndex].clientHeight + "px";
+            setTimeout(function () {
+                tabsContent[i].classList.remove('active');
+                tabsContent[tabIndex].classList.add('active');
+            }, tabsTransition)
+            setTimeout(function () {
+                tabsContent[tabIndex].style.opacity = '1';
+            }, tabsTransition + 10)
+        }
+    })
+
+    tabNext.addEventListener('click', function () {
+        if (tabIndex == 2) {
+            tabIndex = 0;
+        }
+        else {
+            tabIndex++;
+        }
+        tabCurrent.innerHTML = mobileTabs[tabIndex];
+
+        for (let i = 0; i < tabsContent.length; i++) {
+            tabsContent[i].style.opacity = '0';
+            tabsContentWrapper.style.minHeight = tabsContent[tabIndex].clientHeight + "px";
+            setTimeout(function () {
+                tabsContent[i].classList.remove('active');
+                tabsContent[tabIndex].classList.add('active');
+            }, tabsTransition)
+            setTimeout(function () {
+                tabsContent[tabIndex].style.opacity = '1';
+            }, tabsTransition + 10)
+        }
+    })
+
+    // Select
     let select = function () {
         let selectHeader = document.querySelectorAll('.select-header'),
             selectItem = document.querySelectorAll('.select-body__item'),
@@ -179,30 +232,37 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Dynamic adaptive
-    const parent_original = document.querySelector('.calc-account'),
-        parent = document.querySelector('.calc__title_mob'),
-        item = document.querySelector('.calc-estimation__title');
+    const parent_original = document.querySelectorAll('.calc-account'),
+        parent = document.querySelectorAll('.calc__title_mob'),
+        item = document.querySelectorAll('.calc-estimation__title');
 
     if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 992) {
-        if (!item.classList.contains('done')) {
-            parent.insertBefore(item, parent.children[0]);
-            item.classList.add('done');
+        for (let i = 0; i < item.length; i++) {
+            if (!item[i].classList.contains('done')) {
+                parent[i].insertBefore(item[i], parent[i].children[0]);
+                item[i].classList.add('done');
+            }
         }
     }
 
     window.addEventListener('resize', function (event) {
         const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         if (viewport_width <= 992) {
-            if (!item.classList.contains('done')) {
-                parent.insertBefore(item, parent.children[0]);
-                item.classList.add('done');
+            for (let i = 0; i < item.length; i++) {
+                if (!item[i].classList.contains('done')) {
+                    parent[i].insertBefore(item[i], parent[i].children[0]);
+                    item[i].classList.add('done');
+                }
             }
         }
         else {
-            if (item.classList.contains('done')) {
-                parent_original.insertBefore(item, parent_original.children[0]);
-                item.classList.remove('done');
+            for (let i = 0; i < item.length; i++) {
+                if (item[i].classList.contains('done')) {
+                    parent_original[i].insertBefore(item[i], parent_original[i].children[0]);
+                    item[i].classList.remove('done');
+                }
             }
+
         }
     });
 
@@ -317,31 +377,33 @@ document.addEventListener('DOMContentLoaded', function () {
             textFullCost = btnParent.querySelector('.textFullCost'),
             textMonthPayment = btnParent.querySelector('.calc-diagram__value');
 
-        btnParent.classList.add('account');
+        if (!inputAmount == "") {
+            btnParent.classList.add('account');
 
-        textAmout.innerHTML = inputAmount + " ₽";
-        textOverpay.innerHTML = calculateTotalInterest(inputAmount, inputTerm, inputRate) + " ₽";
-        textTotalAmount.innerHTML = calculateTotalPayments(inputAmount, inputTerm, inputRate) + " ₽";
-        textPercentOverpay.innerHTML = calculateInterest(inputAmount, inputTerm, inputRate) + " %";
-        textFullCost.innerHTML = calculateTotalCost(inputAmount, inputTerm, inputRate) + " ₽";
-        textMonthPayment.innerHTML = calculateMonthlyPayment(inputAmount, inputTerm, inputRate) + " ₽";
+            textAmout.innerHTML = inputAmount + " ₽";
+            textOverpay.innerHTML = calculateTotalInterest(inputAmount, inputTerm, inputRate) + " ₽";
+            textTotalAmount.innerHTML = calculateTotalPayments(inputAmount, inputTerm, inputRate) + " ₽";
+            textPercentOverpay.innerHTML = calculateInterest(inputAmount, inputTerm, inputRate) + " %";
+            textFullCost.innerHTML = calculateTotalCost(inputAmount, inputTerm, inputRate) + " ₽";
+            textMonthPayment.innerHTML = calculateMonthlyPayment(inputAmount, inputTerm, inputRate) + " ₽";
 
-        let percentDiagram = (calculateTotalInterest(inputAmount, inputTerm, inputRate) * 100 / inputAmount).toFixed(0);
-        let calcDiagram = btnParent.querySelector('.calc-diagram'),
-            calcProgressValue = 0,
-            calcEndValue,
-            speed = 40;
-        calcEndValue = percentDiagram;
-        let progress = setInterval(() => {
-            calcProgressValue++;
-            calcDiagram.style.background = `conic-gradient(
+            let percentDiagram = (calculateTotalInterest(inputAmount, inputTerm, inputRate) * 100 / inputAmount).toFixed(0);
+            let calcDiagram = btnParent.querySelector('.calc-diagram'),
+                calcProgressValue = 0,
+                calcEndValue,
+                speed = 40;
+            calcEndValue = percentDiagram;
+            let progress = setInterval(() => {
+                calcProgressValue++;
+                calcDiagram.style.background = `conic-gradient(
                     #005BA4 ${calcProgressValue * 3.6}deg,
                     #fff ${calcProgressValue * 3.6}deg
                 )`
-            if (calcProgressValue == calcEndValue) {
-                clearInterval(progress);
-            }
-        }, speed)
+                if (calcProgressValue == calcEndValue) {
+                    clearInterval(progress);
+                }
+            }, speed)
+        }
     })
 
 
@@ -358,31 +420,34 @@ document.addEventListener('DOMContentLoaded', function () {
             textFullCost = btnParent.querySelector('.textFullCost'),
             textMonthPayment = btnParent.querySelector('.calc-diagram__value');
 
-        btnParent.classList.add('account');
+        if (!inputAmount == "") {
+            btnParent.classList.add('account');
 
-        textAmout.innerHTML = inputAmount + " ₽";
-        textOverpay.innerHTML = calculateTotalInterestWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " ₽";
-        textTotalAmount.innerHTML = calculateTotalPaymentsWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " ₽";
-        textPercentOverpay.innerHTML = calculateInterestOverpaymentWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " %";
-        textFullCost.innerHTML = calculateTotalCostWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " ₽";
-        textMonthPayment.innerHTML = calculateMonthlyPaymentWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " ₽";
+            textAmout.innerHTML = inputAmount + " ₽";
+            textOverpay.innerHTML = calculateTotalInterestWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " ₽";
+            textTotalAmount.innerHTML = calculateTotalPaymentsWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " ₽";
+            textPercentOverpay.innerHTML = calculateInterestOverpaymentWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " %";
+            textFullCost.innerHTML = calculateTotalCostWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " ₽";
+            textMonthPayment.innerHTML = calculateMonthlyPaymentWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee) + " ₽";
 
-        let percentDiagram = (calculateTotalInterest(inputAmount, inputTerm, inputRate) * 100 / inputAmount).toFixed(0);
-        let calcDiagram = btnParent.querySelector('.calc-diagram'),
-            calcProgressValue = 0,
-            calcEndValue,
-            speed = 40;
-        calcEndValue = percentDiagram;
-        let progress = setInterval(() => {
-            calcProgressValue++;
-            calcDiagram.style.background = `conic-gradient(
+            let percentDiagram = (calculateTotalInterest(inputAmount, inputTerm, inputRate) * 100 / inputAmount).toFixed(0);
+            let calcDiagram = btnParent.querySelector('.calc-diagram'),
+                calcProgressValue = 0,
+                calcEndValue,
+                speed = 40;
+            calcEndValue = percentDiagram;
+            let progress = setInterval(() => {
+                calcProgressValue++;
+                calcDiagram.style.background = `conic-gradient(
                     #005BA4 ${calcProgressValue * 3.6}deg,
                     #fff ${calcProgressValue * 3.6}deg
                 )`
-            if (calcProgressValue == calcEndValue) {
-                clearInterval(progress);
-            }
-        }, speed)
+                if (calcProgressValue == calcEndValue) {
+                    clearInterval(progress);
+                }
+            }, speed)
+        }
+
     })
 
 

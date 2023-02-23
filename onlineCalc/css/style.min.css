@@ -309,6 +309,53 @@
   font-weight: 700;
 }
 
+.calc-tabs_mob {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  display: none;
+}
+
+.calc-tabs__current {
+  width: 80%;
+  background: #2196f3;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 17px;
+  padding-bottom: 9px;
+  border-radius: 12.7143px 12.7143px 0px 0px;
+}
+
+.calc-tabs__next, .calc-tabs__prev {
+  width: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #f2f2f2;
+  min-width: 50px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.calc-tabs__prev {
+  border-radius: 12.7px 0px 0px 0px;
+}
+
+.calc-tabs__next {
+  border-radius: 0px 12.7px 0px 0px;
+}
+
 .calc-option {
   width: 100%;
   min-width: 160px;
@@ -542,6 +589,10 @@
   margin-bottom: 24px;
 }
 
+.calc-content.account .calc__title_mob {
+  display: block;
+}
+
 .calc-content.mortgage .calc-option__btn {
   max-width: 260px;
 }
@@ -750,9 +801,6 @@ body {
     -ms-flex-negative: 1;
         flex-shrink: 1;
   }
-  .calc__title_mob {
-    display: block;
-  }
   .calc__tab.active {
     font-size: 20px;
   }
@@ -906,6 +954,11 @@ body {
   .lock {
     overflow: hidden;
   }
+  .calc-tabs_mob {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .select-body {
     position: fixed;
     top: 0;
@@ -975,6 +1028,9 @@ body {
   .main-form__input:last-child {
     margin-bottom: 22px;
   }
+  .calc__tabs {
+    display: none;
+  }
   .calc-content {
     padding: 30px;
   }
@@ -1018,18 +1074,27 @@ body {
   }
 }
 @media (max-width: 374px) {
+  .container {
+    padding: 0px 10px;
+  }
   .main__title {
     font-size: 9vw;
   }
   .main-contact {
     padding: 10px;
     padding-bottom: 20px;
+    padding-top: 20px;
   }
   .main-contact__title {
     font-size: 9.2vw;
   }
   .calc-content {
     padding: 15px;
+  }
+  .calc-tabs__current {
+    font-size: 14px;
+    padding-top: 18px;
+    padding-bottom: 12px;
   }
   .article-content {
     padding: 10px;
