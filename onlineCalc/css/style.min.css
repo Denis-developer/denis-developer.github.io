@@ -960,6 +960,7 @@ body {
     display: flex;
   }
   .select-body {
+    border-radius: 0px;
     position: fixed;
     top: 0;
     left: 0;
