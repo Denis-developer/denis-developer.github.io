@@ -216,6 +216,34 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Adaptove mobile select
+    const allSelect = document.querySelectorAll('.select-body');
+
+    const setHeight = function () {
+        const currentHeight = window.innerHeight;
+        for (let i = 0; i < allSelect.length; i++) {
+            allSelect[i].style.height = `${currentHeight}px`;
+
+        }
+    }
+
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 576) {
+        setHeight();
+    }
+
+    window.addEventListener('resize', function (event) {
+        const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        if (viewport_width <= 576) {
+            setHeight();
+        }
+        else {
+            for (let i = 0; i < allSelect.length; i++) {
+                allSelect[i].style.height = "auto";
+
+            }
+        }
+    });
+
     // Dynamic adaptive
     const parent_original = document.querySelectorAll('.calc-account'),
         parent = document.querySelectorAll('.calc__title_mob'),
