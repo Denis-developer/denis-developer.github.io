@@ -305,32 +305,31 @@ document.addEventListener('DOMContentLoaded', function () {
         return outrez;
     }
 
-    function calculateMonthlyPayment(loanAmount, loanTerm, interestRate) {
-        const monthlyInterestRate = interestRate / 12; // Рассчитываем месячную процентную ставку
-        const numberOfPayments = loanTerm * 12; // Рассчитываем общее количество платежей
-
-        const monthlyPayment = (loanAmount * monthlyInterestRate) /
-            (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments)); // Рассчитываем ежемесячный платеж
-
-        return monthlyPayment.toFixed(2); // Округляем до двух знаков после запятой
-    }
-
-    function calculateTotalInterest(loanAmount, loanTerm, interestRate) {
-        const monthlyPayment = calculateMonthlyPayment(loanAmount, loanTerm, interestRate); // Рассчитываем ежемесячный платеж
-        const numberOfPayments = loanTerm * 12; // Рассчитываем общее количество платежей
-
-        const totalPayment = monthlyPayment * numberOfPayments; // Рассчитываем общую сумму выплат
-        const totalInterest = totalPayment - loanAmount; // Рассчитываем общую сумму переплаты
-
-        return totalInterest.toFixed(2); // Округляем до двух знаков после запятой
-    }
-
     let btnСonsumer = document.querySelector('.consumer .calc-option__btn');
     let btnMortgage = document.querySelector('.mortgage .calc-option__btn');
     let btnSecured = document.querySelector('.secured .calc-option__btn');
 
     btnСonsumer.addEventListener('click', function () {
 
+        function calculateMonthlyPayment(loanAmount, loanTerm, interestRate) {
+            const monthlyInterestRate = interestRate / 12; // Рассчитываем месячную процентную ставку
+            const numberOfPayments = loanTerm * 12; // Рассчитываем общее количество платежей
+    
+            const monthlyPayment = (loanAmount * monthlyInterestRate) /
+                (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments)); // Рассчитываем ежемесячный платеж
+    
+            return monthlyPayment.toFixed(2); // Округляем до двух знаков после запятой
+        }
+    
+        function calculateTotalInterest(loanAmount, loanTerm, interestRate) {
+            const monthlyPayment = calculateMonthlyPayment(loanAmount, loanTerm, interestRate); // Рассчитываем ежемесячный платеж
+            const numberOfPayments = loanTerm * 12; // Рассчитываем общее количество платежей
+    
+            const totalPayment = monthlyPayment * numberOfPayments; // Рассчитываем общую сумму выплат
+            const totalInterest = totalPayment - loanAmount; // Рассчитываем общую сумму переплаты
+    
+            return totalInterest.toFixed(2); // Округляем до двух знаков после запятой
+        }
 
         function calculateTotalPayments(loanAmount, loanTerm, interestRate) {
             const monthlyPayment = calculateMonthlyPayment(loanAmount, loanTerm, interestRate); // Рассчитываем ежемесячный платеж
@@ -380,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function () {
             textFullCost.innerHTML = numberSpace(calculateTotalCost(inputAmount, inputTerm, inputRate)) + " ₽";
             textMonthPayment.innerHTML = numberSpace(calculateMonthlyPayment(inputAmount, inputTerm, inputRate)) + " ₽";
 
-            let percentDiagram = (calculateTotalInterest(inputAmount, inputTerm, inputRate) * 100 / inputAmount).toFixed(0);
+            let percentDiagram = (calculateTotalInterest(inputAmount, inputTerm, inputRate) * 100 / calculateTotalPayments(inputAmount, inputTerm, inputRate)).toFixed(0);
             let calcDiagram = btnParent.querySelector('.calc-diagram'),
                 calcProgressValue = 0,
                 calcEndValue,
@@ -499,11 +498,10 @@ document.addEventListener('DOMContentLoaded', function () {
             textOverpay.innerHTML = numberSpace(calculateTotalInterestWithDownPayment(inputAmount, inputInitialFee, inputTerm, inputRate)) + " ₽";
             textTotalAmount.innerHTML = numberSpace(calculateTotalPaymentsWithDownPayment(inputAmount, inputInitialFee, inputTerm, inputRate)) + " ₽";
             textPercentOverpay.innerHTML = numberSpace(calculateInterestOverpaymentWithDownPayment(inputAmount, inputInitialFee, inputTerm, inputRate)) + " %";
-            // textFullCost.innerHTML = numberSpace(calculateTotalCostWithDownPayment(inputAmount, inputTerm, inputRate, inputInitialFee)) + " ₽";
             textFullCost.innerHTML = numberSpace(calculateTotalCostWithDownPayment(inputAmount, inputInitialFee, inputTerm, inputRate)) + " ₽";
             textMonthPayment.innerHTML = numberSpace(calculateMonthlyPaymentWithDownPayment(inputAmount, inputInitialFee, inputTerm, inputRate)) + " ₽";
 
-            let percentDiagram = (calculateTotalInterest(inputAmount, inputTerm, inputRate) * 100 / inputAmount).toFixed(0);
+            let percentDiagram = (calculateTotalInterestWithDownPayment(inputAmount, inputInitialFee, inputTerm, inputRate) * 100 / calculateTotalPaymentsWithDownPayment(inputAmount, inputInitialFee, inputTerm, inputRate)).toFixed(0);
             let calcDiagram = btnParent.querySelector('.calc-diagram'),
                 calcProgressValue = 0,
                 calcEndValue,
@@ -667,11 +665,10 @@ document.addEventListener('DOMContentLoaded', function () {
             textOverpay.innerHTML = numberSpace(calculateTotalInterest2(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
             textTotalAmount.innerHTML = numberSpace(calculateTotalPayments(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
             textPercentOverpay.innerHTML = numberSpace(calculateInterestOverPayment(inputAmount, inputPaymentType, inputTerm, inputRate)) + " %";
-            // textFullCost.innerHTML = numberSpace(calculateTotalCost(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
             textFullCost.innerHTML = numberSpace(calculateTotalCost(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
             textMonthPayment.innerHTML = numberSpace(calculateMonthlyPayment(inputAmount, inputPaymentType, inputTerm, inputRate)) + " ₽";
 
-            let percentDiagram = (calculateTotalInterest(inputAmount, inputTerm, inputRate) * 100 / inputAmount).toFixed(0);
+            let percentDiagram = (calculateTotalInterest2(inputAmount, inputPaymentType, inputTerm, inputRate) * 100 / calculateTotalPayments(inputAmount, inputPaymentType, inputTerm, inputRate)).toFixed(0);
             let calcDiagram = btnParent.querySelector('.calc-diagram'),
                 calcProgressValue = 0,
                 calcEndValue,
