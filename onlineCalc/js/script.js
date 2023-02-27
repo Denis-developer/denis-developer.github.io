@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Mobile tabs
-    let mobileTabs = ["Потребительский кредит", "Ипотечный калькулятор", "Залоговый калькулятор"],
+    let mobileTabs = ["Потребительский", "Ипотечный", "Залоговый"],
         tabPrev = document.querySelector('.calc-tabs__prev'),
         tabNext = document.querySelector('.calc-tabs__next'),
         tabCurrent = document.querySelector('.calc-tabs__current'),
@@ -90,6 +90,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let select = function () {
         let selectHeader = document.querySelectorAll('.select-header'),
             selectItem = document.querySelectorAll('.select-body__item'),
+            selectAll = document.querySelectorAll('.select'),
+            selectAllArrow = document.querySelectorAll('.select-header__icon'),
             body = document.querySelector('body');
 
         selectHeader.forEach(item => {
@@ -101,6 +103,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         function selectToggle() {
+            let selectAttr = this.parentElement.getAttribute('data-select');
+
+            for (let i = 0; i < selectAll.length; i++) {
+                if (selectAttr == selectAll[i].getAttribute('data-select')) {
+                    console.log('true');
+                }
+                else {
+                    selectAll[i].classList.remove('is-active');
+                    selectAll[i].querySelector('.select-header__icon').classList.remove('select-header__icon_active');
+                }
+            }
+
             this.parentElement.classList.toggle('is-active');
             this.querySelector('.select-header__icon').classList.toggle('select-header__icon_active');
             body.classList.toggle('lock');
@@ -116,6 +130,20 @@ document.addEventListener('DOMContentLoaded', function () {
             selectArrow.classList.remove('select-header__icon_active');
             body.classList.toggle('lock');
         }
+
+        document.addEventListener('click', function (e) {
+            let targetSelect = e.target.closest('.select');
+            if (!targetSelect) {
+                let selectAll = document.querySelectorAll('.select');
+                let selectAllArrow = document.querySelectorAll('.select-header__icon');
+                for (let i = 0; i < selectAll.length; i++) {
+                    selectAll[i].classList.remove('is-active');
+                }
+                for (let i = 0; i < selectAllArrow.length; i++) {
+                    selectAllArrow[i].classList.remove('select-header__icon_active');
+                }
+            }
+        })
     }
 
     select();
@@ -314,20 +342,20 @@ document.addEventListener('DOMContentLoaded', function () {
         function calculateMonthlyPayment(loanAmount, loanTerm, interestRate) {
             const monthlyInterestRate = interestRate / 12; // Рассчитываем месячную процентную ставку
             const numberOfPayments = loanTerm * 12; // Рассчитываем общее количество платежей
-    
+
             const monthlyPayment = (loanAmount * monthlyInterestRate) /
                 (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments)); // Рассчитываем ежемесячный платеж
-    
+
             return monthlyPayment.toFixed(2); // Округляем до двух знаков после запятой
         }
-    
+
         function calculateTotalInterest(loanAmount, loanTerm, interestRate) {
             const monthlyPayment = calculateMonthlyPayment(loanAmount, loanTerm, interestRate); // Рассчитываем ежемесячный платеж
             const numberOfPayments = loanTerm * 12; // Рассчитываем общее количество платежей
-    
+
             const totalPayment = monthlyPayment * numberOfPayments; // Рассчитываем общую сумму выплат
             const totalInterest = totalPayment - loanAmount; // Рассчитываем общую сумму переплаты
-    
+
             return totalInterest.toFixed(2); // Округляем до двух знаков после запятой
         }
 

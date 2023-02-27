@@ -30,7 +30,7 @@
   font-size: 34px;
   font-weight: 700;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .main-contact {
@@ -1095,7 +1095,7 @@ body {
     padding: 15px;
   }
   .calc-tabs__current {
-    font-size: 14px;
+    font-size: 5vw;
     padding-top: 18px;
     padding-bottom: 12px;
   }
