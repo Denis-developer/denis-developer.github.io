@@ -106,10 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let selectAttr = this.parentElement.getAttribute('data-select');
 
             for (let i = 0; i < selectAll.length; i++) {
-                if (selectAttr == selectAll[i].getAttribute('data-select')) {
-                    console.log('true');
-                }
-                else {
+                if (!(selectAttr == selectAll[i].getAttribute('data-select'))) {
                     selectAll[i].classList.remove('is-active');
                     selectAll[i].querySelector('.select-header__icon').classList.remove('select-header__icon_active');
                 }
@@ -134,8 +131,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.addEventListener('click', function (e) {
             let targetSelect = e.target.closest('.select');
             if (!targetSelect) {
-                let selectAll = document.querySelectorAll('.select');
-                let selectAllArrow = document.querySelectorAll('.select-header__icon');
                 for (let i = 0; i < selectAll.length; i++) {
                     selectAll[i].classList.remove('is-active');
                 }
@@ -254,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Adaptove mobile select
+    // Adaptive mobile select
     const allSelect = document.querySelectorAll('.select-body');
 
     const setHeight = function () {
