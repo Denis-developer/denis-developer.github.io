@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Show/hide quiz block
     let quizBlock = document.querySelectorAll('.main-quiz__block');
     let quizBlockAnswer = document.querySelectorAll('.main-quiz__answer');
     let quizQuizSuccess = document.querySelector('.main-quiz_success');
-    let quizBlockIndex = 0;
     let quizTransition = 600;
     let quizAnswer = [];
 
@@ -28,19 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    function formSendSuccess() {
-        for (let i = 0; i < quizBlock.length; i++) {
-            quizBlock[i].style.opacity = "0";;
-            setTimeout(function () {
-                quizBlock[i].classList.remove('active');
-                quizQuizSuccess.classList.add('active');
-            }, quizTransition);
-
-            setTimeout(function () {
-                quizQuizSuccess.style.opacity = "1";
-            }, quizTransition + 10)
-        }
-    }
 
     // Validate form
     const form = document.querySelectorAll('.form');
@@ -49,6 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const formFullName = form[i].querySelector('.main-form__input[name="name"]'),
             formTel = form[i].querySelector('.main-form__input[name="tel"]'),
             formEmail = form[i].querySelector('.main-form__input[name="email"]');
+
+        const textName = document.querySelector('.main-quizSuccess__title span'),
+            textEmail = document.querySelector('.main-quizSuccess__text span');
 
         let formSuccess = 0;
         let formInput = 0;
@@ -59,7 +49,18 @@ document.addEventListener('DOMContentLoaded', function () {
             formInput = 0;
             validateInputs();
             if (formSuccess == formInput) {
-                formSendSuccess();
+                var data = {
+                    'name': formFullName.value,
+                    'email': formEmail.value,
+                    'phone': formTel.value,
+                    'custom_array': quizAnswer
+                  };
+                $.ajax({
+                    type: "POST",
+                    url: "mailer/smart.php",
+                    data: data
+                }).done(formSendSuccess());
+                return false;
             }
         })
 
@@ -78,11 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return re.test(String(tel).toLowerCase());
         }
 
-        const isValidFullName = name => {
-            const re = /^[a-zA-Zа-яА-ЯёЁ'][a-zA-Z-а-яА-ЯёЁ' ]+[a-zA-Zа-яА-ЯёЁ']?$/;
-            return re.test(String(name));
-        }
-
         const isValidEmail = email => {
             const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(String(email).toLowerCase());
@@ -95,9 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 formInput++;
                 const usernameValue = formFullName.value.trim();
                 if (usernameValue === "") {
-                    setError(formFullName);
-                }
-                else if (!isValidFullName(usernameValue)) {
                     setError(formFullName);
                 }
                 else {
@@ -136,9 +129,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }
+        function formSendSuccess() {
+            for (let i = 0; i < quizBlock.length; i++) {
+                quizBlock[i].style.opacity = "0";;
+                setTimeout(function () {
+                    quizBlock[i].classList.remove('active');
+                    quizQuizSuccess.classList.add('active');
+                }, quizTransition);
+
+                setTimeout(function () {
+                    quizQuizSuccess.style.opacity = "1";
+                }, quizTransition + 10)
+            }
+            textName.innerHTML = formFullName.value;
+            textEmail.innerHTML = formEmail.value;
+        }
     }
-
-
 
 
 })
