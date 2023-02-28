@@ -183,7 +183,17 @@ document.addEventListener('DOMContentLoaded', function () {
             formInput = 0;
             validateInputs();
             if (formSuccess == formInput) {
-                // form.submit();
+                $.ajax({
+                    type: "POST",
+                    url: "mailer/smart.php",
+                    data: $(this).serialize()
+                }).done(function () {
+                    $(this).find("input").val("");
+                    $('form').trigger('reset');
+                    $('form input').removeClass('success');
+                    $('.main-form__message').addClass('active');
+                });
+                return false;
             }
         })
 

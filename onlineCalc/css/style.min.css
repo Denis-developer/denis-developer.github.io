@@ -37,6 +37,7 @@
   padding: 60px;
   border-radius: 20px;
   background: #f2f2f2;
+  position: relative;
 }
 
 .main-contact__text {
@@ -50,6 +51,17 @@
   font-weight: 700;
   color: #333;
   margin-bottom: 30px;
+}
+
+.main-form__message {
+  position: relative;
+  top: 15px;
+  text-align: center;
+  display: none;
+}
+
+.main-form__message.active {
+  display: block;
 }
 
 .main-form__input {
@@ -1090,6 +1102,9 @@ body {
   }
   .main-contact__title {
     font-size: 9.2vw;
+  }
+  .main-form__message {
+    top: 10px;
   }
   .calc-content {
     padding: 15px;
