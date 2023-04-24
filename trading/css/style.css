@@ -53,7 +53,7 @@ body {
 }
 
 .main-content.last h2{
-    font-size: 48px;
+    font-size: 32px;
 }
 
 .main__title {
@@ -103,6 +103,6 @@ body {
         padding: 0;
     }
     .main-content.last h2 {
-        font-size: 28px;
+        font-size: 24px;
     }
 }
