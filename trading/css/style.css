@@ -52,8 +52,11 @@ body {
     margin-bottom: 10px;
 }
 
+.main-content.last{
+    font-size: 24px
+}
 .main-content.last h2{
-    font-size: 32px;
+    font-size: 24px
 }
 
 .main__title {
