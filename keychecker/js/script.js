@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // aside accordions 
-    const accordions = document.querySelectorAll('.options__title:not(:first-child)');
+    const accordions = document.querySelectorAll('.accordion');
 
 
     for (let i = 0; i < accordions.length; i++) {
@@ -9,14 +9,30 @@ document.addEventListener('DOMContentLoaded', function () {
             const accordionContent = accordions[i].nextElementSibling;
             const accordionIcon = accordions[i].querySelector('img');
             if (accordionContent.style.maxHeight == "") {
-                accordionContent.style.maxHeight = accordionContent.scrollHeight + 20 + "px";
-                accordionContent.style.paddingBottom = "20px";
-                accordionIcon.style.transform = 'rotate(180deg)';
+                if (accordionContent.classList.contains('options-list')) {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 20 + "px";
+                    accordionContent.style.paddingBottom = "20px";
+                    accordionIcon.style.transform = 'rotate(180deg)';
+                }
+                else {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+                    accordionContent.style.marginTop = "16px";
+                    accordionIcon.style.transform = 'rotate(0deg)';
+                }
+
             }
             else {
-                accordionContent.style.maxHeight = null;
-                accordionContent.style.paddingBottom = "0px";
-                accordionIcon.style.transform = 'rotate(0deg)';
+                if (accordionContent.classList.contains('options-list')) {
+                    accordionContent.style.maxHeight = null;
+                    accordionContent.style.paddingBottom = "0px";
+                    accordionIcon.style.transform = 'rotate(0deg)';
+                }
+                else {
+                    accordionContent.style.maxHeight = null;
+                    accordionContent.style.marginTop = "0px";
+                    accordionIcon.style.transform = 'rotate(-90deg)';
+                }
+
             }
         })
     }
@@ -154,5 +170,138 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     select();
+
+    // Dynamic Adaptive
+    const parent_original = document.querySelectorAll('.reviews-block'),
+        parent = document.querySelectorAll('.reviews__content'),
+        item = document.querySelectorAll('.reviews-service');
+
+    const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+    if (viewport_width <= 576) {
+        if (!item[0].classList.contains('done')) {
+            for (let i = 0; i < parent.length; i++) {
+                parent[i].insertBefore(item[i], parent[i].children[1]);
+                item[i].classList.add('done');
+            }
+        }
+    }
+
+    window.addEventListener('resize', function (event) {
+        const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        if (viewport_width <= 576) {
+            if (!item[0].classList.contains('done')) {
+                for (let i = 0; i < parent.length; i++) {
+                    parent[i].insertBefore(item[i], parent[i].children[1]);
+                    item[i].classList.add('done');
+                }
+            }
+        }
+        else {
+            if (item[0].classList.contains('done')) {
+                for (let i = 0; i < parent.length; i++) {
+                    parent_original[i].insertBefore(item[i], parent_original[i].children[1]);
+                    item[i].classList.remove('done');
+                }
+            }
+        }
+    });
+
+
+    const form = document.querySelectorAll('.about-form');
+
+    for (let i = 0; i < form.length; i++) {
+        const formEmail = form[i].querySelector('.about-form__input[name="email"]'),
+            formText = form[i].querySelectorAll('.text-validate');
+
+        let formSuccess = 0;
+        let formInput = 0;
+
+        form[i].addEventListener('submit', formSend);
+
+        async function formSend(e) {
+            e.preventDefault();
+            formSuccess = 0;
+            formInput = 0;
+            validateInputs();
+
+            // let formData = new FormData(form[i]);
+
+            // Добавление массива
+            // for (let z = 0; z < quizAnswer.length; z++) {
+            //     formData.append('arr[]', quizAnswer[z]);
+            // }
+
+            // if (formSuccess == formInput) {
+            //     let response = await fetch('mailer/smart.php', {
+            //         method: 'POST',
+            //         body: formData
+            //     })
+            //     if (response.ok) {
+            //         console.log('Ok');
+            //     }
+            // }
+        }
+
+        const setError = (element) => {
+            element.classList.add('error');
+            element.classList.remove('success');
+        }
+
+        const setSuccess = (element) => {
+            element.classList.add('success');
+            element.classList.remove('error');
+        }
+
+        const isValidName = name => {
+            const re = /^[a-zA-Zа-яА-ЯёЁ'][a-zA-Z-а-яА-ЯёЁ' ]+[a-zA-Zа-яА-ЯёЁ']?$/;
+            return re.test(String(name));
+        }
+
+        const isValidEmail = email => {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        const validateInputs = () => {
+
+            // Username validate
+            if (formText) {
+                for (let i = 0; i < formText.length; i++) {
+                    formInput++;
+                    const textValue = formText[i].value.trim();
+                    if (textValue === "") {
+                        setError(formText[i]);
+                    }
+                    else if (!isValidName(textValue)) {
+                        setError(formText[i]);
+                    }
+                    else {
+                        setSuccess(formText[i]);
+                        formSuccess++;
+                    }
+                }
+            }
+
+            // Email validate
+            if (formEmail) {
+                formInput++;
+                const emailValue = formEmail.value.trim();
+                if (emailValue === "") {
+                    setError(formEmail);
+                }
+                else if (!isValidEmail(emailValue)) {
+                    setError(formEmail);
+                }
+                else {
+                    setSuccess(formEmail);
+                    formSuccess++;
+                }
+            }
+        }
+    }
+
+
+
 
 })
