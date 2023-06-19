@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     accordionIcon.style.transform = 'rotate(180deg)';
                 }
                 else {
-                    accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-                    accordionContent.style.marginTop = "16px";
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 16 + "px";
+                    accordionContent.style.paddingBottom = "16px";
                     accordionIcon.style.transform = 'rotate(0deg)';
                 }
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 else {
                     accordionContent.style.maxHeight = null;
-                    accordionContent.style.marginTop = "0px";
+                    accordionContent.style.paddingBottom = "0px";
                     accordionIcon.style.transform = 'rotate(-90deg)';
                 }
 
@@ -90,19 +90,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Burger menu
     const menuBurger = document.querySelector('.header__hamburger');
+    const menuMobile = document.querySelector('.header .nav');
 
-    if (menuBurger) {
-        const menuMobile = document.querySelector('.header .nav');
-        menuBurger.addEventListener('click', function (e) {
-            document.body.classList.toggle('lock')
-            menuBurger.classList.toggle('active');
-            menuMobile.classList.toggle('active');
-            window.scrollTo(0, 0);
-        })
-    }
+    menuBurger.addEventListener('click', function (e) {
+        document.body.classList.toggle('lock')
+        menuBurger.classList.toggle('active');
+        menuMobile.classList.toggle('active');
+        window.scrollTo(0, 0);
+    })
 
     // Filter
-    const filterBtn = document.querySelector('.service__filter');
+    const filterBtn = document.querySelector('.catalog__filter');
     const filterClose = document.querySelector('.options__close');
 
     if (filterBtn) {
@@ -133,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         function selectToggle() {
+            selectHeader[0].classList.remove('error');
             let selectAttr = this.parentElement.getAttribute('data-select');
 
             for (let i = 0; i < selectAll.length; i++) {
@@ -178,19 +177,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
-    if (viewport_width <= 576) {
-        if (!item[0].classList.contains('done')) {
-            for (let i = 0; i < parent.length; i++) {
-                parent[i].insertBefore(item[i], parent[i].children[1]);
-                item[i].classList.add('done');
-            }
+    if (viewport_width <= 576 && item[0] && !item[0].classList.contains('done')) {
+        for (let i = 0; i < parent.length; i++) {
+            parent[i].insertBefore(item[i], parent[i].children[1]);
+            item[i].classList.add('done');
         }
     }
+
 
     window.addEventListener('resize', function (event) {
         const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         if (viewport_width <= 576) {
-            if (!item[0].classList.contains('done')) {
+            if (item[0] && !item[0].classList.contains('done')) {
                 for (let i = 0; i < parent.length; i++) {
                     parent[i].insertBefore(item[i], parent[i].children[1]);
                     item[i].classList.add('done');
@@ -198,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
         else {
-            if (item[0].classList.contains('done')) {
+            if (item[0] && item[0].classList.contains('done')) {
                 for (let i = 0; i < parent.length; i++) {
                     parent_original[i].insertBefore(item[i], parent_original[i].children[1]);
                     item[i].classList.remove('done');
@@ -208,11 +206,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    const form = document.querySelectorAll('.about-form');
+    const form = document.querySelectorAll('.form');
 
     for (let i = 0; i < form.length; i++) {
-        const formEmail = form[i].querySelector('.about-form__input[name="email"]'),
-            formText = form[i].querySelectorAll('.text-validate');
+        const formEmail = form[i].querySelector('.input[name="email"]'),
+            formSelect = form[i].querySelector('.select-header__item'),
+            formRating = form[i].querySelector('.addReview-rating__items'),
+            formText = form[i].querySelectorAll('.text-validate'),
+            formName = form[i].querySelectorAll('.name-validate');
 
         let formSuccess = 0;
         let formInput = 0;
@@ -232,15 +233,15 @@ document.addEventListener('DOMContentLoaded', function () {
             //     formData.append('arr[]', quizAnswer[z]);
             // }
 
-            // if (formSuccess == formInput) {
-            //     let response = await fetch('mailer/smart.php', {
-            //         method: 'POST',
-            //         body: formData
-            //     })
-            //     if (response.ok) {
-            //         console.log('Ok');
-            //     }
-            // }
+            if (formSuccess == formInput) {
+                // let response = await fetch('mailer/smart.php', {
+                //     method: 'POST',
+                //     body: formData
+                // })
+                // if (response.ok) {
+                //     console.log('Ok');
+                // }
+            }
         }
 
         const setError = (element) => {
@@ -265,19 +266,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const validateInputs = () => {
 
+            // Название сервиса
+            if (formSelect) {
+                formInput++;
+                if (formSelect.innerHTML == "") {
+                    setError(formSelect.closest('.select-header'));
+                }
+                else {
+                    setSuccess(formSelect.closest('.select-header'));
+                    formSuccess++;
+                }
+            }
+
+            // Общая оценка
+            if (formRating) {
+                formInput++;
+                if (formRating.getAttribute('data-total-value') == "0") {
+                }
+                else {
+                    formSuccess++;
+                }
+            }
+
             // Username validate
-            if (formText) {
-                for (let i = 0; i < formText.length; i++) {
+            if (formName) {
+                for (let i = 0; i < formName.length; i++) {
                     formInput++;
-                    const textValue = formText[i].value.trim();
-                    if (textValue === "") {
-                        setError(formText[i]);
+                    const nameValue = formName[i].value.trim();
+                    if (nameValue === "") {
+                        setError(formName[i]);
                     }
-                    else if (!isValidName(textValue)) {
-                        setError(formText[i]);
+                    else if (!isValidName(nameValue)) {
+                        setError(formName[i]);
                     }
                     else {
-                        setSuccess(formText[i]);
+                        setSuccess(formName[i]);
                         formSuccess++;
                     }
                 }
@@ -298,10 +321,77 @@ document.addEventListener('DOMContentLoaded', function () {
                     formSuccess++;
                 }
             }
+
+            // Text validate
+            if (formText) {
+                formInput++;
+                for (let i = 0; i < formText.length; i++) {
+                    if (formText[i].value.length < 2) {
+                        setError(formText[i]);
+                    }
+                    else {
+                        setSuccess(formText[i]);
+                        formSuccess++;
+                    }
+                }
+            }
         }
     }
 
+    // SWIPER SLIDER
+    if (document.querySelector('.swiper')) {
+        const swiper2 = new Swiper('.swiper_2', {
+            loop: false,
+            spaceBetween: 14,
+            slidesPerView: 4,
+        });
 
+        const swiper1 = new Swiper('.swiper_1', {
+            loop: false,
+            navigation: {
+                nextEl: '.service-slider__next',
+                prevEl: '.service-slider__prev',
+            },
+            thumbs: {
+                swiper: swiper2,
+            }
+        });
+    }
 
+    // SmoothScroll anchor
+    let linkNav = document.querySelectorAll('[href^="#"]'),
+        V = 0.5;
+    for (let i = 0; i < linkNav.length; i++) {
+        linkNav[i].addEventListener('click', function (e) {
+            e.preventDefault();
+            let w = window.pageYOffset,
+                hash = this.href.replace(/[^#]*(.*)/, '$1');
+            t = document.querySelector(hash).getBoundingClientRect().top,
+                start = null;
+            requestAnimationFrame(step);
+            function step(time) {
+                if (start === null) start = time;
+                let progress = time - start,
+                    r = (t < 0 ? Math.max(w - progress / V, w + t) : Math.min(w + progress / V, w + t));
+                window.scrollTo(0, r);
+                if (r != w + t) {
+                    requestAnimationFrame(step)
+                } else {
+                    location.hash = hash
+                }
+            }
+        }, false);
+    }
+
+    // RATING
+    const ratingItemsList = document.querySelectorAll('.addReview-rating__items svg');
+    const ratingItemsArray = Array.prototype.slice.call(ratingItemsList);
+
+    ratingItemsArray.forEach(item =>
+        item.addEventListener('click', () => {
+            const { itemValue } = item.dataset;
+            item.parentNode.dataset.totalValue = itemValue;
+        })
+    )
 
 })
