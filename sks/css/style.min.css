@@ -205,8 +205,8 @@ body {
   font-size: 33px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-top: 110px;
-  margin-bottom: 70px;
+  margin-top: 16vh;
+  margin-bottom: 12vh;
 }
 
 .main__title span {
