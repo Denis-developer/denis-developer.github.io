@@ -1,8 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    let form = document.querySelectorAll('form');
+
+    for (let i = 0; i < form.length; i++) {
+        form[i].addEventListener('submit', formSend);
+
+        async function formSend(e) {
+            e.preventDefault();
+            form[i].querySelector('.compare-form__load').style.opacity = "1";
+
+            let formData = new FormData(form[i]);
+
+            let response = await fetch('mailer/smart.php', {
+                method: 'POST',
+                body: formData
+            })
+            if (response.ok) {
+                form[i].querySelector('.compare-form__success').style.display = "block";
+                form[i].querySelector('.compare-form__load').style.opacity = "0";
+            }
+        }
+
+    }
+
+
+    // JQUERY MASK INPUT
     jQuery(function ($) {
         $("input[type='tel']").mask("+7 (999) 999-9999");
     });
+
+    // POPUPS
 
     const popupLinks = document.querySelectorAll('.popup-link'),
         body = document.querySelector('body'),

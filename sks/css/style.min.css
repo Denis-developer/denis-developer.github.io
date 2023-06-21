@@ -390,6 +390,33 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
+  z-index: 2;
+}
+
+.compare-form__load {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  opacity: 0;
+}
+
+.compare-form__success {
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: -15px;
+  display: none;
 }
 
 .compare-form__img {
