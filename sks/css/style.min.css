@@ -169,15 +169,22 @@ body {
   z-index: 1;
 }
 
+.main__video video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .main__wrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#000), to(transparent));
-  background: -o-linear-gradient(left, #000, transparent);
-  background: linear-gradient(to right, #000, transparent);
+  background: -webkit-gradient(linear, left top, right top, color-stop(30%, rgba(0, 0, 0, 0.6)), to(transparent));
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.6) 30%, transparent);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 30%, transparent);
   z-index: 2;
 }
 
@@ -759,6 +766,9 @@ body.lock {
   }
   .main__title {
     font-size: 30px;
+  }
+  .offers {
+    padding-top: 40px;
   }
   .offers__title {
     font-size: 30px;
