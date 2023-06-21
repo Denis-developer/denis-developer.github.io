@@ -107,7 +107,7 @@ body {
 }
 
 .wrapper {
-  background: url(../img/bg_1.png) no-repeat center/cover;
+  background: url(../img/bg_1.png) repeat center/cover;
 }
 
 .header {
@@ -166,17 +166,20 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 1;
 }
 
 .main__video video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.main__wrapper {
+.main__video::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -185,7 +188,7 @@ body {
   background: -webkit-gradient(linear, left top, right top, color-stop(30%, rgba(0, 0, 0, 0.6)), to(transparent));
   background: -o-linear-gradient(left, rgba(0, 0, 0, 0.6) 30%, transparent);
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 30%, transparent);
-  z-index: 2;
+  z-index: 1;
 }
 
 .main-logo {
@@ -262,6 +265,7 @@ body {
 .logistics {
   padding: 35px 0px;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .logistics__title {
@@ -273,15 +277,17 @@ body {
 
 .logistics__wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  -webkit-column-gap: 35px;
-     -moz-column-gap: 35px;
-          column-gap: 35px;
-  row-gap: 45px;
+  grid-template-columns: repeat(auto-fill, minmax(302px, 1fr));
+  -webkit-column-gap: 60px;
+     -moz-column-gap: 60px;
+          column-gap: 60px;
+  row-gap: 60px;
 }
 
 .logistics-block {
   text-align: left;
+  width: 302px;
+  margin: 0 auto;
 }
 
 .logistics-block__title {
@@ -289,20 +295,50 @@ body {
   font-weight: 700;
   color: #242424;
   margin-top: 25px;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
-.logistics-block:nth-child(1) .logistics-block__title, .logistics-block:nth-child(4) .logistics-block__title {
-  padding-left: 45px;
-}
-
-.logistics-block:nth-child(2) .logistics-block__title, .logistics-block:nth-child(5) .logistics-block__title {
-  padding-left: 35px;
-}
-
-.logistics-block:nth-child(4) .logistics-block__img {
+.logistics-block__img {
   position: relative;
-  left: -35px;
+}
+
+.logistics-block__img_1 {
+  -webkit-box-shadow: 20px 20px 30px 1px #414141;
+          box-shadow: 20px 20px 30px 1px #414141;
+}
+
+.logistics-block__img_2 {
+  position: absolute;
+}
+
+.logistics-block:nth-child(1) .logistics-block__img_2 {
+  left: -37px;
+  bottom: 18px;
+}
+
+.logistics-block:nth-child(2) .logistics-block__img_2 {
+  left: -25px;
+  top: 0px;
+}
+
+.logistics-block:nth-child(3) .logistics-block__img_2 {
+  right: 0px;
+  bottom: -7px;
+}
+
+.logistics-block:nth-child(4) .logistics-block__img_2 {
+  left: -66px;
+  top: -18px;
+}
+
+.logistics-block:nth-child(5) .logistics-block__img_2 {
+  left: -22px;
+  bottom: -15px;
+}
+
+.logistics-block:nth-child(6) .logistics-block__img_2 {
+  left: 0px;
+  bottom: -18px;
 }
 
 .compare {
@@ -489,6 +525,8 @@ body {
   width: 400px;
   position: relative;
   z-index: 3;
+  -webkit-box-shadow: 10px 10px 25px #414141;
+          box-shadow: 10px 10px 25px #414141;
 }
 
 .contact-block__btn {
@@ -497,17 +535,6 @@ body {
 
 .contact-block__wrapper {
   position: relative;
-}
-
-.contact-block_2 {
-  position: absolute;
-  z-index: 1;
-  width: 400px;
-  height: 100%;
-  background-color: #646464;
-  position: absolute;
-  left: 13px;
-  top: 13px;
 }
 
 .contact-block__item {
@@ -682,31 +709,10 @@ body.lock {
     font-size: 5vw;
   }
 }
-@media (max-width: 830px) {
-  .logistics__wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .logistics-block {
-    text-align: center;
-    max-width: 400px;
-  }
-  .logistics-block__img {
-    max-width: 100%;
-  }
-  .logistics-block__title {
-    padding: 0 !important;
-  }
-}
 @media (max-width: 800px) {
+  .wrapper {
+    background: url(../img/bg_1.png) repeat top;
+  }
   .header-nav {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -734,6 +740,9 @@ body.lock {
   .compare-content__title {
     margin: 0;
     margin-bottom: 20px;
+  }
+  .contact {
+    background: url(../img/bg_2.png) repeat top;
   }
   .contact__wrapper {
     -webkit-box-orient: vertical;
