@@ -225,22 +225,16 @@ document.addEventListener('DOMContentLoaded', function () {
             formSuccess = 0;
             formInput = 0;
             validateInputs();
-
-            // let formData = new FormData(form[i]);
-
-            // Добавление массива
-            // for (let z = 0; z < quizAnswer.length; z++) {
-            //     formData.append('arr[]', quizAnswer[z]);
-            // }
+            let recaptcha = grecaptcha.getResponse();
 
             if (formSuccess == formInput) {
-                // let response = await fetch('mailer/smart.php', {
-                //     method: 'POST',
-                //     body: formData
-                // })
-                // if (response.ok) {
-                //     console.log('Ok');
-                // }
+
+                if (recaptcha.length === 0) {
+                    alert("Пожалуйста, подтвердите, что вы не робот.");
+                }
+                else {
+                    
+                }
             }
         }
 
@@ -324,8 +318,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Text validate
             if (formText) {
-                formInput++;
                 for (let i = 0; i < formText.length; i++) {
+                    formInput++;
                     if (formText[i].value.length < 2) {
                         setError(formText[i]);
                     }

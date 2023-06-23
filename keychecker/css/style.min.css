@@ -225,6 +225,12 @@ main {
   margin-left: 6px;
   font-size: 14px;
   font-weight: 400;
+  text-decoration: none;
+  color: #222;
+}
+
+.g-recaptcha {
+  grid-column: 1/3;
 }
 
 .header {
@@ -478,12 +484,16 @@ main {
           align-items: flex-start;
 }
 
-.catalog-block__name {
-  font-weight: 700;
-  color: #222;
+.catalog-block__wrapper {
   margin-left: 14px;
   margin-top: -2px;
   line-height: 110%;
+}
+
+.catalog-block__name {
+  font-weight: 700;
+  color: #222;
+  text-decoration: none;
 }
 
 .catalog-block__link {
@@ -502,6 +512,8 @@ main {
 .catalog-block__logo {
   width: 126px;
   text-align: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .catalog-block__logo img {
@@ -845,8 +857,7 @@ main {
           align-items: center;
 }
 
-.reviews-service__name {
-  font-weight: 700;
+.reviews-service__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -859,13 +870,16 @@ main {
           align-items: center;
 }
 
-.reviews-service__name h3 {
-  margin-top: 30px;
-  line-height: 100%;
+.reviews-service__wrapper .rating {
+  margin-top: 2px;
 }
 
-.reviews-service__name .rating {
-  margin-top: 2px;
+.reviews-service__name {
+  font-weight: 700;
+  margin-top: 25px;
+  line-height: 100%;
+  color: #222;
+  text-decoration: none;
 }
 
 .about-question__title {
@@ -1026,6 +1040,20 @@ main {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.addReview-form__text {
+  grid-column: 1/3;
+  color: #777;
+}
+
+.addReview-form__text a {
+  text-decoration: none;
+  color: #3b71fe;
+}
+
+.addReview-form__text a:hover {
+  text-decoration: underline;
 }
 
 .addReview-form .select {
@@ -1322,7 +1350,6 @@ main {
 }
 
 .service-video__data {
-  color: #999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1334,7 +1361,7 @@ main {
   row-gap: 10px;
 }
 
-.service-video__data span {
+.service-video__data span, .service-video__data a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1342,9 +1369,11 @@ main {
       -ms-flex-align: center;
           align-items: center;
   margin-right: 34px;
+  text-decoration: none;
+  color: #999;
 }
 
-.service-video__data span img {
+.service-video__data span img, .service-video__data a img {
   margin-right: 6px;
 }
 
@@ -1639,7 +1668,7 @@ main {
   .reviews-service__logo {
     margin-right: 20px;
   }
-  .reviews-service__name h3 {
+  .reviews-service__name {
     margin: 0;
   }
   .form {
