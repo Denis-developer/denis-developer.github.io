@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модальные окна</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <a href="#popup1" class="popup-link">Modal</a>
+
+    <div class="popup" id="popup1">
+        <div class="popup__body">
+            <div class="popup-content">
+                <a href="#" class="popup__close">
+                    <img src="img/icons/close-icon.svg" alt="">
+                </a>
+                <p class="popup-content__title">оплатите доступ</p>
+                <div class="popup-cost">
+                    <p class="popup-cost__price">79 ₽</p>
+                    <div class="popup-cost__wrapper">
+                        <p class="popup-cost__oldPrice">799 ₽</p>
+                        <p class="popup-cost__discount">Скидка -90%</p>
+                    </div>
+                    <img src="img/modal-arrow.png" alt="" class="popup-cost__img">
+                </div>
+                <ul class="popup-list">
+                    <li class="popup-list__item">
+                        <img src="img/icons/documents-icon.svg" alt="" class="popup-list__icon">
+                        Доступ ко всем шаблонам
+                    </li>
+                    <li class="popup-list__item">
+                        <img src="img/icons/email-icon.svg" alt="" class="popup-list__icon">
+                        Отправка на почту
+                    </li>
+                    <li class="popup-list__item">
+                        <img src="img/icons/chat-icon.svg" alt="" class="popup-list__icon">
+                        Приоритетная тех. поддержка
+                    </li>
+                </ul>
+                <input type="checkbox" class="popup-content__checkbox" id="checkbox1">
+                <label for="checkbox1" class="popup-content__label">Подключить функцию продления работы личного кабинета
+                    на неограниченный период. По истечению оплаченного периода даю согласие на использования полного
+                    функционала конструктора, подписку, стоимостью 297 рублей в месяц. Вы можете отключить продление в
+                    любой момент. </label>
+                <p class="popup-content__text">
+                    Оплачивая здесь, вы соглашаетесь с
+                    <a href="#" class="popup-content__link">лицензионным соглашением</a>
+                </p>
+                <div class="popup-content__wrapper">
+                    <a href="#" class="popup-content__btn">Оплатить доступ</a>
+                    <div class="popup-protect">
+                        <div class="popup-protect__block">
+                            <img src="img/icons/lock-icon.svg" alt="" class="popup-protect__icon">
+                        </div>
+                        <p class="popup-protect__text">Данные защищены по стандарту PCI DSS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

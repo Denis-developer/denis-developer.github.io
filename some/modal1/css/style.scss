@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+body.lock {
+    overflow: hidden;
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all .8s;
+
+    &__body {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 10px;
+    }
+
+    &__close {
+        text-decoration: none;
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        transition: all 0.3s;
+
+        &:hover {
+            filter: brightness(0.8);
+        }
+    }
+
+    &-cost {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &__img {
+            position: absolute;
+            right: 24px;
+            top: 0;
+        }
+
+        &__price {
+            color: #09425d;
+            font-size: 64px;
+            font-weight: 800;
+            margin-right: 16px;
+        }
+
+        &__oldPrice {
+            color: #7a8f99;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            text-decoration-line: line-through;
+        }
+
+        &__discount {
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 0.28px;
+            text-transform: uppercase;
+            font-size: 14px;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #4DB9E6 0%, #69D2B0 100%);
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &-list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+
+        &__item {
+            color: #09425d;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        &__icon {
+            margin-right: 12px;
+        }
+    }
+
+    &-protect {
+        display: inline-flex;
+        align-items: center;
+
+        &__block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            background: #EBF3F7;
+            padding: 9px;
+            margin-right: 12px;
+        }
+
+        &__text {
+            width: 123px;
+            color: #7A8F99;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+        }
+    }
+
+    &-content {
+        background-color: #fff;
+        color: #000;
+        max-width: 520px;
+        width: 100%;
+        position: relative;
+        padding: 28px 32px 35px 32px;
+        border-radius: 4px;
+
+        &__wrapper {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap-reverse;
+            column-gap: 13px;
+            row-gap: 21px;
+            padding-left: 27px;
+        }
+
+        &__title {
+            color: #09425d;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 0.28px;
+            text-transform: uppercase;
+        }
+
+        &__text {
+            color: #7A8F99;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            padding-left: 30px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+        }
+
+        &__link {
+            color: #01a0e2;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &__btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            border-radius: 4px;
+            border: 3px solid #C2E8F8;
+            background: #01A0E2;
+            padding: 11px 20px 11px 17px;
+            font-size: 16px;
+            font-family: Arial;
+            font-weight: 400;
+            line-height: 16px;
+            text-decoration: none;
+            transition: all 0.4s;
+
+            &:hover {
+                background: #09425d;
+            }
+        }
+
+        &__label {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            margin-left: 30px;
+            color: #7A8F99;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: -28px;
+                top: 1px;
+                width: 16px;
+                height: 16px;
+                border-radius: 4px;
+                border: 1px solid #7A8F99;
+            }
+        }
+
+        &__checkbox {
+            display: none;
+
+            &:checked {
+                &+.popup-content__label::before {
+                    background: url(../img/icons/check-icon.svg) no-repeat center center;
+                }
+            }
+        }
+
+    }
+}
+
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 576px) {
+    .popup {
+        &-cost {
+            &__price {
+                font-size: 56px;
+            }
+
+            &__img {
+                display: none;
+            }
+        }
+
+        &-list {
+            margin-top: 10px;
+            margin-bottom: 26px;
+        }
+
+        &-content {
+            padding: 32px 24px 35px 24px;
+
+            &__title {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .popup {
+        &-content {}
+    }
+}

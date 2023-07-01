@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модальные окна</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <a href="#popup1" class="popup-link">Modal</a>
+
+    <div class="popup" id="popup1">
+        <div class="popup__body">
+            <div class="popup-content">
+                <div class="popup-content__head">
+                    <img src="img/modal-img.png" alt="" class="popup-content__img">
+                    <a href="#" class="popup__close">
+                        <img src="img/icons/close-icon.svg" alt="">
+                    </a>
+                    <p class="popup-content__title">Оплатите доступ
+                    </p>
+                    <p class="popup-content__discount">Скидка -90%</p>
+                    <div class="popup-cost">
+                        <p class="popup-cost__price">79 ₽</p>
+                        <div class="popup-cost__wrapper">
+                            <p class="popup-cost__oldPrice">799 ₽</p>
+                            <p class="popup-cost__text">экономия 720 ₽</p>
+                        </div>
+                    </div>
+                    <div class="popup-features">
+                        <p class="popup-features__block">Премиум на 14 дней</p>
+                        <p class="popup-features__block">Доступны все функции сайта</p>
+                        <p class="popup-features__block">Гарантия качества CVzilla </p>
+                    </div>
+                </div>
+                <div class="popup-content__footer">
+                    <input type="checkbox" class="popup-content__checkbox" id="checkbox1">
+                    <label for="checkbox1" class="popup-content__label">Согласен с условиями <a href="#">лицензионного
+                            соглашения</a> и
+                        <a href="#">условиями оплаты</a></label>
+                    <input type="checkbox" class="popup-content__checkbox" id="checkbox2">
+                    <label for="checkbox2" class="popup-content__label">Подключить функцию продления личного кабинета на
+                        неограниченный период. По истечении оплаченного периода в 14 дней, тариф автоматически
+                        продлевается
+                        на 30 дней за 300 ₽. Вы в любой момент можете отключить эту функцию. <a href="#">Условия
+                            подписки</a>.</label>
+                    <div class="popup-content__wrapper">
+                        <a href="#" class="popup-content__btn">Оплатить доступ</a>
+                        <p class="popup-content__protect">
+                            <img src="img/icons/secure-icon.svg" alt="">
+                            Ваши данные защищены
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
