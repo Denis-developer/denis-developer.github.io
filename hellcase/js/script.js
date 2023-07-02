@@ -1,17 +1,18 @@
 // Получаем элемент с картинкой
-var image = document.querySelector('.sidebar__slider_1');
+let image = document.querySelector('.sidebar__slider_1');
 
-var offset = -1110;
+let offset = 0;
+let randomNumber;
 
-setInterval(function () {
-	if(offset >= 0) {
-		offset = -1110;
-	}
-	offset += 102;
-	image.style.top = offset + 'px';
-}, 500);
-
-
+function moveImage() {
+	offset -= 102;
+	image.style.bottom = offset + 'px';
+	
+	randomNumber = Math.floor(Math.random() * (2500 - 500 + 1)) + 500;
+	setTimeout(moveImage, randomNumber);
+  }
+  
+  setTimeout(moveImage, randomNumber);
 
 const popupLinks = document.querySelectorAll('.popup-link'),
 	body = document.querySelector('body'),
