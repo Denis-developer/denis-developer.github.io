@@ -7,12 +7,15 @@ let randomNumber;
 function moveImage() {
 	offset -= 102;
 	image.style.bottom = offset + 'px';
-	
+
 	randomNumber = Math.floor(Math.random() * (2500 - 500 + 1)) + 500;
-	setTimeout(moveImage, randomNumber);
-  }
-  
-  setTimeout(moveImage, randomNumber);
+	if (!(offset <= -12000)) {
+		setTimeout(moveImage, randomNumber);
+	}
+}
+
+
+setTimeout(moveImage, randomNumber);
 
 const popupLinks = document.querySelectorAll('.popup-link'),
 	body = document.querySelector('body'),
