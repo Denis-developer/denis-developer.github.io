@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
 
+@keyframes blink {
+    0% { 
+        left: -100px;
+     }
+    100% { 
+        left: 150px;
+     }
+}
+
 *,
 *::after,
 *::before {
@@ -85,6 +94,21 @@ body.lock {
             padding: 4px 12px;
             border-radius: 4px;
             background: linear-gradient(90deg, #4DB9E6 0%, #69D2B0 100%);
+            position: relative;
+            overflow: hidden;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100px;
+                width: 60px;
+                height: 100%;
+                background-color: #fff;
+                filter: blur(30px);
+                transform: skewX(-30deg);
+                transition: all 1s;
+                animation: blink 1.5s infinite;
+            }
         }
 
         &__wrapper {
@@ -200,7 +224,7 @@ body.lock {
             transition: all 0.4s;
 
             &:hover {
-                background: #09425d;
+                background: #008ddd;
             }
         }
 

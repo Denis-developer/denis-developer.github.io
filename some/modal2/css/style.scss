@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 
+@keyframes ripple {
+    20% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+        transform: scale(2.5);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+        transform: scale(2.5);
+    }
+}
+
 *,
 *::after,
 *::before {
@@ -156,6 +170,7 @@ body.lock {
             line-height: 16px;
             display: flex;
             align-items: center;
+
             img {
                 margin-right: 7px;
             }
@@ -203,9 +218,27 @@ body.lock {
             line-height: 16px;
             text-decoration: none;
             transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 350%;
+                width: 200%;
+                top: 0;
+                left: -100%;
+                background: rgba(255, 255, 255, 0.8);
+                border-radius: 100%;
+                transform: scale(0);
+                animation-name: ripple;
+                animation-duration: 3s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
 
             &:hover {
-                background: #09425d;
+                background: #008ddd;
             }
         }
 
@@ -266,7 +299,8 @@ body.lock {
             display: flex;
             flex-direction: column;
             row-gap: 5px;
-            &__block{
+
+            &__block {
                 &::before {
                     width: 4px;
                     height: 4px;
@@ -275,13 +309,16 @@ body.lock {
                 }
             }
         }
+
         &-cost {
             &__price {
                 font-size: 60px;
             }
+
             &__oldPrice {
                 font-size: 16px;
             }
+
             &__text {
                 font-size: 16px;
             }
@@ -292,13 +329,16 @@ body.lock {
                 margin-right: 8px;
                 font-size: 16px;
             }
+
             &__head {
                 padding: 34px 32px 24px 25px;
             }
+
             &__footer {
                 padding: 24px;
                 padding-bottom: 30px;
             }
+
             &__wrapper {
                 margin-top: 8px;
                 padding-left: 0;

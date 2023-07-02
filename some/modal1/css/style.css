@@ -203,7 +203,7 @@ body.lock {
   transition: all 0.4s;
 }
 .popup-content__btn:hover {
-  background: #09425d;
+  background: #008ddd;
 }
 .popup-content__label {
   display: block;

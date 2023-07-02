@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+@keyframes ripple {
+  20% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
 *,
 *::after,
 *::before {
@@ -184,9 +194,26 @@ body.lock {
   line-height: 16px;
   text-decoration: none;
   transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+.popup-content__btn::before {
+  content: "";
+  position: absolute;
+  height: 350%;
+  width: 200%;
+  top: 0;
+  left: -100%;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 100%;
+  transform: scale(0);
+  animation-name: ripple;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 .popup-content__btn:hover {
-  background: #09425d;
+  background: #008ddd;
 }
 .popup-content__label {
   display: block;
