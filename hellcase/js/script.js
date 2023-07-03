@@ -1,4 +1,44 @@
-// Получаем элемент с картинкой
+let onlineNumber = document.querySelector('.header-online__text');
+
+function numberSpace(value) {
+    let outrez = (value + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    return outrez;
+}
+
+function smoothRandomize(startValue, min, max, callback) {
+	var currentValue = startValue;
+	var range = max - min;
+  
+	var interval = setInterval(function() {
+	  var randomOffset = getRandomValue(2, 10) * (Math.random() < 0.5 ? -1 : 1);
+	  currentValue += randomOffset;
+	  
+	  // Проверяем, чтобы значение не выходило за границы диапазона
+	  if (currentValue < min) {
+		currentValue = min;
+	  } else if (currentValue > max) {
+		currentValue = max;
+	  }
+	  
+	  // Сохраняем текущее значение в переменной onlineNumber
+	  var onlineNumber = currentValue;
+	  
+	  // Вызываем функцию обратного вызова и передаем текущее значение
+	  callback(onlineNumber);
+	}, 4000);
+  
+	function getRandomValue(min, max) {
+	  return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+  }
+ 
+  smoothRandomize(6908, 5000, 8000, function(value) {
+	// Обновляем значение элемента HTML
+	onlineNumber.innerHTML = numberSpace(value);
+  });
+  
+
+
 let image = document.querySelector('.sidebar__slider_1');
 
 let offset = 0;
