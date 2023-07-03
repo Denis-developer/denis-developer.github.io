@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модальные окна</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <a href="#popup1" class="popup-link">Modal</a>
+
+    <div class="popup" id="popup1">
+        <div class="popup__body">
+            <div class="popup-content">
+                <a href="#" class="popup__close">&times;</a>
+                <p class="popup-content__title">Вход в личный кабинет</p>
+                <p class="popup-content__subtitle">
+                    Создать аккаунт?
+                    <a href="#" class="popup-content__link">Регистрация</a>
+                </p>
+                <form action="#" class="popup-form">
+                    <input type="text" class="popup-form__input" placeholder="Логин" required>
+                    <div class="popup-form__wrapper">
+                        <input type="password" class="popup-form__input popup-form__pass" placeholder="Пароль" required>
+                        <img src="img/icons/view-password.svg" alt="" class="popup-form__icon">
+                    </div>
+                    <a href="#" class="popup-content__link">Забыли пароль?</a>
+                    <button type="submit" class="popup-form__btn"><span>Войти</span></button>
+                </form>
+                <p class="popup-content__text">Нажимая "Войти" вы соглашаетесь с <a href="#">лицензионным
+                        соглашением</a></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
