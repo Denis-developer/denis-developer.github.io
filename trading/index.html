@@ -1,200 +1,380 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Проверка сделки</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <main class="main">
-        <div class="container">
-            <h1 class="main__title">Проверка сделки</h1>
-            <div class="main-content active">
-                <h2 class="main-content__title">Какой фон?</h2>
-                <div class="main-block">
-                    <div class="main-item">
-                        <h3 class="main-item__title">Флет</h3>
-                        <img src="img/bg_1.png" alt="" class="main-block__img" data-success="1">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Флет треугольник</h3>
-                        <img src="img/bg_2.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Ретест</h3>
-                        <img src="img/bg_3.png" alt="" class="main-block__img" data-success="1">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Контр тренд</h3>
-                        <img src="img/bg_4.png" alt="" class="main-block__img" data-success="1">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Не пойми что</h3>
-                        <img src="img/bg_5.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Флет с небольшим изменением min/max</h3>
-                        <img src="img/bg_6.png" alt="" class="main-block__img" data-success="1">
-                    </div>
-                </div>
+      <div class="container">
+        <h1 class="main__title">Проверка сделки</h1>
+        <div class="main-content active">
+          <h2 class="main-content__title">Какой фон?</h2>
+          <div class="main-block">
+            <div class="main-item">
+              <h3 class="main-item__title">Флет</h3>
+              <img
+                src="img/bg_1.png"
+                alt=""
+                class="main-block__img"
+                data-success="1"
+              />
             </div>
-            <div class="main-content">
-                <h2 class="main-content__title">Какой подход к уровню?</h2>
-                <div class="main-block">
-                    <div class="main-item">
-                        <h3 class="main-item__title">На объёмах</h3>
-                        <img src="img/trip_1.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Спокойный</h3>
-                        <img src="img/trip_2.png" alt="" class="main-block__img" data-success="1">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">С импульсом</h3>
-                        <img src="img/trip_3.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Крупный игрок</h3>
+              <img
+                src="img/bg_7.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
             </div>
-            <div class="main-content">
-                <h2 class="main-content__title">Какой сигнал?</h2>
-                <div class="main-block">
-                    <div class="main-item">
-                        <h3 class="main-item__title">Двойная вершина</h3>
-                        <img src="img/pattern_1.png" alt="" class="main-block__img" data-success="1">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Микрофлет</h3>
-                        <img src="img/pattern_2.png" alt="" class="main-block__img" data-success="1">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">123</h3>
-                        <img src="img/pattern_3.png" alt="" class="main-block__img" data-success="1">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">123 с не массивной ступенькой</h3>
-                        <img src="img/pattern_4.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Кривой лок. уровень</h3>
-                        <img src="img/pattern_5.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Без второй вершины</h3>
-                        <img src="img/pattern_6.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Цена далеко отошла</h3>
-                        <img src="img/pattern_7.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Несколько локальных уровней</h3>
-                        <img src="img/pattern_8.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Маленький интервал между вершинами</h3>
-                        <img src="img/pattern_9.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Флет треугольник</h3>
+              <img
+                src="img/bg_2.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
             </div>
-            <div class="main-content">
-                <h2 class="main-content__title">Какой захват ликвидности?</h2>
-                <div class="main-block">
-                    <div class="main-item">
-                        <h3 class="main-item__title">Аномальный</h3>
-                        <img src="img/vol_1.png" alt="" class="main-block__img" data-success="1">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Практически нет</h3>
-                        <img src="img/vol_2.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Сильный</h3>
-                        <img src="img/vol_3.png" alt="" class="main-block__img" data-success="1">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Больше всех, но не большой</h3>
-                        <img src="img/vol_4.png" alt="" class="main-block__img" data-success="1">
-                    </div>
-                </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Ретест</h3>
+              <img
+                src="img/bg_3.png"
+                alt=""
+                class="main-block__img"
+                data-success="1"
+              />
             </div>
-            <div class="main-content">
-                <h2 class="main-content__title">Какая точка входа?</h2>
-                <div class="main-block">
-                    <div class="main-item">
-                        <h3 class="main-item__title">Закрпеление минимум 2 свечами</h3>
-                        <img src="img/entry_1.png" alt="" class="main-block__img" data-success="1">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Закрепление одной свечой</h3>
-                        <img src="img/entry_2.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Закрепление размером в одну свечу</h3>
-                        <img src="img/entry_3.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Сильный пробой и свечи дальше не идут</h3>
-                        <img src="img/entry_4.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Вход в микрофлете после пробоя</h3>
-                        <img src="img/entry_5.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Вход после пробоя при ретесте</h3>
-                        <img src="img/entry_6.png" alt="" class="main-block__img" data-success="1">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Вход после пробоя при ретесте (молот)</h3>
-                        <img src="img/entry_7.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                    <div class="main-item">
-                        <h3 class="main-item__title">Вход с опозданием</h3>
-                        <img src="img/entry_8.png" alt="" class="main-block__img" data-success="0">
-                    </div>
-                </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Контр тренд</h3>
+              <img
+                src="img/bg_4.png"
+                alt=""
+                class="main-block__img"
+                data-success="1"
+              />
             </div>
-            <div class="main-content last">
-                <h2 class="main-content__title">
-                    Не ошибаться!
-                    Прочувстовать график после сделки. Просмотреть каждый объём и пропустить через свой мозг, создать
-                    какую-то картину, кто доминирует.
-                    Надо заходить в сделки, в которых нет не ЕДИНОГО сомнения. НАДО уметь отказывать сделкам, которые
-                    выглядят вроде круто, но чёт то не то.
-                </h2>
-                <br>
-                <ul>
-                    <li>Ключевая вещь - захват ликвидности</li>
-                    <li>Ступенька должна быть массивной</li>
-                    <li>Соотношение сделки минимум 1.5/1</li>
-                    <li>Стоп на одну маленькую свечку выше min/max, чтобы не выбило</li>
-                    <li>В спорных ситуациях уменьшать риски. Лучше меньше заработать, но с полной увереностью</li>
-                    <li>Выход при тормозящих свечах</li>
-                    <li>Тейк на ночь (много денег было просрано)</li>
-                    <li>Нужно выходить раньше уровня (много денег было просрано)</li>
-                    <li>Должны увидеть слом тренда (сигнал)</li>
-                    <li>Перечитать ТС</li>
-                    <li>Пересмотреть видео</li>
-                </ul>
-                <br>
-                <p>План:</p>
-                <p>0-400$: 50$ риска</p>
-                <p>400-800$: 100$ риска</p>
-                <p>от 800$: 200$ риска</p>
+            <div class="main-item">
+              <h3 class="main-item__title">Не пойми что</h3>
+              <img
+                src="img/bg_5.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
             </div>
+            <div class="main-item">
+              <h3 class="main-item__title">
+                Флет с небольшим изменением min/max
+              </h3>
+              <img
+                src="img/bg_6.png"
+                alt=""
+                class="main-block__img"
+                data-success="1"
+              />
+            </div>
+          </div>
         </div>
+        <div class="main-content">
+          <h2 class="main-content__title">Какой подход к уровню?</h2>
+          <div class="main-block">
+            <div class="main-item">
+              <h3 class="main-item__title">На объёмах</h3>
+              <img
+                src="img/trip_1.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Спокойный</h3>
+              <img
+                src="img/trip_2.png"
+                alt=""
+                class="main-block__img"
+                data-success="1"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">С импульсом</h3>
+              <img
+                src="img/trip_3.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="main-content">
+          <h2 class="main-content__title">Какой сигнал?</h2>
+          <div class="main-block">
+            <div class="main-item">
+              <h3 class="main-item__title">Двойная вершина</h3>
+              <img
+                src="img/pattern_1.png"
+                alt=""
+                class="main-block__img"
+                data-success="1"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Микрофлет</h3>
+              <img
+                src="img/pattern_2.png"
+                alt=""
+                class="main-block__img"
+                data-success="1"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">123</h3>
+              <img
+                src="img/pattern_3.png"
+                alt=""
+                class="main-block__img"
+                data-success="1"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">123 с не массивной ступенькой</h3>
+              <img
+                src="img/pattern_4.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Кривой лок. уровень</h3>
+              <img
+                src="img/pattern_5.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Без второй вершины</h3>
+              <img
+                src="img/pattern_6.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Цена далеко отошла</h3>
+              <img
+                src="img/pattern_7.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Несколько локальных уровней</h3>
+              <img
+                src="img/pattern_8.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">
+                Маленький интервал между вершинами
+              </h3>
+              <img
+                src="img/pattern_9.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="main-content">
+          <h2 class="main-content__title">Какой захват ликвидности?</h2>
+          <div class="main-block">
+            <div class="main-item">
+              <h3 class="main-item__title">Аномальный</h3>
+              <img
+                src="img/vol_1.png"
+                alt=""
+                class="main-block__img"
+                data-success="1"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Практически нет</h3>
+              <img
+                src="img/vol_2.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Сильный</h3>
+              <img
+                src="img/vol_3.png"
+                alt=""
+                class="main-block__img"
+                data-success="1"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Больше всех, но не большой</h3>
+              <img
+                src="img/vol_4.png"
+                alt=""
+                class="main-block__img"
+                data-success="1"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="main-content">
+          <h2 class="main-content__title">Какая точка входа?</h2>
+          <div class="main-block">
+            <div class="main-item">
+              <h3 class="main-item__title">Закрпеление минимум 2 свечами</h3>
+              <img
+                src="img/entry_1.png"
+                alt=""
+                class="main-block__img"
+                data-success="1"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">
+                Сразу или после входа формирование тор.свечи объёмом больше чем
+                средняя свеча. Даже заходить не надо.
+              </h3>
+              <img
+                src="img/entry_9.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Закрепление одной свечой</h3>
+              <img
+                src="img/entry_2.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">
+                Закрепление размером в одну свечу
+              </h3>
+              <img
+                src="img/entry_3.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">
+                Сильный пробой и свечи дальше не идут
+              </h3>
+              <img
+                src="img/entry_4.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Вход в микрофлете после пробоя</h3>
+              <img
+                src="img/entry_5.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Вход после пробоя при ретесте</h3>
+              <img
+                src="img/entry_6.png"
+                alt=""
+                class="main-block__img"
+                data-success="1"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">
+                Вход после пробоя при ретесте (молот)
+              </h3>
+              <img
+                src="img/entry_7.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+            <div class="main-item">
+              <h3 class="main-item__title">Вход с опозданием</h3>
+              <img
+                src="img/entry_8.png"
+                alt=""
+                class="main-block__img"
+                data-success="0"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="main-content last">
+          <h2 class="main-content__title">
+            Не ошибаться! Прочувстовать график после сделки. Надо заходить в
+            сделки, в которых нет ни ЕДИНОГО сомнения. НАДО уметь отказывать
+            сделкам, которые выглядят вроде круто, но чёт то не то. Сигнал
+            должен быть реальным сломом тренда. После входа ОБЯЗАТЕЛЬНО следить
+            за тормозящими свечми.
+          </h2>
+          <br />
+          <ul>
+            <li>Ключевая вещь - захват ликвидности</li>
+            <li>Ступенька должна быть массивной</li>
+            <li>Соотношение сделки минимум 1.5/1</li>
+            <li>Стоп на одну маленькую свечку выше min/max, чтобы не выбило</li>
+            <li>
+              В спорных ситуациях уменьшать риски. Лучше меньше заработать, но с
+              полной увереностью
+            </li>
+            <li>Тейк на ночь (много денег было просрано)</li>
+            <li>Нужно выходить раньше уровня (много денег было просрано)</li>
+            <li>Должны увидеть слом тренда (сигнал)</li>
+            <li>Перечитать ТС</li>
+            <li>Пересмотреть видео</li>
+          </ul>
+          <br />
+          <p>План:</p>
+          <p>0-300$: 50$ риска</p>
+          <p>300-1000$: 100$ риска</p>
+          <p>от 1000$: 200$ риска</p>
+        </div>
+      </div>
     </main>
 
     <div class="popup">
-        <p class="popup__text">Сделка не подходит!</p>
+      <p class="popup__text">Сделка не подходит!</p>
     </div>
 
     <script src="js/script.js"></script>
-</body>
-
+  </body>
 </html>
