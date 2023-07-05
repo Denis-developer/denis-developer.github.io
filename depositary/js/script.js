@@ -4,23 +4,20 @@ let viewport_width = Math.max(document.documentElement.clientWidth, window.inner
 for (let i = 0; i < accordions.length; i++) {
     accordions[i].addEventListener('click', function () {
         viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        accordions[i].classList.toggle('active');
         const accordionContent = accordions[i].nextElementSibling;
-        if (accordionContent.style.maxHeight == "" && viewport_width > 576) {
-            accordionContent.style.maxHeight = accordionContent.scrollHeight + 64 + "px";
-            accordionContent.style.padding = "32px";
-        }
-        else if (accordionContent.style.maxHeight == "" && viewport_width <= 576) {
-            accordionContent.style.maxHeight = accordionContent.scrollHeight + 40 + "px";
-            accordionContent.style.padding = "20px";
-        }
-        else if (!accordionContent.style.maxHeight == "" && viewport_width > 576) {
-            accordionContent.style.maxHeight = null;
-            accordionContent.style.padding = "0px 32px 0px 32px";
+        accordionContent.classList.toggle('show');
+        this.classList.toggle('active');
+        if (accordionContent.style.maxHeight == "") {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+            setTimeout(() => {
+                const computedStyles = window.getComputedStyle(accordionContent);
+                const paddingTop = parseInt(computedStyles.paddingTop);
+                const paddingBottom = parseInt(computedStyles.paddingBottom);
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + paddingTop + paddingBottom + "px";
+              }, 400);
         }
         else {
             accordionContent.style.maxHeight = null;
-            accordionContent.style.padding = "0px 20px 0px 20px";
         }
     })
 }
@@ -87,46 +84,45 @@ menuBurger.addEventListener('click', function (e) {
 function smoothScrollToAnchor(anchor) {
     viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     let offset = 50;
-    if(viewport_width < 577) {
+    if (viewport_width < 577) {
         offset = 80;
     }
     const target = document.querySelector(anchor);
     if (!target) return;
-    
+
     const targetPosition = target.offsetTop - offset;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
     const duration = 800;
-  
+
     let start = null;
-  
+
     function step(timestamp) {
-      if (!start) start = timestamp;
-      const progress = timestamp - start;
-      const percentage = Math.min(progress / duration, 1);
-      const easing = easeInOutQuad(percentage);
-      window.scrollTo(0, startPosition + distance * easing);
-      if (progress < duration) {
-        requestAnimationFrame(step);
-      } else {
-        history.replaceState(null, null, anchor); // Заменяем URL без изменения положения на странице
-      }
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const percentage = Math.min(progress / duration, 1);
+        const easing = easeInOutQuad(percentage);
+        window.scrollTo(0, startPosition + distance * easing);
+        if (progress < duration) {
+            requestAnimationFrame(step);
+        } else {
+            history.replaceState(null, null, anchor); // Заменяем URL без изменения положения на странице
+        }
     }
-  
+
     function easeInOutQuad(t) {
-      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
     }
-  
+
     requestAnimationFrame(step);
-  }
-  
-  let linkNav = document.querySelectorAll('[href^="#"]');
-  for (let i = 0; i < linkNav.length; i++) {
+}
+
+let linkNav = document.querySelectorAll('[href^="#"]');
+for (let i = 0; i < linkNav.length; i++) {
     linkNav[i].addEventListener('click', function (e) {
-      e.preventDefault();
-      const hash = this.getAttribute('href');
-      smoothScrollToAnchor(hash);
+        e.preventDefault();
+        const hash = this.getAttribute('href');
+        smoothScrollToAnchor(hash);
     });
-  }
-  
-  
+}
+
