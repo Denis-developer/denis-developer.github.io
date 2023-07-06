@@ -1,3 +1,4 @@
+// ACCORDIONS
 const accordions = document.querySelectorAll('.accordion__title');
 let viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
@@ -21,6 +22,8 @@ for (let i = 0; i < accordions.length; i++) {
     })
 }
 
+// HEADER
+
 let logo = document.querySelector('.header-logo'),
     logoText = logo.querySelector('span'),
     headerContainers = document.querySelectorAll('.header .container');
@@ -38,9 +41,6 @@ else {
         headerContainers[i].classList.remove('active');
     }
 }
-
-
-// HEADER
 
 function handleScroll() {
     const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -70,7 +70,8 @@ function handleScroll() {
 
 window.addEventListener("scroll", handleScroll);
 
-// Burger menu
+// BURGER MENU
+
 const menuBurger = document.querySelector('.header__hamburger');
 const menuMobile = document.querySelector('.header__top .container');
 
@@ -79,6 +80,8 @@ menuBurger.addEventListener('click', function (e) {
     menuBurger.classList.toggle('active');
     menuMobile.classList.toggle('show');
 })
+
+// SMOOTH SCROLL
 
 function smoothScrollToAnchor(anchor) {
     viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
