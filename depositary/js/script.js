@@ -8,13 +8,12 @@ for (let i = 0; i < accordions.length; i++) {
         accordionContent.classList.toggle('show');
         this.classList.toggle('active');
         if (accordionContent.style.maxHeight == "") {
-            accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-            setTimeout(() => {
-                const computedStyles = window.getComputedStyle(accordionContent);
-                const paddingTop = parseInt(computedStyles.paddingTop);
-                const paddingBottom = parseInt(computedStyles.paddingBottom);
-                accordionContent.style.maxHeight = accordionContent.scrollHeight + paddingTop + paddingBottom + "px";
-              }, 400);
+            if(viewport_width > 576) {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 64 + "px";
+            }
+            else {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 40 + "px";
+            }
         }
         else {
             accordionContent.style.maxHeight = null;
