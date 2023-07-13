@@ -131,9 +131,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function insertNonBreakingSpaces() {
-        const particles = ['и', 'или', 'а', 'но', 'да', 'к', 'ко', 'на', 'по', 'из', 'от', 'за', 'с', 'у', 'о', 'об', 'в', 'со', 'для'];
+        const particles = ['и', 'или', 'а', 'но', 'да', 'к', 'ко', 'на', 'по', 'из', 'от', 'за', 'с', 'у', 'о', 'об', 'в', 'со', 'для', 'мы'];
 
-        // "XXXX г." 
+        // "XXXX г."
         const yearRegex = /(\d{4})\sг\./g;
 
         const textNodes = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let text = textNode.nodeValue;
 
             particles.forEach((particle) => {
-                const regex = new RegExp(`(\\s)(${particle})(\\s)`, 'gi');
+                const regex = new RegExp(`([^\\S\\n])(${particle})(\\s+)`, 'gi');
                 text = text.replace(regex, '$1$2\u00A0');
             });
 
