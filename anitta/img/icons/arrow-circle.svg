@@ -1,0 +1,12 @@
+<svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 26">
+<rect id="Rectangle 2" width="41" height="41" rx="20.5" fill="url(#paint0_linear_1_106)"/>
+<path id="Vector 1" d="M27.4246 27.2131V13.0709M27.4246 13.0709H13.2825M27.4246 13.0709L12.9289 27.5666" stroke="#0D0D0D" stroke-width="2" stroke-linejoin="bevel"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1_106" x1="0" y1="0" x2="43.7557" y2="3.18889" gradientUnits="userSpaceOnUse">
+<stop stop-color="#5CFF41"/>
+<stop offset="1" stop-color="#F0FF41"/>
+</linearGradient>
+</defs>
+</svg>
