@@ -19,56 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-    flsFunctions.isWebp();
 
-    // ДИНАМИЧЕСКИЙ АДАПТИВ
-    function applyDynamicAdaptivity(parent, item, parent_original, breakpoint, insertParent, insertPerentOrg) {
-        const parent_originalEl = document.querySelectorAll(parent_original),
-            parentEl = document.querySelectorAll(parent),
-            itemEl = document.querySelectorAll(item);
+    isWebp();
 
-        function moveItems() {
-            for (let i = 0; i < parentEl.length; i++) {
-                parentEl[i].insertBefore(itemEl[i], parentEl[i].children[insertParent]);
-                itemEl[i].classList.add('done');
-            }
-        }
-
-        function revertItems() {
-            for (let i = 0; i < parentEl.length; i++) {
-                parent_originalEl[i].insertBefore(itemEl[i], parent_originalEl[i].children[insertPerentOrg]);
-                itemEl[i].classList.remove('done');
-            }
-        }
-
-        if (viewport_width <= breakpoint) {
-            if (itemEl[0] && !itemEl[0].classList.contains('done')) {
-                moveItems();
-            }
-        } else {
-            if (itemEl[0] && itemEl[0].classList.contains('done')) {
-                revertItems();
-            }
-        }
-
-        window.addEventListener('resize', function (event) {
-            viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-            if (viewport_width <= breakpoint) {
-                if (itemEl[0] && !itemEl[0].classList.contains('done')) {
-                    moveItems();
-                }
-            } else {
-                if (itemEl[0] && itemEl[0].classList.contains('done')) {
-                    revertItems();
-                }
-            }
-        });
-    }
-
-    applyDynamicAdaptivity(".header-menu", ".header .nav", ".header .container", 992, 0, 0);
-    applyDynamicAdaptivity(".header-menu", ".intro__btn", ".intro__wrapper", 992, 1, 1);
-    applyDynamicAdaptivity(".header-menu__wrapper", ".header__phone", ".header__wrapper", 992, 0, 0);
-    applyDynamicAdaptivity(".intro", ".intro__linkdown", ".intro__container", 576, 0, 4);
 
     const swiper = new Swiper('.swiper', {
         breakpoints: {
@@ -152,6 +105,55 @@ document.addEventListener('DOMContentLoaded', function () {
             menuMobile.classList.remove('show');
         })
     }
+
+    // ДИНАМИЧЕСКИЙ АДАПТИВ
+    function applyDynamicAdaptivity(parent, item, parent_original, breakpoint, insertParent, insertPerentOrg) {
+        const parent_originalEl = document.querySelectorAll(parent_original),
+            parentEl = document.querySelectorAll(parent),
+            itemEl = document.querySelectorAll(item);
+
+        function moveItems() {
+            for (let i = 0; i < parentEl.length; i++) {
+                parentEl[i].insertBefore(itemEl[i], parentEl[i].children[insertParent]);
+                itemEl[i].classList.add('done');
+            }
+        }
+
+        function revertItems() {
+            for (let i = 0; i < parentEl.length; i++) {
+                parent_originalEl[i].insertBefore(itemEl[i], parent_originalEl[i].children[insertPerentOrg]);
+                itemEl[i].classList.remove('done');
+            }
+        }
+
+        if (viewport_width <= breakpoint) {
+            if (itemEl[0] && !itemEl[0].classList.contains('done')) {
+                moveItems();
+            }
+        } else {
+            if (itemEl[0] && itemEl[0].classList.contains('done')) {
+                revertItems();
+            }
+        }
+
+        window.addEventListener('resize', function (event) {
+            viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            if (viewport_width <= breakpoint) {
+                if (itemEl[0] && !itemEl[0].classList.contains('done')) {
+                    moveItems();
+                }
+            } else {
+                if (itemEl[0] && itemEl[0].classList.contains('done')) {
+                    revertItems();
+                }
+            }
+        });
+    }
+
+    applyDynamicAdaptivity(".header-menu", ".header .nav", ".header .container", 992, 0, 0);
+    applyDynamicAdaptivity(".header-menu", ".intro__btn", ".intro__wrapper", 992, 1, 1);
+    applyDynamicAdaptivity(".header-menu__wrapper", ".header__phone", ".header__wrapper", 992, 0, 0);
+    applyDynamicAdaptivity(".intro", ".intro__linkdown", ".intro__container", 576, 0, 4);
 
     // ПЛАВНЫЙ СКРОЛЛ К ЯКОРЯМ
     function smoothScrollToAnchor(anchor) {
