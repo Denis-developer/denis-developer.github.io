@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuBurger = document.querySelector('.header__hamburger');
     const menuBurger2 = document.querySelector('.header__hamburger_2');
     const menuMobile = document.querySelector('.header-menu');
+    const headerContainer = document.querySelector('.header .container');
     const menuMobileLinks = document.querySelectorAll('.nav-menu__link');
     let viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
@@ -92,15 +93,16 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.classList.toggle('lock');
         document.documentElement.classList.toggle('lock');
         menuBurger.classList.toggle('active');
-        document.querySelector('.header .container').classList.toggle('active');
+        headerContainer.classList.toggle('active');
         menuMobile.classList.toggle('show');
     })
 
     for (let i = 0; i < menuMobileLinks.length; i++) {
         menuMobileLinks[i].addEventListener('click', function () {
             document.body.classList.remove('lock');
-            document.documentElement.classList.toggle('lock');
+            document.documentElement.classList.remove('lock');
             menuBurger.classList.remove('active');
+            headerContainer.classList.remove('active');
             menuMobile.classList.remove('show');
         })
     }
