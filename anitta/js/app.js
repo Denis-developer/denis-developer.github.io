@@ -29,13 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
             320: {
                 slidesPerView: 'auto',
                 spaceBetween: 12,
-                centeredSlides: false
             },
             // when window width is >= 768px
             768: {
                 slidesPerView: 7,
                 spaceBetween: 9,
-                centeredSlides: false
             }
         }
     });
@@ -94,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.classList.toggle('lock');
         document.documentElement.classList.toggle('lock');
         menuBurger.classList.toggle('active');
+        document.querySelector('.header .container').classList.toggle('active');
         menuMobile.classList.toggle('show');
     })
 
