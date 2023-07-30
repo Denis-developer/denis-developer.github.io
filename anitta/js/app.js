@@ -69,6 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
         swiper2.slideTo(activeIndex);
         tattoSlides[activeIndex].classList.add('swiper-slide-thumb-active');
         tattoSlides[activeIndex].classList.add('swiper-slide-active');
+        swiper.slideTo(activeIndex);
+        swiper2.slideTo(activeIndex);
     });
 
     tattoSlides.forEach(function(slide, index) {
