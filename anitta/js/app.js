@@ -29,21 +29,22 @@ document.addEventListener('DOMContentLoaded', function () {
             320: {
                 slidesPerView: 'auto',
                 spaceBetween: 12,
+                centeredSlides: true,
             },
             // when window width is >= 768px
             768: {
                 slidesPerView: 7,
                 spaceBetween: 9,
+                centeredSlides: false,
             }
         }
     });
-
-
 
     const swiper2 = new Swiper('.swiper2', {
         slidesPerView: 1,
         autoHeight: true,
         effect: 'fade',
+        allowTouchMove: false,
         fadeEffect: {
             crossFade: true
         },
@@ -72,6 +73,28 @@ document.addEventListener('DOMContentLoaded', function () {
                 spaceBetween: 30,
             }
         }
+    });
+
+    const tattoSlides = document.querySelectorAll('.tattooStyles-slider__slide');
+
+    tattoSlides.forEach(function (slide, index) {
+        slide.addEventListener('click', function () {
+            swiper.slideTo(index);
+            tattoSlides.forEach(function (slide) {
+                slide.classList.remove('swiper-slide-thumb-active');
+            });
+            slide.classList.add('swiper-slide-thumb-active');
+        });
+    });
+
+    swiper.on('slideChange', function () {
+        let activeIndex = swiper.activeIndex;
+        for (let i = 0; i < tattoSlides.length; i++) {
+            tattoSlides[i].classList.remove('swiper-slide-thumb-active');
+        }
+        swiper.slideTo(activeIndex);
+        swiper2.slideTo(activeIndex);
+        tattoSlides[activeIndex].classList.add('swiper-slide-thumb-active');
     });
 
     // BURGER MENU
