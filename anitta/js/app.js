@@ -57,6 +57,33 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    const tattoSlides = document.querySelectorAll('.tattooStyles-slider__slide');
+
+    swiper.on('slideChange', function () {
+        let activeIndex = swiper.activeIndex;
+        for (let i = 0; i < tattoSlides.length; i++) {
+            tattoSlides[i].classList.remove('swiper-slide-thumb-active');
+            tattoSlides[i].classList.remove('swiper-slide-active');
+        }
+        swiper.slideTo(activeIndex);
+        swiper2.slideTo(activeIndex);
+        tattoSlides[activeIndex].classList.add('swiper-slide-thumb-active');
+        tattoSlides[activeIndex].classList.add('swiper-slide-active');
+    });
+
+    tattoSlides.forEach(function(slide, index) {
+        slide.addEventListener('click', function() {
+          swiper.slideTo(index);
+          swiper2.slideTo(index);
+          tattoSlides.forEach(function(slide) {
+            slide.classList.remove('swiper-slide-thumb-active');
+            slide.classList.remove('swiper-slide-active');
+          });
+          slide.classList.add('swiper-slide-thumb-active');
+          slide.classList.add('swiper-slide-active');
+        });
+      });
+
     const swiper3 = new Swiper('.swiper3', {
         slidesPerView: 'auto',
         navigation: {
@@ -74,29 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-
-    const tattoSlides = document.querySelectorAll('.tattooStyles-slider__slide');
-
-    swiper.on('slideChange', function () {
-        console.log('21');
-        let activeIndex = swiper.activeIndex;
-        for (let i = 0; i < tattoSlides.length; i++) {
-            tattoSlides[i].classList.remove('swiper-slide-thumb-active');
-        }
-        swiper.slideTo(activeIndex);
-        swiper2.slideTo(activeIndex);
-        tattoSlides[activeIndex].classList.add('swiper-slide-thumb-active');
-    });
-
-        for (let i = 0; i < tattoSlides.length; i++) {
-        tattoSlides[i].addEventListener('click', function() {
-            swiper.slideTo(i);
-            for (let y = 0; y < tattoSlides.length; y++) {
-                tattoSlides[y].classList.remove('swiper-slide-thumb-active');
-            }
-            tattoSlides[i].classList.add('swiper-slide-thumb-active');
-        })
-    }
 
     // BURGER MENU
     const menuBurger = document.querySelector('.header__hamburger');
