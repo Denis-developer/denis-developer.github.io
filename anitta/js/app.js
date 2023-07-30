@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     tattoSlides.forEach(function (slide, index) {
         slide.addEventListener('click', function () {
             swiper.slideTo(index);
+            swiper2.slideTo(index);
             tattoSlides.forEach(function (slide) {
                 slide.classList.remove('swiper-slide-thumb-active');
             });
