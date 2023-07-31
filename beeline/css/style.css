@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'Beeline Sans';
+    src: url('../fonts/BeelineSans-Regular.woff2') format('woff2'),
+        url('../fonts/BeelineSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Craftwork Grotesk';
+    src: url('../fonts/CraftworkGrotesk-Regular.woff2') format('woff2'),
+        url('../fonts/CraftworkGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Beeline Sans', sans-serif;
+    font-family: 'Craftwork Grotesk', sans-serif;
+    line-height: normal;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFF;
+    background: #151515;
+}
+
+h1,
+h2 {
+    color: #FFC800;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+h5 {
+    font-size: 50px;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+p {
+    font-size: 30px;
+}
+
+main {
+    width: 100%;
+    max-width: 1410px;
+    margin: 0 auto;
+}
+
+.intro {
+    padding-top: 101px;
+}
+
+.about {
+    padding-top: 211px;
+}
+
+.about__text {
+    max-width: 1075px;
+}
+
+.about__wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 1395px;
+    margin: 0 auto;
+    margin-top: 161px;
+}
+
+.about-block {
+    border-radius: 25px;
+    border: 1px solid #151515;
+    background: #F4F0E2;
+    padding: 28px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #151515;
+}
+
+.about-block_big {
+    padding: 30px 34.562px 30px 25px;
+    background: #FFC800;
+    grid-column: 1 / 6;
+}
+
+.about-block_big .about-block__title {
+    font-size: 35px;
+}
+
+.about-block_medium {
+    grid-column: 4 / 6;
+}
+
+.about-block_medium .about-block__title {
+    font-size: 28px;
+}
+
+.about-block__title {
+    font-size: 33px;
+    line-height: 110%;
+}
+
+.about-block__text {
+    font-family: 'Beeline Sans', sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+    margin-top: 15px;
+}
+
+.portfolio {
+    padding-top: 159px;
+}
+
+.portfolio__wrapper {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-block {
+    border-radius: 25px;
+    border: 1px solid #FFF;
+    padding: 25px 45px;
+    height: 127px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.portfolio-block::before {
+    content: '';
+    position: absolute;
+    top: 26px;
+    right: 45px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.portfolio-block__text {
+    font-family: 'Beeline Sans', sans-serif;
+    line-height: 130%;
+}
+
+.cost {
+    padding-top: 176px;
+    padding-bottom: 98px;
+}
+
+.cost__table {
+    margin-top: 70px;
+    margin-bottom: 65px;
+}
+
+table {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 25px;
+    position: relative;
+}
+
+table::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    border: 2px solid #F4F0E2;
+    z-index: -1;
+    display: block;
+}
+tr:first-child th{
+    padding-top: 15px;
+    padding-bottom: 32px;
+}
+
+td,
+th {
+    color: #FFC800;
+    font-family: 'Beeline Sans', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    text-align: left;
+    width: 16.66%;
+    border: 1px solid #F4F0E2;
+    padding: 25px;
+    padding-right: 24px;
+}
+
+tr th:last-child {
+    border-left: none;
+}
+
+td {
+    color: #fff;
+    font-size: 30px;
+}
