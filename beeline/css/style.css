@@ -209,10 +209,6 @@ th {
     padding-right: 24px;
 }
 
-tr th:last-child {
-    border-left: none;
-}
-
 td {
     color: #fff;
     font-size: 30px;
