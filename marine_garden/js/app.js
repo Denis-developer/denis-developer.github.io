@@ -72,38 +72,26 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
-    let tlLocation = gsap.timeline({
+
+    // Location skills
+    function locationSkills() {
+        let locationSkills = document.querySelectorAll('.location-skill');
+        let total = 30;
+
+        for (let i = 0; i < locationSkills.length; i++) {
+            let locationSkillProgress = locationSkills[i].querySelector('.location-skill__progress');
+            locationSkillProgress.style.width = locationSkillProgress.dataset.progress * 100 / total + "%";
+        }
+    }
+
+    gsap.from(".location", {
+        onComplete: locationSkills,
         scrollTrigger: {
             trigger: ".location",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: true,
-            pin: ".location",
+            start: "top 50%",
+            end: "center 50%",
         },
     });
-
-    tlLocation.to(
-        ".location-block_1",
-        { yPercent: 100, duration: 1 },
-        "<"
-    );
-    tlLocation.to(
-        ".location-block_2",
-        { yPercent: -100, duration: 1 },
-        "<"
-    );
-    tlLocation.to(
-        ".location-block_3",
-        { yPercent: -100, duration: 1 },
-        "<"
-    );
-    tlLocation.to(
-        ".location-block_4",
-        { yPercent: 100, duration: 1 },
-        "<"
-    );
-
-
 
     // international tel input
     const inputTel = document.querySelectorAll("input[type='tel']");
@@ -180,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     applyDynamicAdaptivity(".header-menu", ".header .nav", ".header__wrapper", 1200, 0, 0);
-    applyDynamicAdaptivity(".popup-content", ".popup__img", ".popup__body", 992, 3, 1);
+    // applyDynamicAdaptivity(".popup-content", ".popup__img", ".popup__body", 992, 3, 1);
 
     // BURGER MENU
     const menuBurger = document.querySelector('.header__hamburger');
