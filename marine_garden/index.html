@@ -7,11 +7,12 @@
     <title>Marine Garden Sochi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&amp;family=Roboto:wght@100;300;400;500;700&amp;display=swap&_v=20230803021005" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css?_v=20230803021005">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&amp;family=Roboto:wght@100;300;400;500;700&amp;display=swap&_v=20230804013538" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css?_v=20230804013538">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230804013538">
   </head>
   <body>
-    <main class="main"> 
+    <main class="main">
       <section class="intro" id="intro">
         <header class="header"> <a class="header__logo" href="index.html"> <img src="img/logo.svg" alt="Marine Garden Sochi"></a>
           <div class="header__wrapper"> 
@@ -32,13 +33,13 @@
         </header>
         <div class="container"> 
           <p class="intro__subtitle subtitle">Сочи</p>
-          <h1 class="intro__title">Добро пожаловать в Marine Garden Sochi</h1><a class="intro__btn btn" href="#">подробнее</a>
+          <h1 class="intro__title">Добро пожаловать в Marine Garden Sochi</h1><a class="popup-link intro__btn btn" href="#popup">подробнее<span class="btn__line"></span><span class="btn__line"></span></a>
         </div>
       </section>
       <section class="about" id="about"> 
         <div class="container"> 
-          <div class="about-block"> <picture><source srcset="img/about/img-1.webp" type="image/webp"><img class="about-block__img" src="img/about/img-1.jpg" alt=""></picture>
-            <div class="about-block__content"> 
+          <div class="about-block"><picture><source srcset="img/about/img-1.webp" type="image/webp"><img class="about-block__img gs-anim" src="img/about/img-1.jpg" alt=""></picture>
+            <div class="about-block__content gs-anim"> 
               <p class="about-block__subtitle subtitle">О проекте</p>
               <h2 class="about-block__title">Состоятельность облика</h2>
               <p class="about-block__text">Добро пожаловать в высочайший класс роскошной жизни с потрясающей архитектурой и очарованием прекрасной эпохи «Belle Epoque».</p>
@@ -47,59 +48,88 @@
           </div>
           <div class="about-block" id="facilities">
             <div class="about-block__content"> 
-              <p class="about-block__subtitle subtitle">Удобства</p>
-              <h2 class="about-block__title">Комплекс бассейнов</h2>
-              <p class="about-block__text">Для полноценного семейного отдыха на территории гостиничного комплекса «Marine Garden Sochi» Hotels & Resort в вашем распоряжении открытый и закрытый бассейны, оборудованные зоны отдыха, шезлонги и бары.</p><a class="about-block__link" href="#">скачать брошюру<img src="img/icons/arrow-right.svg" alt="-&gt;"></a>
-            </div><picture><source srcset="img/about/img-2.webp" type="image/webp"><img class="about-block__img" src="img/about/img-2.jpg" alt=""></picture>
+              <p class="about-block__subtitle subtitle gs-odd">Удобства</p>
+              <h2 class="about-block__title gs-odd">Комплекс бассейнов</h2>
+              <p class="about-block__text gs-odd">Для полноценного семейного отдыха на территории гостиничного комплекса «Marine Garden Sochi» Hotels & Resort в вашем распоряжении открытый и закрытый бассейны, оборудованные зоны отдыха, шезлонги и бары.</p><a class="about-block__link popup-link gs-odd" href="#popup">скачать брошюру<img src="img/icons/arrow-right.svg" alt="-&gt;"></a>
+            </div><picture><source srcset="img/about/img-2.webp" type="image/webp"><img class="about-block__img gs-even" src="img/about/img-2.jpg" alt=""></picture>
           </div>
-          <div class="about-block"> <picture><source srcset="img/about/img-3.webp" type="image/webp"><img class="about-block__img" src="img/about/img-3.jpg" alt=""></picture>
+          <div class="about-block"> <picture><source srcset="img/about/img-3.webp" type="image/webp"><img class="about-block__img gs-odd" src="img/about/img-3.jpg" alt=""></picture>
             <div class="about-block__content"> 
-              <h2 class="about-block__title">Спа-центр «Garden SPA»</h2>
-              <p class="about-block__text">Спа-центр «Garden SPA» - это оазис спокойствия с удобствами класса люкс с атмосферой средиземноморского шика, в&nbsp;который захочется возвращаться вновь и вновь.</p><a class="about-block__link" href="#">скачать брошюру<img src="img/icons/arrow-right.svg" alt="-&gt;"></a>
+              <h2 class="about-block__title gs-even">Спа-центр «Garden SPA»</h2>
+              <p class="about-block__text gs-even">Спа-центр «Garden SPA» - это оазис спокойствия с удобствами класса люкс с атмосферой средиземноморского шика, в&nbsp;который захочется возвращаться вновь и вновь.</p><a class="about-block__link popup-link gs-even" href="#popup">скачать брошюру<img src="img/icons/arrow-right.svg" alt="-&gt;"></a>
             </div>
           </div>
           <div class="about-block"> 
             <div class="about-block__content"> 
-              <h2 class="about-block__title">Тематический экопарк</h2>
-              <p class="about-block__text">Тематический экопарк «Marine Garden Sochi» Hotels &&nbspResort это наше уникальное место, концепция не имеющая аналогов в Сочи.</p><a class="about-block__link" href="#">скачать брошюру<img src="img/icons/arrow-right.svg" alt="-&gt;"></a>
-            </div><picture><source srcset="img/about/img-4.webp" type="image/webp"><img class="about-block__img" src="img/about/img-4.jpg" alt=""></picture>
+              <h2 class="about-block__title gs-odd">Тематический экопарк</h2>
+              <p class="about-block__text gs-odd">Тематический экопарк «Marine Garden Sochi» Hotels &&nbspResort это наше уникальное место, концепция не имеющая аналогов в Сочи.</p><a class="about-block__link popup-link gs-odd" href="#popup">скачать брошюру<img src="img/icons/arrow-right.svg" alt="-&gt;"></a>
+            </div><picture><source srcset="img/about/img-4.webp" type="image/webp"><img class="about-block__img gs-even" src="img/about/img-4.jpg" alt=""></picture>
           </div>
         </div>
       </section>
       <section class="brochure" id="brochure"><picture><source srcset="img/brochure/brochure.webp" type="image/webp"><img class="brochure__img" src="img/brochure/brochure.png" alt="brochure"></picture>
         <div class="container"> 
-          <h2 class="brochure__title">Детальная брошюра в один клик</h2>
-          <ul class="brochure-list"> 
+          <h2 class="brochure__title gs-anim">Детальная брошюра в один клик</h2>
+          <ul class="brochure-list gs-anim"> 
             <li class="brochure-list__item subtitle">Стиль жизни</li>
             <li class="brochure-list__item subtitle">Местоположение</li>
             <li class="brochure-list__item subtitle">Галерея</li>
             <li class="brochure-list__item subtitle">Планировки</li>
           </ul>
-          <div class="brochure-form__wrapper">
+          <div class="brochure-form__wrapper gs-anim">
             <h3 class="brochure-form__title">СКАЧАТЬ БРОШЮРУ В ОДИН КЛИК</h3>
-            <form class="brochure-form" action="#">
+            <form class="brochure-form form" action="#">
               <input class="brochure-form__input" type="text" placeholder="Ваше имя" required>
               <input class="brochure-form__input" type="email" placeholder="Ваш e-mail" required>
               <input class="brochure-form__input" type="tel" placeholder="Номер телефона" required>
-              <button class="brochure-form__btn btn" type="submit">скачать</button>
+              <button class="brochure-form__btn btn" type="submit">скачать<span class="btn__line"></span><span class="btn__line"></span></button>
             </form>
           </div>
         </div>
       </section>
       <section class="location" id="location"> 
         <div class="location-block"> 
-          <div class="location-block__content"> 
+          <div class="location-block__content gs-anim"> 
             <p class="location-block__subtitle">Месторасположение</p>
             <h2 class="location-block__title">УНИКАЛЬНАЯ ЛОКАЦИЯ</h2>
             <p class="location-block__text">Наше идеальное месторасположение сделает отдых максимально комфортным и беззаботным.</p>
+            <div class="location-skills"> 
+              <div class="location-skill"> 
+                <div class="location-skill__wrapper"> 
+                  <p class="location-skill__title">Международный аэропорт Сочи</p>
+                  <p class="location-skill__value">26 мин</p>
+                </div>
+                <div class="location-skill__line">
+                  <div class="location-skill__progress"></div>
+                </div>
+              </div>
+              <div class="location-skill"> 
+                <div class="location-skill__wrapper"> 
+                  <p class="location-skill__title">Центр Адлера</p>
+                  <p class="location-skill__value">15 мин</p>
+                </div>
+                <div class="location-skill__line">
+                  <div class="location-skill__progress"></div>
+                </div>
+              </div>
+              <div class="location-skill"> 
+                <div class="location-skill__wrapper"> 
+                  <p class="location-skill__title">Ж/Д вокзал</p>
+                  <p class="location-skill__value">9 мин</p>
+                </div>
+                <div class="location-skill__line">
+                  <div class="location-skill__progress"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="location-block"><picture><source srcset="img/location/img-1.webp" type="image/webp"><img class="location__img" src="img/location/img-1.jpg" alt=""></picture></div>
         <div class="location-block"><picture><source srcset="img/location/img-2.webp" type="image/webp"><img class="location__img" src="img/location/img-2.jpg" alt=""></picture></div>
         <div class="location-block"> 
-          <div class="location-block__content"> 
+          <div class="location-block__content gs-anim"> 
             <h2 class="location-block__title">Город Сочи</h2>
-            <p class="location-block__text">Сочи - это магнит для отдыхающих со всего мира, в том числе обладающих высоким уровнем дохода. Культурный и деловой центр Юга России и важнейший транспортный узел. В городе расположен один из главных российских аэропортов, два крупных морских порта, высоко развито железнодорожное сообщение. Здесь сосредоточены передовые спортивные комплексы и арены, ставшие сердцем зимних Олимпийских игр 2014.</p><a class="location-block__btn btn" href="#">подробнее</a>
+            <p class="location-block__text">Сочи - это магнит для отдыхающих со всего мира, в том числе обладающих высоким уровнем дохода. Культурный и деловой центр Юга России и важнейший транспортный узел. В городе расположен один из главных российских аэропортов, два крупных морских порта, высоко развито железнодорожное сообщение. Здесь сосредоточены передовые спортивные комплексы и арены, ставшие сердцем зимних Олимпийских игр 2014.</p><a class="popup-link location-block__btn btn" href="#popup">подробнее<span class="btn__line"></span><span class="btn__line"></span></a>
           </div>
         </div>
       </section>
@@ -116,8 +146,8 @@
       </section>
       <section class="concept" id="concept">
         <div class="container"> 
-          <div class="concept__wrapper"> <picture><source srcset="img/concept/img-1.webp" type="image/webp"><img class="concept__img" src="img/concept/img-1.jpg" alt=""></picture>
-            <div class="concept__content"> 
+          <div class="concept__wrapper"> <picture><source srcset="img/concept/img-1.webp" type="image/webp"><img class="concept__img gs-anim" src="img/concept/img-1.jpg" alt=""></picture>
+            <div class="concept__content gs-anim"> 
               <p class="concept__subtitle subtitle">главные факты</p>
               <h2 class="concept__title">Концепция «Marine Garden Sochi» Hotels & Resort</h2>
               <p class="concept__text">«Marine Garden Sochi» Hotels & Resort - крупнейший курортный комплекс, расположенный между живописным зеленым массивом и панорамным морским простором района Хоста города Сочи в уединённой парковой зоне площадью 8 га с собственной культурной и развлекательной инфраструктурой.</p>
@@ -128,25 +158,25 @@
     </main>
     <footer class="footer"> 
       <div class="footer__top"> 
-        <h2 class="footer__title">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
+        <h2 class="footer__title gs-anim">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
         <div class="footer__wrapper"> 
           <div class="footer-feature"> 
-            <div class="footer-feature__block"> 
+            <div class="footer-feature__block gs-anim"> 
               <div class="footer-feature__icon"> <img src="img/icons/call.svg" alt=""></div>
               <p class="footer-feature__text">Наши специалисты свяжутся с вами в удобное для вас время</p>
             </div>
-            <div class="footer-feature__block"> 
+            <div class="footer-feature__block gs-anim"> 
               <div class="footer-feature__icon"> <img src="img/icons/chat.svg" alt=""></div>
               <p class="footer-feature__text">Наши эксперты ответят на любые ваши вопросы</p>
             </div>
-            <div class="footer-feature__block"> 
+            <div class="footer-feature__block gs-anim"> 
               <div class="footer-feature__icon"> <img src="img/icons/book.svg" alt=""></div>
               <p class="footer-feature__text">Вы получите все материалы (брошюры, план платежей, прайс-листы, планировки)</p>
             </div>
           </div>
-          <div class="footer-form__wrapper"> 
+          <div class="footer-form__wrapper gs-anim"> 
             <h3 class="footer-form__title">Запросить звонок</h3>
-            <form class="footer-form" action="#"> 
+            <form class="footer-form form" action="#"> 
               <input class="footer-form__input" type="text" placeholder="Ваше имя" required>
               <input class="footer-form__input" type="email" placeholder="Ваш e-mail" required>
               <input class="footer-form__input" type="tel" placeholder="Номер телефона" required>
@@ -171,6 +201,31 @@
         <p class="footer__text">гостиничный комплекс «Marine Garden Sochi» Hotels & Resort - место, которое станет частью вашей истории.</p>
       </div>
     </footer>
-    <script src="js/app.js?_v=20230803021005"></script>
+    <div class="popup" id="popup">
+      <div class="popup__body">
+        <div class="popup-content"><a class="popup__close" href="#"> 
+            <svg width="13" height="13" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.2871 1.16699L1.28711 21.167M21.2871 21.167L1.28711 1.16699" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg></a>
+          <h2 class="popup-content__title">ЗАПОЛНИТЕ ДЛЯ ДАЛЬНЕЙШЕГО ОЗНАКОМЛПЕНИЯ</h2>
+          <ul class="popup-list"> 
+            <li class="popup-list__item">Стиль жизни</li>
+            <li class="popup-list__item">Галерея</li>
+            <li class="popup-list__item">Планировки</li>
+            <li class="popup-list__item">Местоположение</li>
+          </ul>
+          <form class="popup-form form" action="#">
+            <input class="popup-form__input" type="text" placeholder="Ваше имя" required>
+            <input class="popup-form__input" type="email" placeholder="Ваш e-mail" required>
+            <input class="popup-form__input" type="tel" placeholder="Номер телефона" required>
+            <button class="popup-form__btn btn" type="submit">Отправить<span class="btn__line"></span><span class="btn__line"></span></button>
+          </form>
+        </div><picture><source srcset="img/brochure/brochure.webp" type="image/webp"><img class="popup__img" src="img/brochure/brochure.png" alt="brochure"></picture>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js?_v=20230804013538"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20230804013538"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?_v=20230804013538"></script>
+    <script src="js/app.js?_v=20230804013538"></script>
   </body>
 </html>

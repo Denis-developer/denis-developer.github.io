@@ -24,6 +24,98 @@ document.addEventListener('DOMContentLoaded', function () {
 
     isWebp();
 
+    const boxes = gsap.utils.toArray(".gs-anim");
+    boxes.forEach((box) => {
+        gsap.from(box, {
+            yPercent: 20,
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: box,
+                start: "top 90%",
+                end: "center 50%",
+            },
+        });
+    });
+
+    const tlProjectsOdd = gsap.utils.toArray(".gs-odd");
+    tlProjectsOdd.forEach((elem) => {
+        gsap.from(elem, {
+            xPercent: -30,
+            duration: 1.5,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: elem,
+            },
+        });
+    });
+
+    const tlProjectsEven = gsap.utils.toArray(".gs-even");
+    tlProjectsEven.forEach((elem) => {
+        gsap.from(elem, {
+            xPercent: 30,
+            duration: 1.5,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: elem,
+            },
+        });
+    });
+    gsap.from(".brochure__img", {
+        y: 400,
+        x: -200,
+        scrollTrigger: {
+            trigger: ".brochure",
+            start: "top 100%",
+            end: "center 10%",
+            scrub: 1,
+        },
+    });
+
+    let tlLocation = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".location",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true,
+            pin: ".location",
+        },
+    });
+
+    tlLocation.to(
+        ".location-block_1",
+        { yPercent: 100, duration: 1 },
+        "<"
+    );
+    tlLocation.to(
+        ".location-block_2",
+        { yPercent: -100, duration: 1 },
+        "<"
+    );
+    tlLocation.to(
+        ".location-block_3",
+        { yPercent: -100, duration: 1 },
+        "<"
+    );
+    tlLocation.to(
+        ".location-block_4",
+        { yPercent: 100, duration: 1 },
+        "<"
+    );
+
+
+
+    // international tel input
+    const inputTel = document.querySelectorAll("input[type='tel']");
+    for (let i = 0; i < inputTel.length; i++) {
+        window.intlTelInput(inputTel[i], {
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+            initialCountry: 'ru',
+            separateDialCode: true,
+        });
+    }
+
+    // Header
     const header = document.querySelector(".header");
     let scrollPos = window.scrollY;
 
@@ -88,6 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     applyDynamicAdaptivity(".header-menu", ".header .nav", ".header__wrapper", 1200, 0, 0);
+    applyDynamicAdaptivity(".popup-content", ".popup__img", ".popup__body", 992, 3, 1);
 
     // BURGER MENU
     const menuBurger = document.querySelector('.header__hamburger');
@@ -155,9 +248,127 @@ document.addEventListener('DOMContentLoaded', function () {
         linkNav[i].addEventListener('click', function (e) {
             e.preventDefault();
             const hash = this.getAttribute('href');
-            smoothScrollToAnchor(hash);
+            if (!this.classList.contains("popup-link")) {
+                smoothScrollToAnchor(hash);
+            }
         });
     }
+
+
+    // Модальное окно
+    const popupLinks = document.querySelectorAll('.popup-link'),
+        body = document.querySelector('body');
+
+    let unlock = true;
+
+    const timeout = 800;
+
+    if (popupLinks.length > 0) {
+        for (let index = 0; index < popupLinks.length; index++) {
+            const popupLink = popupLinks[index];
+            popupLink.addEventListener('click', function (e) {
+                const popupName = popupLink.getAttribute('href').replace('#', '');
+                const currentPopup = document.getElementById(popupName);
+                popupOpen(currentPopup);
+                e.preventDefault();
+            })
+        }
+    }
+
+    const popupCloseIcon = document.querySelectorAll('.popup__close');
+
+    if (popupCloseIcon.length > 0) {
+        for (let index = 0; index < popupCloseIcon.length; index++) {
+            const el = popupCloseIcon[index];
+            el.addEventListener('click', function (e) {
+                popupClose(el.closest('.popup'));
+                e.preventDefault();
+            })
+        }
+    }
+
+    function popupOpen(currentPopup) {
+        if (currentPopup && unlock) {
+            const popupActive = document.querySelector('.popup.open');
+            if (popupActive) {
+                popupClose(popupActive, false);
+            }
+            else {
+                bodyLock();
+            }
+            currentPopup.classList.add('open');
+            currentPopup.addEventListener('click', function (e) {
+                if (!e.target.closest('.popup-content')) {
+                    popupClose(e.target.closest('.popup'));
+                }
+            })
+        }
+    }
+
+    function popupClose(popupActive, doUnlock = true) {
+        if (unlock) {
+            popupActive.classList.remove('open');
+            if (doUnlock) {
+                bodyUnlock();
+            }
+        }
+    }
+
+    function bodyLock() {
+        body.classList.add('lock');
+        document.documentElement.classList.add('lock');
+
+        unlock = false;
+        setTimeout(function () {
+            unlock = true;
+        }, timeout);
+    }
+
+    function bodyUnlock() {
+        setTimeout(function () {
+            body.classList.remove('lock');
+            document.documentElement.classList.remove('lock');
+        }, timeout);
+
+        unlock = false;
+        setTimeout(function () {
+            unlock = true;
+        }, timeout);
+    }
+
+    document.addEventListener('keydown', function (e) {
+        if (e.which === 27) {
+            const popupActive = document.querySelector('.popup.open');
+            popupClose(popupActive);
+        }
+    })
+
+        (function () {
+            // проверяем поддержку
+            if (!Element.prototype.closest) {
+                // реализуем
+                Element.prototype.closest = function (css) {
+                    var node = this;
+
+                    while (node) {
+                        if (node.matches(css)) return node;
+                        else node = node.parentElement;
+                    }
+                    return null;
+                };
+            }
+        })();
+
+    (function () {
+        // проверяем поддержку
+        if (!Element.prototype.matches) {
+            // определяем свойство
+            Element.prototype.matches = Element.prototype.matchesSelector ||
+                Element.prototype.webkitMatchesSelector ||
+                Element.prototype.mozMatchesSelector ||
+                Element.prototype.msMatchesSelector;
+        }
+    })();
 
 
 
