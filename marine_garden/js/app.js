@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // PRELOADER
     let preloader = document.querySelector('.preloader');
-
-    preloader.classList.add('is-loaded');
+    setTimeout(function () {
+        preloader.classList.add('is-loaded');
+    }, 500);
 
     // Проверка поддержки webp, добавление класса webp или no-webp для html
     function isWebp() {
@@ -28,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     isWebp();
 
+
+    // ANIMATIONS PAGE
     const boxes = gsap.utils.toArray(".gs-anim");
     boxes.forEach((box) => {
         gsap.from(box, {
@@ -89,15 +93,46 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    $('.gallery-block_1').parallax({imageSrc: 'img/gallery/img-1.jpg'});
-    $('.gallery-block_2').parallax({imageSrc: 'img/gallery/img-2.jpg'});
-    $('.gallery-block_3').parallax({imageSrc: 'img/gallery/img-3.jpg'});
-    $('.gallery-block_4').parallax({imageSrc: 'img/gallery/img-4.jpg'});
-    $('.gallery-block_5').parallax({imageSrc: 'img/gallery/img-5.jpg'});
-    // $('.parallax-window').parallax({imageSrc: 'img/gallery/img-1.jpg'});
-    // $('.parallax-window').parallax({imageSrc: 'img/gallery/img-1.jpg'});
-    // $('.parallax-window').parallax({imageSrc: 'img/gallery/img-1.jpg'});
+    if (window.innerWidth >= 992) {
+        var tlLocation = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".location",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 0.5,
+                pin: ".location__container",
+            },
+        });
 
+        tlLocation.to(
+            ".location-block_1",
+            { yPercent: 100, duration: 1 },
+            "<"
+        );
+        tlLocation.to(
+            ".location-block_2",
+            { yPercent: -100, duration: 1 },
+            "<"
+        );
+        tlLocation.to(
+            ".location-block_3",
+            { yPercent: 100, duration: 1 },
+            "<"
+        );
+        tlLocation.to(
+            ".location-block_4",
+            { yPercent: -100, duration: 1 },
+            "<"
+        );
+    }
+
+
+    // PARALLAX GALLERY
+    $('.gallery-block_1').parallax({ imageSrc: 'img/gallery/img-1.jpg' });
+    $('.gallery-block_2').parallax({ imageSrc: 'img/gallery/img-2.jpg' });
+    $('.gallery-block_3').parallax({ imageSrc: 'img/gallery/img-3.jpg' });
+    $('.gallery-block_4').parallax({ imageSrc: 'img/gallery/img-4.jpg' });
+    $('.gallery-block_5').parallax({ imageSrc: 'img/gallery/img-5.jpg' });
 
     // Location skills
     function locationSkills() {
@@ -110,12 +145,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    gsap.from(".location", {
-        onComplete: locationSkills,
+    gsap.from(".location-skills", {
         scrollTrigger: {
-            trigger: ".location",
-            start: "top 50%",
-            end: "center 50%",
+            trigger: ".location-skills",
+            start: "top 100%",
+            end: "center 10%",
+            scrub: 1,
+            onEnter: locationSkills,
         },
     });
 
@@ -194,7 +230,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     applyDynamicAdaptivity(".header-menu", ".header .nav", ".header__wrapper", 1200, 0, 0);
-    // applyDynamicAdaptivity(".popup-content", ".popup__img", ".popup__body", 992, 3, 1);
+
+    let brochureFrom = document.querySelector('.brochure-form__wrapper');
+    brochureFrom.style.height = brochureFrom.offsetWidth + "px";
+
+    window.addEventListener('resize', function (event) {
+        brochureFrom.style.height = brochureFrom.offsetWidth + "px";
+    });
 
     // BURGER MENU
     const menuBurger = document.querySelector('.header__hamburger');
@@ -211,7 +253,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     for (let i = 0; i < menuMobileLinks.length; i++) {
         menuMobileLinks[i].addEventListener('click', function () {
-            console.log('432');
             document.body.classList.remove('lock');
             document.documentElement.classList.remove('lock');
             menuBurger.classList.remove('active');
