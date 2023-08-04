@@ -72,6 +72,23 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
+    const tlBtn = gsap.utils.toArray(".btn");
+    tlBtn.forEach((elem) => {
+        gsap.from(elem, {
+
+            scrollTrigger: {
+                trigger: elem,
+                onEnter: () => {
+                    elem.classList.add("active");
+                },
+            },
+        });
+    });
+
+    // let offset = window.scrollY;
+    // let parallaxContainer = document.querySelector('.gallery-block');
+    // parallaxContainer.style.backgroundPositionY = offset * 0.7 + 'px';
+
 
     // Location skills
     function locationSkills() {
