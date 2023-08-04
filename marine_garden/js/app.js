@@ -85,9 +85,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // let offset = window.scrollY;
-    // let parallaxContainer = document.querySelector('.gallery-block');
-    // parallaxContainer.style.backgroundPositionY = offset * 0.7 + 'px';
+    $('.gallery-block_1').parallax({imageSrc: 'img/gallery/img-1.jpg'});
+    $('.gallery-block_2').parallax({imageSrc: 'img/gallery/img-2.jpg'});
+    $('.gallery-block_3').parallax({imageSrc: 'img/gallery/img-3.jpg'});
+    $('.gallery-block_4').parallax({imageSrc: 'img/gallery/img-4.jpg'});
+    $('.gallery-block_5').parallax({imageSrc: 'img/gallery/img-5.jpg'});
+    // $('.parallax-window').parallax({imageSrc: 'img/gallery/img-1.jpg'});
+    // $('.parallax-window').parallax({imageSrc: 'img/gallery/img-1.jpg'});
+    // $('.parallax-window').parallax({imageSrc: 'img/gallery/img-1.jpg'});
 
 
     // Location skills
