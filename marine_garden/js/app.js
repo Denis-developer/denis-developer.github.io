@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    let preloader = document.querySelector('.preloader');
+
+    preloader.classList.add('is-loaded');
+
     // Проверка поддержки webp, добавление класса webp или no-webp для html
     function isWebp() {
         function testWebP(callback) {
