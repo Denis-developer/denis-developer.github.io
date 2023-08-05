@@ -93,6 +93,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    gsap.to(".gallery__wrapper", {
+        scrollTrigger: {
+            trigger: ".gallery__wrapper",
+        },
+        className: "gallery__wrapper active",
+        delay: 1,
+    });
+
     if (window.innerWidth >= 992) {
         var tlLocation = gsap.timeline({
             scrollTrigger: {
@@ -125,14 +133,17 @@ document.addEventListener('DOMContentLoaded', function () {
             "<"
         );
     }
-
+    
 
     // PARALLAX GALLERY
-    $('.gallery-block_1').parallax({ imageSrc: 'img/gallery/img-1.jpg' });
-    $('.gallery-block_2').parallax({ imageSrc: 'img/gallery/img-2.jpg' });
-    $('.gallery-block_3').parallax({ imageSrc: 'img/gallery/img-3.jpg' });
-    $('.gallery-block_4').parallax({ imageSrc: 'img/gallery/img-4.jpg' });
-    $('.gallery-block_5').parallax({ imageSrc: 'img/gallery/img-5.jpg' });
+    if (window.innerWidth >= 992) {
+        $('.gallery-block_1').parallax({ imageSrc: 'img/gallery/img-1.jpg' });
+        $('.gallery-block_2').parallax({ imageSrc: 'img/gallery/img-2.jpg' });
+        $('.gallery-block_3').parallax({ imageSrc: 'img/gallery/img-3.jpg' });
+        $('.gallery-block_4').parallax({ imageSrc: 'img/gallery/img-4.jpg' });
+        $('.gallery-block_5').parallax({ imageSrc: 'img/gallery/img-5.jpg' });
+    }
+
 
     // Location skills
     function locationSkills() {
