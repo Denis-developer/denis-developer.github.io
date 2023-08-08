@@ -1,90 +1,200 @@
-// Проверка поддержки webp, добавление класса webp или no-webp для html
-function isWebp() {
-    function testWebP(callback) {
-        // Проверка поддержки webp
-        var webP = new Image();
-        webP.onload = webP.onerror = function () {
-            callback(webP.height == 2);
-        };
-        webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Проверка поддержки webp, добавление класса webp или no-webp для html
+    function isWebp() {
+        function testWebP(callback) {
+            // Проверка поддержки webp
+            var webP = new Image();
+            webP.onload = webP.onerror = function () {
+                callback(webP.height == 2);
+            };
+            webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+        }
+
+        // Добавление класаа
+        testWebP(function (support) {
+
+            if (support == true) {
+                document.querySelector('body').classList.add('webp');
+            } else {
+                document.querySelector('body').classList.add('no-webp');
+            }
+        });
     }
 
-    // Добавление класаа
-    testWebP(function (support) {
+    isWebp();
 
-        if (support == true) {
-            document.querySelector('body').classList.add('webp');
-        } else {
-            document.querySelector('body').classList.add('no-webp');
+    // Аккордионы
+    const accordions = document.querySelectorAll('.questions-accordion__title');
+
+
+    for (let i = 0; i < accordions.length; i++) {
+        accordions[i].addEventListener('click', function () {
+            this.classList.toggle('active');
+            viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            const accordionContent = accordions[i].nextElementSibling;
+            accordionContent.classList.toggle('show');
+            if (accordionContent.style.maxHeight == "") {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 62 + "px";
+            }
+            else {
+                accordionContent.style.maxHeight = null;
+            }
+        })
+    }
+
+    // Плавный скролл к якорям
+    function smoothScrollToAnchor(anchor, offset = 0) {
+        let viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        const target = document.querySelector(anchor);
+        if (!target) return;
+
+        const targetPosition = target.offsetTop - offset;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 800;
+
+        let start = null;
+
+        function step(timestamp) {
+            if (!start) start = timestamp;
+            const progress = timestamp - start;
+            const percentage = Math.min(progress / duration, 1);
+            const easing = easeInOutQuad(percentage);
+            window.scrollTo(0, startPosition + distance * easing);
+            if (progress < duration) {
+                requestAnimationFrame(step);
+            } else {
+                history.replaceState(null, null, anchor); // Заменяем URL без изменения положения на странице
+            }
         }
-    });
-}
 
-isWebp();
-
-// Аккордионы
-const accordions = document.querySelectorAll('.questions-accordion__title');
-
-
-for (let i = 0; i < accordions.length; i++) {
-    accordions[i].addEventListener('click', function () {
-        this.classList.toggle('active');
-        viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        const accordionContent = accordions[i].nextElementSibling;
-        accordionContent.classList.toggle('show');
-        if (accordionContent.style.maxHeight == "") {
-            accordionContent.style.maxHeight = accordionContent.scrollHeight + 57 + "px";
+        function easeInOutQuad(t) {
+            return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
         }
-        else {
-            accordionContent.style.maxHeight = null;
+
+        requestAnimationFrame(step);
+    }
+
+    let linkNav = document.querySelectorAll('[href^="#"]');
+    for (let i = 0; i < linkNav.length; i++) {
+        linkNav[i].addEventListener('click', function (e) {
+            e.preventDefault();
+            const hash = this.getAttribute('href');
+            if (hash == "#about") {
+                smoothScrollToAnchor(hash, 70);
+            }
+            else {
+                smoothScrollToAnchor(hash);
+            }
+        });
+    }
+
+    // Модальное окно
+    const popupLinks = document.querySelectorAll('.popup-link'),
+        body = document.querySelector('body'),
+        lockPadding = document.querySelectorAll('.lock-padding');
+
+    let unlock = true;
+
+    const timeout = 800;
+
+    if (popupLinks.length > 0) {
+        for (let index = 0; index < popupLinks.length; index++) {
+            const popupLink = popupLinks[index];
+            popupLink.addEventListener('click', function (e) {
+                const popupName = popupLink.getAttribute('href').replace('#', '');
+                const currentPopup = document.getElementById(popupName);
+                popupOpen(currentPopup);
+                e.preventDefault();
+            })
+        }
+    }
+
+    const popupCloseIcon = document.querySelectorAll('.popup__close');
+
+    if (popupCloseIcon.length > 0) {
+        for (let index = 0; index < popupCloseIcon.length; index++) {
+            const el = popupCloseIcon[index];
+            el.addEventListener('click', function (e) {
+                popupClose(el.closest('.popup'));
+                e.preventDefault();
+            })
+        }
+    }
+
+    function popupOpen(currentPopup) {
+        if (currentPopup && unlock) {
+            const popupActive = document.querySelector('.popup.open');
+            if (popupActive) {
+                popupClose(popupActive, false);
+            }
+            else {
+                bodyLock();
+            }
+            currentPopup.classList.add('open');
+            currentPopup.addEventListener('click', function (e) {
+                if (!e.target.closest('.popup__content')) {
+                    popupClose(e.target.closest('.popup'));
+                }
+            })
+        }
+    }
+
+    function popupClose(popupActive, doUnlock = true) {
+        if (unlock) {
+            popupActive.classList.remove('open');
+            if (doUnlock) {
+                bodyUnlock();
+            }
+        }
+    }
+
+    function bodyLock() {
+        const lockPaddingValue = window.innerWidth - body.clientWidth + 'px';
+
+        if (lockPadding, length > 0) {
+            for (let index = 0; index < lockPadding.length; index++) {
+                const el = lockPadding[index];
+                el.getElementsByClassName.paddingRight = lockPaddingValue
+            }
+        }
+        body.style.paddingRight = lockPaddingValue;
+        body.classList.add('lock');
+        document.documentElement.classList.add('lock');
+
+        unlock = false;
+        setTimeout(function () {
+            unlock = true;
+        }, timeout);
+    }
+
+    function bodyUnlock() {
+        setTimeout(function () {
+            if (lockPadding.length > 0) {
+                for (let index = 0; index < lockPadding.length; index++) {
+                    const el = lockPadding[index];
+                    el.style.paddingRight = '0px';
+                }
+            }
+            body.style.paddingRight = "0px";
+            body.classList.remove('lock');
+            document.documentElement.classList.remove('lock');
+        }, timeout);
+
+        unlock = false;
+        setTimeout(function () {
+            unlock = true;
+        }, timeout);
+    }
+
+    document.addEventListener('keydown', function (e) {
+        if (e.which === 27) {
+            const popupActive = document.querySelector('.popup.open');
+            popupClose(popupActive);
         }
     })
-}
 
-// Плавный скролл к якорям
-function smoothScrollToAnchor(anchor, offset = 0) {
-    let viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    const target = document.querySelector(anchor);
-    if (!target) return;
 
-    const targetPosition = target.offsetTop - offset;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    const duration = 800;
 
-    let start = null;
-
-    function step(timestamp) {
-        if (!start) start = timestamp;
-        const progress = timestamp - start;
-        const percentage = Math.min(progress / duration, 1);
-        const easing = easeInOutQuad(percentage);
-        window.scrollTo(0, startPosition + distance * easing);
-        if (progress < duration) {
-            requestAnimationFrame(step);
-        } else {
-            history.replaceState(null, null, anchor); // Заменяем URL без изменения положения на странице
-        }
-    }
-
-    function easeInOutQuad(t) {
-        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    }
-
-    requestAnimationFrame(step);
-}
-
-let linkNav = document.querySelectorAll('[href^="#"]');
-for (let i = 0; i < linkNav.length; i++) {
-    linkNav[i].addEventListener('click', function (e) {
-        e.preventDefault();
-        const hash = this.getAttribute('href');
-        if (hash == "#about") {
-            smoothScrollToAnchor(hash, 70);
-        }
-        else {
-            smoothScrollToAnchor(hash);
-        }
-    });
-}
-
+})
