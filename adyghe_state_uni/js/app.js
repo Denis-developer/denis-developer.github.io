@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Плавный скролл к якорям
     function smoothScrollToAnchor(anchor, offset = 0) {
-        let viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         const target = document.querySelector(anchor);
         if (!target) return;
 
@@ -96,6 +95,9 @@ document.addEventListener('DOMContentLoaded', function () {
             if (hash == "#about") {
                 smoothScrollToAnchor(hash, 70);
             }
+            else if (hash == "#popup") {
+                return;
+            }
             else {
                 smoothScrollToAnchor(hash);
             }
@@ -104,8 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Модальное окно
     const popupLinks = document.querySelectorAll('.popup-link'),
-        body = document.querySelector('body'),
-        lockPadding = document.querySelectorAll('.lock-padding');
+        body = document.querySelector('body');
 
     let unlock = true;
 
@@ -163,15 +164,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function bodyLock() {
-        const lockPaddingValue = window.innerWidth - body.clientWidth + 'px';
-
-        if (lockPadding, length > 0) {
-            for (let index = 0; index < lockPadding.length; index++) {
-                const el = lockPadding[index];
-                el.getElementsByClassName.paddingRight = lockPaddingValue
-            }
-        }
-        body.style.paddingRight = lockPaddingValue;
         body.classList.add('lock');
         document.documentElement.classList.add('lock');
 
@@ -183,12 +175,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function bodyUnlock() {
         setTimeout(function () {
-            if (lockPadding.length > 0) {
-                for (let index = 0; index < lockPadding.length; index++) {
-                    const el = lockPadding[index];
-                    el.style.paddingRight = '0px';
-                }
-            }
             body.style.paddingRight = "0px";
             body.classList.remove('lock');
             document.documentElement.classList.remove('lock');
