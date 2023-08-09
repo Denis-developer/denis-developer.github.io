@@ -24,6 +24,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     isWebp();
 
+    // Анимация
+    const programPart = gsap.utils.toArray(".gs-anim");
+    programPart.forEach((elem) => {
+        gsap.from(elem, {
+            duration: 1.5,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: elem,
+            },
+        });
+    });
+
     // Аккордионы
     const accordions = document.querySelectorAll('.questions-accordion__title');
 
