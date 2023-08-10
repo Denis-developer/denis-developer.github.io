@@ -27,17 +27,28 @@ document.addEventListener('DOMContentLoaded', function () {
     // Ссылка на верх
     const linkTop = document.querySelector(".linkTop");
     let viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    
-    if(viewport_width > 576) {
-        window.addEventListener("scroll", function() {
+
+    function toggleLinkTop() {
+        if (viewport_width > 576) {
             if (window.scrollY >= window.innerHeight) {
                 linkTop.classList.add("active");
             } else {
                 linkTop.classList.remove("active");
             }
-        });
+        } else {
+            linkTop.classList.remove("active");
+        }
     }
-    
+
+    toggleLinkTop();
+
+    window.addEventListener("scroll", toggleLinkTop);
+
+    window.addEventListener('resize', function (event) {
+        viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        toggleLinkTop();
+    });
+
 
     // Input mask
     $('input[type="tel"]').inputmask("+X (999) 999-9999", {
