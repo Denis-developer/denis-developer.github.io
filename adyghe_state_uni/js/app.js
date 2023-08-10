@@ -24,11 +24,70 @@ document.addEventListener('DOMContentLoaded', function () {
 
     isWebp();
 
+
     // Анимация
     const programPart = gsap.utils.toArray(".gs-anim");
     programPart.forEach((elem) => {
         gsap.from(elem, {
             duration: 1.5,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: elem,
+                start: 'top 80%',
+            },
+        });
+    });
+
+    const programParts = gsap.utils.toArray(".gs-title");
+    programParts.forEach((elem) => {
+        gsap.from(elem, {
+            scrollTrigger: {
+                trigger: elem,
+                start: 'top 80%',
+                onEnter: () => {
+                    let programPartss = document.querySelectorAll('.program-block__part');
+                    for (let i = 0; i < programPartss.length; i++) {
+                        programPartss[i].classList.remove("active");
+                        
+                    }
+                    elem.classList.add("active");
+                },
+                onLeave: () => {
+                    elem.classList.remove("active");
+                },
+            },
+        });
+    });
+
+    const boxToTop = gsap.utils.toArray(".gs-toTop");
+    boxToTop.forEach((elem) => {
+        gsap.from(elem, {
+            yPercent: 100,
+            duration: 1,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: elem,
+            },
+        });
+    });
+
+    const boxToRight = gsap.utils.toArray(".gs-toRight");
+    boxToRight.forEach((elem) => {
+        gsap.from(elem, {
+            xPercent: -100,
+            duration: 1,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: elem,
+            },
+        });
+    });
+
+    const boxToLeft = gsap.utils.toArray(".gs-toLeft");
+    boxToLeft.forEach((elem) => {
+        gsap.from(elem, {
+            xPercent: 100,
+            duration: 1,
             opacity: 0,
             scrollTrigger: {
                 trigger: elem,
