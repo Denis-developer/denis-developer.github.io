@@ -36,12 +36,12 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="css/style.min.css?_v=20230810161918">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230810183732">
   </head>
   <body>
     <main class="main">
       <section class="intro">
-        <header class="header"> 
+        <header class="header" id="header"> 
           <div class="container"><a class="header__logo" href="index.html"><img src="img/logo.svg" alt="Адыгейский государственный университет | Adyghe state university"></a>
             <nav class="header-nav"> 
               <ul class="header-list"> 
@@ -58,7 +58,7 @@
             <h1 class="intro__title gs-toTop">«МЕДИА-КОММУНИКАЦИИ» </h1>
             <p class="intro__text gs-toTop">Магистратура «Медиакоммуникации» - практикориентированная программ тех, кто делает медиа, или хочет работать в медиа, а также хочет знать секреты  медиапланнинга и медиастратегии.</p><a class="intro__btn btn popup-link gs-toTop" href="#popup">Хочу поступить<img src="img/icons/arrow-right.svg" alt="-&gt;"></a>
           </div>
-        </div>
+        </div><a class="linkTop" href="#header"><img src="img/icons/arrow-right.svg" alt="-&gt;"></a>
       </section>
       <section class="about" id="about"> 
         <div class="container"> 
@@ -147,6 +147,8 @@
         <div class="container"> 
           <div class="circle"></div>
           <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
           <div class="teacher__wrapper"> <picture><source srcset="img/teacher/woman.webp, img/teacher/woman@2x.webp 2x" type="image/webp"><img class="teacher__img" srcset="img/teacher/woman@2x.png 2x" src="img/teacher/woman.png" alt=""></picture>
             <div class="teacher__content"> 
               <h2 class="teacher__title gs-toLeft">Анна Шафран</h2>
@@ -226,21 +228,21 @@
               <p class="questions-accordion__text">Зачисление на программу «Медиакоммуникации» по результатам собеседования.</p>
             </div>
           </div>
-          <div class="questions-form__wrapper"> 
+          <div class="form__wrapper"> 
             <div class="circle"></div>
             <div class="circle"></div>
             <div class="circle"></div>
-            <div class="circle"></div><picture><source srcset="img/questions/man.webp, img/questions/man@2x.webp 2x" type="image/webp"><img class="questions-form__img" srcset="img/questions/man@2x.png 2x" src="img/questions/man.png" alt=""></picture>
-            <h5 class="questions-form__title gs-toLeft">Остались вопросы?</h5>
-            <p class="questions-form__text gs-toLeft">свяжитесь с нами, чтобы&nbsp;получить ответы на&nbsp;интересующие вопросы</p>
-            <form class="gs-toLeft questions-form" action="#">
-              <input class="questions-form__input" type="text" name="name" placeholder="Ваше имя" required>
-              <input class="questions-form__input" type="tel" name="tel" placeholder="Телефон" required>
-              <input class="questions-form__input" type="email" name="email" placeholder="Почта" required>
-              <textarea class="questions-form__textarea questions-form__input" name="message" placeholder="Что Вас интересует?" required></textarea>
-              <input class="questions-form__checkbox" type="checkbox" id="checkbox" required>
-              <label class="questions-form__label" for="checkbox">Соглашаюсь на обработку персональных данных в соответствии с условиями <a href="#">Пользовательского соглашения </a>и&nbsp;<a href="#">Положения о конфиденциальности</a></label>
-              <button class="questions-form__btn btn" type="submit">Спросить<img src="img/icons/arrow-right.svg" alt="-&gt;"></button>
+            <div class="circle"></div><picture><source srcset="img/questions/man.webp, img/questions/man@2x.webp 2x" type="image/webp"><img class="form__img" srcset="img/questions/man@2x.png 2x" src="img/questions/man.png" alt=""></picture>
+            <h5 class="form__title gs-toLeft">Остались вопросы?</h5>
+            <p class="form__text gs-toLeft">свяжитесь с нами, чтобы&nbsp;получить ответы на&nbsp;интересующие вопросы</p>
+            <form class="gs-toLeft form" action="#">
+              <input class="form__input" type="text" name="name" placeholder="Ваше имя" required>
+              <input class="form__input" type="tel" name="tel" placeholder="Телефон" required>
+              <input class="form__input" type="email" name="email" placeholder="Почта" required>
+              <textarea class="form__textarea form__input" name="message" placeholder="Что Вас интересует?" required></textarea>
+              <input class="form__checkbox" type="checkbox" id="checkbox" required>
+              <label class="form__label" for="checkbox">Соглашаюсь на обработку персональных данных в соответствии с условиями <a href="#">Пользовательского соглашения </a>и&nbsp;<a href="#">Положения о конфиденциальности</a></label>
+              <button class="form__btn btn" type="submit">Спросить<img src="img/icons/arrow-right.svg" alt="-&gt;"></button>
             </form>
           </div>
         </div>
@@ -252,26 +254,42 @@
           <p class="footer__text gs-toRight">Адыгейский государственный университет</p>
           <p class="footer__text gs-toRight">2023</p>
         </div>
-        <div class="footer__wrapper"> <a class="footer__link gs-toLeft" href="#">Пользовательское соглашение</a><a class="footer__link gs-toLeft" href="#">Положение о конфиденциальности</a></div>
+        <div class="footer__wrapper"> <a class="footer__link popup-link gs-toLeft" href="#popup2">Пользовательское соглашение</a><a class="footer__link popup-link gs-toLeft" href="#popup3">Положение о конфиденциальности</a></div>
       </div>
     </footer>
     <div class="popup" id="popup">
       <div class="popup__body">
         <div class="popup__content"><a class="popup__close" href="#">&times;</a>
-          <form class="popup-form" action="#">
-            <input class="popup-form__input" type="text" name="name" placeholder="Ваше имя" required>
-            <input class="popup-form__input" type="tel" name="tel" placeholder="Телефон" required>
-            <input class="popup-form__input" type="email" name="email" placeholder="Почта" required>
-            <textarea class="popup-form__textarea popup-form__input" name="message" placeholder="Что Вас интересует?" required></textarea>
-            <input class="popup-form__checkbox" type="checkbox" id="checkbox2" required>
-            <label class="popup-form__label" for="checkbox2">Соглашаюсь на обработку персональных данных в соответствии с условиями <a href="#">Пользовательского соглашения </a>и&nbsp;<a href="#">Положения о конфиденциальности</a></label>
-            <button class="popup-form__btn btn" type="submit">Спросить<img src="img/icons/arrow-right.svg" alt="-&gt;"></button>
+          <form class="gs-toLeft form" action="#">
+            <input class="form__input" type="text" name="name" placeholder="Ваше имя" required>
+            <input class="form__input" type="tel" name="tel" placeholder="Телефон" required>
+            <input class="form__input" type="email" name="email" placeholder="Почта" required>
+            <textarea class="form__textarea form__input" name="message" placeholder="Что Вас интересует?" required></textarea>
+            <input class="form__checkbox" type="checkbox" id="checkbox2" required>
+            <label class="form__label" for="checkbox2">Соглашаюсь на обработку персональных данных в соответствии с условиями <a href="#">Пользовательского соглашения </a>и&nbsp;<a href="#">Положения о конфиденциальности</a></label>
+            <button class="form__btn btn" type="submit">Спросить<img src="img/icons/arrow-right.svg" alt="-&gt;"></button>
           </form>
         </div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20230810161918"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?_v=20230810161918"></script>
-    <script src="js/app.js?_v=20230810161918"></script>
+    <div class="popup popupText" id="popup2">
+      <div class="popup__body">
+        <div class="popup__content"><a class="popup__close" href="#">&times;</a>
+          <p class="popup__text">Пользовательское соглашение sit amet, consectetur adipisicing elit. Voluptates iste unde nesciunt placeat et distinctio maiores, alias laudantium voluptatem laboriosam voluptate ea fuga neque veniam molestiae incidunt, est harum nulla consequuntur ullam nihil quod corrupti! Veniam consequuntur dolore tenetur ex? Perferendis aspernatur quidem illo doloremque libero delectus officia eaque tempora corrupti ea, expedita maiores autem facilis saepe consectetur dolorum optio. Quos aspernatur distinctio enim dicta nulla quaerat dolorum! Autem dolorum corrupti commodi dolor similique consectetur explicabo neque, vitae nam porro, provident delectus dolores quas rerum culpa quaerat error molestias consequuntur totam? Ducimus accusamus amet architecto esse sint, provident, asperiores possimus sit deserunt eveniet saepe recusandae fugiat. Praesentium autem eius illo ut consequatur, eos fugiat cupiditate et. Tempora incidunt nulla vel dolores id beatae perspiciatis consequatur animi veniam accusamus aspernatur sint voluptatibus, repellat facere? Repudiandae itaque eos repellat rerum ratione laudantium nesciunt consequatur id veritatis, velit vero, saepe pariatur nulla deserunt quaerat! Tempora dolore facilis architecto ipsum consequuntur, ad odit, consectetur cupiditate illo dolores officiis neque nihil voluptate fugit id at, dolorum vitae ipsa maxime officia nulla quasi earum vel! Non necessitatibus aliquam dolorum possimus ad delectus ratione labore dignissimos, dolorem sint voluptatibus aperiam ullam culpa fugiat ducimus laboriosam, pariatur unde.</p>
+        </div>
+      </div>
+    </div>
+    <div class="popup popupText" id="popup3">
+      <div class="popup__body">
+        <div class="popup__content"><a class="popup__close" href="#">&times;</a>
+          <p class="popup__text">Положение о конфиденциальности sit amet, consectetur adipisicing elit. Voluptates iste unde nesciunt placeat et distinctio maiores, alias laudantium voluptatem laboriosam voluptate ea fuga neque veniam molestiae incidunt, est harum nulla consequuntur ullam nihil quod corrupti! Veniam consequuntur dolore tenetur ex? Perferendis aspernatur quidem illo doloremque libero delectus officia eaque tempora corrupti ea, expedita maiores autem facilis saepe consectetur dolorum optio. Quos aspernatur distinctio enim dicta nulla quaerat dolorum! Autem dolorum corrupti commodi dolor similique consectetur explicabo neque, vitae nam porro, provident delectus dolores quas rerum culpa quaerat error molestias consequuntur totam? Ducimus accusamus amet architecto esse sint, provident, asperiores possimus sit deserunt eveniet saepe recusandae fugiat. Praesentium autem eius illo ut consequatur, eos fugiat cupiditate et. Tempora incidunt nulla vel dolores id beatae perspiciatis consequatur animi veniam accusamus aspernatur sint voluptatibus, repellat facere? Repudiandae itaque eos repellat rerum ratione laudantium nesciunt consequatur id veritatis, velit vero, saepe pariatur nulla deserunt quaerat! Tempora dolore facilis architecto ipsum consequuntur, ad odit, consectetur cupiditate illo dolores officiis neque nihil voluptate fugit id at, dolorum vitae ipsa maxime officia nulla quasi earum vel! Non necessitatibus aliquam dolorum possimus ad delectus ratione labore dignissimos, dolorem sint voluptatibus aperiam ullam culpa fugiat ducimus laboriosam, pariatur unde.</p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js?_v=20230810183732" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.9/jquery.inputmask.bundle.min.js?_v=20230810183732"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20230810183732"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?_v=20230810183732"></script>
+    <script src="js/app.js?_v=20230810183732"></script>
   </body>
 </html>

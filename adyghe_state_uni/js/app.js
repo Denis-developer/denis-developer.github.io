@@ -24,6 +24,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     isWebp();
 
+    // Ссылка на верх
+    const linkTop = document.querySelector(".linkTop");
+    
+    window.addEventListener("scroll", function() {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        
+        if (scrollPosition >= windowHeight) {
+            linkTop.classList.add("active");
+        } else {
+            linkTop.classList.remove("active");
+        }
+    });
+
+    // Input mask
+    $('input[type="tel"]').inputmask("+X (999) 999-9999", {
+        definitions: {
+            "X": {
+                validator: "[7-8]",
+            }
+        },
+        oncomplete: function () {
+            $(this).val('+7' + $(this).val().substring(2));
+        }
+    });
+
 
     // Анимация
     const programPart = gsap.utils.toArray(".gs-anim");
@@ -33,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
             opacity: 0,
             scrollTrigger: {
                 trigger: elem,
-                start: 'top 80%',
+                start: 'top 60%',
             },
         });
     });
@@ -43,12 +69,12 @@ document.addEventListener('DOMContentLoaded', function () {
         gsap.from(elem, {
             scrollTrigger: {
                 trigger: elem,
-                start: 'top 80%',
+                start: 'top 60%',
                 onEnter: () => {
                     let programPartss = document.querySelectorAll('.program-block__part');
                     for (let i = 0; i < programPartss.length; i++) {
                         programPartss[i].classList.remove("active");
-                        
+
                     }
                     elem.classList.add("active");
                 },
@@ -154,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (hash == "#about") {
                 smoothScrollToAnchor(hash, 70);
             }
-            else if (hash == "#popup") {
+            else if (hash.includes("popup")) {
                 return;
             }
             else {
@@ -165,7 +191,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Модальное окно
     const popupLinks = document.querySelectorAll('.popup-link'),
-        body = document.querySelector('body');
+        body = document.querySelector('body'),
+        lockPadding = document.querySelectorAll('.lock-padding');
 
     let unlock = true;
 
@@ -223,6 +250,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function bodyLock() {
+        const lockPaddingValue = window.innerWidth - body.clientWidth + 'px';
+
+        if (lockPadding, length > 0) {
+            for (let index = 0; index < lockPadding.length; index++) {
+                const el = lockPadding[index];
+                el.getElementsByClassName.paddingRight = lockPaddingValue
+            }
+        }
+        body.style.paddingRight = lockPaddingValue;
         body.classList.add('lock');
         document.documentElement.classList.add('lock');
 
@@ -234,6 +270,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function bodyUnlock() {
         setTimeout(function () {
+            if (lockPadding.length > 0) {
+                for (let index = 0; index < lockPadding.length; index++) {
+                    const el = lockPadding[index];
+                    el.style.paddingRight = '0px';
+                }
+            }
             body.style.paddingRight = "0px";
             body.classList.remove('lock');
             document.documentElement.classList.remove('lock');
@@ -251,6 +293,33 @@ document.addEventListener('DOMContentLoaded', function () {
             popupClose(popupActive);
         }
     })
+
+        (function () {
+            // проверяем поддержку
+            if (!Element.prototype.closest) {
+                // реализуем
+                Element.prototype.closest = function (css) {
+                    var node = this;
+
+                    while (node) {
+                        if (node.matches(css)) return node;
+                        else node = node.parentElement;
+                    }
+                    return null;
+                };
+            }
+        })();
+
+    (function () {
+        // проверяем поддержку
+        if (!Element.prototype.matches) {
+            // определяем свойство
+            Element.prototype.matches = Element.prototype.matchesSelector ||
+                Element.prototype.webkitMatchesSelector ||
+                Element.prototype.mozMatchesSelector ||
+                Element.prototype.msMatchesSelector;
+        }
+    })();
 
 
 
