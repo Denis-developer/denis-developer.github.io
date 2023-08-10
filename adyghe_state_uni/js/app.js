@@ -26,17 +26,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Ссылка на верх
     const linkTop = document.querySelector(".linkTop");
+    let viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     
-    window.addEventListener("scroll", function() {
-        const scrollPosition = window.scrollY;
-        const windowHeight = window.innerHeight;
-        
-        if (scrollPosition >= windowHeight) {
-            linkTop.classList.add("active");
-        } else {
-            linkTop.classList.remove("active");
-        }
-    });
+    if(viewport_width > 576) {
+        window.addEventListener("scroll", function() {
+            if (window.scrollY >= window.innerHeight) {
+                linkTop.classList.add("active");
+            } else {
+                linkTop.classList.remove("active");
+            }
+        });
+    }
+    
 
     // Input mask
     $('input[type="tel"]').inputmask("+X (999) 999-9999", {
@@ -52,6 +53,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // Анимация
+    const aboutBlock = gsap.utils.toArray(".about-block");
+    aboutBlock.forEach((elem) => {
+        gsap.from(elem, {
+            yPercent: 100,
+            duration: 1.5,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: elem,
+                start: 'top 140%',
+            },
+        });
+    });
+
+    const aboutListItem = gsap.utils.toArray(".about-block__item");
+    aboutListItem.forEach((elem) => {
+        gsap.from(elem, {
+            duration: 1.5,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: elem,
+                start: 'top 140%',
+            },
+        });
+    });
+
     const programPart = gsap.utils.toArray(".gs-anim");
     programPart.forEach((elem) => {
         gsap.from(elem, {
@@ -196,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let unlock = true;
 
-    const timeout = 800;
+    const timeout = 500;
 
     if (popupLinks.length > 0) {
         for (let index = 0; index < popupLinks.length; index++) {
@@ -293,7 +319,6 @@ document.addEventListener('DOMContentLoaded', function () {
             popupClose(popupActive);
         }
     })
-
 
 
 })
