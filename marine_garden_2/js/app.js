@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // PRELOADER
-    let preloader = document.querySelector('.preloader');
-    setTimeout(function () {
-        preloader.classList.add('is-loaded');
-    }, 700);
+    document.addEventListener('load', function () {
+        // PRELOADER
+        let preloader = document.querySelector('.preloader');
+        setTimeout(function () {
+            preloader.classList.add('is-loaded');
+        }, 700);
+    })
 
     // Проверка поддержки webp, добавление класса webp или no-webp для html
     function isWebp() {
