@@ -271,7 +271,7 @@ td {
     position: absolute;
     top: 0;
     left: 0;
-    background: var(--primary-color-1) url(../img/mobileMenu-bg.png) no-repeat bottom right / contain;
+    background: var(--primary-color-1) url(../img/mobileMenu-bg.png) no-repeat bottom left / contain;
     padding: 81px 15px;
     opacity: 0;
     visibility: hidden;
