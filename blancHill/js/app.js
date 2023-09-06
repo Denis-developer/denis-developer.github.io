@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.gallery-block_2').parallax({ imageSrc: 'img/gallery/img-2.jpg' });
         $('.gallery-block_3').parallax({ imageSrc: 'img/gallery/img-3.jpg' });
         $('.gallery-block_4').parallax({ imageSrc: 'img/gallery/img-4.jpg' });
-        $('.gallery-block_4').parallax({ imageSrc: 'img/gallery/img-5.jpg' });
+        $('.gallery-block_5').parallax({ imageSrc: 'img/gallery/img-5.jpg' });
     }
 
 
