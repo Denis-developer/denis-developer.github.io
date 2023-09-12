@@ -816,8 +816,16 @@ td {
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
-    padding: 103px 24px 64px 24px;
+    padding: 30px 24px 64px 24px;
     box-sizing: border-box;
+}
+
+.popup__header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .popup__close {
@@ -826,9 +834,6 @@ td {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 0;
-    right: 0;
     background-color: #0284c7;
     transition: all 0.2s;
 }
@@ -1030,10 +1035,6 @@ td {
 }
 
 @media (max-width: 1024px) {
-
-    .popup__body {
-        padding-top: 85px;
-    }
 
     .popup-block {
         width: calc((100% - 24px) / 2);
