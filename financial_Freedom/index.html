@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="static/favicon/site.webmanifest">
+  <link rel="shortcut icon" href="static/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="css/style.min.css??=v=20230907171313">
+  <title>SabioTrade</title>
+</head>
+
+<body>
+  <div id="root" class="site site--theme-dark">
+
+    <header class="header site__header" id="header-section">
+      <div class="container header__container">
+        <a href="index.html" class="header__logo logo">
+          <img src="images/logo.svg" class="d-sm-none" alt="SabioTrade">
+          <img src="images/logo-mobile.svg" class="d-sm-block" alt="SabioTrade">
+        </a>
+        <div class="header__dropdown">
+          <p class="d-sm-block header__language-suptitle">Choose language</p>
+          <div class="header__language language-select">
+            <button type="button" class="js-language-toggle language-select__current">
+              <span class="language-select__card">
+                <span class="language-select__card-flag">
+                  <svg class="u-icon">
+                    <use xlink:href="images/icons/icons.svg#flag-en"></use>
+                  </svg>
+                </span>
+                <span class="language-select__card-text">ENG</span>
+                <svg class="u-icon language-select__card-arrow">
+                  <use xlink:href="images/icons/icons.svg#arrow"></use>
+                </svg>
+              </span>
+            </button>
+            <div class="language-select__dropdown">
+              <a href="index-en.html" class="language-select__card language-select__dropdown-card is-current">
+                <span class="language-select__card-flag">
+                  <svg class="u-icon">
+                    <use xlink:href="images/icons/icons.svg#flag-en"></use>
+                  </svg>
+                </span>
+                <span class="language-select__card-text">ENG</span>
+              </a>
+              <a href="index-de.html" class="language-select__card language-select__dropdown-card">
+                <span class="language-select__card-flag">
+                  <svg class="u-icon">
+                    <use xlink:href="images/icons/icons.svg#flag-de"></use>
+                  </svg>
+                </span>
+                <span class="language-select__card-text">GER</span>
+              </a>
+              <a href="index-it.html" class="language-select__card language-select__dropdown-card">
+                <span class="language-select__card-flag">
+                  <svg class="u-icon">
+                    <use xlink:href="images/icons/icons.svg#flag-it"></use>
+                  </svg>
+                </span>
+                <span class="language-select__card-text">ITA</span>
+              </a>
+            </div>
+          </div>
+          <a href="https://dashboard.sabiotrade.io/Account/Login"
+            class="btn btn--size-md btn--theme-simple header__btn-login">
+            <span class="btn__inner">
+              <span class="btn__title">Log in</span>
+            </span>
+          </a>
+        </div>
+        <a href="#tariffs-section" class="btn btn--size-md btn--theme-blue header__btn-get-funded">
+          <span class="btn__inner">
+            <span class="btn__title">Get funded</span>
+          </span>
+        </a>
+        <button type="button" class="header__toggle js-header-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main role="main" class="site__main">
+
+      <section class="intro">
+        <div class="container intro__container">
+          <h1 class="intro__title title-size-2">Speedy Track <span>to&nbsp;Financial Freedom</span></h1>
+          <h2 class="intro__subtitle">Navigate financial empowerment with funded accounts up to $100,000</h2>
+          <a href="#tariffs-section" class="btn btn--theme-accent btn--size-lg intro__btn">
+            <span class="btn__inner">
+              <span class="btn__title">START NOW</span>
+            </span>
+          </a>
+          <div class="content intro__description">
+            <p>We invite talented investors to work as our non-staff traders.<br>Our funds, your skills — you risk
+              nothing, we share the profit 80/20.</p>
+          </div>
+        </div>
+        <picture class="intro__picture">
+          <img src="images/intro-img-desktop.png" alt="Speedy Track to Financial Freedom">
+        </picture>
+      </section>
+
+
+      <section class="tariffs-section" id="tariffs-section">
+        <div class="container tariffs-section__container">
+          <h2 class="tariffs-section__title">Become a funded trader now. Choose&nbsp;your plan</h2>
+          <div class="tariffs-section__table-wrapper">
+            <table id="table-tariffs" class="table-tariffs tariffs-section__table-tariffs">
+              <thead class="table-tariffs__header">
+                <tr>
+                  <th class="table-tariffs__col table-tariffs__col--1">
+                    <div class="table-tariffs__cell">
+                      <p class="table-tariffs__subtitle">Account balance</p>
+                    </div>
+                  </th>
+                  <th class="table-tariffs__col table-tariffs__col--2">
+                    <div class="table-tariffs__card">
+                      <h3 class="table-tariffs__card-name">Standard</h3>
+                      <hr class="table-tariffs__card-hr u-hr">
+                      <p class="d-md-block table-tariffs__card-subtitle">Account balance</p>
+                      <div class="table-tariffs__card-price">$10,000</div>
+                      <div class="d-md-block table-tariffs__card-time-fee">$50</div>
+                      <p class="d-md-block table-tariffs__card-subtitle">One-Time Fee</p>
+                    </div>
+                  </th>
+                  <th class="table-tariffs__col table-tariffs__col--3 table-tariffs__col--theme-accent">
+                    <div class="table-tariffs__card">
+                      <h3 class="table-tariffs__card-name">Premium</h3>
+                      <hr class="table-tariffs__card-hr u-hr">
+                      <p class="d-md-block table-tariffs__card-subtitle">Account balance</p>
+                      <div class="table-tariffs__card-price">$25,000</div>
+                      <div class="d-md-block table-tariffs__card-time-fee">$125</div>
+                      <p class="d-md-block table-tariffs__card-subtitle">One-Time Fee</p>
+                    </div>
+                  </th>
+                  <th class="table-tariffs__col table-tariffs__col--4">
+                    <div class="table-tariffs__card">
+                      <h3 class="table-tariffs__card-name">Platinum</h3>
+                      <hr class="table-tariffs__card-hr u-hr">
+                      <p class="d-md-block table-tariffs__card-subtitle">Account balance</p>
+                      <div class="table-tariffs__card-price">$100,000</div>
+                      <div class="d-md-block table-tariffs__card-time-fee">$500</div>
+                      <p class="d-md-block table-tariffs__card-subtitle">One-Time Fee</p>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="table-tariffs__body">
+                <tr>
+                  <td class="table-tariffs__col table-tariffs__col--1">
+                    <div class="table-tariffs__cell">
+                      <p class="table-tariffs__subtitle">Leverage</p>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--2">
+                    <p class="d-md-block table-tariffs__will-get">What you will get</p>
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Leverage">
+                        <p class="table-tariffs__text">30:1</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--3 table-tariffs__col--theme-accent">
+                    <p class="d-md-block table-tariffs__will-get">What you will get</p>
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Leverage">
+                        <p class="table-tariffs__text">30:1</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--4">
+                    <p class="d-md-block table-tariffs__will-get">What you will get</p>
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Leverage">
+                        <p class="table-tariffs__text">30:1</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-tariffs__col table-tariffs__col--1">
+                    <div class="table-tariffs__cell">
+                      <p class="table-tariffs__subtitle">Profit Target</p>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--2">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Profit Target">
+                        <p class="table-tariffs__text">10%</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--3 table-tariffs__col--theme-accent">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Profit Target">
+                        <p class="table-tariffs__text">10%</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--4">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Profit Target">
+                        <p class="table-tariffs__text">10%</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-tariffs__col table-tariffs__col--1">
+                    <div class="table-tariffs__cell">
+                      <p class="table-tariffs__subtitle">Daily Loss Limit</p>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--2">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Daily Loss Limit">
+                        <p class="table-tariffs__text">3%</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--3 table-tariffs__col--theme-accent">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Daily Loss Limit">
+                        <p class="table-tariffs__text">3%</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--4">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Daily Loss Limit">
+                        <p class="table-tariffs__text">3%</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-tariffs__col table-tariffs__col--1">
+                    <div class="table-tariffs__cell">
+                      <p class="table-tariffs__subtitle">Max Trailing Drawdown</p>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--2">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Max Trailing Drawdown">
+                        <p class="table-tariffs__text">6%</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--3 table-tariffs__col--theme-accent">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Max Trailing Drawdown">
+                        <p class="table-tariffs__text">6%</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--4">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Max Trailing Drawdown">
+                        <p class="table-tariffs__text">6%</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-tariffs__col table-tariffs__col--1">
+                    <div class="table-tariffs__cell">
+                      <p class="table-tariffs__subtitle">Profit Payout</p>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--2">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Profit Payout">
+                        <p class="table-tariffs__text">75%</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--3 table-tariffs__col--theme-accent">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Profit Payout">
+                        <p class="table-tariffs__text">80%</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--4">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Profit Payout">
+                        <p class="table-tariffs__text">80%</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-tariffs__col table-tariffs__col--1">
+                    <div class="table-tariffs__cell">
+                      <p class="table-tariffs__subtitle">Reset Fee Discount</p>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--2">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Reset Fee Discount">
+                        <p class="table-tariffs__text">10%</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--3 table-tariffs__col--theme-accent">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Reset Fee Discount">
+                        <p class="table-tariffs__text">20%</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--4">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__mobile-tr" data-title-mobile="Reset Fee Discount">
+                        <p class="table-tariffs__text">20%</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot class="table-tariffs__footer">
+                <tr>
+                  <td class="table-tariffs__col table-tariffs__col--1">
+                    <div class="table-tariffs__cell">
+                      <p class="table-tariffs__subtitle">All plans include premium education and&nbsp;trading signals
+                      </p>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--2">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__card">
+                        <hr class="d-md-none table-tariffs__card-hr u-hr">
+                        <div class="d-md-none table-tariffs__card-time-fee">$50</div>
+                        <p class="d-md-none table-tariffs__card-subtitle">One-Time Fee</p>
+                        <a href="https://sabiotrade.com/checkout?id=1"
+                          class="btn btn--size-md table-tariffs__card-btn btn--theme-navy-blue">
+                          <span class="btn__inner">
+                            <span class="btn__title">Get funded</span>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--3 table-tariffs__col--theme-accent">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__card">
+                        <hr class="d-md-none table-tariffs__card-hr u-hr">
+                        <div class="d-md-none table-tariffs__card-time-fee">$125</div>
+                        <p class="d-md-none table-tariffs__card-subtitle">One-Time Fee</p>
+                        <a href="https://sabiotrade.com/checkout?id=2"
+                          class="btn btn--size-md table-tariffs__card-btn btn--theme-accent">
+                          <span class="btn__inner">
+                            <span class="btn__title">Get funded now</span>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-tariffs__col table-tariffs__col--4">
+                    <div class="table-tariffs__cell">
+                      <div class="table-tariffs__card">
+                        <hr class="d-md-none table-tariffs__card-hr u-hr">
+                        <div class="d-md-none table-tariffs__card-time-fee">$500</div>
+                        <p class="d-md-none table-tariffs__card-subtitle">One-Time Fee</p>
+                        <a href="https://sabiotrade.com/checkout?id=3"
+                          class="btn btn--size-md table-tariffs__card-btn btn--theme-navy-blue">
+                          <span class="btn__inner">
+                            <span class="btn__title">Get funded</span>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <p class="d-md-block tariffs-section__footer">All Plans Include: Premium&nbsp;Education, Trading Signals</p>
+        </div>
+      </section>
+
+
+      <section class="reviews-section">
+        <div class="container reviews-section__container">
+          <div class="reviews-section__inner">
+            <p class="reviews-section__suptitle">Clients success stories</p>
+            <h2 class="reviews-section__title">Why choose&nbsp;us</h2>
+            <p class="reviews-section__subtitle">Over 400 traders have already joined us and have withdrawn their first
+              payouts.</p>
+            <div class="reviews-section__list">
+              <div class="reviews-section__list-col">
+                <div class="reviews-card reviews-section__list-card" data-aos data-aos-offset="20">
+                  <div class="reviews-card__content">
+                    <div class="reviews-card__header">
+                      <picture class="reviews-card__header-avatar">
+                        <img src="images/reviews-card-1.jpg" alt="">
+                      </picture>
+                      <div class="reviews-card__header-content">
+                        <h3 class="reviews-card__header-name">Hidalgo</h3>
+                        <div class="reviews-card__header-position">AR</div>
+                      </div>
+                    </div>
+                    <div class="reviews-card__rating u-rating" style="--rating-value: 100%"></div>
+                    <div class="content reviews-card__text">
+                      <p>One of the most transparent proprietary trading companies I've run into. I did not have to dig
+                        up any information to register here, everything is laid out to me on their site. Great access to
+                        info!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews-section__list-col">
+                <div class="reviews-card reviews-section__list-card" data-aos data-aos-offset="120">
+                  <div class="reviews-card__content">
+                    <div class="reviews-card__header">
+                      <picture class="reviews-card__header-avatar">
+                        <img src="images/reviews-card-2.jpg" alt="Suzana Valentina">
+                      </picture>
+                      <div class="reviews-card__header-content">
+                        <h3 class="reviews-card__header-name">Suzana Valentina</h3>
+                        <div class="reviews-card__header-position">BR</div>
+                      </div>
+                    </div>
+                    <div class="reviews-card__rating u-rating" style="--rating-value: 100%"></div>
+                    <div class="content reviews-card__text">
+                      <p>The company is a gold mine of opportunities. Especially if you are a skilled trader but lack
+                        some funding.Bear in mind that you need to accomplish the assessment first to receive capital
+                        for trading. But I love the overall concept😍🤑</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews-section__list-col">
+                <div class="reviews-card reviews-section__list-card" data-aos data-aos-offset="220">
+                  <div class="reviews-card__content">
+                    <div class="reviews-card__header">
+                      <picture class="reviews-card__header-avatar">
+                        <img src="images/reviews-card-3.jpg" alt="edmundo b.">
+                      </picture>
+                      <div class="reviews-card__header-content">
+                        <h3 class="reviews-card__header-name">edmundo b.</h3>
+                        <div class="reviews-card__header-position">MX</div>
+                      </div>
+                    </div>
+                    <div class="reviews-card__rating u-rating" style="--rating-value: 80%"></div>
+                    <div class="content reviews-card__text">
+                      <p>It seemed to me at first glance that becoming a partner of this company is not easy. But it
+                        turned out that my skills were enough.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="appeal-section">
+        <div class="container appeal-section__container">
+          <h2 class="appeal-section__title title-size-1">Start with&nbsp;us like a PRO</h2>
+          <a href="#tariffs-section" class="btn btn--theme-accent btn--size-lg appeal-section__btn">
+            <span class="btn__inner">
+              <span class="btn__title">GET FUNDED NOW</span>
+            </span>
+          </a>
+        </div>
+        <picture class="d-sm-block appeal-section__picture">
+          <img src="images/appeal-section-img.png" alt="Start with us like a PRO">
+        </picture>
+      </section>
+
+    </main>
+
+    <footer class="footer site__footer">
+      <div class="container footer__container">
+        <div class="content footer__text">
+          <p><strong>RISK WARNING</strong></p>
+          <p>The content on this website is for general information only. The service and company website are provided
+            on an "as-is" basis and without warranty of anykind, including, but not limited to warranties of title,
+            merchantability, accuracy, fitness for a particular purpose, security, and non-infringement.</p>
+          <p>Financial products are complex, entail risk of loss, may rise and fall, and are impacted by a range of
+            market and economic factors, and you should always obtain professional advice to ensure trading or investing
+            in CFD instruments is suitable for your circumstances, and ensure you obtain, read and understand any
+            applicable terms and conditions.</p>
+        </div>
+        <div class="footer__row">
+          <ul class="footer__privacy">
+            <li>
+              <a href="#">Terms & Conditions</a>
+            </li>
+            <li>
+              <a href="#">Privacy policy</a>
+            </li>
+          </ul>
+          <div class="footer__info-sc-block sc-block">
+            <ul class="sc-block__list">
+              <li class="sc-block__item">
+                <a href="https://twitter.com/SabioTrade" class="sc-block__link">
+                  <svg class="u-icon sc-block__icon">
+                    <use xlink:href="images/icons/icons.svg#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="sc-block__item">
+                <a href="https://www.instagram.com/sabiotrade/" class="sc-block__link">
+                  <svg class="u-icon sc-block__icon">
+                    <use xlink:href="images/icons/icons.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="sc-block__item">
+                <a href="https://www.facebook.com/people/Sabio-Trade/100075852953720/" class="sc-block__link">
+                  <svg class="u-icon sc-block__icon">
+                    <use xlink:href="images/icons/icons.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__row">
+          <div class="footer__contacts">
+            <a href="mailto:support@sabiotrade.com">support@sabiotrade.com</a>
+          </div>
+          <p class="footer__copyright">Sabio Trade, 2021–2023</p>
+        </div>
+      </div>
+    </footer>
+
+
+    <div class="box-cookie">
+      <div class="box-cookie__inner">
+        <div class="content box-cookie__text">
+          <p>By continuing to use this site you consent with our <a href="#">cookie policy</a>.</p>
+        </div>
+        <button type="button" class="box-cookie__btn-close btn-close btn-close--theme-gray js-cookie-btn-close">
+          <svg class="u-icon btn-close__icon">
+            <use xlink:href="images/icons/icons.svg#close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.min.js??=v=20230907171313"></script>
+</body>
+
+</html>
