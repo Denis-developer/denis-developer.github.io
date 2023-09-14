@@ -2733,6 +2733,10 @@ svg {
 .patterns .btn--theme-blue {
     color: #000b36;
     background-color: #fff;
+    transition: all 0.3s;
+}
+.patterns .btn--theme-blue:hover {
+    background-color: #d9d8d8;
 }
 
 .patterns .box-cookie__inner {
