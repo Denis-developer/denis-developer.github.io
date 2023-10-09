@@ -57,13 +57,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function smoothScrollToAnchor(anchor) {
-        let viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        let offset = 0;
         const target = document.querySelector(anchor);
         if (!target) return;
 
-        const targetPosition = target.offsetTop - offset;
-        const startPosition = window.pageYOffset;
+        const targetRect = target.getBoundingClientRect();
+        const startPosition = window.scrollY;
+        const targetPosition = startPosition + targetRect.top; // Получаем абсолютное положение элемента
         const distance = targetPosition - startPosition;
         const duration = 800;
 
@@ -78,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (progress < duration) {
                 requestAnimationFrame(step);
             } else {
-                history.replaceState(null, null, anchor); // Заменяем URL без изменения положения на странице
+                history.replaceState(null, null, anchor);
             }
         }
 
@@ -97,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
             smoothScrollToAnchor(hash);
         });
     }
+
 
 
 
