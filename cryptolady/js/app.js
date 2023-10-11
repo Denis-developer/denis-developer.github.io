@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    applyDynamicAdaptivity(".header-menu", ".header-nav", ".header .container", 768, 0, 0);
+    applyDynamicAdaptivity(".header-menu", ".header-nav", ".header .container", 768, 0, 2);
 
     // BURGER MENU
     const menuBurger = document.querySelector('.header__hamburger');
