@@ -30,7 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
         navigation: {
             nextEl: '.case-slider .swiper-button-next',
             prevEl: '.case-slider .swiper-button-prev',
-        }
+        },
+        autoplay: {
+            delay: 5000,
+        },
     });
 
     const swiper2 = new Swiper('.swiper2', {
@@ -39,7 +42,10 @@ document.addEventListener('DOMContentLoaded', function () {
         navigation: {
             nextEl: '.case-slider2 .swiper-button-next',
             prevEl: '.case-slider2 .swiper-button-prev',
-        }
+        },
+        autoplay: {
+            delay: 5000,
+        },
     });
 
     const swiper4 = new Swiper('.swiper4', {
@@ -52,6 +58,9 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 20,
         thumbs: {
             swiper: swiper4,
+        },
+        autoplay: {
+            delay: 5000,
         },
 
     });
