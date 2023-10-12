@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let unlock = true;
 
-    const timeout = 0;
+    const timeout = 500;
 
     if (popupLinks.length > 0) {
         for (let index = 0; index < popupLinks.length; index++) {
@@ -315,9 +315,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: formData
             })
             if (response.ok) {
-                document.querySelector('#popup3').classList.add('show');
+                document.querySelector('#popup3').classList.add('open');
                 setTimeout(function () {
-                    document.querySelector('#popup3').classList.remove('show');
+                    document.querySelector('#popup3').classList.remove('open');
                 }, 2000);
             }
         }
