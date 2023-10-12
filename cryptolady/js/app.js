@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     isWebp();
 
+
+
+    // Sliders
+
     const swiper1 = new Swiper('.swiper1', {
         slidesPerView: 1,
         loop: true,
@@ -64,6 +68,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
 
     });
+
+
+
+    // Smooth Scroll
 
     function smoothScrollToAnchor(anchor) {
         const target = document.querySelector(anchor);
@@ -106,6 +114,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+
+
+    // DynamicAdaptivity
 
     let viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
@@ -155,6 +166,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     applyDynamicAdaptivity(".header-menu", ".header-nav", ".header .container", 768, 0, 2);
 
+
+
     // BURGER MENU
     const menuBurger = document.querySelector('.header__hamburger');
     const menuMobile = document.querySelector('.header-menu');
@@ -177,8 +190,9 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    // POPUP
 
+
+    // POPUP
     const popupLinks = document.querySelectorAll('.popup-link'),
         body = document.querySelector('body'),
         lockPadding = document.querySelectorAll('.lock-padding');
@@ -282,5 +296,32 @@ document.addEventListener('DOMContentLoaded', function () {
             popupClose(popupActive);
         }
     })
+
+    // Send form
+
+    let forms = document.querySelectorAll('form');
+
+    for (let i = 0; i < forms.length; i++) {
+
+        forms[i].addEventListener('submit', formSend);
+
+        async function formSend(e) {
+            e.preventDefault();
+
+            let formData = new FormData(forms[i]);
+
+            let response = await fetch('telegram.php', {
+                method: 'POST',
+                body: formData
+            })
+            if (response.ok) {
+                document.querySelector('#popup3').classList.add('show');
+                setTimeout(function () {
+                    document.querySelector('#popup3').classList.remove('show');
+                }, 2000);
+            }
+        }
+
+    }
 
 })

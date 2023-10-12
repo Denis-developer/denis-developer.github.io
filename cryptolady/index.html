@@ -20,8 +20,8 @@
     <meta property="twitter:title" content="Главный женский крипто форум 2023">
     <meta property="twitter:description" content="Это не просто форум. Мы создаем комфортное пространство, где каждая женщина может проявляться, получать пользу, поддержку и вдохновение.">
     <meta property="twitter:image" content="img/preview.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&amp;family=Tenor+Sans&amp;family=Unbounded:wght@500&amp;display=swap&_v=20231012170335" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css?_v=20231012170335">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&amp;family=Tenor+Sans&amp;family=Unbounded:wght@500&amp;display=swap&_v=20231012191449" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css?_v=20231012191449">
   </head>
   <body>
     <main class="main">
@@ -447,10 +447,10 @@
           <div class="pricingStrategy-contact"> 
             <div class="pricingStrategy-contact__wrapper"> 
               <p class="pricingStrategy-contact__text"> <img src="img/icons/phone.svg" alt="">остались вопросы? <br> свяжитесь с нами</p>
-              <form class="pricingStrategy-form" action="#">
+              <form class="pricingStrategy-form" action="telegram.php" method="POST">
                 <div class="pricingStrategy-form__wrapper">
-                  <input class="pricingStrategy-form__input" type="text" placeholder="Ваше имя" required>
-                  <input class="pricingStrategy-form__input" type="tel" placeholder="Ваш телефон" required>
+                  <input class="pricingStrategy-form__input" type="text" placeholder="Ваше имя" required name="name">
+                  <input class="pricingStrategy-form__input" type="tel" placeholder="Ваш телефон" required name="tel">
                 </div>
                 <input class="pricingStrategy-form__checkbox" type="checkbox" id="checkbox" required>
                 <label class="pricingStrategy-form__label" for="checkbox">Я согласен на обработку персональных данных</label><br>
@@ -566,9 +566,9 @@
       <div class="popup__body"><a class="popup__close" href="#"> <img src="img/icons/close.svg" alt="X"></a>
         <div class="popup-content">
           <div class="popup-content__title">Купить билет</div>
-          <form class="popup-form" action="#">
-            <input class="popup-form__input" type="text" placeholder="Ваше Имя и Фамилия" required>
-            <input class="popup-form__input" type="tel" placeholder="Ваш телефон" required>
+          <form class="popup-form" action="telegram.php" method="POST">
+            <input class="popup-form__input" type="text" placeholder="Ваше Имя и Фамилия" required name="name">
+            <input class="popup-form__input" type="tel" placeholder="Ваш телефон" required name="tel">
             <button class="popup-form__btn" type="submit">оплатить</button>
           </form>
         </div>
@@ -579,9 +579,9 @@
         <div class="popup-content">
           <div class="popup-content__title">Оставьте свои данные и мы <span>свяжемся с вами!</span></div>
           <div class="popup-content__text">Или напишите нам в личные сообщения<img src="img/icons/telegram_small.svg" alt=""><a href="#">@a_gazizova </a></div>
-          <form class="popup-form" action="#">
-            <input class="popup-form__input" type="text" placeholder="Ваше имя" required>
-            <input class="popup-form__input" type="tel" placeholder="Ваш телефон" required>
+          <form class="popup-form" action="telegram.php" method="POST">
+            <input class="popup-form__input" type="text" placeholder="Ваше имя" required name="name">
+            <input class="popup-form__input" type="tel" placeholder="Ваш телефон" required name="tel">
             <input class="popup-form__checkbox" type="checkbox" id="checkbox2" required>
             <label class="popup-form__label" for="checkbox2">Я согласен на обработку <a href="Политика.docx">персональных данных</a></label>
             <button class="popup-form__btn" type="submit">оплатить</button>
@@ -589,8 +589,15 @@
         </div>
       </div>
     </div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css?_v=20231012170335">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js?_v=20231012170335"></script>
-    <script src="js/app.js?_v=20231012170335"></script>
+    <div class="popup" id="popup3"> 
+      <div class="popup__body"> 
+        <div class="popup-content"> 
+          <div class="popup-content__title">Форма успешно отправлена</div>
+        </div>
+      </div>
+    </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css?_v=20231012191449">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js?_v=20231012191449"></script>
+    <script src="js/app.js?_v=20231012191449"></script>
   </body>
 </html>
