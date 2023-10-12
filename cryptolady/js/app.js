@@ -317,7 +317,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (response.ok) {
                 document.querySelector('#popup3').classList.add('open');
                 setTimeout(function () {
-                    document.querySelector('#popup3').classList.remove('open');
+                    let popups = document.querySelectorAll('.popup');
+                    for (let y = 0; y < popups.length; y++) {
+                        popups[y].classList.remove('open');
+                    }
                 }, 2000);
             }
         }
