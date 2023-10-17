@@ -25,6 +25,31 @@ document.addEventListener('DOMContentLoaded', function () {
     isWebp();
 
 
+    // Header
+    const header = document.querySelector(".header");
+    let scrollPos = window.scrollY;
+
+    if (scrollPos > 10) {
+        header.classList.add('active');
+    }
+
+    document.addEventListener("scroll", function () {
+        scrollPos = window.scrollY;
+        if (scrollPos > 0) {
+            header.classList.add('active');
+        } else {
+            header.classList.remove('active');
+        }
+    });
+
+
+
+    // INPUT MASK
+    let inputsTel = document.querySelectorAll("input[type='tel']");
+
+    let im = new Inputmask("+7 (999) 999-99-99");
+    im.mask(inputsTel);
+
 
     // Sliders
 
@@ -74,12 +99,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // Smooth Scroll
 
     function smoothScrollToAnchor(anchor) {
+        let offset = header.offsetHeight;
         const target = document.querySelector(anchor);
         if (!target) return;
 
         const targetRect = target.getBoundingClientRect();
         const startPosition = window.scrollY;
-        const targetPosition = startPosition + targetRect.top; // Получаем абсолютное положение элемента
+        const targetPosition = startPosition + targetRect.top - offset; // Получаем абсолютное положение элемента
         const distance = targetPosition - startPosition;
         const duration = 800;
 
@@ -110,16 +136,17 @@ document.addEventListener('DOMContentLoaded', function () {
         linkNav[i].addEventListener('click', function (e) {
             e.preventDefault();
             const hash = this.getAttribute('href');
-            smoothScrollToAnchor(hash);
+            if (hash !== '#' && hash.length > 1 && !hash.includes("popup")) {
+                smoothScrollToAnchor(hash);
+            }
         });
     }
 
 
 
+
     // DynamicAdaptivity
-
     let viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-
 
     function applyDynamicAdaptivity(parent, item, parent_original, breakpoint, insertParent, insertPerentOrg) {
         const parent_originalEl = document.querySelectorAll(parent_original),
@@ -174,7 +201,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuMobileLinks = document.querySelectorAll('.header-nav__link');
 
     menuBurger.addEventListener('click', function (e) {
-        window.scrollTo({ top: 0, });
         document.body.classList.toggle('lock');
         document.documentElement.classList.toggle('lock');
         menuBurger.classList.toggle('active');
@@ -208,6 +234,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 const popupName = popupLink.getAttribute('href').replace('#', '');
                 const currentPopup = document.getElementById(popupName);
                 popupOpen(currentPopup);
+                if (popupName == "popup") {
+                    currentPopup.querySelector('form').dataset.form = popupLink.dataset.price;
+                }
                 e.preventDefault();
             })
         }
@@ -298,6 +327,18 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     // Send form
+    function noDigits(event) {
+        if ("1234567890".indexOf(event.key) !== -1) {
+            event.preventDefault();
+        }
+    }
+
+    const textInputs = document.querySelectorAll('input[type="text"]');
+
+    textInputs.forEach(input => {
+        input.addEventListener('keypress', noDigits);
+    });
+
 
     let forms = document.querySelectorAll('form');
 
@@ -308,20 +349,44 @@ document.addEventListener('DOMContentLoaded', function () {
         async function formSend(e) {
             e.preventDefault();
 
+            // Получить значение поля ввода телефона
+            let phoneInput = forms[i].querySelector('input[type="tel"]');
+            let phoneValue = phoneInput.value;
+            let numericValue = phoneValue.replace(/\D/g, '');
+
+            // Проверить, что длина числового значения равна 11 (включая +7)
+            if (numericValue.length !== 11) {
+                return;
+            }
+
             let formData = new FormData(forms[i]);
+
+            let formTitle = forms[i].dataset.form;
+
+            formData.append('formTitle', formTitle);
+
 
             let response = await fetch('telegram.php', {
                 method: 'POST',
                 body: formData
             })
             if (response.ok) {
-                document.querySelector('#popup3').classList.add('open');
+                forms[i].reset();
+                let popupSuccess = document.querySelector('#popup3');
+                popupSuccess.classList.add('open');
+                if (forms[i].classList.contains('myform')) {
+                    popupSuccess.querySelector('.popup-content__text').style.display = "none";
+                }
+                else {
+                    popupSuccess.querySelector('.popup-content__text').style.display = "block";
+                }
                 setTimeout(function () {
                     let popups = document.querySelectorAll('.popup');
                     for (let y = 0; y < popups.length; y++) {
-                        popups[y].classList.remove('open');
+                        unlock = true;
+                        popupClose(popups[y]);
                     }
-                }, 2000);
+                }, 5000);
             }
         }
 
