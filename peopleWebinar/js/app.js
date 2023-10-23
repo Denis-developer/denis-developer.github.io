@@ -25,10 +25,98 @@ document.addEventListener('DOMContentLoaded', function () {
     isWebp();
 
 
+    // GSAP. SCROLL ANIMATION
+    const boxes = gsap.utils.toArray(".gs-anim");
+    boxes.forEach((box) => {
+        gsap.from(box, {
+            yPercent: 20,
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: box,
+                start: "top 90%",
+                end: "center 50%",
+            },
+        });
+    });
+
+
+    // PARALLAX WALLPAPER
+    const parallaxImage = document.querySelector('.intro__img');
+
+    window.addEventListener('scroll', () => {
+        // Получите значение скроллинга
+        const scrollValue = window.scrollY;
+
+        // Рассчитайте значение translateY для картинки
+        const translateYValue = -scrollValue * 0.1; // Измените коэффициент, чтобы управлять скоростью эффекта
+
+        // Примените значение translateY к картинке
+        parallaxImage.style.transform = `translateY(${translateYValue}px)`;
+    });
+
+    // SMOOTH SCROLL ANCHOR
+    function smoothScrollToAnchor(anchor) {
+        let offset = 0;
+        const target = document.querySelector(anchor);
+        if (!target) return;
+
+        const targetRect = target.getBoundingClientRect();
+        const startPosition = window.scrollY;
+        const targetPosition = startPosition + targetRect.top - offset; // Получаем абсолютное положение элемента
+        const distance = targetPosition - startPosition;
+        const duration = 500;
+
+        let start = null;
+
+        function step(timestamp) {
+            if (!start) start = timestamp;
+            const progress = timestamp - start;
+            const percentage = Math.min(progress / duration, 1);
+            const easing = easeInOutQuad(percentage);
+            window.scrollTo(0, startPosition + distance * easing);
+            if (progress < duration) {
+                requestAnimationFrame(step);
+            } else {
+                history.replaceState(null, null, anchor);
+            }
+        }
+
+        function easeInOutQuad(t) {
+            return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    let linkNav = document.querySelectorAll('[href^="#"]');
+    for (let i = 0; i < linkNav.length; i++) {
+        linkNav[i].addEventListener('click', function (e) {
+            e.preventDefault();
+            const hash = this.getAttribute('href');
+            smoothScrollToAnchor(hash);
+        });
+    }
+
+
     // INPUT MASK
     let inputsTel = document.querySelectorAll("input[type='tel']");
     let im = new Inputmask("+7 (999) 999-99-99");
     im.mask(inputsTel);
+
+
+    // PROMOCODE
+    let inputPromocode = document.querySelector('input[name="promocode"]');
+    let inputPromocodeBtn = document.querySelector('.popup-form__check');
+
+    inputPromocode.addEventListener('input', function () {
+        if (inputPromocode.value.length > 0) {
+            inputPromocodeBtn.classList.add('active');
+        }
+        else {
+            inputPromocodeBtn.classList.remove('active');
+        }
+    })
 
 
     // FORMS VALIDATION
@@ -52,13 +140,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
             let formData = new FormData(form[i]);
 
+            let formTitle = form[i].dataset.form;
+
+            formData.append('formTitle', formTitle);
+
             if (formSuccess == formInput) {
                 let response = await fetch('telegram.php', {
                     method: 'POST',
                     body: formData
                 })
                 if (response.ok) {
-                    console.log('Ok');
+                    form[i].reset();
+                    let popupSuccess = document.querySelector('#popup2');
+                    popupSuccess.classList.add('open');
+                    setTimeout(function () {
+                        let popups = document.querySelectorAll('.popup');
+                        for (let y = 0; y < popups.length; y++) {
+                            unlock = true;
+                            popupClose(popups[y]);
+                        }
+                    }, 5000);
                 }
             }
         }
@@ -141,6 +242,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 const popupName = popupLink.getAttribute('href').replace('#', '');
                 const currentPopup = document.getElementById(popupName);
                 popupOpen(currentPopup);
+                if (popupName == "popup") {
+                    currentPopup.querySelector('form').dataset.form = popupLink.dataset.price;
+                }
                 e.preventDefault();
             })
         }
@@ -229,49 +333,5 @@ document.addEventListener('DOMContentLoaded', function () {
             popupClose(popupActive);
         }
     })
-
-
-    // SMOOTH SCROLL ANCHOR
-    function smoothScrollToAnchor(anchor) {
-        let offset = 0;
-        const target = document.querySelector(anchor);
-        if (!target) return;
-
-        const targetRect = target.getBoundingClientRect();
-        const startPosition = window.scrollY;
-        const targetPosition = startPosition + targetRect.top - offset; // Получаем абсолютное положение элемента
-        const distance = targetPosition - startPosition;
-        const duration = 800;
-
-        let start = null;
-
-        function step(timestamp) {
-            if (!start) start = timestamp;
-            const progress = timestamp - start;
-            const percentage = Math.min(progress / duration, 1);
-            const easing = easeInOutQuad(percentage);
-            window.scrollTo(0, startPosition + distance * easing);
-            if (progress < duration) {
-                requestAnimationFrame(step);
-            } else {
-                history.replaceState(null, null, anchor);
-            }
-        }
-
-        function easeInOutQuad(t) {
-            return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-        }
-
-        requestAnimationFrame(step);
-    }
-
-    let linkNav = document.querySelectorAll('[href^="#"]');
-    for (let i = 0; i < linkNav.length; i++) {
-        linkNav[i].addEventListener('click', function (e) {
-            e.preventDefault();
-            const hash = this.getAttribute('href');
-            smoothScrollToAnchor(hash);
-        });
-    }
 
 })
