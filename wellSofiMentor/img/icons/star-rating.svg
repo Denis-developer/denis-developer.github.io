@@ -1,0 +1,12 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Star">
+<path id="Vector" d="M12.0009 1.5L8.58844 8.415L0.960938 9.5175L6.48094 14.9025L5.17594 22.5L12.0009 18.915L18.8259 22.5L17.5209 14.9025L23.0409 9.525L15.4134 8.415L12.0009 1.5Z" fill="url(#paint0_radial_75_920)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_75_920" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(23.0409 12) rotate(180) scale(22.08 20.37)">
+<stop offset="0.13034" stop-color="#F9E3B0"/>
+<stop offset="0.416676" stop-color="#FFC4AB"/>
+<stop offset="0.870611" stop-color="#ECB4D0"/>
+</radialGradient>
+</defs>
+</svg>
