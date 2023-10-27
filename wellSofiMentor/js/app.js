@@ -25,6 +25,56 @@ document.addEventListener('DOMContentLoaded', function () {
     isWebp();
 
 
+    // DYNAMIC ADAPTIVE
+    let viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+
+    function applyDynamicAdaptivity(parent, item, parent_original, breakpoint, insertParent, insertPerentOrg) {
+        const parent_originalEl = document.querySelectorAll(parent_original),
+            parentEl = document.querySelectorAll(parent),
+            itemEl = document.querySelectorAll(item);
+
+        function moveItems() {
+            for (let i = 0; i < parentEl.length; i++) {
+                parentEl[i].insertBefore(itemEl[i], parentEl[i].children[insertParent]);
+                itemEl[i].classList.add('done');
+            }
+        }
+
+        function revertItems() {
+            for (let i = 0; i < parentEl.length; i++) {
+                parent_originalEl[i].insertBefore(itemEl[i], parent_originalEl[i].children[insertPerentOrg]);
+                itemEl[i].classList.remove('done');
+            }
+        }
+
+        if (viewport_width <= breakpoint) {
+            if (itemEl[0] && !itemEl[0].classList.contains('done')) {
+                moveItems();
+            }
+        } else {
+            if (itemEl[0] && itemEl[0].classList.contains('done')) {
+                revertItems();
+            }
+        }
+
+        window.addEventListener('resize', function (event) {
+            viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            if (viewport_width <= breakpoint) {
+                if (itemEl[0] && !itemEl[0].classList.contains('done')) {
+                    moveItems();
+                }
+            } else {
+                if (itemEl[0] && itemEl[0].classList.contains('done')) {
+                    revertItems();
+                }
+            }
+        });
+    }
+
+    applyDynamicAdaptivity(".header-menu", ".header-nav", ".header .container", 576, 0, 0);
+
+
     // SMOOTH SCROLL
     function smoothScrollToAnchor(anchor) {
         let offset = 0;
@@ -69,8 +119,30 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+    // BURGER MENU
+    const menuBurger = document.querySelector('.header__burger');
+    const menuMobile = document.querySelector('.header-menu');
+    const menuMobileLinks = document.querySelectorAll('.header-nav__link');
+
+    menuBurger.addEventListener('click', function (e) {
+        document.body.classList.toggle('lock');
+        document.documentElement.classList.toggle('lock');
+        menuBurger.classList.toggle('active');
+        menuMobile.classList.toggle('show');
+    })
+
+    for (let i = 0; i < menuMobileLinks.length; i++) {
+        menuMobileLinks[i].addEventListener('click', function () {
+            document.body.classList.remove('lock');
+            document.documentElement.classList.remove('lock');
+            menuBurger.classList.remove('active');
+            menuMobile.classList.remove('show');
+        })
+    }
+
+
     // SLIDER REVIEWS
-    let swiper = new Swiper('.swiper', {
+    let swiper1 = new Swiper('.swiper', {
         slidesPerView: 'auto',
         spaceBetween: 20,
     })
@@ -78,6 +150,9 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 'auto',
         spaceBetween: 20,
     })
+
+    swiper1.controller.control = swiper2;
+    swiper2.controller.control = swiper1;
 
 
     // POPUP QUIZ
@@ -215,6 +290,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 correctAnswers++;
             }
 
+            console.log(i);
+            console.log(correctAnswers);
+
             let quizParrent = this.closest('.popup-content');
             quizParrent.style.opacity = "0";
             quizParrent.style.visibility = "hidden";
@@ -223,14 +301,38 @@ document.addEventListener('DOMContentLoaded', function () {
                 quizParrent.style.display = "none";
             }, quizTransition)
 
-            setTimeout(function () {
-                quizParrent.nextElementSibling.style.display = "block";
-            }, quizTransition + 50)
+            if (i < 27) {
+                setTimeout(function () {
+                    quizParrent.nextElementSibling.style.display = "block";
+                }, quizTransition + 50)
 
-            setTimeout(function () {
-                quizParrent.nextElementSibling.style.opacity = "1";
-                quizParrent.nextElementSibling.style.visibility = "visible";
-            }, quizTransition + 100)
+                setTimeout(function () {
+                    quizParrent.nextElementSibling.style.opacity = "1";
+                    quizParrent.nextElementSibling.style.visibility = "visible";
+                }, quizTransition + 100)
+            }
+            else {
+                if (correctAnswers == 10) {
+                    setTimeout(function () {
+                        document.querySelector('.popup-result__good').style.display = "block";
+                    }, quizTransition + 50)
+                    setTimeout(function () {
+                        document.querySelector('.popup-result__good').style.opacity = "1";
+                        document.querySelector('.popup-result__good').style.visibility = "visible";
+                    }, quizTransition + 100)
+                }
+                else {
+                    setTimeout(function () {
+                        document.querySelector('.popup-result__bad').style.display = "block";
+                    }, quizTransition + 50)
+                    setTimeout(function () {
+                        document.querySelector('.popup-result__bad').style.opacity = "1";
+                        document.querySelector('.popup-result__bad').style.visibility = "visible";
+                    }, quizTransition + 100)
+                }
+
+            }
+
 
         })
 
