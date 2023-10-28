@@ -144,11 +144,21 @@ document.addEventListener('DOMContentLoaded', function () {
     // SLIDER REVIEWS
     let swiper1 = new Swiper('.swiper', {
         slidesPerView: 'auto',
-        spaceBetween: 20,
+        spaceBetween: 8,
+        breakpoints: {
+            576: {
+                spaceBetween: 20
+            },
+        }
     })
     let swiper2 = new Swiper('.swiper2', {
         slidesPerView: 'auto',
-        spaceBetween: 20,
+        spaceBetween: 8,
+        breakpoints: {
+            576: {
+                spaceBetween: 20
+            },
+        }
     })
 
     swiper1.controller.control = swiper2;
