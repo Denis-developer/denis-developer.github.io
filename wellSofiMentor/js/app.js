@@ -169,6 +169,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const popupLinks = document.querySelectorAll('.popup-link'),
         body = document.querySelector('body'),
         lockPadding = document.querySelectorAll('.lock-padding');
+    popupContent = document.querySelectorAll('.popup-content');
+
+    const quizBlockAnswer = document.querySelectorAll('.popup-content__item');
+    const quizQuizSuccess = document.querySelector('.popup-result__good');
+    const quizQuizWrong = document.querySelector('.popup-result__bad');
+    const quizTransition = 400;
+    let correctAnswers = 0;
+    let indexOfPopupNow = 0;
 
     let unlock = true;
 
@@ -180,9 +188,28 @@ document.addEventListener('DOMContentLoaded', function () {
             popupLink.addEventListener('click', function (e) {
                 const popupName = popupLink.getAttribute('href').replace('#', '');
                 const currentPopup = document.getElementById(popupName);
-                document.querySelector('.popup-content:first-child').style.display = "inline-block";
-                document.querySelector('.popup-content:first-child').style.opacity = "1";
-                document.querySelector('.popup-content:first-child').style.visibility = "visible";
+                if (indexOfPopupNow >= 10) {
+                    if (correctAnswers == 10) {
+                        showElement(quizQuizSuccess);
+                        setTimeout(function () {
+                            popupClose(currentPopup);
+                            hideElement(quizQuizSuccess);
+                        }, 4000)
+                    }
+                    else {
+                        showElement(quizQuizWrong);
+                        setTimeout(function () {
+                            popupClose(currentPopup);
+                            hideElement(quizQuizWrong);
+                        }, 4000)
+                    }
+                }
+                else {
+                    popupContent[indexOfPopupNow].style.opacity = "1";
+                    popupContent[indexOfPopupNow].style.visibility = "visible";
+                    popupContent[indexOfPopupNow].style.display = "block";
+                }
+
                 popupOpen(currentPopup);
                 e.preventDefault();
             })
@@ -224,7 +251,6 @@ document.addEventListener('DOMContentLoaded', function () {
             popupActive.classList.remove('open');
             let popupContent = document.querySelectorAll('.popup-content');
             for (let z = 0; z < popupContent.length; z++) {
-                correctAnswers = 0;
                 popupContent[z].classList.remove('active');
                 popupContent[z].style.opacity = "0";
                 popupContent[z].style.visibility = "hidden";
@@ -283,69 +309,55 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 
-    // Show/hide quiz block
-    let quizBlock = document.querySelectorAll('.popup-content');
-    let quizBlockAnswer = document.querySelectorAll('.popup-content__item');
-    let quizQuizSuccess = document.querySelector('.main-quiz_success');
-    let quizTransition = 600;
-    let correctAnswers = 0;
-    let totalQuestions = quizBlock.length;
-
-    for (let i = 0; i < quizBlockAnswer.length; i++) {
-        quizBlockAnswer[i].addEventListener('click', function () {
-
-            const isCorrect = this.getAttribute('data-correct') === 'true';
-
-            if (isCorrect) {
-                correctAnswers++;
-            }
-
-            console.log(i);
-            console.log(correctAnswers);
-
-            let quizParrent = this.closest('.popup-content');
-            quizParrent.style.opacity = "0";
-            quizParrent.style.visibility = "hidden";
-
-            setTimeout(function () {
-                quizParrent.style.display = "none";
-            }, quizTransition)
-
-            if (i < 27) {
-                setTimeout(function () {
-                    quizParrent.nextElementSibling.style.display = "block";
-                }, quizTransition + 50)
-
-                setTimeout(function () {
-                    quizParrent.nextElementSibling.style.opacity = "1";
-                    quizParrent.nextElementSibling.style.visibility = "visible";
-                }, quizTransition + 100)
-            }
-            else {
-                if (correctAnswers == 10) {
-                    setTimeout(function () {
-                        document.querySelector('.popup-result__good').style.display = "block";
-                    }, quizTransition + 50)
-                    setTimeout(function () {
-                        document.querySelector('.popup-result__good').style.opacity = "1";
-                        document.querySelector('.popup-result__good').style.visibility = "visible";
-                    }, quizTransition + 100)
-                }
-                else {
-                    setTimeout(function () {
-                        document.querySelector('.popup-result__bad').style.display = "block";
-                    }, quizTransition + 50)
-                    setTimeout(function () {
-                        document.querySelector('.popup-result__bad').style.opacity = "1";
-                        document.querySelector('.popup-result__bad').style.visibility = "visible";
-                    }, quizTransition + 100)
-                }
-
-            }
-
-
-        })
-
+    function hideElement(element) {
+        element.style.opacity = "0";
+        element.style.visibility = "hidden";
+        setTimeout(() => {
+            element.style.display = "none";
+        }, quizTransition);
     }
+
+    function showElement(element) {
+        element.style.display = "block";
+        indexOfPopupNow++;
+        setTimeout(() => {
+            element.style.opacity = "1";
+            element.style.visibility = "visible";
+        }, quizTransition);
+    }
+
+    function handleAnswerClick(event) {
+        const isCorrect = event.target.getAttribute('data-correct') === 'true';
+        if (isCorrect) {
+            correctAnswers++;
+        }
+
+        const quizParent = event.target.closest('.popup-content');
+        hideElement(quizParent);
+
+        const answersArray = Array.from(quizBlockAnswer);
+        if (answersArray.indexOf(event.target) < 27) {
+            setTimeout(() => {
+                showElement(quizParent.nextElementSibling);
+            }, quizTransition);
+        } else {
+            const resultElement = correctAnswers === 10 ? quizQuizSuccess : quizQuizWrong;
+            setTimeout(() => {
+                showElement(resultElement);
+            }, quizTransition);
+            setTimeout(() => {
+                hideElement(resultElement);
+                popupClose(document.querySelector('.popup'));
+            }, 4000);
+            setTimeout(() => {
+                resultElement.style.display = "none";
+            }, 5000);
+        }
+    }
+
+    quizBlockAnswer.forEach(item => {
+        item.addEventListener('click', handleAnswerClick);
+    });
+
 
 })
