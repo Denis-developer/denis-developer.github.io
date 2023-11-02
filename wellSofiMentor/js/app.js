@@ -359,5 +359,10 @@ document.addEventListener('DOMContentLoaded', function () {
         item.addEventListener('click', handleAnswerClick);
     });
 
+    const lightbox = GLightbox({
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: true
+    });
 
 })
