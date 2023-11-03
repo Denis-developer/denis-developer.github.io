@@ -75,6 +75,34 @@ document.addEventListener('DOMContentLoaded', function () {
     applyDynamicAdaptivity(".header-menu", ".header-nav", ".header .container", 576, 0, 0);
 
 
+    // VIDEO CIRCLE
+    let playButton = document.querySelector('.intro-appeal__play');
+    let introVideo = document.querySelector('.intro-appeal__video');
+    let firstClick = true;
+
+    playButton.addEventListener('click', function () {
+        if (firstClick) {
+            introVideo.muted = false;
+            setTimeout(function () {
+                firstClick = false;
+            }, 500)
+        }
+
+        if (firstClick == false) {
+            if (introVideo.paused) {
+                introVideo.play();
+                playButton.classList.add('hide');
+                introVideo.muted = false;
+            } else {
+                introVideo.pause();
+                playButton.classList.remove('hide');
+                introVideo.muted = false;
+            }
+        }
+    });
+
+
+
     // SMOOTH SCROLL
     function smoothScrollToAnchor(anchor) {
         let offset = 0;
@@ -360,9 +388,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const lightbox = GLightbox({
-        touchNavigation: true,
-        loop: true,
-        autoplayVideos: true
+        // plyr: {
+        //     css: 'https://cdn.plyr.io/3.5.6/plyr.css',
+        //     js: 'https://cdn.plyr.io/3.5.6/plyr.js',
+        //     config: {
+        //         muted: true,
+        //         hideControls: true,
+        //     }
+        // }
+    });
+
+    lightbox.on('open', () => {
+        introVideo.pause();
+        playButton.classList.remove('hide');
+        firstClick = false;
+        // let gslideVideo = document.querySelector('.gslide-video');
+        // gslideVideo.classList.add('fullscreen');
     });
 
 })
