@@ -387,23 +387,12 @@ document.addEventListener('DOMContentLoaded', function () {
         item.addEventListener('click', handleAnswerClick);
     });
 
-    const lightbox = GLightbox({
-        // plyr: {
-        //     css: 'https://cdn.plyr.io/3.5.6/plyr.css',
-        //     js: 'https://cdn.plyr.io/3.5.6/plyr.js',
-        //     config: {
-        //         muted: true,
-        //         hideControls: true,
-        //     }
-        // }
-    });
+    const lightbox = GLightbox();
 
     lightbox.on('open', () => {
         introVideo.pause();
         playButton.classList.remove('hide');
         firstClick = false;
-        // let gslideVideo = document.querySelector('.gslide-video');
-        // gslideVideo.classList.add('fullscreen');
     });
 
 })
