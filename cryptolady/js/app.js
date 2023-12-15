@@ -216,7 +216,35 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    // Промокод Begin
+    var tickets = document.getElementById('ticket').querySelectorAll('.ticket-block');
+    var ticket_prss = [];
+    var curMaxAmount, curSaleAmount;
+    for (let i = 0; i < tickets.length; i++) {
+        ticket_prss.push(tickets[i].querySelector('.ticket-block__btn').dataset.amount);
+        // console.log(tickets[i].querySelector('.ticket-block__btn').dataset.amount);
+    }
+    var afterparty_prss = document.querySelector('section.afterparty').querySelector('.afterparty__btn').dataset.amount;
 
+    function rebuykets() {
+        for (let i = 0; i < tickets.length; i++) {
+            tickets[i].querySelector('.ticket-block__btn').dataset.amount = ticket_prss[i];
+        }
+        document.querySelector('section.afterparty').querySelector('.afterparty__btn').dataset.amount = afterparty_prss;
+    }
+
+    function addCommas(nStr) {
+        nStr += '';
+        x = nStr.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + '.' + '$2');
+        }
+        return x1 + x2;
+    }
+    // Промокод End
 
     // POPUP
     const popupLinks = document.querySelectorAll('.popup-link'),
@@ -236,6 +264,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 popupOpen(currentPopup);
                 if (popupName == "popup") {
                     currentPopup.querySelector('form').dataset.form = popupLink.dataset.price;
+                    // YooKassa Begin
+                    rebuykets();
+                    //currentPopup.querySelector('form').dataset.amount = popupLink.dataset.amount;
+                    curMaxAmount = e.target.dataset.amount;
+                    // console.log(curMaxAmount);
+                    let price_card = curMaxAmount;
+                    curSaleAmount = curMaxAmount;
+                    document.getElementById('amount_card').innerHTML = addCommas(price_card);
+                    document.getElementById('price_card').style.color = "";
+                    document.getElementById('price_sale').style.display = "";
+                    document.getElementById('promo_redx').style.display = "";
+                    document.getElementById('promo_check').style.display = "";
+                    document.getElementById('promocode_input').style.borderColor = "";
+                    // YooKassa End
                 }
                 e.preventDefault();
             })
@@ -326,6 +368,72 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 
+    // Промокод Begin
+    let input_promocode = document.getElementById('promocode_input');
+    let promocode_icon = document.getElementById('promocode_check');
+    let promo_redx = document.getElementById('promo_redx');
+    let promo_check = document.getElementById('promo_check');
+    let user_promocode;
+    input_promocode.addEventListener("input", function (e) {
+        if (e.target.value != "") {
+            promocode_icon.style.display = "flex";
+            promo_redx.style.display = "";
+            promo_check.style.display = "";
+            input_promocode.style.borderColor = "";
+        }
+        else {
+            promocode_icon.style.display = "";
+            promo_redx.style.display = "";
+            promo_check.style.display = "";
+            input_promocode.style.borderColor = "";
+        }
+        user_promocode = e.target.value;
+    });
+
+
+
+    promocode_icon.addEventListener('click', promocodeSend);
+
+    async function promocodeSend(e) {
+        if (input_promocode.value != "") {
+            let formData = new FormData();
+            formData.append('promocode', user_promocode);
+            let response = await fetch('promocodes.php', {
+                method: 'POST',
+                body: formData
+            });
+            if (response.ok) {
+                response.json().then(function (json) {
+                    // console.log(json);
+                    let sale = json.sale;
+                    // console.log(sale);
+                    if (sale != 0) {
+                        // console.log("Скидка" + sale + "%");
+                        input_promocode.style.borderColor = "#ADD243";
+                        promo_check.style.display = "block";
+                        promocode_icon.style.display = "";
+                        // let curForm = input_promocode.closest('form');
+                        // let maxAmount = curForm.dataset.amount;
+                        curSaleAmount = curMaxAmount - (curMaxAmount / 100 * sale);
+                        document.getElementById('price_card').style.color = "#54AE32";
+                        document.getElementById('amount_card').innerHTML = addCommas(curSaleAmount);
+                        document.getElementById('sale_percent').innerHTML = sale;
+                        document.getElementById('price_sale').style.display = "inline";
+                    }
+                    else {
+                        // console.log("Промокод неверный"); 
+                        curSaleAmount = curMaxAmount;
+                        input_promocode.style.borderColor = "#FF00004D";
+                        promo_redx.style.display = "block";
+                        promocode_icon.style.display = "";
+                    }
+                });
+            }
+        }
+    }
+
+    // Промокод End
+
     // Send form
     function noDigits(event) {
         if ("1234567890".indexOf(event.key) !== -1) {
@@ -339,7 +447,6 @@ document.addEventListener('DOMContentLoaded', function () {
         input.addEventListener('keypress', noDigits);
     });
 
-
     let forms = document.querySelectorAll('form');
 
     for (let i = 0; i < forms.length; i++) {
@@ -351,12 +458,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Получить значение поля ввода телефона
             let phoneInput = forms[i].querySelector('input[type="tel"]');
-            let phoneValue = phoneInput.value;
-            let numericValue = phoneValue.replace(/\D/g, '');
-
-            // Проверить, что длина числового значения равна 11 (включая +7)
-            if (numericValue.length !== 11) {
-                return;
+            if (phoneInput) {
+                let phoneValue = phoneInput.value;
+                let numericValue = phoneValue.replace(/\D/g, '');
+                // Проверить, что длина числового значения равна 11 (включая +7)
+                if (numericValue.length !== 11) {
+                    return;
+                }
             }
 
             let formData = new FormData(forms[i]);
@@ -372,6 +480,8 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             if (response.ok) {
                 forms[i].reset();
+                // YooKassa Begin
+                // расскомментил попап
                 let popupSuccess = document.querySelector('#popup3');
                 popupSuccess.classList.add('open');
                 if (forms[i].classList.contains('myform')) {
@@ -380,6 +490,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 else {
                     popupSuccess.querySelector('.popup-content__text').style.display = "block";
                 }
+                ym(95234894,'reachGoal','send_information');
                 setTimeout(function () {
                     let popups = document.querySelectorAll('.popup');
                     for (let y = 0; y < popups.length; y++) {
@@ -387,7 +498,31 @@ document.addEventListener('DOMContentLoaded', function () {
                         popupClose(popups[y]);
                     }
                 }, 5000);
+                // YooKassa End
             }
+            // YooKassa Begin
+            /*if(formTitle == 'Билет standard' || formTitle == 'Билет business' || formTitle == 'Билет vip' || formTitle == 'Билет afterparty') {
+                // console.log('Перенаправляем на ЮКасса для оплаты');
+                // let formAmount = forms[i].dataset.amount;
+                formData.append('formAmount', curSaleAmount);
+
+                let responseYooKassa = await fetch('yookassa.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                if (responseYooKassa.ok) {
+                    responseYooKassa.text().then(function (text) {
+                        let proto = text.slice(0, 4);
+                        if (proto == 'http')
+                            location.href = text;
+                        else
+                            console.log(text);
+                    });
+                }
+            }*/
+            // else
+            //     console.log('Форма без оплаты');
+            // YooKassa End
         }
 
     }
