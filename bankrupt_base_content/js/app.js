@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tl1.from(element, {
             opacity: 0,
             y: 20,
-            duration: 0.5,
+            duration: 0.3,
             ease: "power1.out",
             delay: 0.1,
         });
