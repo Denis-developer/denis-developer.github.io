@@ -140,9 +140,9 @@ body.lock {
 .popup-message__text span {
   font-weight: 700;
 }
-.popup-message__text a {
+.popup-message__link {
   color: #388df5;
-  text-decoration: none;
+  font-weight: 400 !important;
 }
 .popup-message__text_last {
   margin-top: 18px;
