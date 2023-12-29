@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', function () {
         popupContentBtn.classList.remove('active');
     })
 
+    popupFormTextarea.addEventListener('focus', function() {
+        popupFormTextarea.classList.remove('error');
+    })
+
     popupFormBtn.addEventListener('click', function (e) {
         e.preventDefault();
         if (popupFormTextarea.value.length == "") {
@@ -36,12 +40,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const popupBtnClose = document.querySelector('.popup-content__btnclose');
         const popupRating = document.querySelector('.popup-rating');
         const popupTitle = document.querySelector('.popup-content__title');
+        const popupContent = document.querySelector('.popup-content');
 
         popupFormTextarea.classList.remove('error');
         popupForm.classList.remove('active');
         popupBtnClose.classList.add('active');
         popupRating.classList.add('hidden');
         popupTitle.textContent = 'Благодарим Вас за обратную связь!';
+        popupTitle.style.marginBottom = '50px';
+        popupContent.classList.add('formSend');
     }
 
 

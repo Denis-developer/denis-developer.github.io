@@ -22,6 +22,8 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
+  opacity: 0;
+  visibility: hidden;
   overflow-x: hidden;
   overflow-y: auto;
   transition: all 0.8s;
@@ -58,6 +60,9 @@ body {
   position: relative;
   padding: 25px;
   border-radius: 3px;
+}
+.popup-content.formSend {
+  max-width: 457px;
 }
 .popup-content__close {
   text-decoration: none;
@@ -122,6 +127,10 @@ body {
   min-height: 164px;
   margin-bottom: 50px;
   transition: all 0.3s;
+}
+.popup-form__textarea:focus {
+  outline: none;
+  border: 1px solid #0065FB;
 }
 .popup-form__textarea.error {
   border-color: #F00;

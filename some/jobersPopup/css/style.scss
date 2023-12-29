@@ -22,8 +22,8 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     left: 0;
-    // opacity: 0;
-    // visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
     overflow-x: hidden;
     overflow-y: auto;
     transition: all .8s;
@@ -63,6 +63,9 @@ body {
         position: relative;
         padding: 25px;
         border-radius: 3px;
+        &.formSend {
+            max-width: 457px;
+        }
 
         &__close {
             text-decoration: none;
@@ -96,6 +99,7 @@ body {
         &__btn {
             margin-top: 50px;
         }
+
         &__btnclose {
             width: 99px;
             height: 40px;
@@ -138,6 +142,11 @@ body {
             min-height: 164px;
             margin-bottom: 50px;
             transition: all 0.3s;
+
+            &:focus {
+                outline: none;
+                border: 1px solid #0065FB;
+            }
 
             &.error {
                 border-color: #F00;
