@@ -22,8 +22,8 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     left: 0;
-    opacity: 0;
-    visibility: hidden;
+    // opacity: 0;
+    // visibility: hidden;
     overflow-x: hidden;
     overflow-y: auto;
     transition: all .8s;
@@ -37,12 +37,13 @@ body {
     }
 
     &__btn {
-        padding: 11px 16px;
+        padding: 10px 16px;
         border-radius: 5px;
         background: #5898FF;
         text-decoration: none;
         border: none;
         display: inline-block;
+        font-family: 'Open Sans', sans-serif;
         color: #FFF;
         font-size: 16px;
         font-weight: 600;
@@ -61,6 +62,7 @@ body {
         width: 100%;
         position: relative;
         padding: 25px;
+        border-radius: 3px;
 
         &__close {
             text-decoration: none;
@@ -90,12 +92,21 @@ body {
                 display: inline-block;
             }
         }
+
+        &__btn {
+            margin-top: 50px;
+        }
+        &__btnclose {
+            width: 99px;
+            height: 40px;
+        }
     }
 
     &-form {
         display: none;
         flex-direction: column;
         align-items: flex-start;
+        margin-top: 57px;
 
         &.active {
             display: flex;
@@ -105,6 +116,11 @@ body {
             color: #333;
             font-size: 14px;
             margin-bottom: 15px;
+        }
+
+        &__btn {
+            width: 119px;
+            height: 40px;
         }
 
         &__textarea {
@@ -125,10 +141,6 @@ body {
 
             &.error {
                 border-color: #F00;
-            }
-
-            &:focus {
-                outline: none;
             }
 
             &::placeholder {
@@ -159,7 +171,7 @@ body {
         justify-content: center;
         flex-direction: row-reverse;
         margin: 0 auto;
-        margin-bottom: 55px;
+        margin-bottom: 6px;
 
         &.hidden {
             display: none;
@@ -169,6 +181,7 @@ body {
             fill: #D2D2D2;
             cursor: pointer;
             transition: all 0.4s;
+
             &:not(:first-child) {
                 margin-right: 10px;
             }

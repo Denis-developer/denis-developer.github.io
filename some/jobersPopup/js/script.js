@@ -6,15 +6,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const popupForm = document.querySelector('.popup-form');
     const popupFormBtn = document.querySelector('.popup-form__btn');
     const popupFormTextarea = document.querySelector('.popup-form__textarea');
+    const popupContentBtn = document.querySelector('.popup-content__btn');
 
 
     ratingItemsArray.forEach(item =>
         item.addEventListener('click', () => {
             const { itemValue } = item.dataset;
             item.parentNode.dataset.totalValue = itemValue;
-            popupForm.classList.add('active');
+            popupContentBtn.classList.add('active');
         })
     )
+
+    popupContentBtn.addEventListener('click', function() {
+        popupForm.classList.add('active');
+        popupContentBtn.classList.remove('active');
+    })
 
     popupFormBtn.addEventListener('click', function (e) {
         e.preventDefault();
