@@ -1,0 +1,195 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body.lock {
+    overflow: hidden;
+}
+
+body {
+    line-height: normal;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all .8s;
+
+    &__body {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 10px;
+    }
+
+    &__btn {
+        padding: 11px 16px;
+        border-radius: 5px;
+        background: #5898FF;
+        text-decoration: none;
+        border: none;
+        display: inline-block;
+        color: #FFF;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.4s;
+        cursor: pointer;
+
+        &:hover {
+            background: darken(#5898FF, 10%);
+        }
+    }
+
+    &-content {
+        background-color: #fff;
+        color: #000;
+        max-width: 447px;
+        width: 100%;
+        position: relative;
+        padding: 25px;
+
+        &__close {
+            text-decoration: none;
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            transition: all 0.3s;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &__title {
+            color: #333;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 55px;
+            padding-right: 20px;
+        }
+
+        &__btn,
+        &__btnclose {
+            display: none;
+
+            &.active {
+                display: inline-block;
+            }
+        }
+    }
+
+    &-form {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &.active {
+            display: flex;
+        }
+
+        &__text {
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        &__textarea {
+            font-family: 'Open Sans', sans-serif;
+            padding: 15px;
+            border-radius: 3px;
+            border: 1px solid #D2D2D2;
+            background: #fff;
+            color: #333;
+            font-size: 13px;
+            font-weight: 400;
+            font-style: normal;
+            resize: none;
+            width: 100%;
+            min-height: 164px;
+            margin-bottom: 50px;
+            transition: all 0.3s;
+
+            &.error {
+                border-color: #F00;
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            &::placeholder {
+                color: #959799;
+            }
+
+            &:-moz-placeholder {
+                color: #959799;
+            }
+
+            &::-moz-placeholder {
+                color: #959799;
+            }
+
+            &:-ms-input-placeholder {
+                color: #959799;
+            }
+
+            &::-webkit-input-placeholder {
+                color: #959799;
+            }
+        }
+    }
+
+    &-rating {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+        margin: 0 auto;
+        margin-bottom: 55px;
+
+        &.hidden {
+            display: none;
+        }
+
+        svg {
+            fill: #D2D2D2;
+            cursor: pointer;
+            transition: all 0.4s;
+            &:not(:first-child) {
+                margin-right: 10px;
+            }
+
+            &:hover,
+            &:hover~svg {
+                fill: #5898FF;
+            }
+        }
+    }
+}
+
+.popup-rating[data-total-value="1"] svg:nth-child(n+5),
+.popup-rating[data-total-value="2"] svg:nth-child(n+4),
+.popup-rating[data-total-value="3"] svg:nth-child(n+3),
+.popup-rating[data-total-value="4"] svg:nth-child(n+2),
+.popup-rating[data-total-value="5"] svg:nth-child(n+1) {
+    fill: #5898FF;
+}
+
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
