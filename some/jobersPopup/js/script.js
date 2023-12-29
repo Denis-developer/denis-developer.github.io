@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     popupContentBtn.addEventListener('click', function() {
         popupForm.classList.add('active');
-        popupContentBtn.classList.remove('active');
+        popupContentBtn.style.display = 'none';
     })
 
     popupFormTextarea.addEventListener('focus', function() {
