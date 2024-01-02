@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const tl1 = gsap.timeline({
         scrollTrigger: {
             trigger: ".unlock__wrapper",
-            start: "top center",
+            start: "top 80%",
         }
     });
 
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const tl2 = gsap.timeline({
         scrollTrigger: {
             trigger: ".analytics__wrapper",
-            start: "top center",
+            start: "top 80%",
         }
     });
 
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const tl3 = gsap.timeline({
         scrollTrigger: {
             trigger: ".coverage__wrapper",
-            start: "top center",
+            start: "top 80%",
         }
     });
 
@@ -98,16 +98,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // gsap.from(".brochure__img", {
-    //     y: 400,
-    //     x: -200,
-    //     scrollTrigger: {
-    //         trigger: ".brochure",
-    //         start: "top 100%",
-    //         end: "center 10%",
-    //         scrub: 1,
-    //     },
-    // });
+    gsap.from(".unlock__img", {
+        y: 400,
+        scrollTrigger: {
+            trigger: ".unlock",
+            start: "top 100%",
+            end: "center 10%",
+            scrub: 1,
+        },
+    });
 
 
 
@@ -120,6 +119,11 @@ document.addEventListener('DOMContentLoaded', function () {
             slidesPerView: 'auto',
             centeredSlides: true,
             breakpoints: {
+                320: {
+                    direction: 'vertical',
+                    spaceBetween: 0,
+                    noSwiping: true
+                },
                 576: {
                     spaceBetween: 40
                 },
