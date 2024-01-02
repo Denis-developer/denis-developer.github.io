@@ -122,10 +122,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 320: {
                     direction: 'vertical',
                     spaceBetween: 0,
-                    noSwiping: true
+                    touchRatio: 0
                 },
                 576: {
-                    spaceBetween: 40
+                    spaceBetween: 40,
+                    direction: 'horizontal',
+                    touchRatio: 1
                 },
                 992: {
                     spaceBetween: 80
