@@ -24,6 +24,91 @@ document.addEventListener('DOMContentLoaded', function () {
 
     isWebp();
 
+    // ANIMATIONS PAGE
+    const boxes = gsap.utils.toArray(".gs-anim");
+    boxes.forEach((box) => {
+        gsap.from(box, {
+            yPercent: 20,
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: box,
+                start: "top 90%",
+                end: "center 50%",
+            },
+        });
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl1 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".unlock__wrapper",
+            start: "top center",
+        }
+    });
+
+    const elements1 = gsap.utils.toArray(".unlock-block");
+
+    elements1.forEach((element) => {
+        tl1.from(element, {
+            opacity: 0,
+            y: 20,
+            duration: 0.3,
+            ease: "power1.out",
+            delay: 0.1,
+        });
+    });
+
+    const tl2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".analytics__wrapper",
+            start: "top center",
+        }
+    });
+
+    const elements2 = gsap.utils.toArray(".analytics-block");
+
+    elements2.forEach((element) => {
+        tl2.from(element, {
+            opacity: 0,
+            y: 20,
+            duration: 0.3,
+            ease: "power1.out",
+            delay: 0.1,
+        });
+    });
+
+    const tl3 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".coverage__wrapper",
+            start: "top center",
+        }
+    });
+
+    const elements3 = gsap.utils.toArray(".coverage__img");
+
+    elements3.forEach((element) => {
+        tl3.from(element, {
+            opacity: 0,
+            y: 20,
+            duration: 0.3,
+            ease: "power1.out",
+            delay: 0.1,
+        });
+    });
+
+    // gsap.from(".brochure__img", {
+    //     y: 400,
+    //     x: -200,
+    //     scrollTrigger: {
+    //         trigger: ".brochure",
+    //         start: "top 100%",
+    //         end: "center 10%",
+    //         scrub: 1,
+    //     },
+    // });
+
 
 
     let viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
