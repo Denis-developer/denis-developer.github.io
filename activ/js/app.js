@@ -118,16 +118,18 @@ document.addEventListener('DOMContentLoaded', function () {
             initialSlide: 1,
             slidesPerView: 'auto',
             centeredSlides: true,
+            slideToClickedSlide: true,
             breakpoints: {
                 320: {
                     direction: 'vertical',
                     spaceBetween: 0,
-                    touchRatio: 0
+                    touchRatio: 0,
+                    slideToClickedSlide: false,
                 },
                 576: {
                     spaceBetween: 40,
                     direction: 'horizontal',
-                    touchRatio: 1
+                    touchRatio: 1,
                 },
                 992: {
                     spaceBetween: 80
