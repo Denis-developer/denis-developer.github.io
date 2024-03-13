@@ -5,26 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Сервис формирования пояснительной записки в формате XML</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20240312224522">
-    <link rel="stylesheet" href="css/style.min.css?_v=20240312224522">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20240313161758">
+    <link rel="stylesheet" href="css/style.min.css?_v=20240313161758">
   </head>
   <body>
     <main class="main">
       <section class="intro">
+        <div class="header-popup">
+          <div class="header-popup__wrapper"> <a class="header-popup__tel" href="tel:88002225050">8 800 222-50-50</a>
+            <p class="header-popup__text">Звонок по России бесплатный</p><a class="header-popup__tel" href="tel:84232225050">8 (423) 222-50-50</a><a class="header-popup__btn btn" href="#">Заказать звонок</a>
+          </div>
+        </div>
         <header class="header"> 
           <div class="container"><img class="header__logo" src="img/logo.svg" alt="ДВ Экспертиза Проект">
             <nav class="header-menu"> <a class="header-menu__link" href="#">Главная</a><a class="header-menu__link" href="#">О сервисе</a><a class="header-menu__link" href="#">О Компании</a><a class="header-menu__link" href="#">Техническая поддержка</a></nav>
             <div class="header__btn"> <img src="img/icons/user.svg" alt="">Личный кабинет</div>
+            <div class="header__burger"><span></span><span></span><span></span></div>
           </div>
         </header>
         <div class="container">
           <div class="intro__content">
             <p class="intro__subtitle">Абсолютно бесплатно!</p>
-            <h1 class="intro__title">Сервис формирования Пояснительной записки в формате XML</h1>
+            <h1 class="intro__title">Сервис формирования Пояснительной записки в&nbsp;формате XML</h1>
             <p class="intro__undertitle">Начните пользоваться нашим сервисом <span>прямо сейчас</span></p><a class="intro__btn btn" href="#">Зарегистрироваться</a>
             <div class="intro__wrapper"> 
-              <div class="intro__option active">Пояснительная записка в XML</div>
-              <div class="intro__option">Сервис цифровой экспертизы</div>
+              <div class="intro__option active">Пояснительная записка в XML</div><a class="intro__option" href="#">Сервис цифровой экспертизы</a>
             </div>
           </div>
         </div>
@@ -92,7 +97,7 @@
       <section class="about">
         <div class="container"> 
           <h2 class="title about__title">О нас</h2>
-          <p class="about__text">ДВ Экспертиза Проект - это стабильный партнер по экспертизе проектной и сметной документации  для 150+ проектировщиков и застройщиков. Мы работаем над экспертизой проектов в условиях сложных строительных норм и помогаем заказчикам комфортно пройти стадию экспертизы. Наш принцип - экспертиза может проходить понятно, спокойно и выгодно. Чтобы это стало возможным, мы разрабатываем сервисы, которые помогают контролировать и ускорять прохождение экспертизы, обмениваться данными без потерь. Делимся мы и полезными материалами, которые помогают нашим заказчикам облегчить работу над проектом. Если вам интересуют наши услуги по экспертизе проектной документации и смет, то о них можно узнать на нашем сайте <a href="#">www.dvexp.ru</a></p>
+          <p class="about__text">ДВ Экспертиза Проект - это стабильный партнер по экспертизе проектной и сметной документации  для 150+ проектировщиков и застройщиков. <br> Мы работаем над экспертизой проектов в условиях сложных строительных норм и помогаем заказчикам комфортно пройти стадию экспертизы. Наш принцип - экспертиза может проходить понятно, спокойно и выгодно. Чтобы это стало возможным, мы разрабатываем сервисы, которые помогают контролировать и ускорять прохождение экспертизы, обмениваться данными без потерь. Делимся мы и полезными материалами, которые помогают нашим заказчикам облегчить работу над проектом. <br> Если вам интересуют наши услуги по экспертизе проектной документации и смет, <br> то о них можно узнать на нашем сайте <a href="#">www.dvexp.ru</a></p>
           <div class="about__wrapper"> 
             <div class="about-block"> 
               <p class="about-block__num">600+</p>
@@ -102,10 +107,10 @@
             <div class="about-block"> 
               <p class="about-block__num">278</p>
               <p class="about-block__title">Заказчиков</p>
-              <p class="about-block__text">уже опробовали работу сервисов и решили с их помощью задачи по экспертизе</p>
+              <p class="about-block__text">уже опробовали работу сервисов и&nbsp;решили с их помощью задачи по экспертизе</p>
             </div>
             <div class="about-block"> 
-              <p class="about-block__num">на 23%</p>
+              <p class="about-block__num"> <span>на </span>23%</p>
               <p class="about-block__title">Быстрее выдаем</p>
               <p class="about-block__text">заключения экспертизы, чем при стандартном варианте документооборота</p>
             </div>
@@ -114,9 +119,37 @@
       </section>
     </main>
     <footer class="footer"> 
-      <div class="container"></div>
+      <div class="container">
+        <div class="footer__top"> 
+          <div class="footer__wrapper"><img class="footer__logo" src="img/logo.svg" alt="ДВ Экспертиза Проект"></div>
+          <ul class="footer-menu"> 
+            <li class="footer-menu__item">Навигация</li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="#">Главная</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="#">О Сервисе</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="#">О Компании</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="#">Техническая поддержка</a></li>
+          </ul>
+          <ul class="footer-menu"> 
+            <li class="footer-menu__item">Электронные сервисы</li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="#">Пояснительная записка в XML</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="#">Сервис цифровой экспертизы</a></li>
+          </ul>
+          <div class="footer-contact"> 
+            <p class="footer-contact__title">Контакты</p>
+            <p class="footer-contact__title_small">Главный офис:</p>
+            <address class="footer-contact__text">690078, Приморский край, г. Владивосток, пр-т Острякова, д. 49, оф. 403</address>
+            <p class="footer-contact__title_small">Почта:</p><a class="footer-contact__text" href="mailto:info@dvexp.ru">info@dvexp.ru</a>
+          </div>
+          <div class="footer-call"> <a class="footer-call__tel" href="tel:88002225050">8 800 222-50-50</a>
+            <p class="footer-call__text">Звонок по России бесплатный</p><a class="footer-call__tel" href="tel:84232225050">8 (423) 222-50-50</a><a class="footer-call__btn" href="#">Заказать звонок</a>
+          </div>
+        </div>
+        <div class="footer__bottom"> 
+          <p class="footer__text">2011 - 2021 ООО "ДВ Экспертиза Проект" — Экспертиза проектной документации <br> &copy; Все права защищены</p>
+        </div>
+      </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20240312224522"></script>
-    <script src="js/app.js?_v=20240312224522"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20240313161758"></script>
+    <script src="js/app.js?_v=20240313161758"></script>
   </body>
 </html>
