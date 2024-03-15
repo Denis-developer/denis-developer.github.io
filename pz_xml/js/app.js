@@ -218,7 +218,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Window resize change items
 
-    let headerLogo = document.querySelector('.header__logo'),
+    let logo = document.querySelectorAll('.logo'),
         headerBtn = document.querySelector('.header__btn'),
         headerMenu = document.querySelector('.header-menu');
 
@@ -228,7 +228,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     if (viewport_width < 500) {
-        headerLogo.src = "img/logo_short.svg";
+        logo.forEach(item => {
+            item.src = "img/logo_short.svg";
+        })
     }
 
     window.addEventListener('resize', () => {
@@ -237,9 +239,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
         // Change header logo on mobile
         if (viewport_width < 500) {
-            headerLogo.src = "img/logo_short.svg";
+            logo.forEach(item => {
+                item.src = "img/logo_short.svg";
+            })
         } else {
-            headerLogo.src = "img/logo.svg";
+            logo.forEach(item => {
+                item.src = "img/logo.svg";
+            })
         }
 
         if (viewport_width > 992) {
