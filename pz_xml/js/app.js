@@ -683,9 +683,14 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // Adaptive mobile 100vh
+
+    let elements100vh = document.querySelectorAll('vh100');
+
     const setHeight = function () {
         const currentHeight = window.innerHeight;
-        menuMobile.style.height = `${currentHeight}px`;
+        elements100vh.forEach(item => {
+            item.style.height = `${currentHeight}px`;
+        })
     }
 
     if (viewport_width <= 500) {
@@ -697,7 +702,9 @@ window.addEventListener('DOMContentLoaded', () => {
             setHeight();
         }
         else {
-            menuMobile.style.height = "100vh";
+            elements100vh.forEach(item => {
+                item.style.height = "100vh";
+            })
         }
     });
 
