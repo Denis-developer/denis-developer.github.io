@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Сервис формирования пояснительной записки в формате XML</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20240315171543">
-    <link rel="stylesheet" href="css/style.min.css?_v=20240315171543">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20240315183321">
+    <link rel="stylesheet" href="css/style.min.css?_v=20240315183321">
   </head>
   <body>
     <main class="main">
@@ -18,13 +18,11 @@
         </div>
         <header class="header" id="header">
           <div class="container"><img class="header__logo" src="img/logo.svg" alt="ДВ Экспертиза Проект">
-            <nav class="header-menu"> <a class="header-menu__link" href="#intro">Главная</a><a class="header-menu__link" href="#service">О сервисе</a><a class="header-menu__link" href="#about">О Компании</a><a class="header-menu__link" href="#contact">Техническая поддержка</a></nav>
-            <div class="header__btn popup__open" data-popup="1" data-wrapper="1"> 
+            <nav class="header-menu"> <a class="header-menu__link" href="#intro">Главная</a><a class="header-menu__link" href="#service">О сервисе</a><a class="header-menu__link" href="#about">О Компании</a><a class="header-menu__link" href="#contact">Техническая поддержка</a></nav><a class="header__btn popup-link" href="#popup1" data-wrapper="1"> 
               <svg viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5.50016 6.52587C7.17605 6.52587 8.53463 5.16729 8.53463 3.4914C8.53463 1.81552 7.17605 0.45694 5.50016 0.45694C3.82427 0.45694 2.4657 1.81552 2.4657 3.4914C2.4657 5.16729 3.82427 6.52587 5.50016 6.52587Z"></path>
                 <path d="M5.49997 8.04312C2.46242 8.04312 0 10.5055 0 13.5431H10.9999C10.9999 10.5055 8.53752 8.04312 5.49997 8.04312Z"></path>
-              </svg>Личный кабинет
-            </div>
+              </svg>Личный кабинет</a>
             <div class="header__burger"><span></span><span></span><span></span></div>
           </div>
         </header>
@@ -32,7 +30,7 @@
           <div class="intro__content">
             <p class="intro__subtitle">Абсолютно бесплатно!</p>
             <h1 class="intro__title">Сервис формирования Пояснительной записки в&nbsp;формате XML</h1>
-            <p class="intro__undertitle">Начните пользоваться нашим сервисом <span>прямо сейчас</span></p><a class="intro__btn btn popup__open" href="#" data-popup="1" data-wrapper="2">Зарегистрироваться</a>
+            <p class="intro__undertitle">Начните пользоваться нашим сервисом <span>прямо сейчас</span></p><a class="intro__btn btn popup-link" href="#popup1" data-wrapper="2">Зарегистрироваться</a>
             <div class="intro__wrapper"> 
               <div class="intro__option active">Пояснительная записка в XML</div><a class="intro__option" href="platforma.html">Сервис цифровой экспертизы</a>
             </div>
@@ -160,7 +158,7 @@
             <p class="footer-contact__title_small">Почта:</p><a class="footer-contact__text" href="mailto:info@dvexp.ru">info@dvexp.ru</a>
           </div>
           <div class="footer-call"> <a class="footer-call__tel" href="tel:88002225050">8 800 222-50-50</a>
-            <p class="footer-call__text">Звонок по России бесплатный</p><a class="footer-call__tel" href="tel:84232225050">8 (423) 222-50-50</a><a class="footer-call__btn popup__open" href="#" data-popup="3" data-wrapper="1">Заказать звонок</a>
+            <p class="footer-call__text">Звонок по России бесплатный</p><a class="footer-call__tel" href="tel:84232225050">8 (423) 222-50-50</a><a class="footer-call__btn popup-link" href="#popup3" data-wrapper="1">Заказать звонок</a>
           </div>
         </div>
         <div class="footer__bottom"> 
@@ -168,8 +166,8 @@
         </div>
       </div>
     </footer>
-    <div class="popup popup1" data-popup="1">
-      <div class="popup1__body"> <a class="close popup__close" href="#"><img src="img/icons/close.svg" alt="X"></a>
+    <div class="popup popup1" id="popup1">
+      <div class="popup__body popup1__body"> <a class="close popup__close" href="#"><img src="img/icons/close.svg" alt="X"></a>
         <div class="popup1__logo"> <a class="close popup1__back" href="#">
             <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5.16667 1.625L1 6M1 6L5.16667 10.375M1 6L11 6" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -189,7 +187,7 @@
             </div>
             <button class="popup1-form__btn btn" type="submit">Войти</button>
           </form>
-          <div class="popup1__text">Еще нет аккаунта? <a href="#">Зарегистрироваться</a></div>
+          <div class="popup1__text">Еще нет аккаунта? <a class="popup-link" href="#popup1" data-wrapper="2">Зарегистрироваться</a></div>
         </div>
         <div class="popup1__wrapper popup1__wrapper_reg popupWrappers"> 
           <form class="popup1-form" action="#" id="form2">
@@ -217,7 +215,7 @@
             </div>
             <button class="popup1-form__btn btn" type="submit">Зарегистрироваться</button>
           </form>
-          <div class="popup1__text">Уже есть аккаунт? <a href="#">Войти</a></div>
+          <div class="popup1__text">Уже есть аккаунт? <a class="popup-link" href="#popup1" data-wrapper="1">Войти</a></div>
         </div>
         <div class="popup1__wrapper popup1__wrapper_confirm popupWrappers"> 
           <div class="popup__content">
@@ -225,21 +223,23 @@
             <p class="popup1__description">На указанный Вами Email было отправлено письмо подтверждения. Откройте письмо и нажмите на кнопку «Подтвердить Email адрес»</p>
             <p class="popup1__description">Если письмо не пришло, вы можете отправить его еще раз</p>
             <button class="popup1__btn btn">Отправить письмо еще раз</button>
-            <div class="popup1__text">Перейти на страницу <a href="#">Входа</a></div>
+            <div class="popup1__text">Перейти на страницу <a class="popup-link" href="#popup1" data-wrapper="2">Входа</a></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="popup popup2" data-popup="2"><a class="close popup__close" href="#"><img src="img/icons/close.svg" alt="X"></a>
-      <div class="popup2-content"> <img class="popup2-content__logo" src="img/logo.svg" alt="ДВ Экспертиза Проект">
-        <h2 class="popup2-content__title">Вход на платформу доступен <span>только клиентам и партнерам</span></h2>
-        <p class="popup2-content__undertitle">Стань нашим клиентом</p>
-        <p class="popup2-content__text">Стать нашим клиентом вы можете после заключения договора на проведение негосударственной экспертизы проектной документации.</p>
-        <p class="popup2-content__offer">Вам доступна демонстрационная версия</p><a class="popup2-content__btn" href="#">Попробовать демоверсию</a>
+    <div class="popup popup2" id="popup2">
+      <div class="popup__body"><a class="close popup__close" href="#"><img src="img/icons/close.svg" alt="X"></a>
+        <div class="popup2-content"> <img class="popup2-content__logo" src="img/logo.svg" alt="ДВ Экспертиза Проект">
+          <h2 class="popup2-content__title">Вход на платформу доступен <span>только клиентам и партнерам</span></h2>
+          <p class="popup2-content__undertitle">Стань нашим клиентом</p>
+          <p class="popup2-content__text">Стать нашим клиентом вы можете после заключения договора на проведение негосударственной экспертизы проектной документации.</p>
+          <p class="popup2-content__offer">Вам доступна демонстрационная версия</p><a class="popup2-content__btn" href="#">Попробовать демоверсию</a>
+        </div>
       </div>
     </div>
-    <div class="popup popup3" data-popup="3">
-      <div class="popup3__body"> <a class="close popup__close" href="#"><img src="img/icons/close.svg" alt="X"></a>
+    <div class="popup popup3" id="popup3">
+      <div class="popup__body"> <a class="close popup__close" href="#"><img src="img/icons/close.svg" alt="X"></a>
         <div class="popup3-content popup3-content_support popupWrappers"> 
           <p class="popup3-content__title">Написать в техподдержку</p>
           <p class="popup3-content__undertitle">Контакты техподдержки: <span>8 800 222-50-50 / info@dvexp.ru</span></p>
@@ -309,8 +309,8 @@
         </div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20240315171543"></script>
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js?_v=20240315171543"></script>
-    <script src="js/app.js?_v=20240315171543"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20240315183321"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js?_v=20240315183321"></script>
+    <script src="js/app.js?_v=20240315183321"></script>
   </body>
 </html>
