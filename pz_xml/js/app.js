@@ -215,7 +215,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Window resize change items
 
-    let headerLogo = document.querySelector('.header__logo');
+    let headerLogo = document.querySelector('.header__logo'),
+        headerBtn = document.querySelector('.header__btn'),
+        headerMenu = document.querySelector('.header-menu');
+
+    if (viewport_width < 1200) {
+        headerBtn.style.display = "flex";
+        headerMenu.style.display = "flex";
+    }
 
     if (viewport_width < 500) {
         headerLogo.src = "img/logo_short.svg";
@@ -342,9 +349,113 @@ window.addEventListener('DOMContentLoaded', () => {
             ]
         );
 
+    const validator3 = new window.JustValidate('#form3');
+
+    validator3
+        .addField('#email3', [
+            {
+                rule: 'required',
+                errorMessage: 'Пожалуйста, укажите адрес почты'
+            },
+            {
+                rule: 'required',
+                errorMessage: 'Пожалуйста, укажите адрес почты'
+            },
+            {
+                rule: 'email',
+                errorMessage: 'Некорректный адрес'
+            },
+        ])
+        .addField('#textarea', [
+            {
+                rule: 'required',
+                errorMessage: 'Пожалуйста, заполните данное поле'
+            }
+        ]);
+
+
+    const validator4 = new window.JustValidate('#form4');
+
+    validator4
+        .addField('#email4', [
+            {
+                rule: 'required',
+                errorMessage: 'Пожалуйста, укажите адрес почты'
+            },
+            {
+                rule: 'required',
+                errorMessage: 'Пожалуйста, укажите адрес почты'
+            },
+            {
+                rule: 'email',
+                errorMessage: 'Некорректный адрес'
+            },
+        ])
+        .addField('#username2', [
+            {
+                rule: 'required',
+                errorMessage: 'Пожалуйста, заполните данное поле'
+            }
+        ])
+        .addField('#phone', [
+            {
+                rule: 'required',
+                errorMessage: 'Пожалуйста, заполните данное поле'
+            }
+        ])
+
+    const validator5 = new window.JustValidate('#form5');
+
+    validator5
+        .addField('#email5', [
+            {
+                rule: 'required',
+                errorMessage: 'Пожалуйста, укажите адрес почты'
+            },
+            {
+                rule: 'required',
+                errorMessage: 'Пожалуйста, укажите адрес почты'
+            },
+            {
+                rule: 'email',
+                errorMessage: 'Некорректный адрес'
+            },
+        ])
+        .addField('#applicantsName', [
+            {
+                rule: 'required',
+                errorMessage: 'Пожалуйста, заполните данное поле'
+            }
+        ])
+        .addField('#contractNumber', [
+            {
+                rule: 'required',
+                errorMessage: 'Пожалуйста, заполните данное поле'
+            }
+        ])
+        .addField('#fullName', [
+            {
+                rule: 'required',
+                errorMessage: 'Пожалуйста, заполните данное поле'
+            }
+        ])
+        .addField('#phone2', [
+            {
+                rule: 'required',
+                errorMessage: 'Пожалуйста, заполните данное поле'
+            }
+        ])
+        .addField('#file', [
+            {
+                rule: 'minFilesCount',
+                value: 1,
+                errorMessage: 'Пожалуйста, загрузите файл'
+            }
+        ])
+
     // BTN SEND LETTER AGAIN
 
-    const btnSendAgain = document.querySelector('.popup__btn');
+    const btnSendAgain = document.querySelector('.popup1__btn');
     let i = 15;
     let intervalId;
 
@@ -374,41 +485,90 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let popupLoginBtns = document.querySelectorAll('.popup__open'),
         popupExitBtns = document.querySelectorAll('.close'),
-        popupWrapper = document.querySelectorAll('.popup .popup__wrapper'),
-        popup = document.querySelector('.popup');
+        popupWrappers = document.querySelectorAll('.popupWrappers'),
+        popups = document.querySelectorAll('.popup');
 
     popupLoginBtns.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
-            if (item.getAttribute('data-popupWrapper')) {
-                popupWrapper.forEach(i => {
-                    i.classList.remove('show');
-                })
-                switch (item.getAttribute('data-popupWrapper')) {
-                    case '1':
-                        document.querySelector('.popup__wrapper_log').classList.add('show');
-                        break;
-                    case '2':
-                        document.querySelector('.popup__wrapper_reg').classList.add('show');
-                        break;
-                    case '3':
-                        document.querySelector('.popup__wrapper_confirm').classList.add('show');
-                        break;
+            popups.forEach(modal => {
+                if (modal.getAttribute("data-popup") == item.getAttribute('data-popup')) {
+                    openPopup(modal);
+                    closeWrapper();
+                    switch (item.getAttribute('data-wrapper')) {
+                        case '1':
+                            openWrapper('.popup1__wrapper_log');
+                            openWrapper('.popup3-content_support');
+                            break;
+                        case '2':
+                            openWrapper('.popup1__wrapper_reg');
+                            openWrapper('.popup3-content_callback');
+                            break;
+                        case '3':
+                            openWrapper('.popup1__wrapper_confirm');
+                            openWrapper('.popup3-content_file');
+                            break;
+                    }
                 }
-            }
-            popup.classList.add('show');
-            document.body.classList.toggle('lock');
-            document.documentElement.classList.toggle('lock');
+            })
         })
     });
 
     popupExitBtns.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
-            popup.classList.remove('show');
+            closePopup();
+        })
+    });
+
+    function openWrapper(wrapperSelector) {
+        const wrapper = document.querySelector(wrapperSelector);
+        wrapper.classList.add('show');
+    }
+
+    function closeWrapper() {
+        popupWrappers.forEach(item => {
+            item.classList.remove('show');
+        });
+    }
+
+    function openPopup(popup) {
+        const lockPaddingValue = window.innerWidth - document.body.clientWidth + 'px';
+        document.body.style.paddingRight = lockPaddingValue;
+        popup.classList.add('show');
+        document.body.classList.add('lock');
+        document.documentElement.classList.add('lock');
+    }
+
+    function closePopup() {
+        popups.forEach(item => {
+            item.classList.remove('show');
+        });
+        setTimeout(() => {
             document.body.classList.remove('lock');
             document.documentElement.classList.remove('lock');
-        })
+            document.body.style.paddingRight = "0";
+        }, 400)
+
+    }
+
+    // Adaptive mobile 100vh
+    const setHeight = function () {
+        const currentHeight = window.innerHeight;
+        menuMobile.style.height = `${currentHeight}px`;
+    }
+
+    if (viewport_width <= 500) {
+        setHeight();
+    }
+
+    window.addEventListener('resize', function (event) {
+        if (viewport_width <= 500) {
+            setHeight();
+        }
+        else {
+            menuMobile.style.height = "100vh";
+        }
     });
 
 });

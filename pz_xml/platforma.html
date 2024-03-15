@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Сервис формирования пояснительной записки в формате XML</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20240314211011">
-    <link rel="stylesheet" href="css/style.min.css?_v=20240314211011">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20240315171543">
+    <link rel="stylesheet" href="css/style.min.css?_v=20240315171543">
   </head>
   <body>
     <main class="main">
@@ -19,7 +19,7 @@
         <header class="header" id="header">
           <div class="container"><img class="header__logo" src="img/logo.svg" alt="ДВ Экспертиза Проект">
             <nav class="header-menu"> <a class="header-menu__link" href="#intro">Главная</a><a class="header-menu__link" href="#service">О сервисе</a><a class="header-menu__link" href="#about">О Компании</a><a class="header-menu__link" href="#contact">Техническая поддержка</a></nav>
-            <div class="header__btn popup__open" data-popupWrapper="1"> 
+            <div class="header__btn popup__open" data-popup="1" data-wrapper="1"> 
               <svg viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5.50016 6.52587C7.17605 6.52587 8.53463 5.16729 8.53463 3.4914C8.53463 1.81552 7.17605 0.45694 5.50016 0.45694C3.82427 0.45694 2.4657 1.81552 2.4657 3.4914C2.4657 5.16729 3.82427 6.52587 5.50016 6.52587Z"></path>
                 <path d="M5.49997 8.04312C2.46242 8.04312 0 10.5055 0 13.5431H10.9999C10.9999 10.5055 8.53752 8.04312 5.49997 8.04312Z"></path>
@@ -156,7 +156,7 @@
             <p class="footer-contact__title_small">Почта:</p><a class="footer-contact__text" href="mailto:info@dvexp.ru">info@dvexp.ru</a>
           </div>
           <div class="footer-call"> <a class="footer-call__tel" href="tel:88002225050">8 800 222-50-50</a>
-            <p class="footer-call__text">Звонок по России бесплатный</p><a class="footer-call__tel" href="tel:84232225050">8 (423) 222-50-50</a><a class="footer-call__btn" href="#">Заказать звонок</a>
+            <p class="footer-call__text">Звонок по России бесплатный</p><a class="footer-call__tel" href="tel:84232225050">8 (423) 222-50-50</a><a class="footer-call__btn popup__open" href="#" data-popup="3" data-wrapper="1">Заказать звонок</a>
           </div>
         </div>
         <div class="footer__bottom"> 
@@ -164,67 +164,69 @@
         </div>
       </div>
     </footer>
-    <div class="popup"><a class="close popup__close" href="#"><img src="img/icons/close.svg" alt="X"></a>
-      <div class="popup__logo"> <a class="close popup__back" href="#">
-          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5.16667 1.625L1 6M1 6L5.16667 10.375M1 6L11 6" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg><span>Вернуться на главную</span></a><picture><source srcset="img/popup-logo.webp" type="image/webp"><img src="img/popup-logo.png" alt="ДВ Экспертиза Проект"></picture></div>
-      <div class="popup__wrapper popup__wrapper_log"> 
-        <form class="popup-form" action="#" id="form1">
-          <p class="popup-form__title">Вход в сервис</p>
-          <div class="control-wrapper">
-            <label class="popup-form__label" for="email1">Email</label>
-            <input class="popup-form__input" type="text" name="email1" id="email1" placeholder="Введите ваш Email" autocomplete="off">
-          </div>
-          <div class="control-wrapper">
-            <label class="popup-form__label" for="pass1">Пароль</label>
-            <div class="popup-form__inputWrapper"> <a class="popup-form__inputBtn" href="#">Восстановить</a>
-              <input class="popup-form__input" type="password" name="pass1" id="pass1" placeholder="Введите пароль">
+    <div class="popup popup1" data-popup="1">
+      <div class="popup1__body"> <a class="close popup__close" href="#"><img src="img/icons/close.svg" alt="X"></a>
+        <div class="popup1__logo"> <a class="close popup1__back" href="#">
+            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.16667 1.625L1 6M1 6L5.16667 10.375M1 6L11 6" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg><span>Вернуться на главную</span></a><picture><source srcset="img/popup-logo.webp" type="image/webp"><img src="img/popup-logo.png" alt="ДВ Экспертиза Проект"></picture></div>
+        <div class="popup1__wrapper popup1__wrapper_log popupWrappers"> 
+          <form class="popup1-form" action="#" id="form1">
+            <p class="popup1-form__title">Вход в сервис</p>
+            <div class="control-wrapper">
+              <label class="popup1-form__label" for="email1">Email</label>
+              <input class="popup1-form__input" type="text" name="email1" id="email1" placeholder="Введите ваш Email" autocomplete="off">
             </div>
+            <div class="control-wrapper">
+              <label class="popup1-form__label" for="pass1">Пароль</label>
+              <div class="popup1-form__inputWrapper"> <a class="popup1-form__inputBtn" href="#">Восстановить</a>
+                <input class="popup1-form__input" type="password" name="pass1" id="pass1" placeholder="Введите пароль">
+              </div>
+            </div>
+            <button class="popup1-form__btn btn" type="submit">Войти</button>
+          </form>
+          <div class="popup1__text">Еще нет аккаунта? <a href="#">Зарегистрироваться</a></div>
+        </div>
+        <div class="popup1__wrapper popup1__wrapper_reg popupWrappers"> 
+          <form class="popup1-form" action="#" id="form2">
+            <p class="popup1-form__title">Форма регистрации</p>
+            <div class="control-wrapper">
+              <label class="popup1-form__label" for="username">Наименование организации или ФИО</label>
+              <input class="popup1-form__input" type="text" name="username" id="username" placeholder="Наименование организации или ФИО" autocomplete="off">
+            </div>
+            <div class="control-wrapper">
+              <label class="popup1-form__label" for="email2">Email</label>
+              <input class="popup1-form__input" type="text" name="email2" id="email2" placeholder="Ваш Email адрес" autocomplete="off">
+            </div>
+            <div class="control-wrapper">
+              <label class="popup1-form__label" for="pass2">Пароль</label>
+              <input class="popup1-form__input" type="password" name="pass2" id="pass2" placeholder="Минимум 8 символов">
+            </div>
+            <div class="control-wrapper">
+              <label class="popup1-form__label" for="pass3">Подтверждение пароля</label>
+              <input class="popup1-form__input" type="password" name="pass3" id="pass3" placeholder="Повторите пароль">
+            </div>
+            <div class="control-wrapper">
+              <input class="popup1-form__checkbox" type="checkbox" name="checkbox" id="checkbox">
+              <label class="popup1-form__labelCheckbox" for="checkbox">
+                 Согласен с <a href="#">условиями использования </a>сервиса</label>
+            </div>
+            <button class="popup1-form__btn btn" type="submit">Зарегистрироваться</button>
+          </form>
+          <div class="popup1__text">Уже есть аккаунт? <a href="#">Войти</a></div>
+        </div>
+        <div class="popup1__wrapper popup1__wrapper_confirm popupWrappers"> 
+          <div class="popup__content">
+            <p class="popup1-form__title">Подтвердите ваш Email</p>
+            <p class="popup1__description">На указанный Вами Email было отправлено письмо подтверждения. Откройте письмо и нажмите на кнопку «Подтвердить Email адрес»</p>
+            <p class="popup1__description">Если письмо не пришло, вы можете отправить его еще раз</p>
+            <button class="popup1__btn btn">Отправить письмо еще раз</button>
+            <div class="popup1__text">Перейти на страницу <a href="#">Входа</a></div>
           </div>
-          <button class="popup-form__btn btn" type="submit">Войти</button>
-        </form>
-        <div class="popup__text">Еще нет аккаунта? <a href="#">Зарегистрироваться</a></div>
-      </div>
-      <div class="popup__wrapper popup__wrapper_reg"> <a class="close popup__close" href="#"><img src="img/icons/close.svg" alt="X"></a>
-        <form class="popup-form" action="#" id="form2">
-          <p class="popup-form__title">Форма регистрации</p>
-          <div class="control-wrapper">
-            <label class="popup-form__label" for="username">Наименование организации или ФИО</label>
-            <input class="popup-form__input" type="text" name="username" id="username" placeholder="Наименование организации или ФИО" autocomplete="off">
-          </div>
-          <div class="control-wrapper">
-            <label class="popup-form__label" for="email2">Email</label>
-            <input class="popup-form__input" type="text" name="email2" id="email2" placeholder="Ваш Email адрес" autocomplete="off">
-          </div>
-          <div class="control-wrapper">
-            <label class="popup-form__label" for="pass2">Пароль</label>
-            <input class="popup-form__input" type="password" name="pass2" id="pass2" placeholder="Минимум 8 символов">
-          </div>
-          <div class="control-wrapper">
-            <label class="popup-form__label" for="pass3">Подтверждение пароля</label>
-            <input class="popup-form__input" type="password" name="pass3" id="pass3" placeholder="Повторите пароль">
-          </div>
-          <div class="control-wrapper">
-            <input class="popup-form__checkbox" type="checkbox" name="checkbox" id="checkbox">
-            <label class="popup-form__labelCheckbox" for="checkbox">
-               Согласен с <a href="#">условиями использования </a>сервиса</label>
-          </div>
-          <button class="popup-form__btn btn" type="submit">Зарегистрироваться</button>
-        </form>
-        <div class="popup__text">Уже есть аккаунт? <a href="#">Войти</a></div>
-      </div>
-      <div class="popup__wrapper popup__wrapper_confirm"> 
-        <div class="popup__content">
-          <p class="popup-form__title">Подтвердите ваш Email</p>
-          <p class="popup__description">На указанный Вами Email было отправлено письмо подтверждения. Откройте письмо и нажмите на кнопку «Подтвердить Email адрес»</p>
-          <p class="popup__description">Если письмо не пришло, вы можете отправить его еще раз</p>
-          <button class="popup__btn btn">Отправить письмо еще раз</button>
-          <div class="popup__text">Перейти на страницу <a href="#">Входа</a></div>
         </div>
       </div>
     </div>
-    <div class="popup2"> <a class="close popup__close" href="#"><img src="img/icons/close.svg" alt="X"></a>
+    <div class="popup popup2" data-popup="2"><a class="close popup__close" href="#"><img src="img/icons/close.svg" alt="X"></a>
       <div class="popup2-content"> <img class="popup2-content__logo" src="img/logo.svg" alt="ДВ Экспертиза Проект">
         <h2 class="popup2-content__title">Вход на платформу доступен <span>только клиентам и партнерам</span></h2>
         <p class="popup2-content__undertitle">Стань нашим клиентом</p>
@@ -232,8 +234,79 @@
         <p class="popup2-content__offer">Вам доступна демонстрационная версия</p><a class="popup2-content__btn" href="#">Попробовать демоверсию</a>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20240314211011"></script>
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js?_v=20240314211011"></script>
-    <script src="js/app.js?_v=20240314211011"></script>
+    <div class="popup popup3" data-popup="3">
+      <div class="popup3__body"> <a class="close popup__close" href="#"><img src="img/icons/close.svg" alt="X"></a>
+        <div class="popup3-content popup3-content_support popupWrappers"> 
+          <p class="popup3-content__title">Написать в техподдержку</p>
+          <p class="popup3-content__undertitle">Контакты техподдержки: <span>8 800 222-50-50 / info@dvexp.ru</span></p>
+          <form class="popup3-form" action="#" id="form3">
+            <div class="control-wrapper">
+              <label class="popup3-form__label" for="email3">Email*</label>
+              <input class="popup3-form__input" type="text" name="email3" id="email3" placeholder="Ваш Email" autocomplete="off">
+            </div>
+            <div class="control-wrapper">
+              <label class="popup3-form__label" for="textarea">Опишите проблему*</label>
+              <textarea class="popup3-form__textarea" type="text" name="textarea" id="textarea" placeholder="Опишите вашу проблему"></textarea>
+            </div>
+            <button class="popup3-form__btn btn" type="submit">Отправить</button>
+          </form>
+          <p class="popup3-content__text">* — Поля, обязательные для заполнения. Заполняя эту форму, Вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
+          <p class="popup3-content__text2">или напишите нам в мессенджер</p>
+          <div class="popup3-content__wrapper"> <a class="popup3-content__link" href="#"><img src="img/icons/telegram.svg" alt="telegram"><span>Telegram</span></a><a class="popup3-content__link" href="#"><img src="img/icons/whatsapp.svg" alt="whatsapp"><span>WhatsApp</span></a></div>
+        </div>
+        <div class="popup3-content popup3-content_callback popupWrappers"> 
+          <p class="popup3-content__title">Заказать обратный звонок</p>
+          <p class="popup3-content__undertitle">Заполните форму, чтобы мы смогли связаться с вами в ближайшее время</p>
+          <form class="popup3-form" action="#" id="form4">
+            <div class="control-wrapper">
+              <label class="popup3-form__label" for="username2">Имя*</label>
+              <input class="popup3-form__input" type="text" name="username2" id="username2" placeholder="Ваше имя" autocomplete="off">
+            </div>
+            <div class="control-wrapper">
+              <label class="popup3-form__label" for="phone">Телефон*</label>
+              <input class="popup3-form__input" type="text" name="phone" id="phone" placeholder="+7 999 999-99-99" autocomplete="off">
+            </div>
+            <div class="control-wrapper">
+              <label class="popup3-form__label" for="email4">Email*</label>
+              <input class="popup3-form__input" type="text" name="email4" id="email4" placeholder="Ваш Email" autocomplete="off">
+            </div>
+            <button class="popup3-form__btn btn" type="submit">Заказать звонок</button>
+          </form>
+          <p class="popup3-content__text">* — Поля, обязательные для заполнения. Заполняя эту форму, Вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
+          <p class="popup3-content__text2">или свяжитесь с нами удобным для вас способом</p>
+          <div class="popup3-content__wrapper"> <a class="popup3-content__link" href="#"><img src="img/icons/call.svg" alt="Звонок"><span>Звонок</span></a><a class="popup3-content__link" href="#"><img src="img/icons/telegram.svg" alt="Telegram"><span>Telegram</span></a><a class="popup3-content__link" href="#"><img src="img/icons/whatsapp.svg" alt="WhatsApp"><span>WhatsApp</span></a></div>
+        </div>
+        <div class="popup3-content popup3-content_file popupWrappers"> 
+          <p class="popup3-content__title">Подать документацию в экспертизу</p>
+          <form class="popup3-form" action="#" id="form5">
+            <p class="popup3-content__title_small">Заполните форму ниже</p>
+            <div class="control-wrapper">
+              <input class="popup3-form__input" type="text" name="contractNumber" id="contractNumber" placeholder="Заполните номер договора" autocomplete="off">
+            </div>
+            <div class="control-wrapper">
+              <input class="popup3-form__input" type="text" name="applicantsName" id="applicantsName" placeholder="Укажите наименование заявителя" autocomplete="off">
+            </div>
+            <p class="popup3-content__title_small">Контакты</p>
+            <div class="control-wrapper">
+              <input class="popup3-form__input" type="text" name="fullName" id="fullName" placeholder="Ваше ФИО" autocomplete="off">
+            </div>
+            <div class="control-wrapper">
+              <input class="popup3-form__input" type="text" name="phone2" id="phone2" placeholder="+7 999 999-99-99" autocomplete="off">
+            </div>
+            <div class="control-wrapper">
+              <input class="popup3-form__input" type="text" name="email5" id="email5" placeholder="Ваш Email" autocomplete="off">
+            </div>
+            <div class="control-wrapper">
+              <input class="popup3-form__file" type="file" name="file" id="file">
+              <label class="popup3-form__labelFile" for="file"> <span> <img src="img/icons/file-add.svg" alt=""></span>Прикрепить файл</label>
+            </div>
+            <button class="popup3-form__btn btn" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20240315171543"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js?_v=20240315171543"></script>
+    <script src="js/app.js?_v=20240315171543"></script>
   </body>
 </html>
