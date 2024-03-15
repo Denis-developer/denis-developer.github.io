@@ -620,6 +620,9 @@ window.addEventListener('DOMContentLoaded', () => {
     function popupClose(popupActive, doUnlock = true) {
         if (unlock) {
             popupActive.classList.remove('open');
+            menuBurger.classList.remove('active');
+            menuMobile.classList.remove('show');
+            header.classList.remove('active');
             if (doUnlock) {
                 bodyUnlock();
             }
@@ -684,7 +687,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Adaptive mobile 100vh
 
-    let elements100vh = document.querySelectorAll('vh100');
+    let elements100vh = document.querySelectorAll('.vh100');
 
     const setHeight = function () {
         const currentHeight = window.innerHeight;
