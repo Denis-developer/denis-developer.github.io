@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Сервис формирования пояснительной записки в формате XML</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20240316112337">
-    <link rel="stylesheet" href="css/style.min.css?_v=20240316112337">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20240316170131">
+    <link rel="stylesheet" href="css/style.min.css?_v=20240316170131">
   </head>
   <body>
     <main class="main">
@@ -18,7 +18,7 @@
         </div>
         <header class="header" id="header">
           <div class="container"><img class="header__logo logo" src="img/logo.svg" alt="ДВ Экспертиза Проект">
-            <nav class="header-menu"> <a class="header-menu__link" href="#intro">Главная</a><a class="header-menu__link" href="#service">О сервисе</a><a class="header-menu__link" href="#about">О Компании</a><a class="header-menu__link popup-link" href="#popup3" data-wrapper="1">Техническая поддержка</a></nav><a class="header__btn popup-link" href="#popup1" data-wrapper="1"> 
+            <nav class="header-menu"> <a class="header-menu__link" href="https://t.me/IamDisaster" target="_blank">Главная</a><a class="header-menu__link" href="#service">О сервисе</a><a class="header-menu__link" href="#about">О Компании</a><a class="header-menu__link popup-link" href="#popup3" data-wrapper="1">Техническая поддержка</a></nav><a class="header__btn popup-link" href="#popup1" data-wrapper="1"> 
               <svg viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5.50016 6.52587C7.17605 6.52587 8.53463 5.16729 8.53463 3.4914C8.53463 1.81552 7.17605 0.45694 5.50016 0.45694C3.82427 0.45694 2.4657 1.81552 2.4657 3.4914C2.4657 5.16729 3.82427 6.52587 5.50016 6.52587Z"></path>
                 <path d="M5.49997 8.04312C2.46242 8.04312 0 10.5055 0 13.5431H10.9999C10.9999 10.5055 8.53752 8.04312 5.49997 8.04312Z"></path>
@@ -144,12 +144,12 @@
             <li class="footer-menu__item"><a class="footer-menu__link" href="#intro">Главная</a></li>
             <li class="footer-menu__item"><a class="footer-menu__link" href="#service">О Сервисе</a></li>
             <li class="footer-menu__item"><a class="footer-menu__link" href="#about">О Компании</a></li>
-            <li class="footer-menu__item"><a class="footer-menu__link" href="#contact">Техническая поддержка</a></li>
+            <li class="footer-menu__item"><a class="popup-link footer-menu__link" href="#popup3" data-wrapper="1">Техническая поддержка</a></li>
           </ul>
           <ul class="footer-menu"> 
             <li class="footer-menu__item">Электронные сервисы</li>
-            <li class="footer-menu__item"><a class="footer-menu__link" href="#">Пояснительная записка в XML</a></li>
-            <li class="footer-menu__item"><a class="footer-menu__link" href="#">Сервис цифровой экспертизы</a></li>
+            <li class="footer-menu__item"><a class="popup-link footer-menu__link" href="#popup3" data-wrapper="1">Пояснительная записка в XML</a></li>
+            <li class="footer-menu__item"><a class="popup-link footer-menu__link" href="#popup3" data-wrapper="1">Сервис цифровой экспертизы</a></li>
           </ul>
           <div class="footer-contact"> 
             <p class="footer-contact__title">Контакты</p>
@@ -165,7 +165,7 @@
           <p class="footer__text">2011 - <span>2024 </span> ООО "ДВ Экспертиза Проект" — Экспертиза проектной документации <br> &copy; Все права защищены</p>
         </div>
       </div>
-    </footer>
+    </footer><a class="telegram" href="#"> <img src="img/icons/telegram.svg" alt="telegram"><span>Мы в телеграм</span></a>
     <div class="popup popup1" id="popup1">
       <div class="popup__body popup1__body"> <a class="close popup__close" href="#"><img src="img/icons/close.svg" alt="X"></a>
         <div class="popup1__logo"> <a class="close popup1__back" href="#">
@@ -181,8 +181,8 @@
             </div>
             <div class="control-wrapper">
               <label class="popup1-form__label" for="pass1">Пароль</label>
-              <div class="popup1-form__inputWrapper"> <a class="popup1-form__inputBtn" href="#">Восстановить</a>
-                <input class="popup1-form__input" type="password" name="pass1" id="pass1" placeholder="Введите пароль">
+              <div class="popup1-form__inputWrapper">
+                <input class="popup1-form__input" type="password" name="pass1" id="pass1" placeholder="Введите пароль"><a class="popup1-form__inputBtn popup-link" href="#popup1" data-wrapper="3">Восстановить </a>
               </div>
             </div>
             <button class="popup1-form__btn btn" type="submit">Войти</button>
@@ -223,7 +223,7 @@
             <p class="popup1__description">На указанный Вами Email было отправлено письмо подтверждения. Откройте письмо и нажмите на кнопку «Подтвердить Email адрес»</p>
             <p class="popup1__description">Если письмо не пришло, вы можете отправить его еще раз</p>
             <button class="popup1__btn btn">Отправить письмо еще раз</button>
-            <div class="popup1__text">Перейти на страницу <a class="popup-link" href="#popup1" data-wrapper="2">Входа</a></div>
+            <div class="popup1__text">Перейти на страницу <a class="popup-link" href="#popup1" data-wrapper="1">Входа</a></div>
           </div>
         </div>
       </div>
@@ -233,7 +233,7 @@
         <div class="popup2-content"> <img class="popup2-content__logo logo" src="img/logo.svg" alt="ДВ Экспертиза Проект">
           <h2 class="popup2-content__title">Вход на платформу доступен <span>только клиентам и партнерам</span></h2>
           <p class="popup2-content__undertitle">Стань нашим клиентом</p>
-          <p class="popup2-content__text">Стать нашим клиентом вы можете после заключения договора на проведение негосударственной экспертизы проектной документации.</p>
+          <p class="popup2-content__text">Стать нашим клиентом вы можете после <a class="popup-link" href="#popup3" data-wrapper="3">заключения договора </a>на проведение негосударственной экспертизы проектной документации.</p>
           <p class="popup2-content__offer">Вам доступна демонстрационная версия</p><a class="popup2-content__btn" href="#">Попробовать демоверсию</a>
         </div>
       </div>
@@ -360,8 +360,8 @@
         </div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20240316112337"></script>
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js?_v=20240316112337"></script>
-    <script src="js/app.js?_v=20240316112337"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20240316170131"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js?_v=20240316170131"></script>
+    <script src="js/app.js?_v=20240316170131"></script>
   </body>
 </html>
