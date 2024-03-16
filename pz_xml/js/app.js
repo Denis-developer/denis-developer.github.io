@@ -599,37 +599,40 @@ window.addEventListener('DOMContentLoaded', () => {
         if (currentPopup && unlock) {
             const popupActive = document.querySelector('.popup.open');
             if (popupActive) {
-                popupClose(popupActive, false);
+                // popupClose(popupActive, false);
             }
             else {
                 bodyLock();
             }
             currentPopup.classList.add('open');
-            closeWrapper();
-            switch (linkAttribute) {
-                case '1':
-                    openWrapper('.popup1__wrapper_log');
-                    openWrapper('.popup3-content_support');
-                    break;
-                case '2':
-                    openWrapper('.popup1__wrapper_reg');
-                    openWrapper('.popup3-content_callback');
-                    break;
-                case '3':
-                    openWrapper('.popup1__wrapper_confirm');
-                    openWrapper('.popup3-content_file');
-                    break;
+            if (linkAttribute != null) {
+                closeWrapper();
+                switch (linkAttribute) {
+                    case '1':
+                        openWrapper('.popup1__wrapper_log');
+                        openWrapper('.popup3-content_support');
+                        break;
+                    case '2':
+                        openWrapper('.popup1__wrapper_reg');
+                        openWrapper('.popup3-content_callback');
+                        break;
+                    case '3':
+                        openWrapper('.popup1__wrapper_confirm');
+                        openWrapper('.popup3-content_file');
+                        break;
+                }
             }
         }
     }
 
     function popupClose(popupActive, doUnlock = true) {
+        let activePopups = document.querySelectorAll('.popup.open').length;
         if (unlock) {
             popupActive.classList.remove('open');
             menuBurger.classList.remove('active');
             menuMobile.classList.remove('show');
             header.classList.remove('active');
-            if (doUnlock) {
+            if (doUnlock && (!popupActive.classList.contains('popup4') || activePopups == 1)) {
                 bodyUnlock();
             }
         }
@@ -675,8 +678,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('keydown', function (e) {
         if (e.which === 27) {
-            const popupActive = document.querySelector('.popup.open');
-            popupClose(popupActive);
+            const popupsActive = document.querySelectorAll('.popup.open');
+            popupsActive.forEach(item => {
+                popupClose(item);
+                unlock = true;
+            })
         }
     })
 
