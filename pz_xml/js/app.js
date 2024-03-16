@@ -72,9 +72,9 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    applyDynamicAdaptivity(".header-popup", ".header-menu", ".header .container", 992, 0, 1);
-    applyDynamicAdaptivity(".header-popup", ".header__btn", ".header .container", 992, 0, 2);
-    applyDynamicAdaptivity(".header-popup", ".header-user", ".header .container", 992, 0, 2);
+    applyDynamicAdaptivity(".header-popup", ".header-menu", ".header .container", 1200, 0, 1);
+    applyDynamicAdaptivity(".header-popup", ".header__btn", ".header .container", 1200, 0, 2);
+    applyDynamicAdaptivity(".header-popup", ".header-user", ".header .container", 1200, 0, 2);
 
     // SMOOTH SCROLL
 
@@ -209,7 +209,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //     string.textContent = string.getAttribute('data-text');
     // };
 
-    if (viewport_width > 992) {
+    if (viewport_width > 1200) {
         if (userName && userEmail) {
             shortString(userName, 14);
             shortString(userEmail, 26);
@@ -220,10 +220,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let logo = document.querySelectorAll('.logo'),
         headerBtn = document.querySelector('.header__btn'),
+        headerUser = document.querySelector('.header-user'),
         headerMenu = document.querySelector('.header-menu');
 
     if (viewport_width < 1200) {
-        headerBtn.style.display = "flex";
+        if (headerBtn) {
+            headerBtn.style.display = "flex";
+        }
+        if (headerUser) {
+            headerUser.style.display = "block";
+        }
         headerMenu.style.display = "flex";
     }
 
@@ -248,7 +254,14 @@ window.addEventListener('DOMContentLoaded', () => {
             })
         }
 
-        if (viewport_width > 992) {
+        if (viewport_width > 1200) {
+            if (headerBtn) {
+                headerBtn.style.display = "flex";
+            }
+            if (headerUser) {
+                headerUser.style.display = "block";
+            }
+            headerMenu.style.display = "flex";
             if (userName && userEmail) {
                 shortString(userName, 14);
                 shortString(userEmail, 26);
@@ -256,11 +269,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         // Menu
-        if (viewport_width > 992) {
+        if (viewport_width > 1200) {
             document.body.classList.remove('lock');
             document.documentElement.classList.remove('lock');
             menuBurger.classList.remove('active');
             menuMobile.classList.remove('show');
+            header.classList.remove('active');
         }
 
         menuMobile.style.paddingTop = document.querySelector('.header').offsetHeight + 'px';
@@ -492,75 +506,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // OPEN LOGIN AND REGISTER MODAL
 
-    // let popupLoginBtns = document.querySelectorAll('.popup__open'),
-    //     popupExitBtns = document.querySelectorAll('.close'),
-    //     popupWrappers = document.querySelectorAll('.popupWrappers'),
-    //     popups = document.querySelectorAll('.popup');
-
-    // popupLoginBtns.forEach(item => {
-    //     item.addEventListener('click', (e) => {
-    //         e.preventDefault();
-    //         popups.forEach(modal => {
-    //             if (modal.getAttribute("data-popup") == item.getAttribute('data-popup')) {
-    //                 openPopup(modal);
-    //                 closeWrapper();
-    //                 switch (item.getAttribute('data-wrapper')) {
-    //                     case '1':
-    //                         openWrapper('.popup1__wrapper_log');
-    //                         openWrapper('.popup3-content_support');
-    //                         break;
-    //                     case '2':
-    //                         openWrapper('.popup1__wrapper_reg');
-    //                         openWrapper('.popup3-content_callback');
-    //                         break;
-    //                     case '3':
-    //                         openWrapper('.popup1__wrapper_confirm');
-    //                         openWrapper('.popup3-content_file');
-    //                         break;
-    //                 }
-    //             }
-    //         })
-    //     })
-    // });
-
-    // popupExitBtns.forEach(item => {
-    //     item.addEventListener('click', (e) => {
-    //         e.preventDefault();
-    //         closePopup();
-    //     })
-    // });
-
-    // function openWrapper(wrapperSelector) {
-    //     const wrapper = document.querySelector(wrapperSelector);
-    //     wrapper.classList.add('show');
-    // }
-
-    // function closeWrapper() {
-    //     popupWrappers.forEach(item => {
-    //         item.classList.remove('show');
-    //     });
-    // }
-
-    // function openPopup(popup) {
-    //     const lockPaddingValue = window.innerWidth - document.body.clientWidth + 'px';
-    //     document.body.style.paddingRight = lockPaddingValue;
-    //     popup.classList.add('show');
-    //     document.body.classList.add('lock');
-    //     document.documentElement.classList.add('lock');
-    // }
-
-    // function closePopup() {
-    //     popups.forEach(item => {
-    //         item.classList.remove('show');
-    //     });
-    //     setTimeout(() => {
-    //         document.body.classList.remove('lock');
-    //         document.documentElement.classList.remove('lock');
-    //         document.body.style.paddingRight = "0";
-    //     }, 400)
-
-    // }
-
     const popupLinks = document.querySelectorAll('.popup-link'),
         body = document.querySelector('body'),
         popupWrappers = document.querySelectorAll('.popupWrappers'),
@@ -568,7 +513,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let unlock = true;
 
-    const timeout = 800;
+    const timeout = 600;
 
     if (popupLinks.length > 0) {
         for (let index = 0; index < popupLinks.length; index++) {
@@ -632,7 +577,7 @@ window.addEventListener('DOMContentLoaded', () => {
             menuBurger.classList.remove('active');
             menuMobile.classList.remove('show');
             header.classList.remove('active');
-            if (doUnlock && (!popupActive.classList.contains('popup4') || activePopups == 1)) {
+            if (doUnlock && activePopups == 1) {
                 bodyUnlock();
             }
         }
