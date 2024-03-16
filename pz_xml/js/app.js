@@ -286,6 +286,14 @@ window.addEventListener('DOMContentLoaded', () => {
         menuMobile.style.paddingTop = document.querySelector('.header').offsetHeight + 'px';
     })
 
+    // OPEN MOBILE DROP DOWN
+
+    let headerUserLinkMenu = document.querySelector('.header-user__switch');
+
+    headerUserLinkMenu.addEventListener('click', () => {
+        // headerMenu.style.d
+    })
+
     // FORM VALIDATE
 
     const validator1 = new window.JustValidate('#form1');
