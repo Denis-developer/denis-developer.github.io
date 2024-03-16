@@ -196,12 +196,15 @@ window.addEventListener('DOMContentLoaded', () => {
     // Short user name and email 
 
     let userName = document.querySelector('.header-user__name'),
-        userEmail = document.querySelector('.header-user__email');
+        userNameText = userName.textContent,
+        userEmail = document.querySelector('.header-user__email'),
+        userEmailText = userEmail.textContent;
 
     function shortString(string, length) {
-        string.setAttribute('data-text', string.textContent);
-        let newString = string.textContent.slice(0, length) + "...";
-        string.textContent = newString;
+        if (string.textContent.length > length) {
+            let newString = string.textContent.slice(0, length) + "...";
+            string.textContent = newString;
+        }
     };
 
     // function restoreString(string) {
@@ -266,6 +269,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 shortString(userName, 14);
                 shortString(userEmail, 26);
             }
+        } else {
+            userName.textContent = userNameText;
+            userEmail.textContent = userEmailText;
         }
 
         // Menu
