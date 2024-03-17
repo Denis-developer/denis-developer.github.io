@@ -182,10 +182,12 @@ window.addEventListener('DOMContentLoaded', () => {
         menuBurger.classList.toggle('active');
         menuMobile.classList.toggle('show');
         header.classList.toggle('active');
-        headerMenu.classList.remove('hide');
-        headerPopupWrapper.classList.remove('hide');
-        headerUserLinkMenu.classList.remove('hide');
-        headerUserMenu.classList.remove('show');
+        if (headerUserLinkMenu) {
+            headerMenu.classList.remove('hide');
+            headerPopupWrapper.classList.remove('hide');
+            headerUserLinkMenu.classList.remove('hide');
+            headerUserMenu.classList.remove('show');
+        }
     })
 
     for (let i = 0; i < menuMobileLinks.length; i++) {
@@ -202,19 +204,27 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // OPEN MOBILE DROP DOWN
 
-    headerUserLinkMenu.addEventListener('click', () => {
-        headerMenu.classList.add('hide');
-        headerPopupWrapper.classList.add('hide');
-        headerUserLinkMenu.classList.add('hide');
-        headerUserMenu.classList.add('show');
-    })
+    if (headerUserLinkMenu) {
+        headerUserLinkMenu.addEventListener('click', () => {
+            headerMenu.classList.add('hide');
+            headerPopupWrapper.classList.add('hide');
+            headerUserLinkMenu.classList.add('hide');
+            headerUserMenu.classList.add('show');
+        })
+    }
+
 
     // Short user name and email 
 
     let userName = document.querySelector('.header-user__name'),
-        userNameText = userName.textContent,
+        userNameText,
         userEmail = document.querySelector('.header-user__email'),
+        userEmailText;
+
+    if (userName && userEmail) {
+        userNameText = userName.textContent;
         userEmailText = userEmail.textContent;
+    }
 
     function shortString(string, length) {
         if (string.textContent.length > length) {
@@ -222,11 +232,6 @@ window.addEventListener('DOMContentLoaded', () => {
             string.textContent = newString;
         }
     };
-
-    // function restoreString(string) {
-    //     string.setAttribute('data-text', string.textContent);
-    //     string.textContent = string.getAttribute('data-text');
-    // };
 
     if (viewport_width > 1200) {
         if (userName && userEmail) {
@@ -287,9 +292,20 @@ window.addEventListener('DOMContentLoaded', () => {
                 shortString(userName, 14);
                 shortString(userEmail, 26);
             }
+            if (headerUserMenu) {
+                if (headerUserMenu.classList.contains('show')) {
+                    headerMenu.classList.remove('hide');
+                    headerPopupWrapper.classList.remove('hide');
+                    headerUserLinkMenu.classList.remove('hide');
+                    headerUserMenu.classList.remove('show');
+                }
+            }
+
         } else {
-            userName.textContent = userNameText;
-            userEmail.textContent = userEmailText;
+            if (userName && userEmail) {
+                userName.textContent = userNameText;
+                userEmail.textContent = userEmailText;
+            }
             if (headerUser) {
                 headerUser.classList.remove('desktop');
             }
