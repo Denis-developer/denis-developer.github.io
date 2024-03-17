@@ -168,10 +168,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // BURGER MENU
 
-    const menuBurger = document.querySelector('.header__burger');
-    const menuMobile = document.querySelector('.header-popup');
-    const menuMobileLinks = document.querySelectorAll('.header-menu__link');
-    const header = document.querySelector('.header');
+    const menuBurger = document.querySelector('.header__burger'),
+        menuMobile = document.querySelector('.header-popup'),
+        menuMobileLinks = document.querySelectorAll('.header-menu__link'),
+        header = document.querySelector('.header'),
+        headerUserLinkMenu = document.querySelector('.header-user__switch'),
+        headerPopupWrapper = document.querySelector('.header-popup__wrapper'),
+        headerUserMenu = document.querySelector('.header-user__menu');
 
     menuBurger.addEventListener('click', function (e) {
         document.body.classList.toggle('lock');
@@ -179,6 +182,10 @@ window.addEventListener('DOMContentLoaded', () => {
         menuBurger.classList.toggle('active');
         menuMobile.classList.toggle('show');
         header.classList.toggle('active');
+        headerMenu.classList.remove('hide');
+        headerPopupWrapper.classList.remove('hide');
+        headerUserLinkMenu.classList.remove('hide');
+        headerUserMenu.classList.remove('show');
     })
 
     for (let i = 0; i < menuMobileLinks.length; i++) {
@@ -192,6 +199,15 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     menuMobile.style.paddingTop = document.querySelector('.header').offsetHeight + 'px';
+
+    // OPEN MOBILE DROP DOWN
+
+    headerUserLinkMenu.addEventListener('click', () => {
+        headerMenu.classList.add('hide');
+        headerPopupWrapper.classList.add('hide');
+        headerUserLinkMenu.classList.add('hide');
+        headerUserMenu.classList.add('show');
+    })
 
     // Short user name and email 
 
@@ -232,6 +248,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         if (headerUser) {
             headerUser.style.display = "block";
+            headerUser.classList.remove('desktop');
         }
         headerMenu.style.display = "flex";
     }
@@ -263,6 +280,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             if (headerUser) {
                 headerUser.style.display = "block";
+                headerUser.classList.add('desktop');
             }
             headerMenu.style.display = "flex";
             if (userName && userEmail) {
@@ -272,6 +290,9 @@ window.addEventListener('DOMContentLoaded', () => {
         } else {
             userName.textContent = userNameText;
             userEmail.textContent = userEmailText;
+            if (headerUser) {
+                headerUser.classList.remove('desktop');
+            }
         }
 
         // Menu
@@ -284,14 +305,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         menuMobile.style.paddingTop = document.querySelector('.header').offsetHeight + 'px';
-    })
-
-    // OPEN MOBILE DROP DOWN
-
-    let headerUserLinkMenu = document.querySelector('.header-user__switch');
-
-    headerUserLinkMenu.addEventListener('click', () => {
-        // headerMenu.style.d
     })
 
     // FORM VALIDATE
