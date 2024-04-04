@@ -138,12 +138,36 @@ body.lock {
     }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 360px) {
     .popup-content {
-        padding-right: 17px;
+        padding: 4.6vw;
     }
 
     .popup-content__close {
-        right: 10px;
+        right: 4.6vw;
+        top: 4.6vw;
+    }
+
+    .popup-content__close img {
+        height: 5.5vw;
+    }
+
+    .popup-block__title {
+        font-size: 5.4vw;
+    }
+
+    .popup-block__undertitle {
+        font-size: 4.1vw;
+        margin: 2.6vw 0px;
+    }
+
+    .popup-block__text {
+        font-size: 3.8vw;
+    }
+
+    .popup-block__btn {
+        font-size: 3.8vw;
+        padding: 3.3vw 5.5vw;
+        margin-top: 10vw;
     }
 }
