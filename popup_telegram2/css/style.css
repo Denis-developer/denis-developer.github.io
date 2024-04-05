@@ -69,6 +69,7 @@ body.lock {
     position: absolute;
     left: 15px;
     bottom: 0;
+    max-width: 281px;
 }
 
 .popup-block {
@@ -110,10 +111,6 @@ body.lock {
     align-items: center;
     justify-content: center;
     transition: all 0.3s;
-}
-
-.popup-block__btn:hover {
-    opacity: 0.85;
 }
 
 .popup.open {
